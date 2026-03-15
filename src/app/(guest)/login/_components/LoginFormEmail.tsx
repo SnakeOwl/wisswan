@@ -36,7 +36,7 @@ const LoginFormEmail = React.memo(({
                 <InputV2 id="email"
                     name="email"
                     type="email"
-                    error={formState?.errors?.email}
+                    error={Array.isArray(formState?.errors?.email) ? formState?.errors?.email[0] : formState?.errors?.email}
                     value={email}
                     onChange={e => setEmail(e.target.value || '')}
 

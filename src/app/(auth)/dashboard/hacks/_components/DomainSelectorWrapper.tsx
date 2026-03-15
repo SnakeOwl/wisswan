@@ -66,26 +66,29 @@ export default function DomainSelectorWrapper({
         const newUsedDomains: Domain[] = [];
         const oldUsedDomains = usedDomains;
 
-        boundedIds.forEach((id: number) => {
-            let domain: Domain | undefined = oldUsedDomains.find(dom => dom.id == id);
-            if (domain != undefined) {
-                newUsedDomains.push(domain);
-            } else {
-                // search in old usedDomains
-                domain = domainsForMatches.current!.find(dom => dom.id == id);
+        if (boundedIds != undefined) {
+            boundedIds.forEach((id: number) => {
+                let domain: Domain | undefined = oldUsedDomains.find(dom => dom.id == id);
                 if (domain != undefined) {
                     newUsedDomains.push(domain);
                 } else {
-                    // TEMPORALLY BUFFER SAVING:
-                    domain = domains.find(dom => dom.id == id) as Domain | undefined;
+                    // search in old usedDomains
+                    domain = domainsForMatches.current!.find(dom => dom.id == id);
                     if (domain != undefined) {
                         newUsedDomains.push(domain);
+                    } else {
+                        // TEMPORALLY BUFFER SAVING:
+                        domain = domains.find(dom => dom.id == id) as Domain | undefined;
+                        if (domain != undefined) {
+                            newUsedDomains.push(domain);
+                        }
                     }
-                }
 
-                // maybe it's a new Domain and it will be in response.new_domains  
-            }
-        });
+                    // maybe it's a new Domain and it will be in response.new_domains  
+                }
+            });
+        }
+
 
 
         if (syncResponse && Array.isArray(syncResponse.new_domains) && syncResponse.new_domains.length > 0) {

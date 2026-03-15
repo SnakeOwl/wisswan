@@ -75,7 +75,8 @@ export default function DomainsSelector({
         <div>
             <h3>Область использования</h3>
 
-            <div className="flex flex-wrap items-center gap-2 border border-neutral-200 dark:border-neutral-800 cursor-pointer relative px-1"
+            <div id="DomainSelector_domains_container"
+                className="flex flex-wrap items-center gap-2 border border-neutral-200 dark:border-neutral-800 cursor-pointer relative px-1"
                 onClick={() => inputRef.current?.focus()}
             >
                 {selectedDomains.map((domain: Domain) => (
@@ -93,7 +94,7 @@ export default function DomainsSelector({
 
 
                 <div className="flex gap-2 items-center px-1">
-                    <Input
+                    <Input id="DomainSelector_domains_pure_input"
                         type="text"
                         value={inputText}
                         onChange={onChangeInputText}
@@ -104,7 +105,8 @@ export default function DomainsSelector({
                     />
 
                     {showCheck &&
-                        <Check className="cursor-pointer hover:text-emerald-500"
+                        <Check id="DomainSelector_domains_pure_input_button"
+                            className="cursor-pointer hover:text-emerald-500"
                             onClick={() => {
                                 boundDomain(inputText);
                                 setInputText('');
@@ -119,7 +121,9 @@ export default function DomainsSelector({
                 <div className="min-h-[100px]">
                     <h4>Используемые области:</h4>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div id="DomainSelector_domains_matches_container"
+                        className="flex flex-wrap gap-2"
+                    >
                         {matches.map((match: Domain, index) => (
                             <Button key={match.id}
                                 className="px-2 py-1 text-sm rounded-lg hover:!border-emerald-600 hover:text-emerald-600"

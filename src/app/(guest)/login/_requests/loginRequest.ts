@@ -19,9 +19,9 @@ export default async function loginRequest(prevState: any, formData: FormData) {
         zodSchema.parse(rawData); // will be a throw on validation error
 
         // request to backend
-        const codeResponse = await Post('login-email', rawData);
+        const response = await Post('login-email', rawData);
 
-        return codeResponse;
+        return response;
     } catch (error: unknown) {
         if (error instanceof z.ZodError) {
             const errorBuffer: Record<string, string> = {};

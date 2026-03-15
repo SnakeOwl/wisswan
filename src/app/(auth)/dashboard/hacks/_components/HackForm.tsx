@@ -59,6 +59,7 @@ export default function HackForm({
         // BRIDGE: I can't send form using onBlur on Editorjs. Because need to write his value to somewhere.
         // Or implementation this feauture will be so clumsily
         formRef.current!.requestSubmit();
+            
     }, [value]);
 
 
