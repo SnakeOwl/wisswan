@@ -18,8 +18,6 @@ class HacksController extends Controller
     {
         $user = $request->user();
         $show_all_records = $request->has('show_all_records') && $user->isAdmin();
-
-        info('show_all_records: ' . ($show_all_records ? 'true' : 'false'));
         $filter_domains = $request->has('domains') ? $request->get('domains') : null;
 
         // here hacks only for auth User;
@@ -99,6 +97,7 @@ class HacksController extends Controller
 
         $domains = $validated['domains'];
 
+        // TODO REFACTORING: Перенести логику синхронизации доменов в модель.
 
         if (!is_null($domains)) {
             foreach ($domains as $domain) {

@@ -13,6 +13,7 @@ class LoginRequest extends FormRequest
      */
     public function rules(): array
     {
+        info($this->all());
         return [
             'email' => 'required|email:rfc,dns|max:255',
         ];

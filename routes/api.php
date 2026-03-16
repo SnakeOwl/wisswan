@@ -5,12 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/test', function (Request $request) {
-    info("check check");
     return 'API is working';
 });
 
 
-require_once __DIR__ . "/feed.php";
-require_once __DIR__ . "/utils.php";
-require_once __DIR__ . "/user.php";
-require_once __DIR__ . "/admin.php";
+// FIX: require_once не ставить, иначе в тестах пути не подхватывает
+require __DIR__ . "/feed.php";
+require __DIR__ . "/utils.php";
+require __DIR__ . "/user.php";
+require __DIR__ . "/admin.php";
