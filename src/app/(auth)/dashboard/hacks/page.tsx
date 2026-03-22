@@ -30,6 +30,7 @@ export default async function Page(props: PageProps<'/dashboard/hacks'>) {
                 </section>
             }
 
+
             {Array.isArray(usedDomains) &&
                 <section className="mb-6">
                     <h3 className="mb-1">Фильтр по областям:</h3>

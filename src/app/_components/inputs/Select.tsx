@@ -1,12 +1,15 @@
 import { ChevronsUpDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export interface ISelect extends React.SelectHTMLAttributes<HTMLSelectElement> {
-    options: {
-        value: string | number
-        title: string
-    }[]
+export type SelectOption = {
+    value: string | number
+    title: string
 }
+
+export interface ISelect extends React.SelectHTMLAttributes<HTMLSelectElement> {
+    options: SelectOption[]
+}
+
 
 
 export default function Select({
