@@ -20,6 +20,7 @@ class HacksController extends Controller
         $show_all_records = $request->has('show_all_records') && $user->isAdmin();
         $filter_domains = $request->has('domains') ? $request->get('domains') : null;
         $order_by_new = $request->has('order_new'); // пока только либо новые, либо популярные
+        $filter_by_status = $request->has('filter_status') ? (int) $request->get('filter_status') : false; // пока только либо новые, либо популярные
 
         // here hacks only for auth User;
         // OR all records for admin
@@ -39,6 +40,11 @@ class HacksController extends Controller
                     $query->where('domains.id', $domainId);
                 });
             }
+        }
+        
+        
+        if ($filter_by_status !== false) {
+            $hacks->where('status', $filter_by_status);
         }
 
 
