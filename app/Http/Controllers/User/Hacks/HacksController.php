@@ -19,6 +19,7 @@ class HacksController extends Controller
         $user = $request->user();
         $show_all_records = $request->has('show_all_records') && $user->isAdmin();
         $filter_domains = $request->has('domains') ? $request->get('domains') : null;
+        $order_by_new = $request->has('order_new'); // пока только либо новые, либо популярные
 
         // here hacks only for auth User;
         // OR all records for admin
@@ -41,8 +42,12 @@ class HacksController extends Controller
         }
 
 
+        if (!$order_by_new) {
+            $hacks->orderByDesc('rating');
+        }
+
+
         return $hacks
-            ->orderByDesc('rating')
             ->orderByDesc('id')
             ->paginate(50);
     }
