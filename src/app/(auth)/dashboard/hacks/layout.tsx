@@ -1,3 +1,4 @@
+import FilterByStatus from "../../_components/filters/FilterByStatus";
 import OrderByPopularOrNew from "../../_components/filters/OrderByPopularOrNew";
 
 export default async function Layout({
@@ -5,12 +6,16 @@ export default async function Layout({
 }: LayoutProps<'/dashboard/hacks'>) {
     return (
         <div>
+            <section className="mb-4 flex flex-wrap gap-2">
+                <OrderByPopularOrNew
+                    className="w-[220px]"
+                />
 
-        <section className="mb-4">
-            <OrderByPopularOrNew 
-                className="w-[250px]"
-            />
-        </section>
+                <FilterByStatus 
+                    className="w-[240px]"
+                />
+            </section>
+            
             {children}
         </div>
     )

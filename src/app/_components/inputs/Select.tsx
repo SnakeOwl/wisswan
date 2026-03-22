@@ -1,5 +1,4 @@
 import { ChevronsUpDown } from "lucide-react";
-import { useEffect, useState } from "react";
 
 export type SelectOption = {
     value: string | number
