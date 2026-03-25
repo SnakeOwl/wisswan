@@ -1,4 +1,5 @@
 "use client"
+import StatusView from "@/app/(auth)/_components/StatusView"
 import EditorjsHackView from "@/app/_components/Editorjs/EditorjsHackView"
 import { Hack } from "@/types/Hack"
 
@@ -7,18 +8,26 @@ export default function HackView({
     hack,
     className = '',
     onClick,
+    showStatus = false
 }: {
     hack: Hack
     className?: string
     onClick?: () => void
+    showStatus?: boolean
 }) {
     return (
         <div key={hack.id}
-            className={`rounded-lg border dark:border-neutral-800 border-neutral-200 p-2 ${className}`}
+            className={`rounded-lg border dark:bg-black dark:border-neutral-800 border-neutral-200 p-2 ${className}`}
             onClick={onClick}
         >
-            <div className="text-lg mb-2">
-                {hack.title}
+            <div className="flex items-start justify-between">
+                <div className="text-lg mb-2">
+                    {hack.title}
+                </div>
+
+                {showStatus &&
+                    <StatusView status={hack.status} />
+                }
             </div>
 
             {hack.domains && hack.domains.length > 0 &&

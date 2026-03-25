@@ -44,6 +44,7 @@ export default function HacksTable({
                         hack={hack}
                         onClick={() => router.push(`/dashboard/hacks/${hack.id}`)}
                         className="cursor-pointer"
+                        showStatus
                     />
                 ))
                 }
