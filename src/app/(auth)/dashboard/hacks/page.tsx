@@ -7,6 +7,8 @@ import { Get } from "@/libs/Fetch";
 import getUser from "@/utils/getUser";
 import { isAdmin } from "@/types/User";
 import ShowAllRecordsFilter from "../../_components/filters/ShowAllRecordsFilter";
+import FilterByStatus from "../../_components/filters/FilterByStatus";
+import OrderByPopularOrNew from "../../_components/filters/OrderByPopularOrNew";
 
 
 export const metadata: Metadata = {
@@ -24,6 +26,16 @@ export default async function Page(props: PageProps<'/dashboard/hacks'>) {
 
     return (
         <main className="pb-4 pt-3">
+            <section className="mb-4 flex flex-wrap gap-2">
+                <OrderByPopularOrNew
+                    className="w-[220px]"
+                />
+
+                <FilterByStatus
+                    className="w-[240px]"
+                />
+            </section>
+
             {isAdmin(user) &&
                 <section className="mb-4">
                     <ShowAllRecordsFilter />
