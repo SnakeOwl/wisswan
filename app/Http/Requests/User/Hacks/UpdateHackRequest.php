@@ -15,9 +15,19 @@ class UpdateHackRequest extends AccessHackRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'title' => "nullable|string|max:65535",
-            'value' => "required|string|max:4294967295"
+            'value' => "nullable|string|max:4294967295",
         ];
+
+
+        if ($this->user() && $this->user()->isAdmin()) {
+            $rules['status'] = 'nullable|numeric';
+        } else {
+            // для обычного пользователя пулл статусов ограничен
+            $rules['status'] = 'nullable|numeric|in:110,200';
+        }
+
+        return $rules;
     }
 }
