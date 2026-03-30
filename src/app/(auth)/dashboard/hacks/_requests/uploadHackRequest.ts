@@ -2,18 +2,10 @@
 
 import { Post } from "@/libs/Fetch";
 import { log } from "@/libs/Logging";
-import getCookie from "@/utils/getCookie";
 import { z } from "zod";
 
-// создаёт | обновляет хак с валидацией. Функция для useFormState.
-export default async function saveHackRequest(prevState: any, formData: FormData) {
-    const rawData = Object.fromEntries(formData);
-
-
-    if (prevState == null || JSON.stringify(rawData) == JSON.stringify(prevState))
-        return rawData; // no changes
-
-
+// обновляет хак с валидацией.
+export default async function uploadHackRequest(data: Record<string, string | number>) {
     const zodSchema = z.object({
         title: z.string()
             .max(65535, "Слишком много символов")
@@ -27,25 +19,22 @@ export default async function saveHackRequest(prevState: any, formData: FormData
         subdomen: z.string()
             .max(255, "Слишком много символов")
             .nullable().optional(),
-        id: z.string()
+        id: z.number()
             .nullable().optional(),
-        value: z.string().min(1, {message: "Без содержимого хаки не сохраняет"})
+        status: z.number()
+            .nullable().optional(),
+        value: z.string()
+            .nullable().optional()
     });
 
 
     try {
-        zodSchema.parse(rawData); // will be a throw on validation error
+        zodSchema.parse(data); // will be a throw on validation error
 
-        const hasUserToken = (await getCookie('auth_token')) != null;
-
-        const urlToSave = hasUserToken
-            ? rawData.id 
-                ? `user/hacks/${rawData.id}`
-                : `user/hacks`
-            :`hacks/anonym-form-suggestion`;
+        const urlToSave = `user/hacks/${data.id}`;
         
         // request to backend
-        const response = await Post(urlToSave, rawData);
+        const response = await Post(urlToSave, data);
         
         return response;
     } catch (error: unknown) {

@@ -20,11 +20,7 @@ export default async function Page({
 
 
     if (hackResponse == 403)
-        return (
-            <main>
-                Недостаточно прав
-            </main>
-        );
+        throw new Error('Недостаточно прав.');
 
 
     if (typeof hackResponse !== "number" && hackResponse.id == undefined)
