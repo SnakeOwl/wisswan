@@ -1,7 +1,7 @@
 "use client"
 
 import MultiSwitcher from "@/app/_components/inputs/MultiSwitcher";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import HackForm from "./HackForm";
 import { Hack } from "@/types/Hack";
 import HackAdvancedForm from "./HackAdvancedForm";

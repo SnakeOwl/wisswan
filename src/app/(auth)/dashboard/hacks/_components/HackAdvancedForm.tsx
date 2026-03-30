@@ -2,7 +2,7 @@ import { Hack } from "@/types/Hack";
 import StatusView from "../../../_components/StatusView";
 import DeleteButton from "./DeleteButton";
 import SendHackToPublickReviewButton from "./SendHackToPublickReviewButton";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ContextUser from "@/context/ContextUser";
 import { isAdmin } from "@/types/User";
 import StatusChanger from "@/app/(auth)/_components/StatusChanger";
@@ -15,6 +15,15 @@ export default function HackAdvancedForm({
 }) {
     const { stateUser } = useContext(ContextUser);
     const [hack, setHack] = useState<Hack | null>(initialHack);
+
+    // прослушка изменения из вне
+    // TODO: Беда, если обновлять Поля, то статус же меняется, а он не подтягивается из вне. Пока не критично, но переделать всю форму под useContext
+    // useEffect(() => {
+    //     if (initialHack != null && initialHack.id != undefined) {
+    //         setHack(initialHack);
+    //     }
+    // }, [initialHack]);
+
 
     if (hack == null)
         return null;
