@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import MainMenuUser from "./MainMenuUser";
 import Link from "next/link";
-import { Copy, UsersRound } from "lucide-react";
+import { Copy, LandPlot, UsersRound } from "lucide-react";
 import clsx from "clsx";
 import { useContext } from "react";
 import ContextUser from "@/context/ContextUser";
@@ -35,6 +35,11 @@ export default function MainMenu() {
             title: "Пользователи",
             link: "/admin/users",
             icon: <UsersRound />
+        },
+        {
+            title: "Домены",
+            link: "/admin/domains",
+            icon: <LandPlot />
         }
     ];
 
@@ -59,17 +64,19 @@ export default function MainMenu() {
                     <div className="border-t dark:border-neutral-800 border-neutral-200 pt-1">
                         <h3>Администрирование</h3>
 
-                        {adminLinks.map(link => (
-                            <Link key={link.link}
-                                href={link.link}
-                                className={clsx("flex gap-2", {
-                                    "text-sky-400": pathname.includes(link.link)
-                                })}
-                            >
-                                {link.icon}
-                                {link.title}
-                            </Link>
-                        ))}
+                        <nav className="flex flex-col gap-2">
+                            {adminLinks.map(link => (
+                                <Link key={link.link}
+                                    href={link.link}
+                                    className={clsx("flex gap-2", {
+                                        "text-sky-400": pathname.includes(link.link)
+                                    })}
+                                >
+                                    {link.icon}
+                                    {link.title}
+                                </Link>
+                            ))}
+                        </nav>
                     </div>
                 }
             </div>
