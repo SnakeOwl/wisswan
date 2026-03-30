@@ -29,6 +29,10 @@ class Hack extends Model
         // user_id // bounds on creating
     ];
 
+    protected $casts = [
+        'is_global' => 'boolean', // В MySQL нет честного типа BOOLEAN, поэтому используется TINYINT(1). Из-за этого он по умолчанию возвращает строки '0', '1'
+    ];
+
     /**
      * Defatult values on creating
      *

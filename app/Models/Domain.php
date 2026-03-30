@@ -15,8 +15,12 @@ class Domain extends Model
 
     protected $fillable = [
         'name',
-        'alias',    
+        'alias',
         'published',
+    ];
+
+    protected $casts = [
+        'published' => 'boolean', // В MySQL нет честного типа BOOLEAN, поэтому используется TINYINT(1). Из-за этого он по умолчанию возвращает строки '0', '1'
     ];
 
 
