@@ -2,11 +2,12 @@
 import { usePathname } from "next/navigation";
 import MainMenuUser from "./MainMenuUser";
 import Link from "next/link";
-import { Copy, LandPlot, UsersRound } from "lucide-react";
+import { Copy, LandPlot, Settings, UsersRound } from "lucide-react";
 import clsx from "clsx";
 import { useContext } from "react";
 import ContextUser from "@/context/ContextUser";
 import { isAdmin } from "@/types/User";
+import Hr from "@/app/_components/Hr";
 
 
 export type MenuLink = {
@@ -31,6 +32,11 @@ export default function MainMenu() {
 
 
     const adminLinks: MenuLink[] = [
+        {
+            title: "Администрирование",
+            link: "/admin",
+            icon: <Settings />
+        },
         {
             title: "Пользователи",
             link: "/admin/users",
@@ -61,9 +67,8 @@ export default function MainMenu() {
 
 
                 {isAdmin(stateUser.user) &&
-                    <div className="border-t dark:border-neutral-800 border-neutral-200 pt-1">
-                        <h3>Администрирование</h3>
-
+                    <>
+                        <Hr />
                         <nav className="flex flex-col gap-2">
                             {adminLinks.map(link => (
                                 <Link key={link.link}
@@ -77,7 +82,7 @@ export default function MainMenu() {
                                 </Link>
                             ))}
                         </nav>
-                    </div>
+                    </>
                 }
             </div>
 
