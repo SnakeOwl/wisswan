@@ -90,15 +90,40 @@ const Editorjs = ({
 
 
     useEffect(() => {
-        if (typeof window === 'undefined')
-            return;
+        if (typeof window === 'undefined') return;
 
+        // 1. Обработчик нажатия Tab
+        const handleTabKey = (e: KeyboardEvent) => {
+            if (e.key === 'Tab') {
+                // Проверяем, что мы внутри редактора и НЕ в таблице (в таблицах Tab нужен для ячеек)
+                const target = e.target as HTMLElement;
+                if (target.closest('.ce-table')) return;
+
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                // Вставляем символ табуляции (или 2-4 пробела, если хочешь)
+                const selection = window.getSelection();
+
+                if (!selection || !selection.rangeCount)
+                    return;
+
+
+                const range = selection.getRangeAt(0);
+                const tabNode = document.createTextNode('\t');
+
+                range.deleteContents(); // Удаляем выделенный текст, если он есть
+                range.insertNode(tabNode); // Вставляем таб
+
+                // Переносим курсор в конец вставленного таба
+                range.setStartAfter(tabNode);
+                range.setEndAfter(tabNode);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        };
 
         const onFocusOut = () => {
-            if (!editorRef.current || !onBlur)
-                return;
-
-
+            if (!editorRef.current || !onBlur) return;
             editorRef.current.save().then((outputData: Object) => {
                 onBlur(JSON.stringify(outputData));
             }).catch((error) => {
@@ -106,20 +131,18 @@ const Editorjs = ({
             });
         }
 
-
         import('@editorjs/editorjs').then(({ default: EditorJS }) => {
             if (!editorRef.current) {
                 editorRef.current = new EditorJS({
                     holder: holderId.current,
-                    tools: {
-                    },
-                    i18n: {
-                        messages: editorjs_i18n_messages
-                    },
+                    i18n: { messages: editorjs_i18n_messages },
                     data: savedData ? JSON.parse(savedData) : undefined,
                 });
 
                 if (containerRef.current) {
+                    // 2. Вешаем слушатель Tab
+                    containerRef.current.addEventListener("keydown", handleTabKey, true);
+
                     if (onBlur) {
                         containerRef.current.addEventListener("focusout", onFocusOut)
                     }
@@ -127,15 +150,16 @@ const Editorjs = ({
             }
         });
 
-
         return () => {
             if (editorRef.current) {
                 if (containerRef.current) {
+                    // 3. Не забываем удалить слушатель при размонтировании
+                    containerRef.current.removeEventListener("keydown", handleTabKey, { capture: true });
+
                     if (onBlur) {
                         containerRef.current.removeEventListener("focusout", onFocusOut)
                     }
                 }
-
                 editorRef.current.destroy();
                 editorRef.current = null;
             }
@@ -148,7 +172,7 @@ const Editorjs = ({
             ref={containerRef}
             id={holderId.current}
             className={clsx(className, {
-                'hideToolbar': hideToolbar
+                'editorJS hideToolbar': hideToolbar
             })}
 
         />
