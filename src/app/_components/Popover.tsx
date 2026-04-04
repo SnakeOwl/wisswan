@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import Button from './buttons/Button';
 
@@ -5,12 +6,12 @@ export const Popover = ({
     label,
     children,
     TriggerClassName = '',
-    PopoverClassName = 'w-48 p-1'
+    popoverClassname = ''
 }: {
     label: React.ReactNode,
     children: React.ReactNode
     TriggerClassName?: string
-    PopoverClassName?: string
+    popoverClassname?: string
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     // Теперь по умолчанию true (сверху)
@@ -68,7 +69,7 @@ export const Popover = ({
             {isOpen && (
                 <div
                     ref={popoverRef}
-                    className={`
+                    className={` ${popoverClassname}
                         absolute left-1/2 -translate-x-1/2 z-50
                         border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-950 rounded-md
                         ${isTop ? 'bottom-full mb-2' : 'top-full mt-2'}

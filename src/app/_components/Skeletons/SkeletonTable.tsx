@@ -1,5 +1,3 @@
-import Table from "../tables/Table";
-import TableTr from "../tables/TableTr";
 import { Skeleton } from "./Skeleton";
 
 export const SkeletonTable = ({

@@ -2,12 +2,13 @@
 import { usePathname } from "next/navigation";
 import MainMenuUser from "./MainMenuUser";
 import Link from "next/link";
-import { Copy, LandPlot, Settings, UsersRound } from "lucide-react";
+import { Bot, Copy, LandPlot, Settings, ToolCase, UsersRound } from "lucide-react";
 import clsx from "clsx";
 import { useContext } from "react";
 import ContextUser from "@/context/ContextUser";
 import { isAdmin } from "@/types/User";
 import Hr from "@/app/_components/Hr";
+
 
 
 export type MenuLink = {
@@ -27,7 +28,17 @@ export default function MainMenu() {
             title: "Хаки",
             link: "/dashboard/hacks",
             icon: <Copy />
-        }
+        },
+        {
+            title: "Telegram бот",
+            link: "/dashboard/telegram",
+            icon: <Bot />
+        },
+        {
+            title: "Помощники",
+            link: "/dashboard/helpers",
+            icon: <ToolCase />
+        },
     ];
 
 

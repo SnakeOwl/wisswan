@@ -1,4 +1,5 @@
 import { Domain } from "./Domain"
+import { User } from "./User"
 
 export type Hack = {
     id: number
@@ -17,4 +18,5 @@ export type Hack = {
     status: number // Status in fact
 
     domains?: Domain[]
+    user?: User
 }
