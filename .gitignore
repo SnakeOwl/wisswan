@@ -23,8 +23,6 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 
-# local notes (programmer marks or some...)
-notes
 
 FRONTEND
 composer.phar

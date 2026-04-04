@@ -59,6 +59,11 @@ class User extends Authenticatable
         return $this->hasMany(Hack::class);
     }
 
+    public function site_crawlers(): HasMany
+    {
+        return $this->hasMany(SiteCrawler::class);
+    }
+
     // hasMany in fact, but not for this functional.
     public function auth_code(): HasOne
     {

@@ -3,6 +3,7 @@
 use App\Http\Controllers\User\Hacks\GetUsedDomainsInHacksController;
 use App\Http\Controllers\User\Hacks\HacksController;
 use App\Http\Controllers\User\Login\LoginController;
+use App\Http\Controllers\User\SiteCrawlersController;
 use App\Http\Controllers\User\User\UpdateUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,8 @@ Route::middleware('auth:sanctum')
 
         Route::get('get-used-domains-in-hacks', GetUsedDomainsInHacksController::class);
 
+        Route::post('/update/{user}', UpdateUserController::class);
 
-        Route::post('/update/{user}', UpdateUserController::class); 
+        Route::apiResource('site-crawlers', SiteCrawlersController::class)->except(['update']);
+        Route::post('site-crawlers/{site_crawler}', [SiteCrawlersController::class, 'update']);
     });
