@@ -13,7 +13,7 @@ class UpdateAnonymHackRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        $hackId = $this->has('id') ? $this->has('id') : null;
+        $hackId = $this->has('id') ? $this->get('id') : null;
 
         if ($hackId === null) // new anonymous Hack
             return true;
@@ -34,7 +34,7 @@ class UpdateAnonymHackRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => 'nullable|exists:hacks.id|numeric',
+            'id' => 'nullable',
             'title' => "nullable|string|max:65535",
             'value' => "required|string|max:4294967295",
             'domains' => "array|nullable",
