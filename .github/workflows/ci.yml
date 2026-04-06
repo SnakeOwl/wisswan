@@ -1,7 +1,7 @@
 name: CI
 on:  # когда воркфлоу триггерить
   push: 
-    branches: [ origin ]
+    branches: [ master ]
 
 jobs:
   eslint:
