@@ -7,13 +7,22 @@ import fs from "node:fs/promises";
  * @param fname filename
  * @returns True if ok. Else otherwise.
  */
-export async function log(message: string, fname: string = "logs"): Promise<boolean> {
+export async function log(message: string, ...args: any): Promise<boolean> {
+    const fname = "logs";
+
+    let argsConverted = null;
+    try {
+        argsConverted = args != undefined || args != null ? JSON.parse(args) : null;
+    } catch (e) {
+        // not critical
+    }
+
     try {
         const now = new Date();
-        await fs.appendFile(process.cwd() + "/logs/" + fname, "\n\n" + now + "\n" + message);
+        await fs.appendFile(process.cwd() + "/logs/" + fname, "\n\n" + now + "\n" + message + (argsConverted != null ? "\n" + argsConverted : ''));
     } catch (e) {
         return false;
     }
-    
+
     return true;
 }

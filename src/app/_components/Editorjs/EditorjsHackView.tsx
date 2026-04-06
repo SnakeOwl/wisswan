@@ -61,9 +61,10 @@ export default function EditorjsHackView({
                 <Copy />
             </div>
 
-            <div ref={valueContainer}>
+            <div ref={ valueContainer}>
                 {blocks.map((block: any) => (
                     <div key={block.id}
+                        className="whitespace-pre"
                         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.data.text) + '<br class="explicit-break" />' }}
                     />
                 ))}

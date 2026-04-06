@@ -1,9 +1,9 @@
-import { Fetch } from "@/libs/Fetch";
 import { log } from "@/libs/Logging";
 import { Hack } from "@/types/Hack";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import HackView from "./HackView";
+import { Fetch } from "@/libs";
 
 export default async function HacksBlock() {
 
