@@ -6,7 +6,7 @@ export default function NewAnonymHackBlock() {
         <div>
             <div>
                 <h3>Что-то забыли? Предложите свой хак:</h3>
-                <HackForm showToastAfterSave />
+                <HackForm showToastAfterSave={true} />
             </div>
         </div>
     )

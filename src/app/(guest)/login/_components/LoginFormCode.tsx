@@ -24,7 +24,6 @@ export default function LoginFormCode({
     const router = useRouter();
     const { dispatchUser } = useContext(ContextUser);
     const [code, setCode] = useState<string>('');
-    const [showSubmitButton, setShowSubmitButton] = useState<boolean>(false);
     const [formState, formAction, isPending] = useActionState(loginCodeRequest, null);
 
     const formRef = useRef<HTMLFormElement>(null);
@@ -34,6 +33,7 @@ export default function LoginFormCode({
     const input4_ref = useRef<HTMLInputElement>(null);
     const input5_ref = useRef<HTMLInputElement>(null);
 
+    const showSubmitButton = code.length == 5;
 
     const codeFieldClick = () => {
         switch (code.length) {
@@ -151,10 +151,10 @@ export default function LoginFormCode({
         // ==== show the submit button when code length is 5
         if (code.length == 5) {
             formRef.current?.requestSubmit();
-            setShowSubmitButton(true);
         }
         // ---- show the submit button when code length is 5
     }, [code])
+
 
     useEffect(() => {
         if (!!formState?.user && !!formState?.token) {
@@ -171,11 +171,11 @@ export default function LoginFormCode({
             if (redirectAfterSuccess) {
                 router.push('/dashboard'); // 
                 router.refresh(); // without refresh() URL is not changing
-            }else {
+            } else {
                 router.back();
             }
         }
-    }, [formState])
+    }, [formState, dispatchUser, redirectAfterSuccess, router]);
 
 
     return (

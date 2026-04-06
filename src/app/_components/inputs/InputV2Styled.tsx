@@ -11,5 +11,6 @@ const InputV2Styled = React.memo((params: IInputV2) => (
 )
 )
 
+InputV2Styled.displayName = "InputV2Styled";
 
 export default InputV2Styled;

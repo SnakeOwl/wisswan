@@ -29,7 +29,6 @@ export default function HackForm({
     const [value, setValue] = useState<string>(initialHack?.value || '');
 
 
-
     useEffect(() => {
         if (formState?.errors?.general) {
             dispatchToast({
@@ -42,7 +41,10 @@ export default function HackForm({
 
         if (formState?.id != undefined && data.id == undefined) {
             // ==== HACK WAS CREATED HAS ID
+            /* eslint-disable */
+            // TODO: если сейчас это вынести, то диспатч перестанет работать
             setData({ ...data, id: formState.id });
+            /* eslint-enable */
 
             if (showToastAfterSave) {
                 dispatchToast({
@@ -52,16 +54,14 @@ export default function HackForm({
                 });
             }
         }
-    }, [formState]);
+    }, [formState, dispatchToast, showToastAfterSave, data]);
 
 
     useEffect(() => {
         // BRIDGE: I can't send form using onBlur on Editorjs. Because need to write his value to somewhere.
         // Or implementation this feauture will be so clumsily
         formRef.current!.requestSubmit();
-            
     }, [value]);
-
 
 
 
@@ -70,7 +70,6 @@ export default function HackForm({
             formRef.current!.requestSubmit();
         }
     }, [value])
-
 
 
 

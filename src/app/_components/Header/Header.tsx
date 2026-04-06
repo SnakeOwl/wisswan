@@ -2,7 +2,7 @@
 
 import Logo from "@/app/_components/Logo";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import UserButton from "./UserButton";
 import GlobalMenu from "../GlobalMenu";
 import GlobalMenuToggler from "../GlobalMenuToggler";
@@ -12,10 +12,13 @@ import { usePathname } from "next/navigation";
 const Header = React.memo(() => {
     const [showGlobalMenu, setShowGlobalMenu] = useState<boolean>(false);
     const pathname = usePathname();
+    // Храним "предыдущий" путь прямо в стейте для сравнения
+    const [prevPathname, setPrevPathname] = useState(pathname);
 
-    useEffect(() => {
+    if (pathname !== prevPathname) {
+        setPrevPathname(pathname);
         setShowGlobalMenu(false);
-    }, [pathname]);
+    }
 
 
     return (

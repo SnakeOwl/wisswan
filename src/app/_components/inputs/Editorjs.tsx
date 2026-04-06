@@ -92,6 +92,10 @@ const Editorjs = ({
     useEffect(() => {
         if (typeof window === 'undefined') return;
 
+
+        // FIX: копируем текущее значение рефа в локальную переменную
+        const currentContainer = containerRef.current;
+
         // 1. Обработчик нажатия Tab
         const handleTabKey = (e: KeyboardEvent) => {
             if (e.key === 'Tab') {
@@ -139,12 +143,12 @@ const Editorjs = ({
                     data: savedData ? JSON.parse(savedData) : undefined,
                 });
 
-                if (containerRef.current) {
+                if (currentContainer) {
                     // 2. Вешаем слушатель Tab
-                    containerRef.current.addEventListener("keydown", handleTabKey, true);
+                    currentContainer.addEventListener("keydown", handleTabKey, true);
 
                     if (onBlur) {
-                        containerRef.current.addEventListener("focusout", onFocusOut)
+                        currentContainer.addEventListener("focusout", onFocusOut)
                     }
                 }
             }
@@ -152,19 +156,19 @@ const Editorjs = ({
 
         return () => {
             if (editorRef.current) {
-                if (containerRef.current) {
+                if (currentContainer) {
                     // 3. Не забываем удалить слушатель при размонтировании
-                    containerRef.current.removeEventListener("keydown", handleTabKey, { capture: true });
+                    currentContainer.removeEventListener("keydown", handleTabKey, { capture: true });
 
                     if (onBlur) {
-                        containerRef.current.removeEventListener("focusout", onFocusOut)
+                        currentContainer.removeEventListener("focusout", onFocusOut)
                     }
                 }
                 editorRef.current.destroy();
                 editorRef.current = null;
             }
         };
-    }, []);
+    }, [onBlur, savedData]);
 
 
     return (

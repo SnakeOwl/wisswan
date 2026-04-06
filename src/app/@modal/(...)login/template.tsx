@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import ModalWrapper from './_components/ModalWrapper';
 import ContextUser from '@/context/ContextUser';
 
@@ -11,19 +11,9 @@ export default function Template({
     children: React.ReactNode
 }) {
     const pathname = usePathname();
-    const [showModal, setShowModal] = useState<boolean>(true);
     const { stateUser } = useContext(ContextUser);
 
-    useEffect(() => {
-        if (
-            pathname.includes('/login')
-        ) {
-            setShowModal(true);
-        } else {
-            setShowModal(false);
-        }
-
-    }, [pathname]);
+    const showModal = pathname.includes('/login')
 
 
     if (stateUser.authentication_status == "authorized" || showModal === false)

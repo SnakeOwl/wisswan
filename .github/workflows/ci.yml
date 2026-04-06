@@ -1,0 +1,18 @@
+name: CI
+on:  # когда воркфлоу триггерить
+  push: 
+    branches: [ origin ]
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest # на чём запускать
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - name: install dependencies
+        run: npm ci
+      - name: eslint
+        run: npx eslint .
+
+  
+

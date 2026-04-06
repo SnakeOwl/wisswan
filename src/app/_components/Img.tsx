@@ -7,6 +7,7 @@ export default function Img(props: ImageProps) {
         <Image
             {...props}
             src={newSrc}
+            alt={props.alt || "Изображение"}
         />
     )
 }

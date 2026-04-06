@@ -14,9 +14,6 @@ export const Popover = ({
     popoverClassname?: string
 }) => {
     const [isOpen, setIsOpen] = useState(false);
-    // Теперь по умолчанию true (сверху)
-    const [isTop, setIsTop] = useState(true);
-
     const containerRef = useRef<HTMLDivElement>(null);
     const popoverRef = useRef<HTMLDivElement>(null);
 
@@ -31,13 +28,17 @@ export const Popover = ({
 
             // Если сверху места меньше, чем высота облачка + запас, 
             // И при этом снизу места больше, чем сверху — прыгаем вниз
+
             if (spaceAbove < popoverHeight + 20 && spaceBelow > spaceAbove) {
-                setIsTop(false);
+                popoverRef.current.classList.remove('bottom-full', 'mb-2');
+                popoverRef.current.classList.add('top-full', 'mt-2');
             } else {
-                setIsTop(true);
+                popoverRef.current.classList.remove('top-full', 'mt-2');
+                popoverRef.current.classList.add('bottom-full', 'mb-2');
             }
         }
     }, [isOpen]);
+
 
     // Закрытие по нажатию Esc
     useEffect(() => {
@@ -72,7 +73,6 @@ export const Popover = ({
                     className={` ${popoverClassname}
                         absolute left-1/2 -translate-x-1/2 z-50
                         border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-950 rounded-md
-                        ${isTop ? 'bottom-full mb-2' : 'top-full mt-2'}
                     `}
                 >
                     {children}

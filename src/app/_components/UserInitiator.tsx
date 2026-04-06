@@ -44,7 +44,7 @@ const UserInitiator = React.memo(() => {
                 });
             }
         })
-    }, []);
+    }, [dispatchUser]);
     // ---- checking auth_token in cookies
 
 

@@ -59,5 +59,6 @@ const InputV2 = React.memo(({
     )
 })
 
+InputV2.displayName = "InputV2";
 
 export default InputV2;

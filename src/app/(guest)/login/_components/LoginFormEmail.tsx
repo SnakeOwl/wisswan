@@ -22,7 +22,7 @@ const LoginFormEmail = React.memo(({
             // code was ыend
             changeForm();
         }
-    }, [formState]);
+    }, [formState, changeForm]);
 
 
     return (

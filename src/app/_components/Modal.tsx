@@ -33,7 +33,7 @@ export default function Modal({
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, []);
+    }, [hide]);
 
 
     return (

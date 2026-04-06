@@ -1,9 +1,11 @@
 "use client"
+
 import DomainsSelector from "@/app/(auth)/_components/DomainsSelector";
+import { Skeleton } from "@/app/_components/Skeletons/Skeleton";
 import ContextUser from "@/context/ContextUser";
 import { Fetch, Get, Post } from "@/libs/Fetch";
 import { Domain } from "@/types/Domain";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 
 export default function DomainSelectorWrapper({
     hackId,
@@ -12,15 +14,16 @@ export default function DomainSelectorWrapper({
     hackId: number | null
     initialUsedDomains?: Domain[]
 }) {
+    const needSaveAfterGettingId = useRef<boolean>(hackId === null);
     const { stateUser } = useContext(ContextUser);
     const [usedDomains, setUsedDomains] = useState<Domain[]>(initialUsedDomains);
     const [disableDomainSelector, setDisableDomainSelector] = useState<boolean>(false);
-    const domainsForMatches = useRef<Domain[] | null>(null);
-    const needWaitHackToSave = useRef<boolean>(hackId == null)
+    const [domainsForMatches, setDomainsForMatches] = useState<Domain[] | null>(null);
     const reverseIndexForTempDomains = useRef<number>(-1); // starts from minus
 
 
-    const syncDomains = async (domains: {
+
+    const syncDomains = useCallback(async (domains: {
         id?: number, // id is not nessesary for new domains
         name: string
     }[]) => {
@@ -43,10 +46,7 @@ export default function DomainSelectorWrapper({
                     domains[index] = tempDomain;
                 }
             });
-
             boundedIds = domains.map(el => el.id!);
-
-
         } else {
             // ALL OK, CAN BE SAVED ON BACKEND
             setDisableDomainSelector(true);
@@ -62,18 +62,17 @@ export default function DomainSelectorWrapper({
         }
 
 
-
         const newUsedDomains: Domain[] = [];
         const oldUsedDomains = usedDomains;
 
-        if (boundedIds != undefined) {
+        if (boundedIds != undefined && domainsForMatches != null) {
             boundedIds.forEach((id: number) => {
                 let domain: Domain | undefined = oldUsedDomains.find(dom => dom.id == id);
                 if (domain != undefined) {
                     newUsedDomains.push(domain);
                 } else {
                     // search in old usedDomains
-                    domain = domainsForMatches.current!.find(dom => dom.id == id);
+                    domain = domainsForMatches.find(dom => dom.id == id);
                     if (domain != undefined) {
                         newUsedDomains.push(domain);
                     } else {
@@ -90,28 +89,18 @@ export default function DomainSelectorWrapper({
         }
 
 
-
         if (syncResponse && Array.isArray(syncResponse.new_domains) && syncResponse.new_domains.length > 0) {
             newUsedDomains.push(...syncResponse.new_domains);
         }
 
 
         setUsedDomains(newUsedDomains);
-
         setDisableDomainSelector(false);
-    }
+    }, [hackId, stateUser.authentication_status, usedDomains, domainsForMatches])
 
 
     useEffect(() => {
-        if (hackId != null && needWaitHackToSave.current) {
-            needWaitHackToSave.current = false;
-            syncDomains(usedDomains); // save Domains after creatign Hack
-        }
-    }, [hackId])
-
-
-    useEffect(() => {
-        if (domainsForMatches.current === null) {
+        if (domainsForMatches === null && stateUser.authentication_status != "unknown") {
             (async () => {
                 let domainsForMathces: Domain[] = [];
                 if (stateUser.authentication_status == "authorized") {
@@ -121,18 +110,40 @@ export default function DomainSelectorWrapper({
                         })
                 }
 
-                await Fetch('feed/domains', Number(0), ['domains'])
+                await Fetch('feed/domains', 20, ['domains'])
                     .then(publicDomains => {
                         const domainsForMathcesCurrentIds = domainsForMathces.map(el => el.id);
                         domainsForMathces.push(...publicDomains.filter((el: Domain) => !domainsForMathcesCurrentIds.includes(el.id)))
                     })
 
-
-                domainsForMatches.current = domainsForMathces;
+                setDomainsForMatches(domainsForMathces);
             })()
         }
-    }, []);
+    }, [stateUser.authentication_status, domainsForMatches]);
 
+
+    useEffect(() => {
+        if (hackId !== null && needSaveAfterGettingId.current) {
+            needSaveAfterGettingId.current = false;
+
+            // TODO: REFACTOR: setTimeout - Это скорее заглушка чтобы линт пропускал. 
+            // но я серьёзно пока не знаю как сделать сохранение доменов при приходе нужного айди для сохранения.
+            // если перенести сохранение на уровень выше, то компонент становится менее автомативным
+            
+            /* eslint-disable */
+            syncDomains(usedDomains); // save Domains after creatign Hack
+            /* eslint-enable */
+        }
+    }, [hackId, syncDomains, usedDomains])
+
+
+
+
+    // TODO: REFACTOR: нужно задержать вывод или переделывать функцию под SSR
+    if (domainsForMatches === null)
+        return (
+            <Skeleton className="min-h-12 w-full" />
+        )
 
 
     return (
@@ -144,14 +155,13 @@ export default function DomainSelectorWrapper({
                 })), (typeof domain == "string" ? { name: domain } : { id: domain.id, name: domain.name })];
                 syncDomains(domains);
             }}
-            DomainsForMatches={domainsForMatches.current || []}
             selectedDomains={usedDomains}
             unboundDomain={(id: number) => {
                 const newDomains = [...usedDomains.filter((el: Domain) => el.id != id)];
                 syncDomains(newDomains);
             }}
 
-            initialMatches={domainsForMatches.current || []}
+            initialMatches={domainsForMatches}
             disabled={disableDomainSelector}
         />
     )

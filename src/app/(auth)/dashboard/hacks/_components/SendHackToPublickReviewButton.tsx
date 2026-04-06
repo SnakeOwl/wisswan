@@ -2,7 +2,7 @@
 
 import ButtonStyled from "@/app/_components/buttons/ButtonStyled";
 import { Hack } from "@/types/Hack";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import uploadHackRequest from "../_requests/uploadHackRequest";
 
 export default function SendHackToPublickReviewButton({
@@ -13,9 +13,9 @@ export default function SendHackToPublickReviewButton({
     statusChanged: (newStatus: number) => void
 }) {
     const [process, setProcess] = useState<boolean>(false);
-    const [status, setStatus] = useState<number>(hack.status);
-
-    let buttonDisabled: boolean = false;
+    
+    
+    let status = hack.status;
 
     const onClick = async () => {
         setProcess(true);
@@ -29,20 +29,12 @@ export default function SendHackToPublickReviewButton({
 
 
         statusChanged(newStatus);
-        setStatus(newStatus);
 
         setProcess(false);
     }
 
-
-    // прослушка изменения статуса из вне
-    // TODO: refactoring: При добавлении следующей фичи в форму хака, ставить всю форму на useReducer
-    useEffect(() => {
-        setStatus(hack.status);
-    }, [hack.status]);
-
-
     let buttonText: string = "Опубликовать";
+    let buttonDisabled: boolean = false;
 
     switch (status) {
         case 110:

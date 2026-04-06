@@ -4,48 +4,34 @@ import Button from "@/app/_components/buttons/Button"
 import Input from "@/app/_components/inputs/Input"
 import { Domain } from "@/types/Domain"
 import { Check, X } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 
 
 export default function DomainsSelector({
     selectedDomains,
-    DomainsForMatches,
     unboundDomain,
     boundDomain,
     initialMatches,
     disabled = false
 }: {
     selectedDomains: Domain[],
-    DomainsForMatches: Domain[],
     unboundDomain: (id: number) => void,
     boundDomain: (newNameOrId: string | Domain) => void
     initialMatches: Domain[]
     disabled?: boolean
 }) {
+    // ==== затереть уже выбранные домены из пула доменов
+    let matchesFiltered = [...initialMatches];
+    const selectedDomainsIds = selectedDomains.map(el => el.id);
+    matchesFiltered = matchesFiltered.filter(el => !selectedDomainsIds.includes(el.id))
+    // ---- затереть уже выбранные домены из пула доменов
+    
+
     const [inputText, setInputText] = useState<string>('');
-    const [showCheck, setShowCheck] = useState<boolean>(false);
     const [matches, setMatches] = useState<Domain[]>(initialMatches);
     const inputRef = useRef<HTMLInputElement>(null);
 
-
-    useEffect(() => {
-        if (inputText.length > 0) {
-            setShowCheck(true);
-        } else {
-            setShowCheck(false);
-        }
-    }, [inputText]);
-
-
-    useEffect(() => {
-        let matches = [...initialMatches];
-
-        // remove selected Domains from pull
-        const selectedDomainsIds = selectedDomains.map(el => el.id);
-        matches = matches.filter(el => !selectedDomainsIds.includes(el.id))
-
-        setMatches(matches);
-    }, [initialMatches, selectedDomains]);
+    const showCheckButton = inputText.length > 0;
 
 
     const onChangeInputText = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,7 +40,7 @@ export default function DomainsSelector({
         setInputText(val);
 
         if (val.length > 0) {
-            const matchedDomains = DomainsForMatches.filter(domain => domain.name.toLowerCase().includes(val));
+            const matchedDomains = initialMatches.filter(domain => domain.name.toLowerCase().includes(val));
             setMatches(matchedDomains);
         } else {
             setMatches(initialMatches);
@@ -104,7 +90,7 @@ export default function DomainsSelector({
                         disabled={disabled}
                     />
 
-                    {showCheck &&
+                    {showCheckButton &&
                         <Check id="DomainSelector_domains_pure_input_button"
                             className="cursor-pointer hover:text-emerald-500"
                             onClick={() => {
