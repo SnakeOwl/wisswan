@@ -77,6 +77,13 @@ test('Компонент: Тестирование переходов этапо
     // попытка добавить свой домен из инпута. НЕАВТОРИЗИРОВАННО
     const newDomainPureInput = container.querySelector('#DomainSelector_domains_pure_input') as HTMLInputElement;
     const newDomainText = "Новый домен";
+
+    // ==== DEBUG ====
+    screen.debug() // Выведет весь DOM компонента
+    console.log('компонент:', document.body.textContent) // Проверим, есть ли вообще какой-то контент
+    // console.log('user:', user) // Проверим, есть ли вообще какой-то контент
+    // ---- DEBUG ----
+
     await user.type(newDomainPureInput, newDomainText);
 
     expect(containerBlock).toBeInTheDocument();

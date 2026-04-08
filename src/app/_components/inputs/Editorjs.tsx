@@ -168,7 +168,8 @@ const Editorjs = ({
                 editorRef.current = null;
             }
         };
-    }, [onBlur, savedData]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
 
     return (

@@ -13,6 +13,13 @@ jobs:
         run: npm ci
       - name: eslint
         run: npx eslint .
-
-  
+  # tests:
+  #   runs-on: ubuntu-latest # на чём запускать
+  #   steps:
+  #     - name: checkout
+  #       uses: actions/checkout@v6
+  #     - name: install dependencies
+  #       run: npm ci
+  #     - name: eslint
+  #       run: npx eslint .
 
