@@ -64,7 +64,7 @@ export default function EditorjsHackView({
             <div ref={ valueContainer}>
                 {blocks.map((block: any) => (
                     <div key={block.id}
-                        className="whitespace-pre"
+                        className="whitespace-pre-wrap"
                         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(block.data.text) + '<br class="explicit-break" />' }}
                     />
                 ))}

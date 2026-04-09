@@ -21,7 +21,7 @@ export default function HackView({
             onClick={onClick}
         >
             <div className="flex items-start justify-between">
-                <div className="text-lg mb-2">
+                <div className="text-lg mb-2 whitespace-pre-wrap">
                     {hack.title}
                 </div>
 
