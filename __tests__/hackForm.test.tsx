@@ -89,7 +89,7 @@ const renderWithContext = (component: React.ReactNode, authStatus: "unknown" | "
 
 
 
-test('Компонент: Тестирование переходов этапов логина.', async () => {
+test('Компонент: Тестирование формы Хака.', async () => {
     const { container } = renderWithContext(<HackForm />, "unauthorized");;
 
     const user = userEvent.setup()

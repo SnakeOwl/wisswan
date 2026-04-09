@@ -9,5 +9,5 @@ npx eslint .
 
 Запуск:
 ```bash
-    
+npm run test
 ```
