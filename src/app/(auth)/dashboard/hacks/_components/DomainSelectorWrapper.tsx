@@ -5,7 +5,7 @@ import { Skeleton } from "@/app/_components/Skeletons/Skeleton";
 import ContextUser from "@/context/ContextUser";
 import { Fetch, Get, Post } from "@/libs/Fetch";
 import { Domain } from "@/types/Domain";
-import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 
 export default function DomainSelectorWrapper({
     hackId,

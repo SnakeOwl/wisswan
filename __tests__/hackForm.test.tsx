@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import HackForm from '@/app/(auth)/dashboard/hacks/_components/HackForm';
 import '@testing-library/jest-dom/vitest'
+import ContextUser from '@/context/ContextUser';
 
 
 
@@ -39,6 +40,23 @@ vi.mock('@/libs/Fetch', () => ({
     }),
 }));
 
+// работу этого мока не проверял
+vi.mock('@/libs/Get', () => ({
+    // Оставляем оригинальные Get и Post, если они нужны, или мокаем всё
+    Get: vi.fn(() => Promise.resolve([])),
+    Post: vi.fn(() => Promise.resolve({ bounded: [], new_domains: [] })),
+
+    // Мокаем именно ту функцию Fetch, которая нужна компоненту
+    Fetch: vi.fn((url: string) => {
+        if (url === 'user/get-used-domains-in-hacks') {
+            return Promise.resolve([
+                { id: 13, name: "Linux", published: true },
+                { id: 14, name: "Windows", published: true }
+            ]);
+        }
+        return Promise.resolve([]);
+    }),
+}));
 
 // В тестовой среде нету роутера next/navigation
 // Мокаем навигацию Next.js
@@ -54,9 +72,25 @@ vi.mock('next/navigation', () => ({
 }));
 
 
+// Создаём обёртку с провайдером
+const renderWithContext = (component: React.ReactNode, authStatus: "unknown" | "authorized" | "unauthorized" = "unauthorized") => {
+    return render(
+        <ContextUser.Provider value={{
+            stateUser: {
+                user: null,
+                authentication_status: authStatus,
+            },
+            dispatchUser: vi.fn()
+        }}>
+            {component}
+        </ContextUser.Provider>
+    );
+};
+
+
 
 test('Компонент: Тестирование переходов этапов логина.', async () => {
-    const { container } = render(<HackForm />);
+    const { container } = renderWithContext(<HackForm />, "unauthorized");;
 
     const user = userEvent.setup()
 
@@ -77,12 +111,6 @@ test('Компонент: Тестирование переходов этапо
     // попытка добавить свой домен из инпута. НЕАВТОРИЗИРОВАННО
     const newDomainPureInput = container.querySelector('#DomainSelector_domains_pure_input') as HTMLInputElement;
     const newDomainText = "Новый домен";
-
-    // ==== DEBUG ====
-    screen.debug() // Выведет весь DOM компонента
-    console.log('компонент:', document.body.textContent) // Проверим, есть ли вообще какой-то контент
-    // console.log('user:', user) // Проверим, есть ли вообще какой-то контент
-    // ---- DEBUG ----
 
     await user.type(newDomainPureInput, newDomainText);
 
@@ -117,9 +145,10 @@ test('Компонент: Тестирование переходов этапо
     const firstMatchButton = matchesContainer?.querySelector('button');
     const domainName = firstMatchButton?.textContent;
 
-    if (!firstMatchButton || !domainName) {
+
+    if (!firstMatchButton || !domainName)
         throw new Error('Кнопки в контейнере совпадений не найдены');
-    }
+
 
     // 3. Кликаем по ней
     await user.click(firstMatchButton);
