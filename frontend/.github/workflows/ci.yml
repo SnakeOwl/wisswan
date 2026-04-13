@@ -1,0 +1,32 @@
+name: CI
+on:  # когда воркфлоу триггерить
+  push: 
+    branches: [ master ]
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest # на чём запускать
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - name: install dependencies
+        run: npm ci
+      - name: eslint
+        run: npx eslint .
+  tests:
+    needs: [ eslint ]       # без линта не запускать
+    strategy:               # что-то вроде переменых. по факту множества
+      matrix:
+        version: [24]
+    runs-on: ubuntu-latest  # на чём запускать
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.version }}
+      - name: install dependencies
+        run: npm ci
+      - name: test
+        run: npm run test
+
