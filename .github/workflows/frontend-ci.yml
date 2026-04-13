@@ -1,11 +1,18 @@
-name: CI
+name: Next CI
 on:  # когда воркфлоу триггерить
   push: 
+    # Запускать только если изменились файлы во фронтенде
+    paths:
+      - 'frontend/**'
     branches: [ master ]
 
 jobs:
   eslint:
     runs-on: ubuntu-latest # на чём запускать
+    defaults:
+      run:
+        # по умолчанию выполняются внутри папки frontend
+        working-directory: ./frontend
     steps:
       - name: checkout
         uses: actions/checkout@v6
@@ -19,6 +26,11 @@ jobs:
       matrix:
         version: [24]
     runs-on: ubuntu-latest  # на чём запускать
+    
+    defaults:
+      run:
+        # по умолчанию выполняются внутри папки frontend
+        working-directory: ./frontend
     steps:
       - name: checkout
         uses: actions/checkout@v6
