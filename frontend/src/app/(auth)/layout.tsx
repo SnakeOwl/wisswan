@@ -20,8 +20,7 @@ export default async function Layout({
 
     return (
         <div className="flex flex-1">
-            <div className="min-h-full w-[200px] 
-                border-r dark:border-neutral-800 border-neutral-300 py-4">
+            <div className="min-h-full min-w-[200px] border-r dark:border-neutral-800 border-neutral-300 py-4">
                 <MainMenu />
             </div>
 
