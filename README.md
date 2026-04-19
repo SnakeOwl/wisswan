@@ -86,7 +86,7 @@ php artisan serve
 npm run dev
 ```
 
-Если всё хорошо, по этой ссылке можно увидеть сайт: [localhost:3000](http://localhost:3000/)
+Если всё хорошо, по этой ссылке можно увидеть сайт: [localhost:3030](http://localhost:3030/)
 
 
 # Развёртывание / Frontend / Ручная
