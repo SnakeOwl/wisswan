@@ -1,11 +1,11 @@
 # See https://docs.docker.com/guides/reactjs/containerize/ to update
 
 # Ignore dependencies and build output
-# node_modules/
-# dist/
-# out/
-# .tmp/
-# .cache/
+node_modules/
+dist/
+out/
+.tmp/
+.cache/
 
 # Ignore Vite, Webpack, and React-specific build artifacts
 .vite/
@@ -20,7 +20,7 @@ cypress/videos/
 reports/
 
 # Ignore environment and config files (sensitive data)
-*.env*
+# *.env*
 *.log
 
 # Ignore TypeScript build artifacts (if using TypeScript)

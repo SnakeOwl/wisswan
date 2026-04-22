@@ -1,36 +1,40 @@
 # Используем официальный образ PHP с менеджером процессов FPM
 FROM php:8.3-fpm
 
-# Устанавливаем системные утилиты, необходимые для работы библиотек и Composer
+# Устанавливаем системные утилиты + libicu-dev для расширения intl
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libicu-dev \
     zip \
     unzip
 
-# Устанавливаем расширения PHP, которые требуются для работы Laravel (БД, строки, кэш)
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+# Устанавливаем расширения PHP
+RUN docker-php-ext-configure intl \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl
 
-# Копируем исполняемый файл Composer из официального образа прямо в наш контейнер
+# Копируем Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Указываем рабочую папку внутри контейнера
 WORKDIR /var/www
 
-# Копируем все файлы из папки backend в рабочую папку контейнера
+# Сначала копируем файлы зависимостей
+COPY composer.json composer.lock ./
+
+# Устанавливаем зависимости (без этого шага Laravel может ругаться на отсутствие библиотек)
+RUN composer install --no-scripts --no-autoloader
+
+# Копируем всё остальное
 COPY . .
 
-# Создаем .env из примера
-RUN cp .env.example.docker .env
+# Финальные штрихи
+RUN cp .env.example.docker .env && \
+    composer dump-autoload --optimize && \
+    php artisan storage:link
 
-# Создаем симлинк для хранилища
-RUN php artisan storage:link
-
-# Даем права пользователю www-data на папки, в которые Laravel пишет логи и кэш
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Запускаем PHP-FPM сервер
 CMD ["php-fpm"]

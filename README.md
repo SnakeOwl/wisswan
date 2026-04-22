@@ -30,10 +30,18 @@ npm run test
 
 Запускаем саму сборку по команде:
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
-Если всё прошло Хорошо, frontend откроется по пути [localhost:3000](http://localhost:3000). Работу бекенда можно глянуть по пути [localhost:8000](http://localhost:8000/api/test)
+Если всё прошло Хорошо, frontend откроется по пути [localhost](http://localhost). Работу бекенда можно глянуть по пути [localhost/api/test](http://localhost/api/test)
+
+### Возможные проблемы
+
+#### Неверная конфигурация nginx.
+
+В корне проекта заготовлено 2 файла для nginx. С поддержкой SSL, и без. Для развёртывания на localhost создать **nginx.conf** из файла **nginx.conf.dev**, иначе создавать из **nginx.conf.prod**. 
+
+*Либо единожды менять конфиги, либо создавать ssl для корректной работы на localhost.*
 
 ## Установка / Backend / Ручная
 Создать базу и пользователя к ней. (на примере используется mysql)
