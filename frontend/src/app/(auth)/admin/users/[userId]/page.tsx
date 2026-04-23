@@ -1,5 +1,12 @@
 import UserForm from "@/app/(auth)/_components/UserForm";
 import { Get } from "@/libs/Fetch";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: "Пользователи / Редактирование"
+}
+
 
 export default async function Page({
     params

@@ -1,6 +1,13 @@
+import { Metadata } from "next";
 import OnlyPublished from "../../_components/filters/OnlyPublished";
 import OrderByPopularOrNew from "../../_components/filters/OrderByPopularOrNew";
 import DomainsList from "./_components/DomainsList";
+
+
+export const metadata: Metadata = {
+    title: "Домены (Области)"
+}
+
 
 export default function Page(params: PageProps<'/admin/domains'>) {
     return (

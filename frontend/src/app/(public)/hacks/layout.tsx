@@ -1,6 +1,9 @@
 import { Fetch } from "@/libs/Fetch"
 import DomainsFilter from "./_components/DomainsFilter"
 import NewAnonymHackBlock from "./_components/NewAnonymHackBlock";
+import { Metadata } from "next";
+
+
 
 export default async function Layout({
     children

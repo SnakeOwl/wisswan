@@ -3,16 +3,11 @@ import ParticlesWrapper from "./_components/ParticlesWrapper"
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./_components/Header/Header";
-import { PT_Sans, /* PT_Serif */ } from "next/font/google";
+import { PT_Sans } from "next/font/google";
 import UserProvider from "./_components/UserProvider";
 import ToastProvider from "./_components/contexts/ToastProvider";
 
 // fonts: PT Sans / PT Serif
-
-// const pt_serif = PT_Serif({
-//     subsets: ["latin", "cyrillic"],
-//     weight: ["400", "700"]
-// });
 
 const pt_sans = PT_Sans({
     subsets: ["latin", "cyrillic"],
