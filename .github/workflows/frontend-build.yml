@@ -1,14 +1,14 @@
-# name: Frontend-build
-# on: 
-#   push:
-#     branches: ["master"]
+name: Frontend-build
+on: 
+  push:
+    branches: ["master"]
 
-# jobs:
-#   build:
-#     runs-on: self-hosted
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v4
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
 #       - name: Build with Docker Compose
 #         run: docker compose up -d --build

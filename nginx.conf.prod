@@ -32,6 +32,19 @@ server {
     }
 }
 
+
+# Редирект HTTPS www -> HTTPS без www
+server {
+    listen 443 ssl;
+    server_name www.wisswan.tech;
+
+    ssl_certificate /etc/letsencrypt/live/wisswan.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/wisswan.tech/privkey.pem;
+
+    return 301 https://wisswan.tech$request_uri;
+}
+
+
 # HTTPS
 server {
     listen 443 ssl;
@@ -68,11 +81,13 @@ server {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
         
-        # Передаем реальный IP пользователя
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        # Добавьте эти строки обязательно:
+        proxy_set_header X-Forwarded-Host $host;
         proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Real-IP $remote_addr;
+
+        proxy_cache_bypass $http_upgrade;
     }
 }

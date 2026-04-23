@@ -31,10 +31,12 @@ RUN composer install --no-scripts --no-autoloader
 COPY . .
 
 # Финальные штрихи
-RUN cp .env.example.docker .env && \
+# 1. Проверяем наличие .env, если нет — копируем из примера
+# 2. Оптимизируем автозагрузку и создаем линк
+# 3. storage используется не из контейнера
+RUN sh -c '[ ! -f .env ] && cp .env.example.docker .env || echo ".env already exists"' && \
     composer dump-autoload --optimize && \
-    php artisan storage:link
-
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+    php artisan storage:link && \
+    chown -R www-data:www-data storage bootstrap/cache
 
 CMD ["php-fpm"]
