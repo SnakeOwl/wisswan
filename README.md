@@ -35,6 +35,15 @@ docker compose up -d --build
 
 Если всё прошло Хорошо, frontend откроется по пути [localhost](http://localhost). Работу бекенда можно глянуть по пути [localhost/api/test](http://localhost/api/test)
 
+
+### Laravel schedule
+
+Чтобы laravel schedule работал, нужно в crontab прописать примерно такую строку:
+```
+* * * * * docker exec wisswan-backend php /var/www/artisan schedule:run >> /dev/null 2>&1
+```
+
+
 ### Возможные проблемы
 
 #### Неверная конфигурация nginx.
