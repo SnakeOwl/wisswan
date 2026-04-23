@@ -13,6 +13,8 @@ export default async function Page() {
     return (
         <main>
             <h1>О проекте</h1>
+            <p>Изначально сайт планировался как портал для технических специалистов.</p>
+
             <section className="flex flex-col gap-6">
                 <h2>Используемые технологии</h2>
                 <section>

@@ -17,7 +17,7 @@ export default function HackView({
 }) {
     return (
         <div key={hack.id}
-            className={`rounded-lg border dark:bg-black dark:border-neutral-800 border-neutral-200 p-2 ${className}`}
+            className={`rounded border dark:bg-black dark:border-neutral-800 border-neutral-200 p-2 ${className}`}
             onClick={onClick}
         >
             <div className="flex items-start justify-between">
@@ -34,7 +34,7 @@ export default function HackView({
                 <div className="mb-2 flex flex-wrap gap-3">
                     {hack.domains.map(domain => (
                         <div key={domain.id}
-                            className="px-2 py-1 border border-neutral-200 dark:border-neutral-800 rounded-md"
+                            className="px-2 py-1 border border-neutral-200 dark:border-neutral-800 rounded"
                         >
                             {domain.name}
                         </div>
