@@ -53,6 +53,6 @@ test('Компонент: Тестирование переходов этапо
 
 
     // Проверяем второй этап
-    const inputs = screen.getAllByRole('textbox');
+    const inputs = await screen.findAllByRole('textbox');
     expect(inputs.length).toBe(5); // 5 инпутов для кода
 });
