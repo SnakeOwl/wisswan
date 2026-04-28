@@ -1,6 +1,6 @@
 export type User = {
     id: number
-    access?: number // hidden
+    access?: number 
     avatar: string | null // url
     deleted_at: string | null
     email: string
@@ -11,6 +11,8 @@ export type User = {
     created_at: string | null
     updated_at: string | null
     deleted_message?: string // hidden. Manager: Why this user was deleted.
+    use_telegram_notify_on_site_cravler_500: boolean
+    use_telegram_notify_on_site_cravler_all_responses: boolean
 }
 
 

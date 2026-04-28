@@ -1,10 +1,10 @@
 "use server"
-import fs from "node:fs/promises";
 
 /**
- * Log to file.
- * @param message something to log. (message, JSON ...)
- * @param fname filename
+ * Логгирует в консоль. После билда и разворота можно смотреть логи с помощью docker.
+ * 
+ * @param message - сообщение
+ * @param args - аргументы, которые будут закодированы в JSON
  * @returns True if ok. Else otherwise.
  */
 export async function log(message: string, ...args: any): Promise<boolean> {
@@ -12,14 +12,14 @@ export async function log(message: string, ...args: any): Promise<boolean> {
 
     let argsConverted = null;
     try {
-        argsConverted = args != undefined || args != null ? JSON.parse(args) : null;
+        argsConverted = args != undefined || args != null ? JSON.stringify(args) : null;
     } catch (e) {
         // not critical
     }
 
     try {
         const now = new Date();
-        await fs.appendFile(process.cwd() + "/logs/" + fname, "\n\n" + now + "\n" + message + (argsConverted != null ? "\n" + argsConverted : ''));
+        console.log(now + "\n" + message + (argsConverted != null ? "\n" + argsConverted : '') + "\n\n")
     } catch (e) {
         return false;
     }

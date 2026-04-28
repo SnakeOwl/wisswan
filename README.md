@@ -11,6 +11,10 @@ A brief description of what this project does and who it's for
 
 Весь фронтенд находится в папке **frontend**. Далее инструкции для фронта идут относительно этой папки.
 
+## Логгирование
+
+Логгирование осуществляется в консоль. Ищи либо в docker, либо в CLI.
+
 ## ESLint
 Запуск eslint:
 ```bash
@@ -36,11 +40,20 @@ docker compose up -d --build
 Если всё прошло Хорошо, frontend откроется по пути [localhost](http://localhost). Работу бекенда можно глянуть по пути [localhost/api/test](http://localhost/api/test)
 
 
-### Laravel schedule
+## Laravel schedule
 
 Чтобы laravel schedule работал, нужно в crontab прописать примерно такую строку:
 ```
 * * * * * docker exec wisswan-backend php /var/www/artisan schedule:run >> /dev/null 2>&1
+```
+
+## Привязка Telegram бота
+
+Нужно дать запрос (в браузере открой ссылку) на привязку вебхука и перепроверить .env файлы. 
+
+Запрос такой:
+```
+https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://wisswan.tech/api/webhooks/telegram-input&secret_token=<SECRET>
 ```
 
 
