@@ -4,6 +4,7 @@ use App\Http\Controllers\User\Hacks\GetUsedDomainsInHacksController;
 use App\Http\Controllers\User\Hacks\HacksController;
 use App\Http\Controllers\User\Login\LoginController;
 use App\Http\Controllers\User\SiteCrawlersController;
+use App\Http\Controllers\User\TelegramChats\TelegramChatController;
 use App\Http\Controllers\User\User\UpdateUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,7 @@ Route::middleware('auth:sanctum')
 
         Route::apiResource('site-crawlers', SiteCrawlersController::class)->except(['update']);
         Route::post('site-crawlers/{site_crawler}', [SiteCrawlersController::class, 'update']);
+
+        Route::apiResource('telegram-chats', TelegramChatController::class)->except(['update', 'show']);
+        Route::post('telegram-chats/{telegram_chat}', [TelegramChatController::class, 'update']);
     });

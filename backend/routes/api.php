@@ -14,3 +14,6 @@ require __DIR__ . "/feed.php";
 require __DIR__ . "/utils.php";
 require __DIR__ . "/user.php";
 require __DIR__ . "/admin.php";
+
+require __DIR__ . "/webhooks.php";
+

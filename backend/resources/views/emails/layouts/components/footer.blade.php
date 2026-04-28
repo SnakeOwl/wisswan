@@ -1,7 +1,7 @@
 <div style="margin-top: 36px;display:grid; gap: 8px;">
     <div style="">
         С уважением администрация <a href="https://wisswan.tech/about">{{ env('APP_NAME') }}</a>.
-        <img alt="Логотип {{ env('APP_NAME') }}" height="20" width="20" src={{  imageToBase64(public_path("/images/logo.png")) }}>
+        <img alt="Логотип {{ env('APP_NAME') }}" height="20" width="20" src={{  imageToBase64(public_path("/images/logo.svg")) }}>
     </div>
 
     <div>

@@ -27,6 +27,9 @@ class User extends Authenticatable
         // 'avatar', // not used, maybe should delete
         'name',
         // 'email', // change email via function TODO: write this function (process to change email to)
+
+        'use_telegram_notify_on_site_cravler_500', // Кидать те site_crawlers парсинги, которые с 500 ответом, как уведомления по telegram
+        'use_telegram_notify_on_site_cravler_all_responses', // Кидать парсинги site_crawlers как уведомления по telegram
     ];
 
     /**
@@ -46,13 +49,20 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            // 'email_verified_at' => 'datetime',
+            'use_telegram_notify_on_site_cravler_500' => 'boolean',
+            'use_telegram_notify_on_site_cravler_all_responses' => 'boolean',
         ];
     }
 
 
 
+
     // ==== RELATIONS ====
+
+    public function telegram_chats(): HasMany
+    {
+        return $this->hasMany(TelegramChat::class);
+    }
 
     public function hacks(): HasMany
     {

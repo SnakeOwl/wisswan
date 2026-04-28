@@ -29,11 +29,15 @@ class UpdateUserRequest extends FormRequest
     {
         $rules = [
             'name' => 'nullable|string|max:255',
+            'use_telegram_notify_on_site_cravler_500' => 'nullable|boolean',
+            'use_telegram_notify_on_site_cravler_all_responses' => 'nullable|boolean',
         ];
 
 
         if ($this->user() && $this->user()->isAdmin()) {
-            $rules['email'] = 'required|email:rfc,dns|max:255';
+            if ($this->has('email')) {
+                $rules['email'] = 'required|email:rfc,dns|max:255';
+            }
             $rules['access'] = 'nullable|numeric';
             $rules['deleted_message'] = 'nullable|string|max:65535';
         }
