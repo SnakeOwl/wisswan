@@ -23,15 +23,18 @@ class TelegramChat extends Model
      */
     public function send_message($message)
     {
-        if ($this->chat_id == null && $this->user_name == null)
+        // в личных чатах через бота нельзя использовать user_name
+        if ($this->chat_id == null)
             throw new Exception("Не хватает chat_id для отправки сообщения. TelegramChat.id: {$this->id}. message: $message");
 
 
-        $chat_id = $this->user_name || $this->chat_id;
+        $chat_id = $this->chat_id;
 
         $telegram_api = app(TelegramAPI::class); // singleton
 
-        return $telegram_api->send_message($chat_id, $message);
+        $response = $telegram_api->send_message($chat_id, $message);
+        
+        return $response;
     }
 
     /**
@@ -40,11 +43,12 @@ class TelegramChat extends Model
      */
     public function send_menu()
     {
-        if ($this->chat_id == null && $this->user_name == null)
+        // в личных чатах через бота нельзя использовать user_name
+        if ($this->chat_id == null)
             throw new Exception("Не хватает chat_id для отправки меню. TelegramChat.id: {$this->id}.");
 
 
-        $chat_id = $this->user_name || $this->chat_id;
+        $chat_id = $this->chat_id;
 
         return app(TelegramAPI::class)->send_menu($chat_id);
     }

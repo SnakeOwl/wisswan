@@ -5,6 +5,7 @@ namespace App\Libs\OuterAPI\TelegramAPI;
 use App\Models\TelegramChat;
 use Exception;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class TelegramAPI
 {
@@ -140,7 +141,7 @@ class TelegramAPI
      * @param string $text - Посылаемый текст
      * @return \Illuminate\Http\Client\Response
      */
-    public function send_message(int $chat_id, string $text)
+    public function send_message($chat_id, string $text)
     {
         $url = "https://api.telegram.org/bot{$this->api_key}/sendMessage";
 
@@ -150,9 +151,14 @@ class TelegramAPI
             'parse_mode' => 'HTML',
         ];
 
-        $resposne = Http::post($url, $params);
+        $response = Http::post($url, $params);
         
-        return $resposne;
+        if (isset($response["error_code"])){
+            Log::info("Telegram error_code. ");
+            Log::info($response);
+        }
+        
+        return $response;
     }
 
     /**
@@ -160,7 +166,7 @@ class TelegramAPI
      * @param string | int $chat_id - @username | id чата Telegram
      * @return \Illuminate\Http\Client\Response
      */
-    public function send_menu(int $chat_id, $menu = null, $text = "Вывожу ваше меню")
+    public function send_menu($chat_id, $menu = null, $text = "Вывожу ваше меню")
     {
         $menu = $menu ?? self::$telegram_menu;
         $url = "https://api.telegram.org/bot{$this->api_key}/sendMessage";
@@ -172,8 +178,13 @@ class TelegramAPI
             'reply_markup' => json_encode($menu),
         ];
 
-        $resposne = Http::post($url, $params);
+        $response = Http::post($url, $params);
 
-        return $resposne;
+        if (isset($response["error_code"])){
+            Log::info("Telegram error_code. ");
+            Log::info($response);
+        }
+
+        return $response;
     }
 }
