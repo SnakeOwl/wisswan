@@ -15,6 +15,7 @@ class TelegramChat extends Model
     ];
 
 
+
     /**
      * Посылает сообщение в чат
      * @param string $message
@@ -28,7 +29,20 @@ class TelegramChat extends Model
 
         $telegram_api = app(TelegramAPI::class); // singleton
 
-        $telegram_api->send_message($message);
+        return $telegram_api->send_message($this->chat_id, $message);
+    }
+
+    /**
+     * Посылает меню пользователю.
+     * @throws \Exception
+     */
+    public function send_menu()
+    {
+        if ($this->chat_id == null)
+            throw new Exception("Не хватает chat_id для отправки меню. TelegramChat.id: {$this->id}.");
+
+
+        return app(TelegramAPI::class)->send_menu($this->chat_id);
     }
 
 

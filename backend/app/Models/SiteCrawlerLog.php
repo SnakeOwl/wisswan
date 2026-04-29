@@ -17,12 +17,18 @@ class SiteCrawlerLog extends Model
         'status',
     ];
 
+    
+    public function __toString()
+    {
+        $crawler = $this->crawler;
+        return implode(', ', [$this->created_at, $crawler->url, "Статус ответа: {$this->status}"]);
+    }
 
     // ==== RELATIONS ====
 
     public function crawler(): BelongsTo
     {
-        return $this->belongsTo(SiteCrawler::class);
+        return $this->belongsTo(SiteCrawler::class, 'site_crawler_id');
     }
     // ---- RELATIONS ----
 }

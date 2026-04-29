@@ -34,7 +34,7 @@ class SendTelegramNotification implements ShouldQueue
     public function handle(): void
     {
         try {
-        // TODO: тут посылать сообщение
+            $this->telegram_chat->send_message($this->message);
         } catch (Throwable $e) {
             info("TelegramChat id: " . $this->telegram_chat->id . ' : ' . $e->getMessage());
         }
