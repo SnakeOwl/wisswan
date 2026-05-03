@@ -6,6 +6,7 @@ import Header from "./_components/Header/Header";
 import { PT_Sans } from "next/font/google";
 import UserProvider from "./_components/UserProvider";
 import ToastProvider from "./_components/contexts/ToastProvider";
+import { Suspense } from "react";
 
 // fonts: PT Sans / PT Serif
 
@@ -28,9 +29,13 @@ export default function RootLayout({
                     <ParticlesWrapper>
                         <ToastProvider>
                             <div className="max-w-[1280px] mx-auto w-full flex-1 flex flex-col px-2 lg:px-0">
-                                <Header />
+                                <Suspense>
+                                    <Header />
+                                </Suspense>
 
-                                {children}
+                                <Suspense>
+                                    {children}
+                                </Suspense>
                             </div>
 
                             {modal}

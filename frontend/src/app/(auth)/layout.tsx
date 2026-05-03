@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { ReactNode } from "react"
+import { ReactNode, Suspense } from "react"
 import MainMenu from "./_components/MainMenu";
 
 export default async function Layout({
@@ -25,7 +25,9 @@ export default async function Layout({
             </div>
 
             <div className="pl-4 pt-2 flex-1">
-                {children}
+                <Suspense>
+                    {children}
+                </Suspense>
             </div>
         </div>
     )

@@ -1,17 +1,16 @@
-import { isAdmin } from "@/types/User";
-import getUser from "@/utils/getUser";
-import { redirect } from "next/navigation";
+import LayoutChildrenWrapper from "./_components/LayoutChildrenWrapper";
+import { Suspense } from "react";
 
 export default async function Layout({
     children
 }: {
     children: React.ReactNode
 }) {
-    const user = await getUser();
-
-    if (!isAdmin(user))
-        redirect('/dashboard');
-
-
-    return children;
+    return (
+        <Suspense>
+            <LayoutChildrenWrapper>
+                {children}
+            </LayoutChildrenWrapper>
+        </Suspense>
+    )
 }

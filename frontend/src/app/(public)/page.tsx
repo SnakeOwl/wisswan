@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import HacksBlock from './_components/HacksBlock';
+import { Suspense } from 'react';
+import { Skeleton } from '../_components/Skeletons/Skeleton';
 
 
 export const metadata: Metadata = {
@@ -9,10 +11,13 @@ export const metadata: Metadata = {
 
 
 export default async function Page() {
+
     return (
         <main className='pb-4'>
             <section>
-                <HacksBlock />
+                <Suspense fallback={ <Skeleton /> }>
+                    <HacksBlock />
+                </Suspense>
             </section>
         </main>
     );

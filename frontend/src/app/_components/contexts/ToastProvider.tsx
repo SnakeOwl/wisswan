@@ -2,7 +2,7 @@
 
 import ContextToast, { stateToastInitial } from "@/context/messages/Toaster/ContextToast";
 import ReducerToast from "@/context/messages/Toaster/ReduceToast";
-import { useEffect, useReducer } from "react"
+import { Suspense, useEffect, useReducer } from "react"
 import Button from "../buttons/Button";
 import { Check } from "lucide-react";
 import clsx from "clsx";
@@ -15,7 +15,7 @@ export default function ToastProvider({
     const [stateToast, dispatchToast] = useReducer(ReducerToast, stateToastInitial);
 
 
-    useEffect(()=>{
+    useEffect(() => {
         if (!!stateToast.secondsBeforeHide) {
             setTimeout(() => dispatchToast({ type: "RESET" }), 1000 * stateToast.secondsBeforeHide);
         }

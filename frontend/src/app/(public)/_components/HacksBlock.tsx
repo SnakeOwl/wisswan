@@ -5,8 +5,8 @@ import Link from "next/link";
 import HackView from "./HackView";
 import { Fetch } from "@/libs";
 
-export default async function HacksBlock() {
 
+export default async function HacksBlock() {
     const hacksResponse = await Fetch('feed/index-hacks');
 
     if (!Array.isArray(hacksResponse)) {

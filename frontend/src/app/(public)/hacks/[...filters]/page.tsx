@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import HacksBlock from "../_components/HacksBlock";
+import { Suspense } from "react";
+import HacksBlockWrapper from "./_components/HacksBlockWrapper";
 
 
 export const metadata: Metadata = {
@@ -8,22 +9,12 @@ export const metadata: Metadata = {
     keywords: ["Хаки", "Готовые решения", "утилиты"],
 }
 
-export default async function BlogPostPage({
-    params
-}: PageProps<'/hacks/[...filters]'>
-) {
-    const filters = (await params).filters;
-
-    const sparams = new URLSearchParams();
-
-    filters.forEach(filter => {
-        sparams.append('domains[]', filter);
-    });
-
-
+export default async function BlogPostPage(props: PageProps<'/hacks/[...filters]'>) {
     return (
         <main>
-            <HacksBlock filters={sparams} />
+            <Suspense>
+                <HacksBlockWrapper params={props.params} searchParams={props.searchParams} />
+            </Suspense>
         </main>
     )
 }

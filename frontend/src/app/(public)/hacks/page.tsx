@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import HacksBlock from "./_components/HacksBlock";
+import { Suspense, use } from "react";
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,9 @@ export default async function Page({
 
     return (
         <main>
-            <HacksBlock filters={soptions} />
+            <Suspense>
+                <HacksBlock filters={soptions} />
+            </Suspense>
         </main>
     )
 }
