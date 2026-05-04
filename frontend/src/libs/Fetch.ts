@@ -47,9 +47,13 @@ export async function Fetch(
 
 
         return response.status;
-    } catch (e) {
-        await log("Request GET error: " + String(e) + "\n url: " + process.env.NEXT_PUBLIC_BASE_URL_API + url);
+    } catch (e: any) {
+        if (e.message?.includes('During prerendering')) {
+            // При билде нужно давать испключение, так как Next тогда понимает что сегмент динамический и не пытается рендерить далее
+            throw e;
+        }
 
+        await log("Request GET error: " + String(e) + "\n url: " + process.env.NEXT_PUBLIC_BASE_URL_API + url);
     }
     return false;
 };
@@ -67,11 +71,20 @@ export async function Get(
     appendHeadrs: Record<string, string> = {}
 ): Promise<false | number | any> {
     try {
-        const cookieStore = await cookies();
-        const token = cookieStore.get("auth_token");
+        let tokenHeader = {};
+
+        try {
+            const cookieStore = await cookies();
+            const token = cookieStore.get("auth_token");
+            if (token != undefined) {
+                tokenHeader = ({ "Authorization": `Bearer ${token.value}` });
+            }
+        } catch (e) {
+            // во время билда этот блок всегда срабатывает, так как кук нету
+        }
 
         const headers = {
-            ...(token != undefined ? { "Authorization": `Bearer ${token.value}` } : {}),
+            ...(tokenHeader),
             "accept": "application/json", // without this laravel returns 302
             ...appendHeadrs,
         }
@@ -91,7 +104,12 @@ export async function Get(
 
 
         return response.status;
-    } catch (e) {
+    } catch (e: any) {
+        if (e.message?.includes('During prerendering')) {
+            // При билде нужно давать испключение, так как Next тогда понимает что сегмент динамический и не пытается рендерить далее
+            throw e;
+        }
+
         await log("Request GET error: " + String(e) + "\n url: " + process.env.NEXT_PUBLIC_BASE_URL_API + url);
 
     }
@@ -123,7 +141,7 @@ export async function Post(
             ...(token != undefined ? { "Authorization": `Bearer ${token.value}` } : {}), // laravel auth
             ...appendHeders,
         }
-        
+
         let postBody: any = null;
         if (!!body) {
             if (body instanceof FormData) {
@@ -135,7 +153,7 @@ export async function Post(
                 appendObjectToFormData(postBody, body);
             }
         }
-        
+
         const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL_API + url,
             {
                 headers: headers,
@@ -212,7 +230,7 @@ export async function Delete(
 
 //  Append into formData any object recursively.
 const appendObjectToFormData = (formData: FormData, data: any, parentKey = '') => {
-    
+
     if (data instanceof File && parentKey.length > 0) {
         // FILES
         formData.append(parentKey, data);

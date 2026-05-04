@@ -2,14 +2,13 @@ import { ReactNode, Suspense } from "react"
 import MainMenu from "./_components/MainMenu";
 import LayoutAsyncProcessor from "./_components/LayoutAsyncProcessor";
 
+
+
 export default async function Layout({
     children
 }: {
     children: ReactNode
 }) {
-
-
-
     return (
         <div className="flex flex-1">
             <Suspense>
@@ -25,5 +24,4 @@ export default async function Layout({
             </Suspense>
         </div>
     )
-
 }
