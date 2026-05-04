@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import HacksBlock from "./_components/HacksBlock";
 import { Suspense, use } from "react";
+import HackBlockWrapper from "./_components/HackBlockWrapper";
 
 
 export const metadata: Metadata = {
@@ -10,17 +10,11 @@ export const metadata: Metadata = {
 }
 
 
-export default async function Page({
-    searchParams,
-}: PageProps<'/hacks'>) {
-    const sparams = await searchParams;
-    const soptions = new URLSearchParams(sparams as { [key: string]: string });
-
-
+export default async function Page(props: PageProps<'/hacks'>) {
     return (
         <main>
             <Suspense>
-                <HacksBlock filters={soptions} />
+                <HackBlockWrapper {...props} />
             </Suspense>
         </main>
     )

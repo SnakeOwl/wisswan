@@ -1,7 +1,7 @@
 
 import HackForm from "@/app/(auth)/dashboard/hacks/_components/HackForm";
 
-export default function NewAnonymHackBlock() {
+export default async function NewAnonymHackBlock() {
     return (
         <div>
             <div>

@@ -22,9 +22,6 @@ export async function Fetch(
     appendHeadrs: Record<string, string> = {},
 ): Promise<false | number | any> {
     try {
-        const cookieStore = await cookies();
-        const token = cookieStore.get("auth_token");
-
         const headers = {
             "accept": "application/json", // without this laravel returns 302
             ...appendHeadrs,
@@ -39,9 +36,7 @@ export async function Fetch(
                     revalidate: revalidate,
                     tags: revalidationTags,
                 }
-
             }
-
         );
 
 

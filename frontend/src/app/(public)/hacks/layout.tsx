@@ -1,6 +1,7 @@
 import NewAnonymHackBlock from "./_components/NewAnonymHackBlock";
 import { Suspense } from "react";
 import DomainsFilterWrapper from "./_components/DomainsFilterWrapper";
+import { SkeletonTable } from "@/app/_components/Skeletons/SkeletonTable";
 
 
 export default async function Layout({
@@ -11,18 +12,14 @@ export default async function Layout({
     return (
         <div>
             <h1>Хаки по областям</h1>
-            <Suspense>
+            <Suspense fallback={<SkeletonTable cols={4} rows={1} />}>
                 <DomainsFilterWrapper />
             </Suspense>
-            
-            <Suspense>
-                {children}
-            </Suspense>
 
-            <section className="mt-4 border border-neutral-200 dark:border-neutral-800 p-2 rounded-xl">
-                <Suspense>
-                    <NewAnonymHackBlock />
-                </Suspense>
+            {children}
+
+            <section className="mt-8 border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-950 p-2 ">
+                <NewAnonymHackBlock />
             </section>
         </div>
     )

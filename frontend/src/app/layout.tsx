@@ -7,13 +7,15 @@ import { PT_Sans } from "next/font/google";
 import UserProvider from "./_components/UserProvider";
 import ToastProvider from "./_components/contexts/ToastProvider";
 import { Suspense } from "react";
+import { SkeletonTable } from "./_components/Skeletons/SkeletonTable";
 
-// fonts: PT Sans / PT Serif
 
 const pt_sans = PT_Sans({
     subsets: ["latin", "cyrillic"],
     weight: ["400", "700"]
 });
+
+
 
 export default function RootLayout({
     children,
@@ -29,13 +31,11 @@ export default function RootLayout({
                     <ParticlesWrapper>
                         <ToastProvider>
                             <div className="max-w-[1280px] mx-auto w-full flex-1 flex flex-col px-2 lg:px-0">
-                                <Suspense>
+                                <Suspense fallback={<SkeletonTable cols={3} rows={1} />}>
                                     <Header />
                                 </Suspense>
 
-                                <Suspense>
-                                    {children}
-                                </Suspense>
+                                {children}
                             </div>
 
                             {modal}

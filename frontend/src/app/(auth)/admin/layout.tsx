@@ -1,5 +1,5 @@
-import LayoutChildrenWrapper from "./_components/LayoutChildrenWrapper";
 import { Suspense } from "react";
+import LayoutAsyncProcessor from "./_components/LayoutAsyncProcessor";
 
 export default async function Layout({
     children
@@ -8,9 +8,9 @@ export default async function Layout({
 }) {
     return (
         <Suspense>
-            <LayoutChildrenWrapper>
+            <LayoutAsyncProcessor>
                 {children}
-            </LayoutChildrenWrapper>
+            </LayoutAsyncProcessor>
         </Suspense>
     )
 }

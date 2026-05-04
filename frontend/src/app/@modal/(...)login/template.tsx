@@ -25,7 +25,6 @@ export default function Template({
             <div className='px-1'>
                 {children}
             </div>
-
         </ModalWrapper>
     )
 }

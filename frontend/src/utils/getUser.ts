@@ -1,12 +1,9 @@
 "use server"
 
 import { Get } from "@/libs/Fetch";
-import { connection } from "next/server";
 
 
 export default async function getUser(){
-    await connection(); 
-    
     const userResponse = await Get('user');
     
     if (!!userResponse.id){ 
