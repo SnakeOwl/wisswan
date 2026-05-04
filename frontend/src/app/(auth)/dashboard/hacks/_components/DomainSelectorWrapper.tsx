@@ -126,10 +126,6 @@ export default function DomainSelectorWrapper({
         if (hackId !== null && needSaveAfterGettingId.current) {
             needSaveAfterGettingId.current = false;
 
-            // TODO: REFACTOR: setTimeout - Это скорее заглушка чтобы линт пропускал. 
-            // но я серьёзно пока не знаю как сделать сохранение доменов при приходе нужного айди для сохранения.
-            // если перенести сохранение на уровень выше, то компонент становится менее автомативным
-            
             /* eslint-disable */
             syncDomains(usedDomains); // save Domains after creatign Hack
             /* eslint-enable */
@@ -141,9 +137,8 @@ export default function DomainSelectorWrapper({
 
     // TODO: REFACTOR: нужно задержать вывод или переделывать функцию под SSR
     if (domainsForMatches === null)
-        return (
-            <Skeleton className="min-h-12 w-full" />
-        )
+        return <Skeleton className="min-h-12 w-full" />
+
 
 
     return (

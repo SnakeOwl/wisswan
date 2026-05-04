@@ -26,8 +26,6 @@ class DeleteOldAuthCodes extends Command
      */
     public function handle()
     {
-        $codes = UserLoginCode::where('expires_at', '<', now())->delete();
-
-        info("DeleteOldAuthCodes: SUCCESS."); // TODO: <== delete after cheching on prod
+        UserLoginCode::where('expires_at', '<', now())->delete();
     }
 }

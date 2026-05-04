@@ -23,7 +23,7 @@ class Hack extends Model
         'value', // longtext
         'rating', // counter
         'ip_last_updated',
-        'shared_link', // TODO: reserved. initialize.
+        'shared_link', // Зарезервировано. initialize.
         'status', // see App\Models\Traits\UsesStatuses
 
         // user_id // bounds on creating
@@ -51,6 +51,36 @@ class Hack extends Model
         $this->rating += 1;
         $this->saveQuietly();
     }
+
+
+    public function sync_or_create_domains_with_name(&$domains_array)
+    {
+        $ids_to_sync = [];
+        $new_domains = [];
+
+        if (!is_null($domains_array)) {
+            foreach ($domains_array as $domain) {
+                // if $domain not have id, than create;
+                if (isset($domain['id'])) {
+                    $ids_to_sync[] = $domain['id'];
+                    continue;
+                }
+
+
+                $new_domain = Domain::firstOrCreate(['name' => $domain['name']])->refresh();
+                $ids_to_sync[] = $new_domain->id;
+                $new_domains[] = $new_domain;
+            }
+        }
+
+        $this->domains()->sync($ids_to_sync);
+
+        return [
+            'bounded' => $ids_to_sync,
+            "new_domains" => $new_domains
+        ];
+    }
+
 
     // ==== RELATIONS ====
 

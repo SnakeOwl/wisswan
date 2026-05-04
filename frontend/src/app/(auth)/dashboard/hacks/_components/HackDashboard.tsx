@@ -39,7 +39,7 @@ export default function HackDashboard({
                 <HackForm initialHack={hack} />
             }
 
-            {showMode == "advanced" &&
+            {showMode == "advanced" && hack != null &&
                 <HackAdvancedForm initialHack={hack} />
             }
         </div>

@@ -41,8 +41,8 @@ class HacksController extends Controller
                 });
             }
         }
-        
-        
+
+
         if ($filter_by_status !== false) {
             $hacks->where('status', $filter_by_status);
         }
@@ -102,36 +102,11 @@ class HacksController extends Controller
     public function sync_domains(ManageDomainsHackRequest $request, Hack $hack)
     {
         $validated = $request->validated();
-
-        $ids_to_sync = [];
-        $new_domains = []; // new - because on frontend we have all used domains
-
         $domains = $validated['domains'];
 
-        // TODO REFACTORING: Перенести логику синхронизации доменов в модель.
+        $synced_domains = $hack->sync_or_create_domains_with_name($domains);
 
-        if (!is_null($domains)) {
-            foreach ($domains as $domain) {
-                // if $domain not have id, than create;
-                if (isset($domain['id'])) {
-                    $ids_to_sync[] = $domain['id'];
-                    continue;
-                }
-
-
-                $new_domain = Domain::firstOrCreate(['name' => $domain['name']])->refresh();
-                $ids_to_sync[] = $new_domain->id;
-                $new_domains[] = $new_domain;
-            }
-        }
-
-        $hack->domains()->sync($ids_to_sync);
-
-
-        return ([
-            'bounded' => $ids_to_sync,
-            "new_domains" => $new_domains
-        ]);
+        return $synced_domains;
     }
 
 
@@ -139,34 +114,11 @@ class HacksController extends Controller
     {
         $validated = $request->validated();
 
-        $ids_to_sync = [];
-        $new_domains = []; // new - because on frontend we have all used domains
-
         $domains = $validated['domains'];
 
+        $synced_domains = $hack->sync_or_create_domains_with_name($domains);
 
-        if (!is_null($domains)) {
-            foreach ($domains as $domain) {
-                // if $domain not have id, than create;
-                if (isset($domain['id'])) {
-                    $ids_to_sync[] = $domain['id'];
-                    continue;
-                }
-
-
-                $new_domain = Domain::firstOrCreate(['name' => $domain['name']])->refresh();
-                $ids_to_sync[] = $new_domain->id;
-                $new_domains[] = $new_domain;
-            }
-        }
-
-        $hack->domains()->sync($ids_to_sync);
-
-
-        return ([
-            'bounded' => $ids_to_sync,
-            "new_domains" => $new_domains
-        ]);
+        return $synced_domains;
     }
 
 

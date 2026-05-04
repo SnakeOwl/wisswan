@@ -9,24 +9,12 @@ import StatusChanger from "@/app/(auth)/_components/StatusChanger";
 import uploadHackRequest from "../_requests/uploadHackRequest";
 
 export default function HackAdvancedForm({
-    initialHack = null
+    initialHack
 }: {
-    initialHack?: Hack | null
+    initialHack: Hack
 }) {
     const { stateUser } = useContext(ContextUser);
-    const [hack, setHack] = useState<Hack | null>(initialHack);
-
-    // прослушка изменения из вне
-    // TODO: Беда, если обновлять Поля, то статус же меняется, а он не подтягивается из вне. Пока не критично, но переделать всю форму под useContext
-    // useEffect(() => {
-    //     if (initialHack != null && initialHack.id != undefined) {
-    //         setHack(initialHack);
-    //     }
-    // }, [initialHack]);
-
-
-    if (hack == null)
-        return null;
+    const [hack, setHack] = useState<Hack>(initialHack);
 
 
     return (

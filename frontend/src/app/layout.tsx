@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./_components/Header/Header";
 import { PT_Sans } from "next/font/google";
-import UserProvider from "./_components/UserProvider";
+import UserProvider from "../context/UserProvider";
 import ToastProvider from "./_components/contexts/ToastProvider";
 import { Suspense } from "react";
 import { SkeletonTable } from "./_components/Skeletons/SkeletonTable";
