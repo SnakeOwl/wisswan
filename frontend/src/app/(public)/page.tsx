@@ -1,7 +1,12 @@
 import { Metadata } from 'next';
-import HacksBlock from './_components/HacksBlock';
 import { Suspense } from 'react';
-import { SkeletonTable } from '../_components/Skeletons/SkeletonTable';
+import ParalaxImagesBox from './_components/ParalaxImagesBox';
+import { RainWithTextBlock } from './_components/RainWithTextBlock';
+import { CardsWithGlowingEffectBox } from './_components/CardsWithGlowingEffectBox';
+import { TripleCardBox } from './_components/TripleCardBox';
+import { DoubleTextWithLargeImageBox } from './_components/DoubleTextWithLargeImageBox';
+import { ReviewsBlock } from './_components/ReviewsBlock';
+import { WorldMapBlock } from './_components/WorldMapBlock';
 
 
 export const metadata: Metadata = {
@@ -12,11 +17,35 @@ export const metadata: Metadata = {
 
 export default async function Page() {
     return (
-        <main>
+        <main className='flex flex-col gap-12 py-12'>
+            <section className='container-v1'>
+                <ParalaxImagesBox />
+            </section>
+
             <section>
-                <Suspense fallback={ <SkeletonTable cols={2} rows={4} /> }>
-                    <HacksBlock />
+                <RainWithTextBlock />
+            </section>
+
+            <section className='container-v1'>
+                <CardsWithGlowingEffectBox />
+            </section>
+
+            <section className='container-v1'>
+                <TripleCardBox />
+            </section>
+
+            <section>
+                <DoubleTextWithLargeImageBox />
+            </section>
+
+            <section className='container-v1'>
+                <Suspense>
+                    <ReviewsBlock />
                 </Suspense>
+            </section>
+
+            <section className='container-v1'>
+                <WorldMapBlock />
             </section>
         </main>
     );

@@ -12,12 +12,12 @@ export default async function Page() {
     return (
         <main className="flex-1 flex flex-col items-center justify-around">
             <div className="w-full lg:w-[400px] flex flex-col gap-4">
-                <h1>Вход</h1>
+                <h1 className="font-bold text-2xl">Вход</h1>
 
                 <LoginFormWrapper />
 
                 <p className="text-sm">
-                    Отправляя форму, вы&nbsp;даёте своё согласие на&nbsp;<Link href="/privacy">обработку ваших персональных данных</Link>.
+                    Отправляя форму, вы&nbsp;даёте своё согласие на&nbsp;<Link className="text-sky-500" href="/privacy">обработку ваших персональных данных</Link>.
                 </p>
             </div>
         </main>

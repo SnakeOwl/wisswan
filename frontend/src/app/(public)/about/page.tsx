@@ -8,15 +8,22 @@ export const metadata: Metadata = {
     keywords: ["О проекте", "технический стек", "используемые технологии", "описание проекта"],
 }
 
+const PageHeader = () => (
+    <div className='flex flex-row gap-4 w-full items-center my-4'>
+        <div className="hidden xl:block border-b border-neutral-500 w-full"></div>
+        <h1 className='text-4xl font-bold min-w-fit mx-auto'>О проекте</h1>
+        <div className="hidden xl:block border-b border-neutral-500 w-full"></div>
+    </div>
+)
 
 export default async function Page() {
     return (
         <main>
-            <h1>О проекте</h1>
+            <PageHeader />
             <p>Изначально сайт планировался как портал для технических специалистов.</p>
 
-            <section className="flex flex-col gap-6">
-                <h2>Используемые технологии</h2>
+            <section className="flex flex-col gap-2">
+                <h2 className="font-bold text-2xl">Используемые технологии</h2>
                 <section>
                     <h3>Frontend</h3>
                     <ul>

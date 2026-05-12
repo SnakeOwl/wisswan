@@ -1,6 +1,6 @@
 export default async function Layout(props: LayoutProps<"/">) {
     return (
-        <div className="pb-4">
+        <div className="pb-4 container-v1">
             {props.children}
         </div>
     )

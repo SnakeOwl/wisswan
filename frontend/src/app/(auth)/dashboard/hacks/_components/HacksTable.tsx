@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { Get } from "@/libs/Fetch";
 import Pagination from "@/app/_components/Paginations/Pagination";
 import { useRouter, useSearchParams } from "next/navigation";
-import HackView from "@/app/(public)/_components/HackView";
+import HackView from "@/app/(public)/hacks/_components/HackView";
 
 
 export default function HacksTable({

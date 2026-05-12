@@ -13,12 +13,12 @@ export default function Page() {
             onClick={e => e.stopPropagation()}
         >
             <div className="w-full lg:w-[400px] flex flex-col gap-4">
-                <h1>Вход</h1>
+                <h1 className="font-bold text-2xl">Вход</h1>
 
                 <LoginFormWrapper useRedirectAfterSuccess={false} />
 
                 <p className="text-sm">
-                    Отправляя форму, вы&nbsp;даёте своё согласие на&nbsp;<Link href="/privacy">обработку ваших персональных данных</Link>.
+                    Отправляя форму, вы&nbsp;даёте своё согласие на&nbsp;<Link className="text-sky-500" href="/privacy">обработку ваших персональных данных</Link>.
                 </p>
             </div>
         </main>

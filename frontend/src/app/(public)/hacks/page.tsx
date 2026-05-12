@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Suspense, use } from "react";
+import { Suspense } from "react";
 import HackBlockWrapper from "./_components/HackBlockWrapper";
 
 

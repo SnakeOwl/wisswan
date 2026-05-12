@@ -1,7 +1,7 @@
 import { Fetch } from "@/libs/Fetch"
 import { log } from "@/libs/Logging";
 import { Hack } from "@/types/Hack";
-import HackView from "../../_components/HackView";
+import HackView from "./HackView";
 import Pagination from "@/app/_components/Paginations/Pagination";
 
 export default async function HacksBlock({

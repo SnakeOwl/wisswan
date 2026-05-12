@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { useEffect, useId, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import type EditorJS from '@editorjs/editorjs';
 import { I18nDictionary } from '@editorjs/editorjs';
 import clsx from 'clsx';
