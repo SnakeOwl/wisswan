@@ -26,6 +26,7 @@ export default async function Page(props: PageProps<'/dashboard/hacks'>) {
 
     return (
         <main className="pb-4 pt-3">
+
             <section className="mb-4 flex flex-wrap gap-2">
                 <OrderByPopularOrNew
                     className="w-[220px]"

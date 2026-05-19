@@ -1,7 +1,8 @@
 import { ReactNode, Suspense } from "react"
-import MainMenu from "./_components/MainMenu";
-import LayoutAsyncProcessor from "./_components/LayoutAsyncProcessor";
-
+import { LayoutUI } from "./_components/LayoutUI";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import LayoutHeader from "./_components/LayoutHeader";
 
 
 export default async function Layout({
@@ -10,18 +11,36 @@ export default async function Layout({
     children: ReactNode
 }) {
     return (
-        <div className="flex flex-1">
-            <Suspense>
-                <LayoutAsyncProcessor>
-                    <div className="min-h-full min-w-[200px] border-r dark:border-neutral-800 border-neutral-300 py-4">
-                        <MainMenu />
-                    </div>
+        <Suspense>
+            <LayoutHeader />
 
-                    <div className="pl-4 pt-2 flex-1">
-                        {children}
-                    </div>
-                </LayoutAsyncProcessor>
-            </Suspense>
-        </div>
+            <LayoutAsyncProcessor>
+                <LayoutUI>
+                    {children}
+                </LayoutUI>
+            </LayoutAsyncProcessor>
+        </Suspense>
     )
+}
+
+
+
+
+
+const LayoutAsyncProcessor = async function ({
+    children
+}: {
+    children: React.ReactNode
+}) {
+    const cookiesStorage = await cookies();
+
+    // ==== Redirecting users without token
+
+    if (!cookiesStorage.has("auth_token"))
+        redirect('/login');
+
+    // ---- Redirecting users without token
+
+
+    return children;
 }

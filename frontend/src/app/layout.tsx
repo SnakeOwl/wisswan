@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./_components/Header/Header";
-import { PT_Sans, Geist } from "next/font/google";
+import { PT_Sans, Unbounded } from "next/font/google";
 import UserProvider from "../context/UserProvider";
 import ToastProvider from "./_components/contexts/ToastProvider";
 import { Suspense } from "react";
@@ -9,13 +9,18 @@ import { SkeletonTable } from "./_components/Skeletons/SkeletonTable";
 import { cn } from "@/lib/utils";
 import CookiesAgreement from "./_components/CookiesAgreement";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
+// дефолтные шрифты
 const pt_sans = PT_Sans({
     subsets: ["latin", "cyrillic"],
     weight: ["400", "700"]
 });
 
+
+// шрифт для заголовков (подключаем как CSS-переменную)
+const unbounded = Unbounded({
+  subsets: ["cyrillic", "latin"],
+  variable: "--font-unbounded", // Имя переменной для Tailwind или CSS
+});
 
 
 export default async function RootLayout({
@@ -26,11 +31,10 @@ export default async function RootLayout({
     modal: React.ReactNode;
 }) {
     return (
-        <html lang="ru" className={cn("bg-white dark:bg-black text-black dark:text-stone-100 ", "font-sans", geist.variable)}>
+        <html lang="ru" className={cn("bg-white dark:bg-black text-black dark:text-stone-100 ", "font-sans", unbounded.variable)}>
             <UserProvider>
-                <body className={/*`${pt_sans.className } ` + */ 'antialiased'}>
+                <body className={`${pt_sans.className}  antialiased`}>
                     <ToastProvider>
-                        
                         <div className="relative w-full min-h-screen flex flex-col">
                             <Suspense fallback={<SkeletonTable cols={3} rows={1} />}>
                                 <Header />

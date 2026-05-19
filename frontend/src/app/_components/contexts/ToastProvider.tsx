@@ -2,7 +2,7 @@
 
 import ContextToast, { stateToastInitial } from "@/context/messages/Toaster/ContextToast";
 import ReducerToast from "@/context/messages/Toaster/ReduceToast";
-import { Suspense, useEffect, useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import Button from "../buttons/Button";
 import { Check } from "lucide-react";
 import clsx from "clsx";
