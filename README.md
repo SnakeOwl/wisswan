@@ -28,13 +28,24 @@ npm run test
 ```
 
 # Установка
-## Установка / Весь проект / Docker
 
 *Если есть готовый дамп базы, кидать его в папку **init-db***
 
+## Установка / Весь проект / Docker / !!DEV
+
 Запускаем саму сборку по команде:
 ```bash
-docker compose up -d --build
+sudo docker compose -f docker-compose.dev.yml up -d --build
+```
+
+Если всё прошло Хорошо, frontend откроется по пути [localhost](http://localhost). Работу бекенда можно глянуть по пути [localhost/api/test](http://localhost/api/test)
+
+
+## Установка / Весь проект / Docker / !!PROD
+
+Запускаем саму сборку по команде:
+```bash
+sudo docker compose up -d --build
 ```
 
 Если всё прошло Хорошо, frontend откроется по пути [localhost](http://localhost). Работу бекенда можно глянуть по пути [localhost/api/test](http://localhost/api/test)

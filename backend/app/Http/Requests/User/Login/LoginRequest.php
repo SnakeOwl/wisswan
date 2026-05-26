@@ -3,6 +3,7 @@
 namespace App\Http\Requests\User\Login;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 
 class LoginRequest extends FormRequest
 {
@@ -13,7 +14,6 @@ class LoginRequest extends FormRequest
      */
     public function rules(): array
     {
-        info($this->all());
         return [
             'email' => 'required|email:rfc,dns|max:255',
         ];

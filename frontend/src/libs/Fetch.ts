@@ -39,11 +39,16 @@ export async function Fetch(
             }
         );
 
-
+        
+        
         if (response.status == 200
             || response.status == 422 // laravel validation
-        )
-            return await response.json();
+        ){
+            const result = await response.json();
+            console.log(result)
+            return result;
+            
+        }
 
 
         return response.status;
