@@ -34,5 +34,5 @@ COPY . .
 # 1. Оптимизируем автозагрузку и создаем линк
 # 2. storage используется не из контейнера
 RUN sh -c composer dump-autoload && \
-    chown -R www-data:www-data storage bootstrap/cache \    
-    php artisan storage:link && \
+    chown -R www-data:www-data storage bootstrap/cache && \
+    php artisan storage:link 

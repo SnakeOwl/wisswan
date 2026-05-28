@@ -36,8 +36,8 @@ COPY . .
 # 3. storage используется не из контейнера
 RUN sh -c '[ ! -f .env ] && cp .env.example.docker .env || echo ".env already exists"' && \
     composer dump-autoload --optimize && \
-    php artisan storage:link && \
-    chown -R www-data:www-data storage bootstrap/cache
-
+    chown -R www-data:www-data storage bootstrap/cache && \
+    php artisan storage:link
+    
 # Запуск php-fpm идёт из docker-compose
 #CMD ["php-fpm"]
