@@ -31,6 +31,10 @@ const Header = React.memo(() => {
             link: "/hacks",
         },
         {
+            name: "Геометрия",
+            link: "/math/geometry",
+        },
+        {
             name: "О проекте",
             link: "/about",
         },

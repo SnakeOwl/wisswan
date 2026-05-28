@@ -18,8 +18,8 @@ const pt_sans = PT_Sans({
 
 // шрифт для заголовков (подключаем как CSS-переменную)
 const unbounded = Unbounded({
-  subsets: ["cyrillic", "latin"],
-  variable: "--font-unbounded", // Имя переменной для Tailwind или CSS
+    subsets: ["cyrillic", "latin"],
+    variable: "--font-unbounded", // Имя переменной для Tailwind или CSS
 });
 
 
@@ -46,10 +46,10 @@ export default async function RootLayout({
                         {modal}
                     </ToastProvider>
 
-                <Suspense>
-                    <CookiesAgreement />
-                </Suspense>
-                    
+                    <Suspense>
+                        <CookiesAgreement />
+                    </Suspense>
+
                 </body>
             </UserProvider>
         </html>

@@ -2,7 +2,7 @@ import { ReactNode, Suspense } from "react"
 import { LayoutUI } from "./_components/LayoutUI";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import LayoutHeader from "./_components/LayoutHeader";
+import LayoutBreadcrumbs from "../_components/LayoutBreadcrumbs";
 
 
 export default async function Layout({
@@ -12,7 +12,7 @@ export default async function Layout({
 }) {
     return (
         <Suspense>
-            <LayoutHeader />
+            <LayoutBreadcrumbs />
 
             <LayoutAsyncProcessor>
                 <LayoutUI>
@@ -22,9 +22,6 @@ export default async function Layout({
         </Suspense>
     )
 }
-
-
-
 
 
 const LayoutAsyncProcessor = async function ({

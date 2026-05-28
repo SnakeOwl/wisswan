@@ -4,13 +4,6 @@ import DomainsFilterWrapper from "./_components/DomainsFilterWrapper";
 import { SkeletonTable } from "@/app/_components/Skeletons/SkeletonTable";
 
 
-const LayoutHeader = () => (
-    <div className='flex flex-row gap-4 w-full items-center my-4'>
-        <div className="hidden xl:block border-b border-neutral-500 w-full"></div>
-        <h1 className='text-4xl font-bold min-w-fit mx-auto'>Хаки по областям</h1>
-        <div className="hidden xl:block border-b border-neutral-500 w-full"></div>
-    </div>
-)
 
 export default async function Layout({
     children
@@ -19,8 +12,6 @@ export default async function Layout({
 }) {
     return (
         <div>
-            <LayoutHeader />
-
             <Suspense fallback={<SkeletonTable cols={4} rows={1} />}>
                 <DomainsFilterWrapper />
             </Suspense>

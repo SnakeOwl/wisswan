@@ -1,7 +1,12 @@
+import LayoutBreadcrumbs from "../_components/LayoutBreadcrumbs"
+
 export default async function Layout(props: LayoutProps<"/">) {
     return (
-        <div className="pb-4 container-v1">
-            {props.children}
-        </div>
+        <>
+            <LayoutBreadcrumbs />
+            <div className="pb-4 container-v1">
+                {props.children}
+            </div>
+        </>
     )
 }
