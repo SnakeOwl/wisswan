@@ -1,3 +1,4 @@
+import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import { Cuboid } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -21,24 +22,28 @@ export default async function Page() {
 
     return (
         <main>
-            <h1 className="text-2xl font-bold mb-4">Разделы математики</h1>
+            <section>
+                <ContentDividerV1>
+                    <h2 className="text-2xl font-bold mb-4 text-nowrap">Разделы математики</h2>
+                </ContentDividerV1>
 
-            <div className="grid lg:grid-cols-2 gap-4">
-                {mainLinks.map((el, index) => (
-                    <div key={index}>
-                        <div className="border rounded p-2">
-                            <Link href={el.href}
-                                className="hover:text-sky-500"
-                            >
-                                <h2 className="text-xl font-bold">
-                                    {el.label}
-                                </h2>
-                            </Link>
+                <div className="grid lg:grid-cols-2 gap-4">
+                    {mainLinks.map((el, index) => (
+                        <div key={index}>
+                            <div className="border rounded p-2">
+                                <Link href={el.href}
+                                    className="hover:text-sky-500"
+                                >
+                                    <h2 className="text-xl font-bold">
+                                        {el.label}
+                                    </h2>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                ))
-                }
-            </div>
+                    ))
+                    }
+                </div>
+            </section>
         </main>
     )
 }

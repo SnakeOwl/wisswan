@@ -14,6 +14,8 @@ const translatedSegments: Record<string, string> = {
     "site-crawlers": "Краулеры",
     "math": "Математика",
     "geometry": "Геометрия",
+    circle: "Круг и окружность",
+    about: "О проекте",
 }
 
 
@@ -42,7 +44,7 @@ export default function LayoutBreadcrumbs() {
             label: translatedSegments[segment] != undefined ? translatedSegments[segment] : segment,
             href: href
         });
-        console.log(href);
+
         return href;
     }, '/')
 
@@ -51,21 +53,30 @@ export default function LayoutBreadcrumbs() {
         <div className='flex flex-row gap-4 w-full items-center my-4'>
             <div className="hidden xl:block border-b border-neutral-500 w-full"></div>
             <div className="flex flex-row gap-1 font-heading items-center text-2xl">
-                {breadcrumbs.map((el, index) => {
-                    return (
-                        <React.Fragment key={index}>
-                            {(index > 0) &&
-                                <div>/</div>
-                            }
-                            
+                {breadcrumbs.map((el, index) => (
+
+                    <React.Fragment key={index}>
+                        {(index > 0) &&
+                            <div>/</div>
+                        }
+
+                        {index == breadcrumbs.length-1 ? (
+                            <h1 className="font-bold text-nowrap">
+                                {el.label}
+                            </h1>
+                        ) : (
                             <Link href={el.href}
-                                className="hover:text-sky-500 text-nowrap  font-bold"
+                                className="hover:text-sky-500 font-bold text-nowrap"
                             >
                                 {el.label}
                             </Link>
-                        </React.Fragment>
-                    )
-                })
+                        )
+                        }
+
+                    </React.Fragment>
+                ))
+
+
 
                 }
             </div>
