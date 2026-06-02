@@ -1,9 +1,13 @@
+import { Suspense } from "react"
 import LayoutBreadcrumbs from "../_components/LayoutBreadcrumbs"
 
 export default async function Layout(props: LayoutProps<"/">) {
     return (
         <>
-            <LayoutBreadcrumbs />
+            <Suspense>
+                <LayoutBreadcrumbs />
+            </Suspense>
+            
             <div className="pb-4 container-v1">
                 {props.children}
             </div>
