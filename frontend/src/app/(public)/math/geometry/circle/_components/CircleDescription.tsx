@@ -10,10 +10,11 @@ export default function CircleDescription() {
 
             <div>
                 <Image
-                    className="float-left lg:mr-4" 
-                    src="/images/storage/circle_description_1.svg" 
-                    alt="Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор" 
-                    />
+                    className="float-left lg:mr-4"
+                    src="/images/storage/circle_description_1.svg"
+                    width={400} height={400}
+                    alt="Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор"
+                />
 
                 <div className="flex flex-col gap-2">
                     <p><b>Окружность</b>&nbsp;&mdash; это замкнутая линия на&nbsp;плоскости, все точки которой находятся на&nbsp;одинаковом расстоянии от&nbsp;одной точки&nbsp;&mdash; центра окружности.</p>
