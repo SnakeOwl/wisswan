@@ -16,6 +16,7 @@ const translatedSegments: Record<string, string> = {
     "geometry": "Геометрия",
     circle: "Круг и окружность",
     about: "О проекте",
+    triangle: "Треугольник",
 }
 
 
@@ -54,7 +55,6 @@ export default function LayoutBreadcrumbs() {
             <div className="hidden xl:block border-b border-neutral-500 w-full"></div>
             <div className="flex flex-row gap-1 font-heading items-center text-2xl">
                 {breadcrumbs.map((el, index) => (
-
                     <React.Fragment key={index}>
                         {(index > 0) &&
                             <div>/</div>
@@ -72,12 +72,8 @@ export default function LayoutBreadcrumbs() {
                             </Link>
                         )
                         }
-
                     </React.Fragment>
                 ))
-
-
-
                 }
             </div>
             <div className="hidden xl:block border-b border-neutral-500 w-full"></div>

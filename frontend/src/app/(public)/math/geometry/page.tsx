@@ -8,26 +8,43 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
+    const sections = [{
+        imageSrc: "/images/storage/circle_description_1.svg",
+        imageAlt: "Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор",
+        label: "Круг и окружность",
+        link: `/math/geometry/circle`,
+    }, {
+        imageSrc: "/images/storage/triangle_description_1.svg",
+        imageAlt: "Треугольник, на котором обозначены высота, медиана, биссектриса",
+        label: "Треугольник",
+        link: `/math/geometry/triangle`,
+    },
+
+    ]
+
     return (
         <main>
             <nav className="grid lg:grid-cols-2 gap-4">
+                {sections.map((el, index) => (
+                    <Link key={index}
+                        href={el.link}
+                        className="link-hover"
+                    >
+                        <div className="border p-4 rounded hover:ring flex flex-row">
+                            <Image
+                                src={el.imageSrc}
+                                alt={el.imageAlt}
+                                width={200}
+                                height={200}
+                            />
 
-                <Link href={`/math/geometry/circle`} 
-                    className="link-hover"
-                >
-                    <div className="border p-4 rounded hover:ring flex flex-row">
-                        <Image
-                            src="/images/storage/circle_description_1.svg"
-                            alt="Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор"
-                            width={200}
-                            height={200}
-                        />
-
-                        <div className="font-bold text-xl">
-                            Круг и окружность
+                            <div className="font-bold text-xl">
+                                {el.label}
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                ))
+                }
             </nav>
         </main>
     )
