@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
-import ParalaxImagesBox from './_components/ParalaxImagesBox';
 import { RainWithTextBlock } from './_components/RainWithTextBlock';
 import { CardsWithGlowingEffectBox } from './_components/CardsWithGlowingEffectBox';
 import { TripleCardBox } from './_components/TripleCardBox';
 import { DoubleTextWithLargeImageBox } from './_components/DoubleTextWithLargeImageBox';
 import { ReviewsBlock } from './_components/ReviewsBlock';
 import { WorldMapBlock } from './_components/WorldMapBlock';
+import DoomBlock from './_components/DoomBlock/DoomBlock';
 
 
 export const metadata: Metadata = {
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default async function Page() {
     return (
         <main className='flex flex-col gap-12 py-12'>
-            <section className='container-v1'>
-                <ParalaxImagesBox />
+            <section>
+                <DoubleTextWithLargeImageBox />
             </section>
 
             <section>
@@ -34,10 +34,6 @@ export default async function Page() {
                 <TripleCardBox />
             </section>
 
-            <section>
-                <DoubleTextWithLargeImageBox />
-            </section>
-
             <section className='container-v1'>
                 <Suspense>
                     <ReviewsBlock />
@@ -46,6 +42,10 @@ export default async function Page() {
 
             <section className='container-v1'>
                 <WorldMapBlock />
+            </section>
+
+            <section className='container-v1 hidden lg:block'>
+                <DoomBlock />
             </section>
         </main>
     );
