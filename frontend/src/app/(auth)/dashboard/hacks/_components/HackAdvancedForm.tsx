@@ -43,7 +43,7 @@ export default function HackAdvancedForm({
                     <div className="flex flex-wrap gap-3 mb-4">
                         <StatusChanger
                             changeRequest={(newStatus: number) => uploadHackRequest({ id: hack.id, status: newStatus })}
-                            initialStatus={hack.status}
+                            status={hack.status}
                             onChanged={(newStatus: number) => setHack({ ...hack, status: newStatus })}
                         />
                     </div>

@@ -126,9 +126,7 @@ export default function DomainSelectorWrapper({
         if (hackId !== null && needSaveAfterGettingId.current) {
             needSaveAfterGettingId.current = false;
 
-            /* eslint-disable */
-            syncDomains(usedDomains); // save Domains after creatign Hack
-            /* eslint-enable */
+            syncDomains(usedDomains); // save Domains after creatign Hack            
         }
     }, [hackId, syncDomains, usedDomains])
 

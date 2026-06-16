@@ -3,25 +3,22 @@
 import Select from "@/app/_components/inputs/Select";
 import ContextToast from "@/context/messages/Toaster/ContextToast";
 import { statuses } from "@/types/Status";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 
 export default function StatusChanger({
     changeRequest, // какая-либо функция для отправки на бек. Главное чтобы response возвращала для отладки
-    initialStatus,
+    status,
     onChanged
 }: {
     changeRequest: (newStatus: number) => any,
-    initialStatus: number,
+    status: number,
     onChanged: (newStatus: number) => void
 }) {
-    const [status, setStatus] = useState<number>(initialStatus);
     const { dispatchToast } = useContext(ContextToast);
-
     
     const onChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newStatus = Number(e.target.value);
-        setStatus(newStatus);
         const response = await changeRequest(newStatus);
 
         if (response == undefined || response.id == undefined)
@@ -36,12 +33,6 @@ export default function StatusChanger({
         });
     }
 
-
-    // прослушка изменения статуса из вне
-    // TODO: refactoring: При добавлении следующей фичи в форму хака, ставить всю форму на useReducer
-    useEffect(() => {
-        setStatus(initialStatus);
-    }, [initialStatus]);
 
 
     return (

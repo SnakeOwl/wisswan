@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { useEffect, useRef } from 'react';
+import { useEffect, useId, useRef } from 'react';
 import type EditorJS from '@editorjs/editorjs';
 import { I18nDictionary } from '@editorjs/editorjs';
 import clsx from 'clsx';
@@ -84,8 +84,9 @@ const Editorjs = ({
     onBlur,
     savedData
 }: IEditorjs) => {
+    const editorId = useId();
     const editorRef = useRef<EditorJS | null>(null);
-    const holderId = useRef(`editor-${Date.now()}`);
+    const holderId = `editor-${editorId}`;
     const containerRef = useRef<HTMLDivElement>(null);
 
 
@@ -138,7 +139,7 @@ const Editorjs = ({
         import('@editorjs/editorjs').then(({ default: EditorJS }) => {
             if (!editorRef.current) {
                 editorRef.current = new EditorJS({
-                    holder: holderId.current,
+                    holder: holderId,
                     i18n: { messages: editorjs_i18n_messages },
                     data: savedData ? JSON.parse(savedData) : undefined,
                 });
@@ -175,7 +176,7 @@ const Editorjs = ({
     return (
         <div
             ref={containerRef}
-            id={holderId.current}
+            id={holderId}
             className={clsx(className, {
                 'editorJS hideToolbar': hideToolbar
             })}
