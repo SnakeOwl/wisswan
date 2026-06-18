@@ -16,8 +16,7 @@ RUN --mount=type=cache,target=/root/.npm \
     --mount=type=cache,target=/root/.local/share/pnpm/store \
   if [ -f package-lock.json ]; then \
     npm ci --no-audit --no-fund; \
-  else \
-    if [ -f package.json ]; then \
+  elif [ -f package.json ]; then \
     npm install; \
   else \
     echo "No lockfile found." && exit 1; \
