@@ -4,6 +4,8 @@ namespace App\Models\Traits;
 
 /**
  * Description and implementation of statuses.
+ * IMPLEMENTATION: in migration file write this string:
+ * @code $table->unsignedInteger('status')->default(0);
  */
 trait UsesStatuses
 {

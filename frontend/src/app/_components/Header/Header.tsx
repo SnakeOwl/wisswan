@@ -26,10 +26,7 @@ const Header = React.memo(() => {
     }
 
     const navItems = [
-        {
-            name: "Хаки",
-            link: "/hacks",
-        },
+        
         {
             name: "Геометрия",
             link: "/math/geometry",
@@ -37,6 +34,10 @@ const Header = React.memo(() => {
         {
             name: "О проекте",
             link: "/about",
+        },
+        {
+            name: "Связь",
+            link: "/help",
         },
     ];
 

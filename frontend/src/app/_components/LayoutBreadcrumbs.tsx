@@ -17,6 +17,8 @@ const translatedSegments: Record<string, string> = {
     circle: "Круг и окружность",
     about: "О проекте",
     triangle: "Треугольник",
+    login: "Вход",
+    help: "Связь с админом",
 }
 
 

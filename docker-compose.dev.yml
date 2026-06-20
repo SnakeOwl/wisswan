@@ -7,11 +7,11 @@ services:
     environment:
       MYSQL_DATABASE: wisswan           # Имя базы
       MYSQL_ROOT_PASSWORD: root         # Пароль рута
-      MYSQL_USER: admin                 # Твой пользователь
-      MYSQL_PASSWORD: admin             # Пароль пользователя
+      MYSQL_USER: admin                 # Пользователь
+      MYSQL_PASSWORD: admin             # Пароль
     volumes:
       - db_data:/var/lib/mysql         # ДАННЫЕ НЕ ПРОПАДУТ МЕЖДУ БИЛДАМИ
-      # МАГИЯ ДЛЯ ДАМПА:
+      # Использование готового дампа (если есть):
       - ./init-db:/docker-entrypoint-initdb.d # Сюда положи свой дамп
     networks:
       - wisswan-network-dev
@@ -21,11 +21,10 @@ services:
     env_file:
       - ./backend/.env
     build:
-      context: ./backend      # Где искать Dockerfile для этого сервиса
-      dockerfile: Dockerfile.dev  # Имя файла (если оно стандартное, можно не писать)
+      context: ./backend      # Где искать Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: wisswan-backend
-    restart: unless-stopped   # Перезапускать контейнер, если он упал (но не если вы сами его выключили)
-    # применяю миграции к базе
+    restart: unless-stopped   # Перезапускать контейнер, если он упал (но не если вы сами его выключили
     command: >
       sh -c "until php artisan db:monitor; do
                echo 'Waiting for database connection...';
@@ -63,7 +62,6 @@ services:
     volumes:
       - ./backend:/var/www
       - /var/www/vendor  # Не дает локальной папке перекрыть папку в контейнере
-      - /var/www/storage # FIX: права на запись файлов
     depends_on:
       - db
       - backend
@@ -99,7 +97,6 @@ services:
       - "80:80"               
       # - "443:443" # 443 на localhost не нужен
     volumes:
-      # Пробрасываем конфиг, который мы написали ранее
       - ./nginx-dev.conf:/etc/nginx/conf.d/default.conf
       # Пробрасываем папку бэкенда, чтобы Nginx видел папку public (для картинок и статики)
       - ./backend:/var/www

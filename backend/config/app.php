@@ -123,4 +123,5 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'admin_telegram' => '@anikeev_nikolas',
 ];

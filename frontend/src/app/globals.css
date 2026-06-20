@@ -84,7 +84,7 @@
   }
 
   /* hover на ссылках */
-  .link-hover {
+  .link-hover, .hover-link {
     @apply hover:text-sky-600;
   }
 }

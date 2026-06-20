@@ -22,9 +22,9 @@ export default function Select({
     return (
         <div className="relative">
             <select
-                className="bg-white dark:bg-neutral-950 p-2 rounded w-full
+                className={`bg-white dark:bg-neutral-950 p-2 rounded w-full
                     border border-neutral-200 dark:border-neutral-800
-                    focus:outline-0 appearance-none"
+                    focus:outline-0 appearance-none`}
                 name={name}
                 {...other}
             >

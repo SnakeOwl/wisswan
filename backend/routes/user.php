@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Feedback\SupportFormRequestController;
 use App\Http\Controllers\User\Hacks\GetUsedDomainsInHacksController;
 use App\Http\Controllers\User\Hacks\HacksController;
 use App\Http\Controllers\User\Login\LoginController;
@@ -34,4 +35,9 @@ Route::middleware('auth:sanctum')
 
         Route::apiResource('telegram-chats', TelegramChatController::class)->except(['update', 'show']);
         Route::post('telegram-chats/{telegram_chat}', [TelegramChatController::class, 'update']);
+
+        Route::apiResource('feedbacks/support-form-requests', SupportFormRequestController::class)
+            ->except(['update']);
+        Route::post('feedbacks/support-form-requests/{support_form_request}', [SupportFormRequestController::class, 'update']);
+
     });

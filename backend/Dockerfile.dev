@@ -21,20 +21,13 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
 
-# Сначала копируем файлы зависимостей
 COPY composer.json composer.lock ./
-
-# Устанавливаем зависимости (без этого шага Laravel может ругаться на отсутствие библиотек)
 RUN composer install --no-scripts --no-autoloader
 
-# Копируем всё остальное
 COPY . .
 
-# права на папки ебёт мозг
-RUN chown -R www-data:www-data storage bootstrap/cache
 RUN php artisan storage:link 
 
-# Финальные штрихи
-# 1. Оптимизируем автозагрузку и создаем линк
-# 2. storage используется не из контейнера
-RUN sh -c composer dump-autoload &&     
+RUN sh -c composer dump-autoload && \
+    chown -R www-data:www-data storage bootstrap/cache && \
+    php artisan storage:link

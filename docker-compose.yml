@@ -34,9 +34,6 @@ services:
              done;
              php artisan migrate;
              php-fpm"
-    volumes:
-      - ./backend:/var/www    # "Связываем" папку на компьютере с папкой в контейнере (Live-coding)
-      - /var/www/vendor  # Не дает локальной папке перекрыть папку в контейнере
     depends_on:
       - db
     networks:

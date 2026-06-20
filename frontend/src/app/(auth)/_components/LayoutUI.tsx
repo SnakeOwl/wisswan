@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
-import { Bot, Copy, House, LandPlot, Settings, ToolCase, UsersRound } from "lucide-react";
+import { Bot, Copy, House, LandPlot, Mail, Settings, ToolCase, UsersRound } from "lucide-react";
 import ContextUser from "@/context/ContextUser";
 import Link from "next/link";
 import { isAdmin } from "@/types/User";
@@ -61,6 +61,11 @@ export function LayoutUI({
             label: "Домены",
             href: "/admin/domains",
             icon: <LandPlot className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        },
+        {
+            label: "Формы обратной связи",
+            href: "/admin/feedbacks",
+            icon: <Mail className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
         }
     ];
 

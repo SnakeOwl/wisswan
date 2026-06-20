@@ -33,11 +33,7 @@ COPY . .
 # Финальные штрихи
 # 1. Проверяем наличие .env, если нет — копируем из примера
 # 2. Оптимизируем автозагрузку и создаем линк
-# 3. storage используется не из контейнера
 RUN sh -c '[ ! -f .env ] && cp .env.example.docker .env || echo ".env already exists"' && \
     composer dump-autoload --optimize && \
     chown -R www-data:www-data storage bootstrap/cache && \
     php artisan storage:link
-    
-# Запуск php-fpm идёт из docker-compose
-#CMD ["php-fpm"]
