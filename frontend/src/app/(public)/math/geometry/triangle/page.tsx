@@ -10,8 +10,9 @@ export default async function Page() {
         <main>
             <CircleDescription />
 
-            <CircleFullDescription />
+            <RightTriangleFormulas />
             <Theorems />
+            <CircleFullDescription />
             <EqualitySigns />
         </main>
     )
@@ -41,7 +42,7 @@ const CircleDescription = () => (
             <div className="flex flex-col gap-2">
                 <p><b>Высотой</b> треугольника называется перпендикуляр, опущенный из&nbsp;вершины треугольника на&nbsp;противоположную сторону или на&nbsp;её&nbsp;продолжение.</p>
                 <p><b>Медианой</b> треугольника называется отрезок, который соединяет вершину треугольника с&nbsp;серединой противоположной стороны</p>
-                <p><b>Биссектрисой</b> треугольника нзывается отрезок биссектрисы угла треугольника, соединяющий вершину треугольника с&nbsp;точкой пересечения биссектрисы с&nbsp;противоположной стороны</p>
+                <p><b>Биссектриса</b> идёт из угла треугольника и делит этот угол пополам</p>
                 <Link href={'#CircleFullDescription'}
                     className="link-hover text-sky-800"
                 >
@@ -76,8 +77,7 @@ const CircleFullDescription = () => (
 
                 <p><b>Высотой</b> треугольника называется перпендикуляр, опущенный из&nbsp;вершины треугольника на&nbsp;противоположную сторону или на&nbsp;её&nbsp;продолжение.</p>
                 <p><b>Медианой</b> треугольника называется отрезок, который соединяет вершину треугольника с&nbsp;серединой противоположной стороны</p>
-                <p><b>Биссектрисой</b> треугольника нзывается отрезок биссектрисы угла треугольника, соединяющий вершину треугольника с&nbsp;точкой пересечения биссектрисы с&nbsp;противоположной стороны</p>
-
+                <p><b>Биссектрисой</b> треугольника называется отрезок биссектрисы угла треугольника, соединяющий вершину треугольника с&nbsp;точкой пересечения биссектрисы с&nbsp;противоположной стороны</p>
             </div>
         </div>
     </section>
@@ -89,7 +89,8 @@ const Theorems = () => (
         <ContentDividerV1 className='my-2'>
             <h3 className="text-xl text-nowrap">Теоремы</h3>
         </ContentDividerV1>
-        <ul>
+
+        <ul className="space-y-2">
             <li>Если в&nbsp;треугольнике <b>высота является медианой</b>, то&nbsp;<b>треугольник равнобедренный</b></li>
             <li>Если в&nbsp;треугольнике <b>высота является биссектрисой</b>, то&nbsp;<b>треугольник равнобедренный</b></li>
             <li>Если в&nbsp;треугольнике <b>медиана является биссектрисой</b>, то&nbsp;<b>треугольник равнобедренный</b></li>
@@ -98,6 +99,35 @@ const Theorems = () => (
             <li><i>О&nbsp;свойстве точек биссектрисы угла</i>. Любая точка биссектрисы угла равноудалена от&nbsp;сторон угла. Если точка внутри угла равноудалена от&nbsp;сторон угла, то&nbsp;она лежит на&nbsp;биссектрисе этого угла.</li>
             <li><i>Свойство катета прямоугольного треугольника, лежащего против угла в&nbsp;30&deg;</i>. Катет прямоугольного треугольника, лежащий против угла в&nbsp;30&deg;, равен половине гипотенузы.</li>
             <li>Если в&nbsp;прямоугольном треугольнике катет равен половине гипотенузы, то&nbsp;этот катет лежит против угла в&nbsp;30&deg;.</li>
+
+            <li className="list-none">
+                <div className="flex xl:flex-row border rounded-md p-2">
+                    <Image
+                        src="/images/storage/Triangle_2.svg"
+                        width={200} height={200}
+                        alt="Треугольник, на котором показано как 3 биссектрисы пересекаются в центре вписанного круга"
+                    />
+
+                    <ul className="space-y-2">
+                        <li>Каждая биссектриса угла в&nbsp;треугольнике делит его противолежащую сторону на&nbsp;отрезки, пропорциональные к&nbsp;двум другим сторонам треугольника: <span className="font-bold">BN/BA = CN/CA ; NB/NC = AB/AC</span></li>
+                        <li>Все биссектрисы треугольника пересекаются в&nbsp;одной точке, которая является центром вписанной окружности.</li>
+                    </ul>
+                </div>
+            </li>
+            <li><span className="font-bold">Теорема косинусов:</span> квадрат стороны треугольника равен сумме квадратов двух других сторон минус удвоенное произведение этих сторон на&nbsp;косинус угла между ними.</li>
+            <li>
+                <div className="flex xl:flex-row xl:flex-nowrap gap-4 border rounded-md p-2">
+                    <Image
+                        src="/images/storage/circle_triangle_1.svg"
+                        width={300} height={300}
+                        alt="Прямоугольный треугольник с указанием сторон и углов"
+                    />
+                    <div>
+                        <p><span className="font-bold">Теорема синусов:</span> стороны треугольника пропорциональны синусу противолежащих углов. Кроме того, это отношение равно диаметру окружности, описанной вокруг этого треугольника:</p>
+                        <div className="text-2xl"><span className="text-blue-600">a</span> / sin(<span className="text-green-600">α</span>) == <span className="text-blue-600">b</span> / sin(<span className="text-green-600">β</span>) == <span className="text-blue-600">c</span> / sin(<span className="text-green-600">γ</span>) == 2<span className="text-red-600">R</span></div>
+                    </div>
+                </div>
+            </li>
         </ul>
     </section>
 )
@@ -109,7 +139,7 @@ const EqualitySigns = () => (
             <h4 className="text-lg text-nowrap">Тризнаки равенства треугольников</h4>
         </ContentDividerV1>
 
-        <ul>
+        <ul className="space-y-2">
             <li><b>Первый признак (по&nbsp;двум сторонам и&nbsp;углу между ними)</b>: если две стороны и&nbsp;угол между ними одного треугольника соответственно равны двум сторонам и&nbsp;углу между ними&nbsp;другого треугольника, то&nbsp;такие треугольники равны.</li>
             <li><b>Второй признак (по&nbsp;стороне и&nbsp;двум прилежащим к&nbsp;ней углам)</b>: если сторона и&nbsp;два прилежащих к&nbsp;ней угла одного треугольника соответственно равны стороне и&nbsp;двум прилежащим к&nbsp;ней углам другого треугольника, то&nbsp;такие треугольники равны.</li>
             <li><b>Третий признак (по&nbsp;трем сторонам)</b>: Если три стороны одного треугольника соответственно равны трем сторонам другого треугольника, то&nbsp;такие треугольники равны.</li>
@@ -128,3 +158,70 @@ const EqualitySigns = () => (
         </ol>
     </section>
 )
+
+const RightTriangleFormulas = () => {
+    /**
+     * используемые цвета на картинке
+     * e - text-amber-700   <span className="text-amber-600">e</span>
+     * f - text-lime-700    <span className="text-lime-600">f</span>
+     * g - text-cyan-700    <span className="text-cyan-600">g</span>
+     * A - text-red-700     <span className="text-red-600">A</span>
+     * B - text-blue-700    <span className="text-blue-600">B</span>
+     * C - text-green-700   <span className="text-green-600">C</span>
+     * α - text-amber-700   <span className="text-amber-600">α</span>
+     * γ - text-pink-700    <span className="text-pink-600">γ</span>
+     * ω - text-purple-700  <span className="text-purple-600">ω</span>
+     */
+    const formulas: React.ReactNode[] = [
+
+    ];
+
+    return (
+        <section>
+            <ContentDividerV1 className='my-2'>
+                <h2 className="text-lg text-nowrap">Формулы прямоугольного треугольника</h2>
+            </ContentDividerV1>
+
+            <div className="flex xl:flex-row gap-4 max-w-4xl mx-auto">
+                <ul className="text-xl flex-1 font-bold space-y-2">
+                    <li>
+                        <span className="text-emerald-600">f</span> = <span>&radic;<span className="overline decoration-solid"><span className="text-amber-700">e</span>&sup2; + <span className="text-cyan-700">g</span>&sup2;</span></span>  <span className="font-normal text-base">(Теорема Пифагора)</span>
+                    </li>
+                    <li>
+                        <span className="text-lime-600">f</span> = <span className="text-amber-600">e</span> / cos(<span className="text-amber-600">α</span>) == <span className="text-cyan-600">g</span> / cos(<span className="text-purple-600">ω</span>) == <span className="text-amber-600">e</span> / sin(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> / sin(<span className="text-amber-600">α</span>)
+                    </li>
+                    <li>
+                        <span className="text-amber-600">e</span> = <span className="text-lime-600">f</span> * cos(<span className="text-amber-600">α</span>) == <span className="text-lime-600">f</span> * sin(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> * tg(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> / tg(<span className="text-amber-600">α</span>)
+                    </li>
+                    <li>
+                        <span className="text-cyan-600">g</span> = <span className="text-lime-600">f</span> * cos(<span className="text-purple-600">ω</span>) == <span className="text-lime-600">f</span> * sin(<span className="text-amber-600">α</span>) == <span className="text-amber-600">e</span> * tg(<span className="text-amber-600">α</span>) == <span className="text-amber-600">e</span> / tg(<span className="text-purple-600">ω</span>)
+                    </li>
+                    <li>
+                        S = (<span className="text-amber-600">e</span> * <span className="text-cyan-600">g</span>) / 2 <span className="text-base font-normal">(Площадь)</span>
+                    </li>
+                    <li>
+                        <span className="text-amber-600">e</span>&sup2; = <span className="text-cyan-600">g</span>&sup2; + <span className="text-lime-600">f</span>&sup2; - 2<span className="text-cyan-600">g</span><span className="text-lime-600">f</span> * cos(<span className="text-purple-600">ω</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
+                    </li>
+                    <li>
+                        <span className="text-cyan-600">g</span>&sup2; = <span className="text-amber-600">e</span>&sup2; + <span className="text-lime-600">f</span>&sup2; - 2<span className="text-amber-600">e</span><span className="text-lime-600">f</span> * cos(<span className="text-amber-600">α</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
+                    </li>
+                    <li>
+                        <span className="text-emerald-600">f</span>&sup2; = <span className="text-amber-600">e</span>&sup2; + <span className="text-cyan-600">g</span>&sup2; - 2<span className="text-amber-600">e</span><span className="text-cyan-600">g</span> * cos(<span className="text-pink-600">γ</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
+                    </li>
+                    <li>
+                        <span className="text-base font-normal">Формула Герона:</span> S = &radic;<span className="overline decoration-solid">П (П - <span className="text-amber-600">e</span>) (П - <span className="text-cyan-600">g</span>) (П - <span className="text-lime-600">f</span>)</span><span className="text-base font-normal">, где</span> П = (<span className="text-amber-600">e</span> + <span className="text-lime-600">f</span> + <span className="text-cyan-600">g</span>) / 2 <span className="text-base font-normal">(полупериметр)</span>
+                    </li>
+                    <li>
+                        S = (<span className="text-amber-600">e</span>&sup2; * &radic;3) / 4 <span className="text-base font-normal">НО: только если треугольник равносторонний</span>
+                    </li>
+                </ul>
+
+                <Image
+                    src="/images/storage/Triangle_3.svg"
+                    width={300} height={300}
+                    alt="Прямоугольный треугольник с указанием сторон и углов"
+                />
+            </div>
+        </section>
+    )
+}
