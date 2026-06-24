@@ -58,7 +58,7 @@ export default function CrawlersList({
             <div className="grid gap-2">
                 {hacks.map((crawler: SiteCrawler) => (
                     <div key={crawler.id}
-                        className="flex flex-row gap-2 border-b dark:border-neutral-800 border-neutral-200 py-2 px-1 hover:border-neutral-500"
+                        className="flex flex-row gap-2 border-b border-neutral-200 py-2 px-1 hover:border-neutral-500"
                     >
                         <Link href={`/dashboard/helpers/site-crawlers/${crawler.id}`}
                             className="flex-1 flex gap-3"

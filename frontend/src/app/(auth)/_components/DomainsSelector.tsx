@@ -62,7 +62,7 @@ export default function DomainsSelector({
             <h3>Область использования</h3>
 
             <div id="DomainSelector_domains_container"
-                className="flex flex-wrap items-center gap-2 border border-neutral-200 dark:border-neutral-800 cursor-pointer relative px-1"
+                className="flex flex-wrap items-center gap-2 border border-neutral-200 cursor-pointer relative px-1"
                 onClick={() => inputRef.current?.focus()}
             >
                 {selectedDomains.map((domain: Domain) => (

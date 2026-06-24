@@ -35,9 +35,9 @@ export default function DomainsFilter({
                 return (
                     <Link key={el.id}
                         href={link}
-                        className={clsx("px-2 py-1 border border-neutral-200 dark:border-neutral-800 rounded-md", {
+                        className={clsx("px-2 py-1 border border-neutral-200 rounded-md", {
                             "text-neutral-500 hover:text-red-500 hover:border-red-500": domainUsed,
-                            "hover:border-emerald-500 dark:hover:border-emerald-700 dark:hover:text-emerald-600 hover:text-emerald-500": !domainUsed
+                            "hover:border-emerald-500 hover:text-emerald-500": !domainUsed
                         })}
                     >
                         {el.name}

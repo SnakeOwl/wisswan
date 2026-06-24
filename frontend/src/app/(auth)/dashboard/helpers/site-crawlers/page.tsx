@@ -31,7 +31,7 @@ export default async function Page(props: PageProps<'/dashboard/helpers/site-cra
             <nav className="flex gap-4 mb-4">
                 <Link
                     className="flex gap-1 w-fit py-2 px-3 rounded-lg 
-                        border dark:border-neutral-800 border-neutral-300"
+                        border border-neutral-300"
                     href={'/dashboard/helpers/site-crawlers/create'}
                 >
                     <Plus />

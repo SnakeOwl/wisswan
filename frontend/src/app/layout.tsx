@@ -31,7 +31,7 @@ export default async function RootLayout({
     modal: React.ReactNode;
 }) {
     return (
-        <html lang="ru" className={cn("bg-white dark:bg-black text-black dark:text-stone-100 ", "font-sans", unbounded.variable)}>
+        <html lang="ru" className={cn("bg-white text-black", "font-sans", unbounded.variable)}>
             <UserProvider>
                 <body className={`${pt_sans.className}  antialiased`}>
                     <ToastProvider>

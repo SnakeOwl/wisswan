@@ -11,10 +11,9 @@ export default function Textarea({ className, ...other }: ITextarea) {
         <textarea
             name={name}
             className={`
-                border border-neutral-300 dark:border-neutral-800 focus:border-b-neutral-800 dark:focus:border-b-white
-                duration-300 focus:outline-hidden dark:bg-black/50 dark:focus:bg-black
+                border border-neutral-300 focus:border-b-neutral-800
+                duration-300 focus:outline-hidden
                 ${className}`}
-
             {...other}
         />
     )

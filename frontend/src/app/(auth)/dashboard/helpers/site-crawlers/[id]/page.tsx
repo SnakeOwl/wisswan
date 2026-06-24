@@ -40,8 +40,8 @@ export default async function Page(props: PageProps<'/dashboard/helpers/site-cra
                     <h2>История обходов</h2>
                     {logs.map((log: SiteCrawlerLog) => (
                         <div key={log.id}
-                            className="w-full flex gap-1 items-center py-1 px-2 rounded-lg dark:bg-neutral-950
-                                border dark:border-neutral-800 border-neutral-300"
+                            className="w-full flex gap-1 items-center py-1 px-2 rounded-lg
+                                border border-neutral-300"
                         >
                             <div className="flex-1">
                             {formatDate(log.created_at, true) + ' : '}

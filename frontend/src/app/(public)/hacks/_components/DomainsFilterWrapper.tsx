@@ -6,7 +6,7 @@ export default async function DomainsFilterWrapper() {
 
 
     return (
-        <section className="my-6 border dark:border-neutral-800 border-neutral-200 p-2 rounded-lg">
+        <section className="my-6 border border-neutral-200 p-2 rounded-lg">
             <h4 className="mb-2">Области применения</h4>
 
             <DomainsFilter domains={filterDomainsResponse} />

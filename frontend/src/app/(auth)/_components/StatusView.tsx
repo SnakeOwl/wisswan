@@ -74,8 +74,7 @@ export default function StatusView({
                     <div className="hidden group-hover:block
                         absolute bottom-full left-1/2 transform -translate-x-1/2 w-[250px]
                         mb-2 px-3 py-1 text-sm
-                        bg-white dark:bg-neutral-800 dark:text-neutral-300 rounded 
-                        border border-neutral-300 dark:border-neutral-800
+                        bg-white rounded border border-neutral-300
                         ">
                         {hint}
                     </div>

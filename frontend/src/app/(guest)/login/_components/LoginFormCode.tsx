@@ -185,7 +185,7 @@ export default function LoginFormCode({
             className="w-full lg:w-[400px] flex flex-col gap-4"
         >
             <div className="flex flex-col gap-2">
-                <div className={clsx(`rounded-sm border border-neutral-800 hover:border-b-neutral-100  duration-300 focus:outline-hidden dark:bg-black/50 focus:bg-black 
+                <div className={clsx(`rounded-sm border border-neutral-800 hover:border-b-neutral-100  duration-300 focus:outline-hidden focus:bg-black 
                     flex  justify-center gap-2 mx-auto 
                     cursor-pointer p-2 text-xl`, {
                     'border-red-500': !!formState?.errors?.code

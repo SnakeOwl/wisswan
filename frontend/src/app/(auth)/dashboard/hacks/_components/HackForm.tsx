@@ -108,7 +108,7 @@ export default function HackForm({
                 <div>
                     <h4>Содержимое хака (копируемый текст)*:</h4>
                     <Editorjs
-                        className="border-r dark:border-neutral-800 border-neutral-300"
+                        className="border-r border-neutral-300"
                         hideToolbar
                         onBlur={(content: string) => setValue(content)}
                         savedData={value || undefined}
@@ -127,7 +127,7 @@ export default function HackForm({
             {/** saving icon */}
             {isPending &&
                 <div className="fixed right-4 bottom-4 animate-pulse">
-                    <Save className="dark:stroke-neutral-700 stroke-neutral-300" />
+                    <Save className="stroke-neutral-300" />
                 </div>
             }
         </div>

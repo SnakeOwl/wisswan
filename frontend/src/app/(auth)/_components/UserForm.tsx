@@ -140,7 +140,7 @@ export default function UserForm({
             {/** saving icon */}
             {isPending &&
                 <div className="fixed right-4 bottom-4 animate-pulse">
-                    <Save className="dark:stroke-neutral-700 stroke-neutral-300" />
+                    <Save className="stroke-neutral-300" />
                 </div>
             }
         </div>

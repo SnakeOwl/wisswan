@@ -30,9 +30,9 @@ export default function ToastProvider({
                         rounded-lg
                         fixed z-[99] left-1/2 -translate-x-1/2
                         flex gap-1 p-6 justify-between`, {
-                    "bg-white dark:bg-neutral-950 dark:border-neutral-800 border-neutral-300": stateToast.style == "default",
-                    "bg-emerald-100  dark:text-white dark:bg-emerald-950 dark:border-emerald-700 border-emerald-300": stateToast.style == "green",
-                    "bg-red-100 dark:bg-red-950 dark:border-red-800 border-red-300": stateToast.style == "red"
+                    "bg-white border-neutral-300": stateToast.style == "default",
+                    "bg-emerald-100 border-emerald-300": stateToast.style == "green",
+                    "bg-red-100 border-red-300": stateToast.style == "red"
                 })}
 
                     onClick={e => dispatchToast({ type: "RESET" })}

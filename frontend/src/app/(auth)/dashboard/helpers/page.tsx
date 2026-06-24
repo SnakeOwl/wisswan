@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
     const cardsH = "min-h-[150px]";
-    const cardClasses = cardsH + " border border-neutral-200 dark:border-neutral-800 rounded-lg p-3 dark:bg-neutral-950";
+    const cardClasses = cardsH + " border border-neutral-200 rounded-lg p-3";
 
     return (
         <main className="grid grid-cols-4 gap-4">

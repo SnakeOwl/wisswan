@@ -32,17 +32,17 @@ export function LayoutUI({
         {
             label: "Хаки",
             href: "/dashboard/hacks",
-            icon: <Copy className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+            icon: <Copy className="h-5 w-5 shrink-0 text-neutral-700" />
         },
         {
             label: "Telegram бот",
             href: "/dashboard/telegram",
-            icon: <Bot className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+            icon: <Bot className="h-5 w-5 shrink-0 text-neutral-700" />
         },
         {
             label: "Помощники",
             href: "/dashboard/helpers",
-            icon: <ToolCase className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+            icon: <ToolCase className="h-5 w-5 shrink-0 text-neutral-700" />
         }
     ];
 
@@ -50,28 +50,28 @@ export function LayoutUI({
         {
             label: "Администрирование",
             href: "/admin",
-            icon: <Settings className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+            icon: <Settings className="h-5 w-5 shrink-0 text-neutral-700" />
         },
         {
             label: "Пользователи",
             href: "/admin/users",
-            icon: <UsersRound className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+            icon: <UsersRound className="h-5 w-5 shrink-0 text-neutral-700" />
         },
         {
             label: "Домены",
             href: "/admin/domains",
-            icon: <LandPlot className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+            icon: <LandPlot className="h-5 w-5 shrink-0 text-neutral-700" />
         },
         {
             label: "Формы обратной связи",
             href: "/admin/feedbacks",
-            icon: <Mail className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+            icon: <Mail className="h-5 w-5 shrink-0 text-neutral-700" />
         }
     ];
 
     const userLink = {
         href: '/personal',
-        icon: <House className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />,
+        icon: <House className="h-5 w-5 shrink-0 text-neutral-700" />,
         label: userEmail.slice(0, 2) + "..." + userEmail.slice(userEmail.indexOf('@'))
     }
 
@@ -79,7 +79,7 @@ export function LayoutUI({
     return (
         <div
             className={cn(
-                "mx-auto flex w-full flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 bg-gray-100 md:flex-row dark:border-neutral-700 dark:bg-neutral-800",
+                "mx-auto flex w-full flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 bg-gray-100 md:flex-row",
                 "h-[60vh]", // for your use case, use `h-screen` instead of `h-[60vh]`
             )}
         >
@@ -111,7 +111,7 @@ export function LayoutUI({
             </Sidebar>
 
             <div className="flex flex-1">
-                <div className="flex h-full w-full flex-1 flex-col gap-2 rounded-tl-2xl border border-neutral-200 bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-neutral-900">
+                <div className="flex h-full w-full flex-1 flex-col gap-2 rounded-tl-2xl border border-neutral-200 bg-white p-2 md:p-10">
                     {children}
                 </div>
             </div>
@@ -124,11 +124,11 @@ const Logo = () => {
             href="/dashboard"
             className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
         >
-            <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
+            <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black" />
             <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="font-medium whitespace-pre text-black dark:text-white"
+                className="font-medium whitespace-pre text-black"
             >
                 {process.env.NEXT_PUBLIC_APP_NAME}
             </motion.span>
@@ -141,7 +141,7 @@ const LogoIcon = () => {
             href="/dashboard"
             className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
         >
-            <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
+            <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black" />
         </Link>
     );
 };

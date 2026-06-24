@@ -16,8 +16,8 @@ export default function ModalWrapper({
         <Modal hide={hide}
             wrapperClick={hide}
         >
-                <div className="relative bg-white dark:bg-neutral-950">
-                    <X className="absolute right-4 top-4 cursor-pointer dark:hover:text-white w-fit h-fit z-50 hover:animate-pulse" />
+                <div className="relative bg-white">
+                    <X className="absolute right-4 top-4 cursor-pointer w-fit h-fit z-50 hover:animate-pulse" />
 
                     {children}
                 </div>

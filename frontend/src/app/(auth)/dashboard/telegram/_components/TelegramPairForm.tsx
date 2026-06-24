@@ -89,7 +89,7 @@ export default function TelegramPairForm() {
 
     // TODO: по хорошему тут нужно будет вводить проверку на привязку пользователя (по его названию). Но пока сайтом даже никто не пользуется.
     return (
-        <div className="flex flex-col gap-2 p-2 border border-neutral-200 dark:border-neutral-800 rounded w-full lg:w-1/2">
+        <div className="flex flex-col gap-2 p-2 border border-neutral-200 rounded w-full lg:w-1/2">
             <h2>Привязка бота</h2>
 
             <div className="grid gap-2">

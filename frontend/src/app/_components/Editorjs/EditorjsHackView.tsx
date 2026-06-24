@@ -49,8 +49,8 @@ export default function EditorjsHackView({
 
 
     return (
-        <div className={`relative p-2 min-h-[44px] dark:bg-neutral-950 rounded-md
-            border border-neutral-200 dark:border-neutral-800
+        <div className={`relative p-2 min-h-[44px] rounded-md
+            border border-neutral-200
         `}
             onClick={e => e.stopPropagation()}
         >

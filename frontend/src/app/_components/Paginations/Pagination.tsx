@@ -31,7 +31,7 @@ export default function Pagination({
     return (
         <div className="w-full flex gap-2 justify-center items-center">
             <Link href={`${pathname}?page=${page - 1}${anotherSparams}`}
-                className={clsx("border border-neutral-200 dark:border-neutral-800 rounded-sm", {
+                className={clsx("border border-neutral-200 rounded-sm", {
                     "pointer-events-none text-neutral-500": disableLeftArrow
                 })}
             >
@@ -43,7 +43,7 @@ export default function Pagination({
 
             {showFirstPage &&
                 <Link href={`${pathname}?page=1${anotherSparams}`}
-                    className="border border-neutral-200 dark:border-neutral-800 rounded-sm min-w-[32px] text-center"
+                    className="border border-neutral-200 rounded-sm min-w-[32px] text-center"
                 >
                     <div className="p-1">
                         1
@@ -59,7 +59,7 @@ export default function Pagination({
             }
 
 
-            <Link href="#" className="pointer-events-none text-neutral-500 border border-neutral-200 dark:border-neutral-800 rounded-sm min-w-[32px] text-center">
+            <Link href="#" className="pointer-events-none text-neutral-500 border border-neutral-200 rounded-sm min-w-[32px] text-center">
                 <div className="p-1">
                     {page}
                 </div>
@@ -75,7 +75,7 @@ export default function Pagination({
 
             {showLastPage &&
                 <Link href={`${pathname}?page=${totalPages}${anotherSparams}`}
-                    className="border border-neutral-200 dark:border-neutral-800 rounded-sm min-w-[32px] text-center"
+                    className="border border-neutral-200 rounded-sm min-w-[32px] text-center"
                 >
                     <div className="p-1">
                         {totalPages}
@@ -85,7 +85,7 @@ export default function Pagination({
 
 
             <Link href={`${pathname}?page=${page + 1}${anotherSparams}`}
-                className={clsx("border border-neutral-200 dark:border-neutral-800 rounded-sm", {
+                className={clsx("border border-neutral-200 rounded-sm", {
                     "pointer-events-none text-neutral-500": disableRightArrow
                 })}
             >

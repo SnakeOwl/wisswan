@@ -72,7 +72,7 @@ export const Popover = ({
                     ref={popoverRef}
                     className={` ${popoverClassname}
                         absolute left-1/2 -translate-x-1/2 z-50
-                        border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-950 rounded-md
+                        border border-neutral-200 rounded-md
                     `}
                 >
                     {children}

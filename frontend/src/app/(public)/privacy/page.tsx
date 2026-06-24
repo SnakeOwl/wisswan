@@ -106,20 +106,20 @@ export default async function Page() {
             <table>
                 <tbody>
                     <tr>
-                        <td className="font-bold border p-2 border-neutral-200 dark:border-neutral-800">Цель обработки</td>
-                        <td className="border p-2 border-neutral-200 dark:border-neutral-800">информирование Пользователя посредством отправки электронных писем</td>
+                        <td className="font-bold border p-2 border-neutral-200">Цель обработки</td>
+                        <td className="border p-2 border-neutral-200">информирование Пользователя посредством отправки электронных писем</td>
                     </tr>
                     <tr>
-                        <td className="font-bold border p-2 border-neutral-200 dark:border-neutral-800">Персональные данные</td>
-                        <td className="border p-2 border-neutral-200 dark:border-neutral-800">электронный адрес</td>
+                        <td className="font-bold border p-2 border-neutral-200">Персональные данные</td>
+                        <td className="border p-2 border-neutral-200">электронный адрес</td>
                     </tr>
                     <tr>
-                        <td className="font-bold border p-2 border-neutral-200 dark:border-neutral-800">Правовые основания</td>
-                        <td className="border p-2 border-neutral-200 dark:border-neutral-800">Исполнение договора, стороной которого является пользователь (Пользовательское соглашение), а также согласие пользователя на обработку персональных данных.</td>
+                        <td className="font-bold border p-2 border-neutral-200">Правовые основания</td>
+                        <td className="border p-2 border-neutral-200">Исполнение договора, стороной которого является пользователь (Пользовательское соглашение), а также согласие пользователя на обработку персональных данных.</td>
                     </tr>
                     <tr>
-                        <td className="font-bold border p-2 border-neutral-200 dark:border-neutral-800">Виды обработки персональных данных</td>
-                        <td className="border p-2 border-neutral-200 dark:border-neutral-800">Отправка информационных писем на адрес электронной почты</td>
+                        <td className="font-bold border p-2 border-neutral-200">Виды обработки персональных данных</td>
+                        <td className="border p-2 border-neutral-200">Отправка информационных писем на адрес электронной почты</td>
                     </tr>
                 </tbody>
 

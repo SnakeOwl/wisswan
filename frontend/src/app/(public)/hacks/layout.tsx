@@ -18,7 +18,7 @@ export default async function Layout({
 
             {children}
 
-            <section className="mt-8 border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-950 p-2 ">
+            <section className="mt-8 border border-neutral-200 p-2 ">
                 <NewAnonymHackBlock />
             </section>
         </div>

@@ -42,7 +42,7 @@ export default function TelegramNotificationsForm({
 
 
     return (
-        <div className={`${className} flex flex-col gap-2 border p-4 border-neutral-200 dark:border-neutral-800 dark:bg-neutral-950 rounded`}>
+        <div className={`${className} flex flex-col gap-2 border p-4 border-neutral-200 rounded`}>
             <div className="flex flex-row gap-2">
                 <InputV2Styled id="use_telegram_notify_on_site_cravler_500"
                     checked={stateUser.user?.use_telegram_notify_on_site_cravler_500}

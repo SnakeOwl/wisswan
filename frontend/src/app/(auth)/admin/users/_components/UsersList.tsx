@@ -34,7 +34,7 @@ export default function UsersList() {
             <div className="flex flex-col w-full gap-3">
                 {users.map(user => (
                     <div key={user.id}
-                        className="flex flex-row gap-2 border-b dark:border-neutral-800 border-neutral-200 py-2 px-1 hover:border-neutral-500"
+                        className="flex flex-row gap-2 border-b border-neutral-200 py-2 px-1 hover:border-neutral-500"
                     >
                         <div className="flex-1 flex gap-3">
                             <span className="w-12 text-right">
