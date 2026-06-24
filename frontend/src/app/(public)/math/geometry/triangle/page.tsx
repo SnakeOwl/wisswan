@@ -37,6 +37,7 @@ const CircleDescription = () => (
                 src="/images/storage/triangle_description_1.svg"
                 width={400} height={400}
                 alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
+                unoptimized
             />
 
             <div className="flex flex-col gap-2">
@@ -66,6 +67,7 @@ const CircleFullDescription = () => (
                 src="/images/storage/triangle_description_1.svg"
                 width={400} height={400}
                 alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
+                unoptimized
             />
 
             <div className="flex flex-col">
@@ -106,6 +108,7 @@ const Theorems = () => (
                         src="/images/storage/Triangle_2.svg"
                         width={200} height={200}
                         alt="Треугольник, на котором показано как 3 биссектрисы пересекаются в центре вписанного круга"
+                        unoptimized
                     />
 
                     <ul className="space-y-2">
@@ -121,6 +124,7 @@ const Theorems = () => (
                         src="/images/storage/circle_triangle_1.svg"
                         width={300} height={300}
                         alt="Прямоугольный треугольник с указанием сторон и углов"
+                        unoptimized
                     />
                     <div>
                         <p><span className="font-bold">Теорема синусов:</span> стороны треугольника пропорциональны синусу противолежащих углов. Кроме того, это отношение равно диаметру окружности, описанной вокруг этого треугольника:</p>
@@ -220,6 +224,7 @@ const RightTriangleFormulas = () => {
                     src="/images/storage/Triangle_3.svg"
                     width={300} height={300}
                     alt="Прямоугольный треугольник с указанием сторон и углов"
+                    unoptimized
                 />
             </div>
         </section>

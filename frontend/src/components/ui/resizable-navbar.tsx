@@ -243,6 +243,7 @@ export const NavbarLogo = () => {
         alt="logo"
         width={30}
         height={30}
+        unoptimized
       />
       <span className="font-medium text-black dark:text-white">{process.env.NEXT_PUBLIC_APP_NAME}</span>
     </Link>

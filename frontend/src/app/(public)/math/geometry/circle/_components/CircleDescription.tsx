@@ -14,6 +14,7 @@ export default function CircleDescription() {
                     src="/images/storage/circle_description_1.svg"
                     width={400} height={400}
                     alt="Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор"
+                    unoptimized
                 />
 
                 <div className="flex flex-col gap-2">

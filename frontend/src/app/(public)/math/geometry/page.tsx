@@ -36,6 +36,7 @@ export default async function Page() {
                                 alt={el.imageAlt}
                                 width={200}
                                 height={200}
+                                unoptimized
                             />
 
                             <div className="font-bold text-xl">
