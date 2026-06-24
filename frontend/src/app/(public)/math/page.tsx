@@ -23,7 +23,7 @@ export default async function Page() {
     const mainLinks = [
         {
             label: "Геометрия",
-            href: "/math/geometry",
+            href: "",
             icon: <Cuboid />,
         }
     ];
@@ -32,26 +32,19 @@ export default async function Page() {
     return (
         <main>
             <section>
-                <ContentDividerV1>
-                    <h2 className="text-2xl font-bold mb-4 text-nowrap">Разделы математики</h2>
+                <ContentDividerV1 className="mb-4">
+                    <h2 className="text-2xl text-nowrap">Разделы математики</h2>
                 </ContentDividerV1>
 
-                <div className="grid lg:grid-cols-2 gap-4">
-                    {mainLinks.map((el, index) => (
-                        <div key={index}>
-                            <div className="border rounded p-2">
-                                <Link href={el.href}
-                                    className="hover:text-sky-500"
-                                >
-                                    <h2 className="text-xl font-bold">
-                                        {el.label}
-                                    </h2>
-                                </Link>
-                            </div>
-                        </div>
-                    ))
-                    }
-                </div>
+                <ContentDividerV1 className="mb-4">
+                    <h3 className="text-xl font-bold text-nowrap">
+                        <Link href={'/math/geometry'}
+                            className="link-hover underline"
+                        >
+                            Геометрия
+                        </Link>
+                    </h3>
+                </ContentDividerV1>
             </section>
 
             <ShortMultipliesFormulas />
