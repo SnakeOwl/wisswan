@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Cloud, Layers, Lock, Search, Settings, ShieldUser, Sparkles, Zap } from "lucide-react";
+import { Cloud, Layers, Settings, ShieldUser, Zap } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function CardsWithGlowingEffectBox() {

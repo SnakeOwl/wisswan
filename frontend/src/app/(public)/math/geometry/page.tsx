@@ -1,6 +1,5 @@
 import { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
+import GeometryNavCard from "./_components/GeometryNavCard"
 
 export const metadata: Metadata = {
     title: "Геометрия",
@@ -8,42 +7,47 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
+
     const sections = [{
         imageSrc: "/images/storage/circle_description_1.svg",
         imageAlt: "Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор",
         label: "Круг и окружность",
         link: `/math/geometry/circle`,
+        sublinks: [{
+            href: "/math/geometry/circle#CircleDescription",
+            label: "Общие сведения"
+        }]
     }, {
-        imageSrc: "/images/storage/triangle_description_1.svg",
-        imageAlt: "Треугольник, на котором обозначены высота, медиана, биссектриса",
+        imageSrc: "/images/storage/Triangle_3.svg",
+        imageAlt: "Прямоугольный треугольник с указанием сторон и углов",
         label: "Треугольник",
         link: `/math/geometry/triangle`,
+        sublinks: [{
+            href: "/math/geometry/triangle#CircleDescription",
+            label: "Общие сведения"
+        }, {
+            href: "/math/geometry/triangle#CircleFullDescription",
+            label: "Подробные сведения"
+        }, {
+            href: "/math/geometry/triangle#Theorems",
+            label: "Теоремы"
+        }, {
+            href: "/math/geometry/triangle#EqualitySigns",
+            label: "Тризнаки равенства треугольников"
+        }, {
+            href: "/math/geometry/triangle#RightTriangleFormulas",
+            label: "Формулы прямоугольного треугольника"
+        }]
     },
-
     ]
 
     return (
         <main>
             <nav className="grid lg:grid-cols-2 gap-4">
                 {sections.map((el, index) => (
-                    <Link key={index}
-                        href={el.link}
-                        className="link-hover"
-                    >
-                        <div className="border p-4 rounded hover:ring flex flex-row">
-                            <Image
-                                src={el.imageSrc}
-                                alt={el.imageAlt}
-                                width={200}
-                                height={200}
-                                unoptimized
-                            />
-
-                            <div className="font-bold text-xl">
-                                {el.label}
-                            </div>
-                        </div>
-                    </Link>
+                    <GeometryNavCard key={index}
+                        card={el}
+                    />
                 ))
                 }
             </nav>

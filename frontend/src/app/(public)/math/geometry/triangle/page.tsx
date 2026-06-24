@@ -181,7 +181,7 @@ const RightTriangleFormulas = () => {
     ];
 
     return (
-        <section>
+        <section id="RightTriangleFormulas">
             <ContentDividerV1 className='my-2'>
                 <h2 className="text-lg text-nowrap">Формулы прямоугольного треугольника</h2>
             </ContentDividerV1>
