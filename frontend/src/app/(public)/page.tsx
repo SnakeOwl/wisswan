@@ -3,7 +3,6 @@ import { Suspense } from 'react';
 import { RainWithTextBlock } from './_components/RainWithTextBlock';
 import { CardsWithGlowingEffectBox } from './_components/CardsWithGlowingEffectBox';
 import { TripleCardBox } from './_components/TripleCardBox';
-import { DoubleTextWithLargeImageBox } from './_components/DoubleTextWithLargeImageBox';
 import { ReviewsBlock } from './_components/ReviewsBlock';
 import { WorldMapBlock } from './_components/WorldMapBlock';
 import DoomBlock from './_components/DoomBlock/DoomBlock';
@@ -18,10 +17,6 @@ export const metadata: Metadata = {
 export default async function Page() {
     return (
         <main className='flex flex-col gap-12 py-12'>
-            <section>
-                <DoubleTextWithLargeImageBox />
-            </section>
-
             <section>
                 <RainWithTextBlock />
             </section>

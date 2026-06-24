@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default async function Page() {
     // TODO: Если стрельнёт, то нужно будет у адвокатов заказывать этот документ
     return (
-        <main>
+        <main className="container-v1">
             <h1 className="mt-8 mb-4">Политика в отношении обработки персональных данных</h1>
 
             <h2 className="mt-8 mb-4">Общие положения</h2>

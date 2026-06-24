@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
     return (
-        <main>
+        <main className="container-v1">
             <p>Изначально сайт планировался как портал для технических специалистов.</p>
 
             <section className="flex flex-col gap-2">
