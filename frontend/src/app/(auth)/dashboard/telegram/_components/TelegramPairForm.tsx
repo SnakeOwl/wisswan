@@ -115,7 +115,7 @@ export default function TelegramPairForm() {
                 <Link href='https://t.me/wisswan_bot'
                     className="text-sky-500 hover:underline"
                     target="_blank"
-                    rel="nofollow noindex"
+                    rel="noindex"
                 >
                     Ссылка на бота
                 </Link>

@@ -10,101 +10,66 @@ export const metadata: Metadata = {
 
 
 export default async function Page() {
+    const links = [
+        {
+            hLabel: "Frontend",
+            links: [{
+                href: 'https://nextjs.org/',
+                label: 'Next.js'
+            }, {
+                href: 'https://tailwindcss.com/',
+                label: 'Tailwind'
+            }]
+        }, {
+            hLabel: "Backend",
+            links: [{
+                href: 'https://laravel.com/',
+                label: 'Laravel'
+            }, {
+                href: 'https://resend.com/',
+                label: 'Resend'
+            }, {
+                href: 'https://www.mysql.com/',
+                label: 'Mysql'
+            }]
+        }, {
+            hLabel: "Development",
+            links: [{
+                href: 'https://github.com/SnakeOwl/wisswan',
+                label: 'Github'
+            }, {
+                href: 'https://www.docker.com/',
+                label: 'Docker'
+            }]
+        }
+    ];
+
+
     return (
         <main className="container-v1">
             <p>Изначально сайт планировался как портал для технических специалистов.</p>
 
             <section className="flex flex-col gap-2">
                 <h2 className="font-bold text-2xl">Используемые технологии</h2>
-                <section>
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>
-                            <Link href='https://nextjs.org/'
-                                rel="nofollow noindex"
-                                target="_blank"
-                                className="first-letter:text-sky-400 block"
-                            >
-                                Next.js
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='https://nextjs.org/'
-                                rel="nofollow noindex"
-                                target="_blank"
-                                className="first-letter:text-sky-400 block"
-                            >
-                                Editor.js
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='https://tailwindcss.com/'
-                                rel="nofollow noindex"
-                                target="_blank"
-                                className="first-letter:text-sky-400 block"
-                            >
-                                Tailwind
-                            </Link>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>
-                            <Link href='https://laravel.com/'
-                                rel="nofollow noindex"
-                                target="_blank"
-                                className="first-letter:text-sky-400 block"
-                            >
-                                Laravel
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='https://resend.com/'
-                                rel="nofollow noindex"
-                                target="_blank"
-                                className="first-letter:text-sky-400 block"
-                            >
-                                Resend
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='https://www.mysql.com/'
-                                rel="nofollow noindex"
-                                target="_blank"
-                                className="first-letter:text-sky-400 block"
-                            >
-                                Mysql
-                            </Link>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Development</h3>
-                    <ul>
-                        <li>
-                            <Link href='https://github.com/SnakeOwl/wisswan'
-                                rel="nofollow noindex"
-                                target="_blank"
-                                className="first-letter:text-sky-400 block"
-                            >
-                                Github
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href='https://www.docker.com/'
-                                rel="nofollow noindex"
-                                target="_blank"
-                                className="first-letter:text-sky-400 block"
-                            >
-                                Docker
-                            </Link>
-                        </li>
-                    </ul>
-                </section>
+                {links.map((el, index) => (
+                    <section key={index}>
+                        <h3>{el.hLabel}</h3>
+                        <ul>
+                            {el.links.map((link, index) => (
+                                <li key={index}>
+                                    <Link href={link.href}
+                                        rel="noindex"
+                                        target="_blank"
+                                        className="first-letter:text-sky-400 block w-fit link-hover"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+                ))
+                }
             </section>
         </main>
     )
