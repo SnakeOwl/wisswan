@@ -1,4 +1,6 @@
+import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import { Metadata } from "next"
+import Image from "next/image";
 import Link from "next/link"
 
 
@@ -10,6 +12,21 @@ export const metadata: Metadata = {
 
 
 export default async function Page() {
+
+
+
+    return (
+        <main className="container-v1">
+            <p>Изначально сайт планировался как портал для технических специалистов. Но&nbsp;у&nbsp;сил свыше было своё мнение.</p>
+
+            <LogosBlock />
+            
+            <UsedTecnologies />
+        </main>
+    )
+}
+
+const UsedTecnologies = () => {
     const links = [
         {
             hLabel: "Frontend",
@@ -46,31 +63,60 @@ export default async function Page() {
 
 
     return (
-        <main className="container-v1">
-            <p>Изначально сайт планировался как портал для технических специалистов.</p>
+        <section className="flex flex-col gap-2">
+            <ContentDividerV1>
+                <h2 className="font-bold text-2xl text-nowrap">Используемые технологии</h2>
+            </ContentDividerV1>
 
-            <section className="flex flex-col gap-2">
-                <h2 className="font-bold text-2xl">Используемые технологии</h2>
-                {links.map((el, index) => (
-                    <section key={index}>
-                        <h3>{el.hLabel}</h3>
-                        <ul>
-                            {el.links.map((link, index) => (
-                                <li key={index}>
-                                    <Link href={link.href}
-                                        rel="noindex"
-                                        target="_blank"
-                                        className="first-letter:text-sky-400 block w-fit link-hover"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </section>
-                ))
-                }
-            </section>
-        </main>
+            {links.map((el, index) => (
+                <section key={index}>
+                    <h3>{el.hLabel}</h3>
+                    <ul>
+                        {el.links.map((link, index) => (
+                            <li key={index}>
+                                <Link href={link.href}
+                                    rel="noindex noreferrer"
+                                    target="_blank"
+                                    className="first-letter:text-sky-400 block w-fit link-hover"
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            ))
+            }
+        </section>
     )
 }
+
+const LogosBlock = () => (
+    <section>
+        <ContentDividerV1>
+            <h2 className="font-bold text-2xl text-nowrap">Логотипы</h2>
+        </ContentDividerV1>
+
+        <div className="flex flex-wrap justify-around">
+            <div>
+                <Image
+                    src={"/images/logo.svg"}
+                    width={400} height={400}
+                    alt="Логотип сайта в светлом стиле"
+                    unoptimized
+                />
+                <p className="text-sm text-center">Логотип сайта в светлом стиле</p>
+            </div>
+
+            <div>
+                <Image
+                    src={"/images/logo_dark.svg"}
+                    width={400} height={400}
+                    alt="Логотип сайта в тёмном стиле"
+                    unoptimized
+                />
+                <p className="text-sm text-center">Логотип сайта в тёмном стиле</p>
+            </div>
+        </div>
+    </section>
+)
