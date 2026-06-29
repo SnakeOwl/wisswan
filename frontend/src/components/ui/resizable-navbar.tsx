@@ -236,16 +236,16 @@ export const NavbarLogo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black "
     >
       <Image
-        src="/images/logo.svg"
+        src="/images/logo_dark.svg"
         alt="logo"
         width={30}
         height={30}
         unoptimized
+        className="rounded hover:animate-pulse"
       />
-      <span className="font-medium text-black dark:text-white">{process.env.NEXT_PUBLIC_APP_NAME}</span>
     </Link>
   );
 };
