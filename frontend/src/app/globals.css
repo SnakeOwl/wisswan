@@ -80,9 +80,11 @@
 
 
 @layer utils {
+  
   .container-v1 {
     @apply xl:max-w-7xl w-full mx-auto px-2;
   }
+
 
   /* hover на ссылках */
   .link-hover, .hover-link {

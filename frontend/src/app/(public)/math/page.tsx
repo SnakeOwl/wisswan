@@ -1,5 +1,4 @@
 import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
-import { Cuboid } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -20,15 +19,6 @@ export const metadata: Metadata = {
 
 
 export default async function Page() {
-    const mainLinks = [
-        {
-            label: "Геометрия",
-            href: "",
-            icon: <Cuboid />,
-        }
-    ];
-
-
     return (
         <main>
             <section>
