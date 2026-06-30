@@ -132,7 +132,7 @@ const Editorjs = ({
             editorRef.current.save().then((outputData: Object) => {
                 onBlur(JSON.stringify(outputData));
             }).catch((error) => {
-                console.log('Saving failed: ', error)
+                // console.log('Saving failed: ', error)
             });
         }
 
