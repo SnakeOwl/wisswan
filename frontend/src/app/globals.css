@@ -75,12 +75,13 @@
 
   html {
     @apply font-sans;
+    scroll-behavior: smooth; /* нормальный скролл */
   }
+
 }
 
-
+/* утилиты для переиспользования */
 @layer utils {
-  
   .container-v1 {
     @apply xl:max-w-7xl w-full mx-auto px-2;
   }
@@ -89,6 +90,10 @@
   /* hover на ссылках */
   .link-hover, .hover-link {
     @apply hover:text-sky-600;
+  }
+  
+  .link {
+    @apply text-sky-600 hover:text-sky-800
   }
 }
 

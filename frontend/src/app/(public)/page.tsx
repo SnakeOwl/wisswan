@@ -24,7 +24,7 @@ export default async function Page() {
 
             <CardsWithGlowingEffectBox />
 
-            <ChooseUs />
+            <WorkSteps />
 
             <section className='container-v1'>
                 <Suspense>
@@ -61,13 +61,9 @@ const RainWithTextBlock = () => (
 );
 
 
-const ChooseUs = () => {
+const WorkSteps = () => {
     return (
-        <section className='container-v1'>
-            <ContentDividerV1 className="mb-4">
-                <h2 className="text-2xl text-nowrap font-bold">Этапы работы</h2>
-            </ContentDividerV1>
-
+        <section id="WorkSteps" className='container-v1'>
             <TimelineWorkSteps />
         </section>
     );

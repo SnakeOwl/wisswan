@@ -36,7 +36,7 @@ export function CardsWithGlowingEffectBox() {
                 }
             ],
             plusesListIcon: <CirclePlus className="text-green-700 min-h-5 h-5 min-w-5 w-5" />,
-            detailsHref: '',
+            detailsHref: '/#WorkSteps',
 
         }, {
             imageSrc: '/images/storage/1c_bitrix_logo.svg',
@@ -65,8 +65,7 @@ export function CardsWithGlowingEffectBox() {
                 }
             ],
             plusesListIcon: <Plus className="text-blue-700 min-h-4 h-4 min-w-4 w-4" />,
-            detailsHref: '',
-
+            detailsHref: '/#WorkSteps',
         }, {
             imageSrc: '/images/storage/Laravel.svg',
             imageAlt: 'Логотип Laravel',
@@ -97,7 +96,7 @@ export function CardsWithGlowingEffectBox() {
                 },
             ],
             plusesListIcon: <SquarePlus className="text-orange-700 min-h-5 h-5 min-w-5 w-5" />,
-            detailsHref: '',
+            detailsHref: '/#WorkSteps',
         }
     ];
 
@@ -152,23 +151,23 @@ const NextjsEvervaultCard = () => {
             </h3>
 
 
-            
-                
-                <ul className="space-y-1">
-                    <li className="flex flex-row gap-2 items-center">
-                        <Star className="text-yellow-400 min-h-6 h-6 min-w-6 w-6" />
-                        Одна из трёх лучших технологий современности
-                    </li>
-                    
-                    <li className="flex flex-row gap-2 items-center">
-                        <ReplaceAll className="text-rose-700 min-h-6 h-6 min-w-6 w-6" />
-                        Высокопроизводительное приложение любой сложности
-                    </li>
-                </ul>
-            
+
+
+            <ul className="space-y-1">
+                <li className="flex flex-row gap-2 items-center">
+                    <Star className="text-yellow-400 min-h-6 h-6 min-w-6 w-6" />
+                    Одна из трёх лучших технологий современности
+                </li>
+
+                <li className="flex flex-row gap-2 items-center">
+                    <ReplaceAll className="text-rose-700 min-h-6 h-6 min-w-6 w-6" />
+                    Высокопроизводительное приложение любой сложности
+                </li>
+            </ul>
+
 
             <div className="w-full flex flex-row justify-between items-center mt-4">
-                <Link href={""}
+                <Link href={"/#WorkSteps"}
                     className="link-hover text-sky-600"
                 >
                     Подробнее
@@ -178,7 +177,6 @@ const NextjsEvervaultCard = () => {
                     className="px-2 py-1 rounded"
                     theme="red-reversed"
                 >
-
                     Заказать
                 </ButtonStyled>
             </div>
