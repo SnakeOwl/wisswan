@@ -3,15 +3,19 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { CardsWithGlowingEffectBox } from './_components/CardsWithGlowingEffectBox';
 import { ReviewsBlock } from './_components/ReviewsBlock';
-import { WorldMapBlock } from './_components/WorldMapBlock';
 import DoomBlock from './_components/DoomBlock/DoomBlock';
-import Image from "next/image";
-import ContentDividerV1 from "../_components/dividers/ContentDividerV1";
 import TimelineWorkSteps from "./_components/TimelineWorkSteps";
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
+import SchemaOrg from "./_components/SchemaOrg";
 
 export const metadata: Metadata = {
-    description: `${process.env.NEXT_PUBLIC_APP_NAME} — платформа для облегчения рутины разработчиков. Готовые решения и мониторинг с уведомлениями удобными способами.`,
-    keywords: [process.env.NEXT_PUBLIC_APP_NAME!, "виссван", "хаки", "сайт-краулеры", "hacks", "site crawlers"]
+    title: "Создание сайтов",
+    description: `${process.env.NEXT_PUBLIC_APP_NAME} — Создание сайтов на Wordpress, Laravel, React, Nextjs, 1С-Битрикс. Купить сайт под ключ.`,
+    keywords: [process.env.NEXT_PUBLIC_APP_NAME!, "виссван", "создание сайтов", "разработка сайтов", "wordpress", "1с-битрикс", "laravel", "react", "nextjs"],
+
+    openGraph: getDefaultOpenGraph({
+        description: "Создание сайтов на Wordpress, Laravel, React, Nextjs, 1С-Битрикс"
+    }),
 }
 
 
@@ -26,19 +30,18 @@ export default async function Page() {
 
             <WorkSteps />
 
-            <section className='container-v1'>
+            <section data-nosnippet className='container-v1 hidden lg:block'>
+                <DoomBlock />
+            </section>
+
+            <section data-nosnippet className='container-v1'>
                 <Suspense>
                     <ReviewsBlock />
                 </Suspense>
             </section>
 
-            <section className='container-v1'>
-                <WorldMapBlock />
-            </section>
 
-            <section className='container-v1 hidden lg:block'>
-                <DoomBlock />
-            </section>
+            <SchemaOrg />
         </main>
     );
 }

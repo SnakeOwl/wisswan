@@ -1,11 +1,17 @@
 import { Metadata } from "next";
-import CircleCalculator from "./_components/CircleCalculator";
 import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import Image from "next/image";
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 
 export const metadata: Metadata = {
-    title: "Круг и окружность",
-    description: "Использование круга. Формулы круга. Свойства круга. Калькулятор круга."
+    title: "Круг и окружности",
+    description: "Описание круга и окружностей, их свойства, формулы, теоремы",
+    keywords: ['круг и окружность', "описание кругов и окружностей"],
+
+    openGraph: getDefaultOpenGraph({
+        description: "круг и окружности",
+        images: [(process.env.NEXT_PUBLIC_SITE_URL +  'images/storage/circle_description_1.svg')]
+    }),
 }
 
 

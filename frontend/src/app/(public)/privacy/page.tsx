@@ -1,3 +1,4 @@
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import { Metadata } from "next";
 
 
@@ -5,6 +6,10 @@ export const metadata: Metadata = {
     title: "Политика в отношении обработки персональных данных",
     description: "Информация об исопльзовании пользовательских данных на сайте",
     keywords: ["Политика обработки персональных данных"],
+
+    openGraph: getDefaultOpenGraph({
+        description: "Политика в отношении обработки персональных данных"
+    }),
 }
 
 

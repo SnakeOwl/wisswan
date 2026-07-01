@@ -1,10 +1,16 @@
 import Link from "next/link";
 import LoginFormWrapper from "./_components/LoginFormWrapper";
 import { Metadata } from "next";
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 
 export const metadata: Metadata = {
     title: "Вход",
-    description: "Форма входа"
+    description: "Форма входа",
+    keywords: ["форма входа", "вход"],
+
+    openGraph: getDefaultOpenGraph({
+        description: "Вход"
+    }),
 }
 
 

@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import { SkeletonTable } from "./_components/Skeletons/SkeletonTable";
 import { cn } from "@/lib/utils";
 import CookiesAgreement from "./_components/CookiesAgreement";
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 
 // дефолтные шрифты
 const pt_sans = PT_Sans({
@@ -61,21 +62,26 @@ export default async function RootLayout({
 export const metadata: Metadata = {
     // for images and icons
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "/"),
-
+    applicationName: process.env.NEXT_PUBLIC_APP_NAME,
+    manifest: process.env.NEXT_PUBLIC_SITE_URL + "manifest.json",
+    
     title: {
         template: `%s / ${process.env.NEXT_PUBLIC_APP_NAME}`,
         default: `${process.env.NEXT_PUBLIC_APP_NAME}`
     },
-    description: "",
-
-
+    openGraph: getDefaultOpenGraph(),
+    formatDetection: {
+        email: true,
+        address: false,
+        telephone: true,
+    },
     robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
         nocache: true,
         googleBot: {
-            index: false,
-            follow: false,
+            index: true,
+            follow: true,
         },
     },
 };

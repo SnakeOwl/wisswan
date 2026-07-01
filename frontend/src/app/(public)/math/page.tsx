@@ -10,11 +10,17 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 
 
 export const metadata: Metadata = {
     title: "Математика",
     description: "Раздел с ссылками на другие разделы математики",
+    keywords: ["математика", "геометрия"],
+
+    openGraph: getDefaultOpenGraph({
+        description: "Раздел математики"
+    }),
 }
 
 

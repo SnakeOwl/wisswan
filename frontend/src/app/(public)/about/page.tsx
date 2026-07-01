@@ -1,4 +1,5 @@
 import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import { Metadata } from "next"
 import Image from "next/image";
 import Link from "next/link"
@@ -8,19 +9,20 @@ export const metadata: Metadata = {
     title: "О проекте",
     description: "Краткая информация о проекте",
     keywords: ["О проекте", "технический стек", "используемые технологии", "описание проекта"],
+
+    openGraph: getDefaultOpenGraph({
+        description: "О проекте"
+    }),
 }
 
 
 export default async function Page() {
-
-
-
     return (
         <main className="container-v1">
             <p>Изначально сайт планировался как портал для технических специалистов. Но&nbsp;у&nbsp;сил свыше было своё мнение.</p>
 
             <LogosBlock />
-            
+
             <UsedTecnologies />
         </main>
     )
@@ -64,7 +66,7 @@ const UsedTecnologies = () => {
 
     return (
         <section className="flex flex-col gap-2">
-            <ContentDividerV1>
+            <ContentDividerV1 className="my-4">
                 <h2 className="font-bold text-2xl text-nowrap">Используемые технологии</h2>
             </ContentDividerV1>
 
@@ -93,7 +95,7 @@ const UsedTecnologies = () => {
 
 const LogosBlock = () => (
     <section>
-        <ContentDividerV1>
+        <ContentDividerV1 className="my-4">
             <h2 className="font-bold text-2xl text-nowrap">Логотипы</h2>
         </ContentDividerV1>
 

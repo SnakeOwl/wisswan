@@ -1,8 +1,18 @@
 import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1"
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph"
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
+export const metadata: Metadata = {
+    title: "Треугольники",
+    description: "Описание треугольников, его формулы, свойства, теоремы",
+    keywords: ['реугольник', "описание треугольников"],
+    openGraph: getDefaultOpenGraph({
+        description: "Треугольники",
+        images: [(process.env.NEXT_PUBLIC_SITE_URL +  'images/storage/Triangle_3.svg')]
+    }),
+}
 
 
 export default async function Page() {
@@ -19,10 +29,6 @@ export default async function Page() {
 }
 
 
-export const metadata: Metadata = {
-    title: "Треугольник",
-    description: "Описание треугольника, свойства треугольника, калькулятор треугольников."
-}
 
 
 const CircleDescription = () => (

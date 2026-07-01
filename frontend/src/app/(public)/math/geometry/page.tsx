@@ -1,9 +1,14 @@
 import { Metadata } from "next"
 import GeometryNavCard from "./_components/GeometryNavCard"
+import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph"
 
 export const metadata: Metadata = {
     title: "Геометрия",
-    description: "Раздел о геометрии. Геометрические фигуры."
+    description: "Раздел о геометрии. Геометрические фигуры.",
+    keywords: ["геометрия", "раздел о геометрии"],
+    openGraph: getDefaultOpenGraph({
+        description: "Раздел геометрии"
+    }),
 }
 
 export default async function Page() {

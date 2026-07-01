@@ -13,7 +13,7 @@ export default function DoomBlock() {
     return (
         <div>
             <ContentDividerV1 className="mb-2">
-                <h3 className="text-nowrap">Играй в DOOM!</h3>
+                <h3 className="text-nowrap font-bold">Играй в DOOM!</h3>
             </ContentDividerV1>
 
             {showPlayer ? (
