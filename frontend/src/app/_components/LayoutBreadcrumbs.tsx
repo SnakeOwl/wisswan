@@ -19,6 +19,7 @@ const translatedSegments: Record<string, string> = {
     triangle: "Треугольник",
     login: "Вход",
     help: "Связь с админом",
+    order: "Форма заказа"
 }
 
 
@@ -55,7 +56,7 @@ export default function LayoutBreadcrumbs() {
     return (
         <div className='flex flex-row gap-4 w-full items-center my-4'>
             <div className="hidden xl:block border-b border-neutral-500 w-full"></div>
-            <div className="px-2 xl:px-0 flex flex-wrap xl:flex-nowrap flex-row gap-1 font-heading items-center text-2xl">
+            <div className="px-2 xl:px-0 flex flex-wrap xl:flex-nowrap flex-row gap-1 font-heading items-center text-lg xl:text-2xl">
                 {breadcrumbs.map((el, index) => (
                     <React.Fragment key={index}>
                         {(index > 0) &&

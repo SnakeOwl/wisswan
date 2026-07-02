@@ -9,6 +9,7 @@ import { SkeletonTable } from "./_components/Skeletons/SkeletonTable";
 import { cn } from "@/lib/utils";
 import CookiesAgreement from "./_components/CookiesAgreement";
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 // дефолтные шрифты
 const pt_sans = PT_Sans({
@@ -36,15 +37,17 @@ export default async function RootLayout({
             <UserProvider>
                 <body className={`${pt_sans.className}  antialiased`}>
                     <ToastProvider>
-                        <div className="relative w-full min-h-screen flex flex-col">
-                            <Suspense fallback={<SkeletonTable cols={3} rows={1} />}>
-                                <Header />
-                            </Suspense>
+                        <TooltipProvider>
+                            <div className="relative w-full min-h-screen flex flex-col">
+                                <Suspense fallback={<SkeletonTable cols={3} rows={1} />}>
+                                    <Header />
+                                </Suspense>
 
-                            {children}
-                        </div>
+                                {children}
+                            </div>
 
-                        {modal}
+                            {modal}
+                        </TooltipProvider>
                     </ToastProvider>
 
                     <Suspense>
@@ -64,7 +67,7 @@ export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "/"),
     applicationName: process.env.NEXT_PUBLIC_APP_NAME,
     manifest: process.env.NEXT_PUBLIC_SITE_URL + "manifest.json",
-    
+
     title: {
         template: `%s / ${process.env.NEXT_PUBLIC_APP_NAME}`,
         default: `${process.env.NEXT_PUBLIC_APP_NAME}`

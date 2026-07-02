@@ -37,7 +37,7 @@ export default async function Page() {
 const TriangleDescription = () => (
     <section id="CircleDescription">
         <ContentDividerV1 className='my-4'>
-            <h2 className="text-2xl xl:text-nowrapmx-auto">Общие сведения</h2>
+            <h2 className="text-2xl xl:text-nowrap mx-auto">Общие сведения</h2>
         </ContentDividerV1>
 
         <div className="flex flex-col xl:flex-row ">

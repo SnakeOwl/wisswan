@@ -6,6 +6,7 @@ import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonStyled from "@/app/_components/buttons/ButtonStyled";
+import { useRouter } from "next/navigation";
 
 export function CardsWithGlowingEffectBox() {
 
@@ -137,6 +138,7 @@ export function CardsWithGlowingEffectBox() {
 
 
 const NextjsEvervaultCard = () => {
+    const router = useRouter();
 
     return (
         <div className="w-full border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start mx-auto p-6 relative ">
@@ -177,6 +179,7 @@ const NextjsEvervaultCard = () => {
                 <ButtonStyled
                     className="px-2 py-1 rounded"
                     theme="red-reversed"
+                    onClick={() => router.push('/order')}
                 >
                     Заказать
                 </ButtonStyled>
@@ -200,6 +203,8 @@ interface GridItemProps {
 }
 
 const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref }: GridItemProps) => {
+    const router = useRouter();
+
     return (
         <li className={`list-none`}>
             <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3">
@@ -260,6 +265,7 @@ const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref }: G
                             <ButtonStyled
                                 className="px-2 py-1 rounded"
                                 theme="red-reversed"
+                                onClick={() => router.push('/order')}
                             >
 
                                 Заказать
