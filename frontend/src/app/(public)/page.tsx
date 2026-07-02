@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 
 export default async function Page() {
     return (
-        <main className='flex flex-col gap-12 py-12'>
-            <section>
+        <main className='flex flex-col gap-12 pt-4'>
+            <section data-nosnippet>
                 <RainWithTextBlock />
             </section>
 
@@ -30,16 +30,15 @@ export default async function Page() {
 
             <WorkSteps />
 
-            <section data-nosnippet className='container-v1 hidden lg:block'>
-                <DoomBlock />
-            </section>
-
             <section data-nosnippet className='container-v1'>
                 <Suspense>
                     <ReviewsBlock />
                 </Suspense>
             </section>
 
+            <section data-nosnippet className='container-v1 hidden lg:block'>
+                <DoomBlock />
+            </section>
 
             <SchemaOrg />
         </main>

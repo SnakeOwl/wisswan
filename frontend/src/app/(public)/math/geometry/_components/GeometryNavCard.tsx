@@ -37,8 +37,9 @@ export default function GeometryNavCard({
                 inactiveZone={0.01}
             />
 
-            <div className="group  p-4   flex flex-row gap-4">
+            <div className="group p-4 flex flex-col xl:flex-row gap-4">
                 <Image
+                className="mx-auto xl:mx-0"
                     src={card.imageSrc}
                     alt={card.imageAlt}
                     width={200}
@@ -73,7 +74,7 @@ type HastagLinkProps = ComponentProps<typeof Link>;
 
 const HastagLink = (props: HastagLinkProps) => (
     <Link {...props}
-        className={`py-1 px-2 text-sm rounded-sm
+        className={`py-1 px-2 text-xs xl:text-sm rounded-sm
             bg-linear-to-r from-cyan-100 via-sky-100 to-blue-50
             hover:text-white hover:from-cyan-400 hover:via-sky-400 hover:to-blue-300 duration-100
             `}

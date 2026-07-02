@@ -17,12 +17,15 @@ export const metadata: Metadata = {
 
 export default async function Page() {
     return (
-        <main>
-            <CircleDescription />
+        <main className="grid gap-4">
+            <TriangleDescription />
 
             <RightTriangleFormulas />
+
             <Theorems />
-            <CircleFullDescription />
+
+            <TriangleFullDescription />
+
             <EqualitySigns />
         </main>
     )
@@ -31,17 +34,17 @@ export default async function Page() {
 
 
 
-const CircleDescription = () => (
+const TriangleDescription = () => (
     <section id="CircleDescription">
         <ContentDividerV1 className='my-4'>
-            <h2 className="text-2xl text-nowrap">Общие сведения</h2>
+            <h2 className="text-2xl xl:text-nowrapmx-auto">Общие сведения</h2>
         </ContentDividerV1>
 
-        <div>
+        <div className="flex flex-col xl:flex-row ">
             <Image
                 className="float-left lg:mr-4"
                 src="/images/storage/triangle_description_1.svg"
-                width={400} height={400}
+                width={300} height={300}
                 alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
                 unoptimized
             />
@@ -61,17 +64,17 @@ const CircleDescription = () => (
 )
 
 
-const CircleFullDescription = () => (
+const TriangleFullDescription = () => (
     <section id="CircleFullDescription">
         <ContentDividerV1 className='my-4'>
             <h2 className="text-2xl text-nowrap">Подробные сведения</h2>
         </ContentDividerV1>
 
-        <div>
+        <div className="flex flex-col xl:flex-row">
             <Image
                 className="float-left lg:mr-4"
                 src="/images/storage/triangle_description_1.svg"
-                width={400} height={400}
+                width={300} height={300}
                 alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
                 unoptimized
             />
@@ -109,7 +112,7 @@ const Theorems = () => (
             <li>Если в&nbsp;прямоугольном треугольнике катет равен половине гипотенузы, то&nbsp;этот катет лежит против угла в&nbsp;30&deg;.</li>
 
             <li className="list-none">
-                <div className="flex xl:flex-row border rounded-md p-2">
+                <div className="flex flex-col xl:flex-row border rounded-md p-2">
                     <Image
                         src="/images/storage/Triangle_2.svg"
                         width={200} height={200}
@@ -125,7 +128,7 @@ const Theorems = () => (
             </li>
             <li><span className="font-bold">Теорема косинусов:</span> квадрат стороны треугольника равен сумме квадратов двух других сторон минус удвоенное произведение этих сторон на&nbsp;косинус угла между ними.</li>
             <li>
-                <div className="flex xl:flex-row xl:flex-nowrap gap-4 border rounded-md p-2">
+                <div className="flex flex-col xl:flex-row xl:flex-nowrap gap-4 border rounded-md p-2">
                     <Image
                         src="/images/storage/circle_triangle_1.svg"
                         width={300} height={300}
@@ -134,7 +137,7 @@ const Theorems = () => (
                     />
                     <div>
                         <p><span className="font-bold">Теорема синусов:</span> стороны треугольника пропорциональны синусу противолежащих углов. Кроме того, это отношение равно диаметру окружности, описанной вокруг этого треугольника:</p>
-                        <div className="text-2xl"><span className="text-blue-600">a</span> / sin(<span className="text-green-600">α</span>) == <span className="text-blue-600">b</span> / sin(<span className="text-green-600">β</span>) == <span className="text-blue-600">c</span> / sin(<span className="text-green-600">γ</span>) == 2<span className="text-red-600">R</span></div>
+                        <div className="text-md xl:text-2xl"><span className="text-blue-600">a</span> / sin(<span className="text-green-600">α</span>) == <span className="text-blue-600">b</span> / sin(<span className="text-green-600">β</span>) == <span className="text-blue-600">c</span> / sin(<span className="text-green-600">γ</span>) == 2<span className="text-red-600">R</span></div>
                     </div>
                 </div>
             </li>
@@ -146,7 +149,7 @@ const Theorems = () => (
 const EqualitySigns = () => (
     <section id="EqualitySigns">
         <ContentDividerV1 className='my-2'>
-            <h4 className="text-lg text-nowrap">Тризнаки равенства треугольников</h4>
+            <h4 className="text-lg text-wrap xl:text-nowrap">Тризнаки равенства треугольников</h4>
         </ContentDividerV1>
 
         <ul className="space-y-2">
@@ -155,8 +158,8 @@ const EqualitySigns = () => (
             <li><b>Третий признак (по&nbsp;трем сторонам)</b>: Если три стороны одного треугольника соответственно равны трем сторонам другого треугольника, то&nbsp;такие треугольники равны.</li>
         </ul>
 
-        <ContentDividerV1 className='my-1'>
-            <h5 className="text-md text-nowrap">Признаки равенства прямоугольных трегольников</h5>
+        <ContentDividerV1 className='mt-4 mb-2'>
+            <h5 className="text-md text-wrap xl:text-nowrap">Признаки равенства прямоугольных трегольников</h5>
         </ContentDividerV1>
 
         <ol className="list-decimal list-inside">
@@ -189,11 +192,11 @@ const RightTriangleFormulas = () => {
     return (
         <section id="RightTriangleFormulas">
             <ContentDividerV1 className='my-2'>
-                <h2 className="text-lg text-nowrap">Формулы прямоугольного треугольника</h2>
+                <h2 className="text-lg text-wrap xl:text-nowrap">Формулы прямоугольного треугольника</h2>
             </ContentDividerV1>
 
-            <div className="flex xl:flex-row gap-4 max-w-4xl mx-auto">
-                <ul className="text-xl flex-1 font-bold space-y-2">
+            <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">
+                <ul className="tex-md xl:text-xl flex-1 font-bold space-y-2">
                     <li>
                         <span className="text-emerald-600">f</span> = <span>&radic;<span className="overline decoration-solid"><span className="text-amber-700">e</span>&sup2; + <span className="text-cyan-700">g</span>&sup2;</span></span>  <span className="font-normal text-base">(Теорема Пифагора)</span>
                     </li>

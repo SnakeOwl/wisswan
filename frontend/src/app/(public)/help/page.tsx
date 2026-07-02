@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
     return (
-        <main>
+        <main className="container-v1">
             <HelpForm />
         </main>
     )

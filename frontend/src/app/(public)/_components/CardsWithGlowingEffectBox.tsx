@@ -104,7 +104,7 @@ export function CardsWithGlowingEffectBox() {
     return (
         <section>
             <ContentDividerV1 className="mb-4">
-                <h1 className="text-2xl text-nowrap font-bold">Создание и поддержка сайтов</h1>
+                <h1 className="text-xl px-2 xl:px-0 xl:text-2xl xl:text-nowrap font-bold mx-auto w-fit">Создание&nbsp;и&nbsp;поддержка сайтов</h1>
             </ContentDividerV1>
 
             <ul className="px-2 xl:px-16 px-2 xl:px-16 grid xl:grid-cols-4 gap-4 lg:gap-4">
@@ -126,8 +126,9 @@ export function CardsWithGlowingEffectBox() {
                     />
                 ))
                 }
-
-                <NextjsEvervaultCard />
+                <div className="px-1">
+                    <NextjsEvervaultCard />
+                </div>
             </ul>
         </section>
 
@@ -138,7 +139,7 @@ export function CardsWithGlowingEffectBox() {
 const NextjsEvervaultCard = () => {
 
     return (
-        <div className="w-full border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start mx-auto p-4 relative ">
+        <div className="w-full border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start mx-auto p-6 relative ">
             <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
             <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
             <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
@@ -146,7 +147,7 @@ const NextjsEvervaultCard = () => {
 
             <EvervaultCard text="Next" />
 
-            <h3 className="dark:text-white text-black mt-4 text-sm">
+            <h3 className="dark:text-white text-black mt-4 text-sm text-wrap">
                 Разработка сайтов на React технологии
             </h3>
 

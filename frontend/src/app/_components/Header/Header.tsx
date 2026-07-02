@@ -26,7 +26,6 @@ const Header = React.memo(() => {
     }
 
     const navItems = [
-        
         {
             name: "Геометрия",
             link: "/math/geometry",
@@ -86,7 +85,7 @@ const Header = React.memo(() => {
                             as={"button"}
                             onClick={() => setIsMobileMenuOpen(false)}
                             variant="primary"
-                            className="w-full"
+                            className="w-fit"
                         >
                             <UserButton />
                         </NavbarButton>

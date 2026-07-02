@@ -34,7 +34,7 @@ const CircleDescription = () => (
             <h2 className="text-2xl text-nowrap">Общие сведения</h2>
         </ContentDividerV1>
 
-        <div>
+        <div className="flex flex-col xl:flex-row">
             <Image
                 className="float-left lg:mr-4"
                 src="/images/storage/circle_description_1.svg"

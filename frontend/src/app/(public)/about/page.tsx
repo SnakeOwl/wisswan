@@ -19,8 +19,6 @@ export const metadata: Metadata = {
 export default async function Page() {
     return (
         <main className="container-v1">
-            <p>Изначально сайт планировался как портал для технических специалистов. Но&nbsp;у&nbsp;сил свыше было своё мнение.</p>
-
             <LogosBlock />
 
             <UsedTecnologies />
