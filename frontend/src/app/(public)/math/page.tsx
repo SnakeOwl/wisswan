@@ -41,6 +41,16 @@ export default async function Page() {
                         </Link>
                     </h3>
                 </ContentDividerV1>
+
+                <ContentDividerV1 className="mb-4">
+                    <h3 className="text-xl font-bold text-nowrap">
+                        <Link href={'/math/algebra'}
+                            className="link-hover underline"
+                        >
+                            Алгебра
+                        </Link>
+                    </h3>
+                </ContentDividerV1>
             </section>
 
             <ShortMultipliesFormulas />

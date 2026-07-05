@@ -36,7 +36,7 @@ export default async function Page() {
                 </Suspense>
             </section>
 
-            <section data-nosnippet className='container-v1 hidden lg:block'>
+            <section data-nosnippet aria-hidden="true" className='container-v1 hidden lg:block'>
                 <DoomBlock />
             </section>
 

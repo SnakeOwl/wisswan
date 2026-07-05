@@ -19,7 +19,9 @@ const translatedSegments: Record<string, string> = {
     triangle: "Треугольник",
     login: "Вход",
     help: "Связь с админом",
-    order: "Форма заказа"
+    order: "Форма заказа",
+    algebra: "Алгебра",
+
 }
 
 
