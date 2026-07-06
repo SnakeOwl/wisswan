@@ -6,7 +6,7 @@ Disallow /admin
 Disallow /personal
 
 # TODO: временно
-Disallow /algebra
+Disallow /math/algebra
 
 
 Sitemap: https://wisswan.tech/sitemap.xml
