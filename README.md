@@ -1,15 +1,10 @@
-
-# Project Title
-
-A brief description of what this project does and who it's for
-
 # Описание
 
 Код сайта wisswan.tech. Backend написан на [Laravel](https://laravel.com/). Frontend написан на [Laravel](https://nextjs.org/).
 
 # Frontend (Next.js)
 
-Весь фронтенд находится в папке **frontend**. Далее инструкции для фронта идут относительно этой папки.
+Весь фронтенд находится в папке `frontend`. Далее инструкции для фронта идут относительно этой папки.
 
 ## Логгирование
 
@@ -29,7 +24,7 @@ npm run test
 
 # Установка
 
-*Если есть готовый дамп базы, кидать его в папку **init-db***
+Если есть готовый дамп базы, кидать его в папку `init-db`
 
 ## Установка / Весь проект / Docker / !!DEV
 
@@ -47,16 +42,13 @@ sudo docker compose -f docker-compose.dev.yml up -d --build
 ```bash
 sudo docker compose up -d --build
 ```
+### Запуск прода на localhost 
+- Нужно в файле `docker-compose.yml` отключить использование 443 порта у nginx. И удалить путь в `volume` для SSL
+- В файле конфига nginx `backend/docker/production/nginx.conf` пошаманить с комментами, чтобы через SSL не пытался работать. Там всё расписано.
 
+### Проверки
 Если всё прошло Хорошо, frontend откроется по пути [localhost](http://localhost). Работу бекенда можно глянуть по пути [localhost/api/test](http://localhost/api/test)
 
-
-## Laravel schedule
-
-Чтобы laravel schedule работал, нужно в crontab прописать примерно такую строку:
-```
-* * * * * docker exec wisswan-backend php /var/www/artisan schedule:run >> /dev/null 2>&1
-```
 
 ## Привязка Telegram бота
 
@@ -67,14 +59,6 @@ sudo docker compose up -d --build
 https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://wisswan.tech/api/webhooks/telegram-input&secret_token=<SECRET>
 ```
 
-
-### Возможные проблемы
-
-#### Неверная конфигурация nginx.
-
-В корне проекта заготовлено 2 файла для nginx. С поддержкой SSL, и без. Для развёртывания на localhost создать **nginx.conf** из файла **nginx.conf.dev**, иначе создавать из **nginx.conf.prod**. 
-
-*Либо единожды менять конфиги, либо создавать ssl для корректной работы на localhost.*
 
 ## Установка / Backend / Ручная
 Создать базу и пользователя к ней. (на примере используется mysql)

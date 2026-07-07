@@ -12,12 +12,19 @@ vendor/**/Tests*
 
 **/*node_modules
 
-**.git
+# Ignore local development files
+.git/
+.gitignore
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
 .idea
-**.gitignore
 **.gitattributes
 **.sass-cache
-.env
+# .env
 # composer.json
 
 *.config.js

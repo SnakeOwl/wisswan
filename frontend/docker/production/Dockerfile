@@ -2,7 +2,7 @@
 # Stage 1: Dependencies Installation Stage
 # ============================================
 
-ARG NODE_VERSION=26.3.0
+ARG NODE_VERSION=24.13.0-slim
 
 FROM node:${NODE_VERSION} AS dependencies
 
@@ -10,14 +10,14 @@ WORKDIR /app
 
 COPY package.json package-lock.json* ./
 
-
+# При сборке Nextjs - standalone приложения флаг --only=production не ставить
 RUN --mount=type=cache,target=/root/.npm \
     --mount=type=cache,target=/usr/local/share/.cache/yarn \
     --mount=type=cache,target=/root/.local/share/pnpm/store \
   if [ -f package-lock.json ]; then \
-    npm ci --no-audit --no-fund; \
+    npm ci --no-audit --no-fund; \ 
   elif [ -f package.json ]; then \
-    npm install; \
+    npm install --no-fund; \
   else \
     echo "No lockfile found." && exit 1; \
   fi
@@ -37,7 +37,7 @@ RUN cp .env.example.docker .env
 
 ENV NODE_ENV=production
 
-RUN npm run build;
+RUN --mount=type=cache,target=/app/.next/cache npm run build;
 
 # ============================================
 # Stage 3: Run Next.js application
@@ -64,12 +64,9 @@ RUN chown node:node .next
 COPY --from=builder --chown=node:node /app/.next/standalone ./
 COPY --from=builder --chown=node:node /app/.next/static ./.next/static
 
-# If you want to persist the fetch cache generated during the build so that
-# cached responses are available immediately on startup, uncomment this line:
-# COPY --from=builder --chown=node:node /app/.next/cache ./.next/cache
+COPY --from=builder --chown=node:node /app/.next/cache ./.next/cache
 
 USER node
-
 EXPOSE 3000
 
 CMD ["node", "server.js"]

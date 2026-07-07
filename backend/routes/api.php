@@ -8,7 +8,7 @@ Route::get('/test', function (Request $request) {
     return 'API is working';
 });
 
-Route::get('/test', function (Request $request) {
+Route::get('/login', function (Request $request) {
     // TODO: можно же вроде либо перехватывать исключение, либо вообще отключить его генерацию.
     return redirect('/login');
 })->name('login');

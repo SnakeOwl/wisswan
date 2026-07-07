@@ -41,7 +41,7 @@ const nextConfig = {
         turbopackFileSystemCacheForDev: true,
 
         serverActions: {
-            allowedOrigins: ['wisswan.tech', 'localhost:3000'],
+            allowedOrigins: ['wisswan.tech', 'localhost', '127.0.0.1'],
         },
     },
     typescript: {
