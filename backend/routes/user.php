@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\Feedback\SupportFormRequestController;
-use App\Http\Controllers\User\Hacks\GetUsedDomainsInHacksController;
-use App\Http\Controllers\User\Hacks\HacksController;
 use App\Http\Controllers\User\Login\LoginController;
 use App\Http\Controllers\User\SiteCrawlersController;
 use App\Http\Controllers\User\TelegramChats\TelegramChatController;
@@ -22,11 +20,6 @@ Route::middleware('auth:sanctum')
             return $request->user();
         });
 
-        Route::apiResource('hacks', HacksController::class)->except(['update']);
-        Route::post('hacks/{hack}', [HacksController::class, 'update']);
-        Route::post('hacks/sync-domens/{hack}', [HacksController::class, 'sync_domains']);
-
-        Route::get('get-used-domains-in-hacks', GetUsedDomainsInHacksController::class);
 
         Route::post('/update/{user}', UpdateUserController::class);
 

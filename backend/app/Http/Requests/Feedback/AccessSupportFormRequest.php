@@ -15,7 +15,6 @@ class AccessSupportFormRequest extends FormRequest
         $user = $this->user();
         $form_request = $this->route("support_form_request");
 
-        // if Hack has no bound to User, then it's anonymous created Hack
         return ($form_request->user_id === null && $user->isAdmin())
             || Gate::forUser($user)->allows('edit-model', $form_request);
     }

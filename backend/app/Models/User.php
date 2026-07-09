@@ -65,11 +65,6 @@ class User extends Authenticatable
         return $this->hasMany(TelegramChat::class);
     }
 
-    public function hacks(): HasMany
-    {
-        return $this->hasMany(Hack::class);
-    }
-
     public function site_crawlers(): HasMany
     {
         return $this->hasMany(SiteCrawler::class);

@@ -43,7 +43,7 @@ export default async function Page() {
             href: "/math/geometry/triangle#RightTriangleFormulas",
             label: "Формулы прямоугольного треугольника"
         }]
-    },{
+    }, {
         imageSrc: "/images/storage/geometry/polygon.svg",
         imageAlt: "Ломаная из четырёх отрезков",
         label: "Многоугольники",
@@ -58,7 +58,7 @@ export default async function Page() {
             href: "/math/geometry/polygonal#PolygonalFormulas",
             label: "Формулы многоугольников"
         },
-    ]
+        ]
     },
     ]
 

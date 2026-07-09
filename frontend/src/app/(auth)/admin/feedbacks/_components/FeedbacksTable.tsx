@@ -40,7 +40,7 @@ export default function FeedbacksTable({
 
                 perPageRef.current = feedbacksPaginate.per_page;
                 setTotalPages(feedbacksPaginate.last_page);
-                setFeedbacks(feedbacksPaginate.data); // user's Hacks
+                setFeedbacks(feedbacksPaginate.data); 
             });
     }, [page, searchParams]);
 

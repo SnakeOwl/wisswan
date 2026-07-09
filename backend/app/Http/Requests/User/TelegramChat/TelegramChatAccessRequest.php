@@ -15,7 +15,6 @@ class TelegramChatAccessRequest extends FormRequest
         $user = $this->user();
         $chat = $this->route("telegram_chat");
 
-        // if Hack has no bound to User, then it's anonymous created Hack
         return $chat->user_id === null
             || Gate::forUser($user)->allows('edit-model', $chat);
     }

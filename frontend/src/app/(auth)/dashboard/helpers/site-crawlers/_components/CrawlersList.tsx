@@ -18,7 +18,7 @@ export default function CrawlersList({
     page: number,
 }) {
     const searchParams = useSearchParams();
-    const [hacks, setHacks] = useState<SiteCrawler[]>([]);
+    const [entities, setEntities] = useState<SiteCrawler[]>([]);
     const [totalPages, setTotalPages] = useState<number>(1);
     const perPageRef = useRef<number>(1);
     const router = useRouter();
@@ -27,15 +27,15 @@ export default function CrawlersList({
     useEffect(() => {
         const sparams = new URLSearchParams(searchParams);
 
-        // FIX: must to get Hacks in useEffect on client side. Otherwise it will cache on SSR.
-        Get(`user/site-crawlers?${sparams.toString()}`).then((hacksPaginate) => {
-            if (hacksPaginate === false)
+        // FIX: must to get entities in useEffect on client side. Otherwise it will cache on SSR.
+        Get(`user/site-crawlers?${sparams.toString()}`).then((entitiesPaginate) => {
+            if (entitiesPaginate === false)
                 throw new Error("Запрос на краулеров оборавался");
 
 
-            perPageRef.current = hacksPaginate.per_page;
-            setTotalPages(hacksPaginate.last_page);
-            setHacks(hacksPaginate.data); // user's Hacks
+            perPageRef.current = entitiesPaginate.per_page;
+            setTotalPages(entitiesPaginate.last_page);
+            setEntities(entitiesPaginate.data); // entities himselfs
         });
     }, [page, searchParams]);
 
@@ -56,7 +56,7 @@ export default function CrawlersList({
 
         <div className="grid gap-4">
             <div className="grid gap-2">
-                {hacks.map((crawler: SiteCrawler) => (
+                {entities.map((crawler: SiteCrawler) => (
                     <div key={crawler.id}
                         className="flex flex-row gap-2 border-b border-neutral-200 py-2 px-1 hover:border-neutral-500"
                     >

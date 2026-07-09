@@ -7,7 +7,6 @@ import React from "react";
 
 const translatedSegments: Record<string, string> = {
     "dashboard": "Панель",
-    "hacks": "Хаки",
     "telegram": "Telegram",
     "personal": "Личные данные",
     "helpers": "Помощники",

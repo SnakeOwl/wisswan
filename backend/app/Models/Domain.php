@@ -26,9 +26,5 @@ class Domain extends Model
 
     // ==== RELATIONS ====
 
-    public function hacks(): BelongsToMany
-    {
-        return $this->belongsToMany(Hack::class);
-    }
     // ---- RELATIONS ----
 }
