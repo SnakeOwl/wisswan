@@ -21,7 +21,7 @@ const translatedSegments: Record<string, string> = {
     help: "Связь с админом",
     order: "Форма заказа",
     algebra: "Алгебра",
-
+    polygonal: "Многоугольник",
 }
 
 

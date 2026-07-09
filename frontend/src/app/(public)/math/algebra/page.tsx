@@ -28,6 +28,8 @@ export const metadata: Metadata = {
 export default async function Page() {
     return (
         <main>
+            <Numbers />
+
             <Drobi />
 
             {/* <FractionalNumbers /> */}
@@ -35,6 +37,38 @@ export default async function Page() {
     )
 }
 
+const Numbers = () => (
+    <section id="Numbers">
+        <ContentDividerV1>
+            <h2 className="w-fit text-2xl text-wrap xl:text-nowrap mt-4 mb-2 ">Числа</h2>
+        </ContentDividerV1>
+
+        <section>
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Дейсвтия над числами</h3>
+            <ul>
+                <li>
+                    <h4 className="mt-4 mb-2 text-lg">Деление</h4>
+                    <p>
+                        <span>
+                            a / b = c
+                        </span> <br />
+                        <span>Где a — <strong>делимое</strong> (число, которое делят)</span> <br />
+                        <span>b — <strong>делитель</strong> (число, на которое делят)</span> <br />
+                        <span>c — <strong>частное</strong> (результат деления)</span> <br />
+                    </p>
+                </li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Формулы и характеристики</h3>
+            <p>
+                <strong>Среднее арифметическое</strong> нескольких чисел — это частное, от деления суммы этих чисел на их количество.
+            </p>
+        </section>
+    </section>
+)
 
 const Drobi = () => {
     return (
@@ -81,7 +115,7 @@ const Drobi = () => {
                                     x умножить на дробь, a деленное на b, равно дроби, в числителе x умножить на a, в знаменателе b.
                                 </span>
 
-                                <strong> - умножение числа на дробь.</strong>
+                                <strong> — умножение числа на дробь.</strong>
                             </div>
 
                             <div className="flex items-center gap-1 text-sm ml-1">
@@ -110,7 +144,7 @@ const Drobi = () => {
                             <span className="sr-only">
                                 Дробь, a деленное на b, умножить на дробь, c деленное на d, равно дроби, в числителе a умножить на c, в знаменателе b умножить на d.
                             </span>
-                            <strong> - умножение дробей</strong>
+                            <strong> — умножение дробей</strong>
                         </div>
                     </li>
                     <li>
@@ -125,7 +159,7 @@ const Drobi = () => {
                                 x плюс дробь, a деленное на b, равно дроби, в числителе x умножить на b плюс a, в знаменателе b.
                             </span>
 
-                            <strong> - сложение числа с дробью</strong>
+                            <strong> — сложение числа с дробью</strong>
                         </div>
                     </li>
                     <li>
@@ -140,7 +174,7 @@ const Drobi = () => {
                                 Дробь, a деленное на b, разделить на дробь, c деленное на d, равно дроби, в числителе a умножить на d, в знаменателе b умножить на c.
                             </span>
 
-                            <strong> - деление дробей</strong>
+                            <strong> — деление дробей</strong>
                         </div>
                     </li>
                     <li>
@@ -156,7 +190,7 @@ const Drobi = () => {
                                     Дробь, a деленное на b, разделить на два равно дроби, в числителе a разделить на два, в знаменателе b.
                                 </span>
 
-                                <strong> - деление дроби на число.</strong>
+                                <strong> — деление дроби на число.</strong>
                             </div>
 
                             <div className="flex items-center text-sm ml-1">
@@ -188,7 +222,7 @@ const Drobi = () => {
                                 Одна целая семь пятнадцатых минус одна целая десять пятнадцатых равно минус три пятнадцатых.
                             </span>
 
-                            <strong> - смещение отрицания дробей</strong>
+                            <strong> — смещение отрицания дробей</strong>
                         </div>
                     </li>
                 </ul>
@@ -636,6 +670,9 @@ const Drobi = () => {
         </section>
     )
 }
+
+
+
 
 
 const FractionalNumbers = () => (

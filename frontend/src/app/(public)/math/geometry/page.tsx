@@ -43,6 +43,18 @@ export default async function Page() {
             href: "/math/geometry/triangle#RightTriangleFormulas",
             label: "Формулы прямоугольного треугольника"
         }]
+    },{
+        imageSrc: "/images/storage/geometry/polygon.svg",
+        imageAlt: "Ломаная из четырёх отрезков",
+        label: "Многоугольники",
+        link: `/math/geometry/polygonal`,
+        sublinks: [{
+            href: "/math/geometry/polygonal#PolygonalLine",
+            label: "Ломаная"
+        }, {
+            href: "/math/geometry/polygonal#Polygonal",
+            label: "Многоугольники"
+        }]
     },
     ]
 
