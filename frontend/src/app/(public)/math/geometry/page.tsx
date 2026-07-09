@@ -54,7 +54,11 @@ export default async function Page() {
         }, {
             href: "/math/geometry/polygonal#Polygonal",
             label: "Многоугольники"
-        }]
+        }, {
+            href: "/math/geometry/polygonal#PolygonalFormulas",
+            label: "Формулы многоугольников"
+        },
+    ]
     },
     ]
 
