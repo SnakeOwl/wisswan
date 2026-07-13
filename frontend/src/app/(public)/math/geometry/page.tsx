@@ -59,6 +59,16 @@ export default async function Page() {
             label: "Формулы многоугольников"
         },
         ]
+    },{
+        imageSrc: "/images/storage/geometry/rectangular_parallelepiped.svg",
+        imageAlt: "Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c.",
+        label: "Трёхмерные фигуры",
+        link: `/math/geometry/3d`,
+        sublinks: [{
+            href: "/math/geometry/3d#RectangularParallelepiped",
+            label: "Прямоугольный параллелепипед"
+        }
+        ]
     },
     ]
 

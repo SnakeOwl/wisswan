@@ -40,7 +40,7 @@ export default async function Page() {
 const Numbers = () => (
     <section id="Numbers">
         <ContentDividerV1>
-            <h2 className="w-fit text-2xl text-wrap xl:text-nowrap mt-4 mb-2 ">Числа</h2>
+            <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Числа</h2>
         </ContentDividerV1>
 
         <section>
@@ -74,7 +74,7 @@ const Drobi = () => {
     return (
         <section id="Drobi">
             <ContentDividerV1>
-                <h2 className="w-fit text-2xl text-wrap xl:text-nowrap mt-4 mb-2 ">Дроби</h2>
+                <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Дроби</h2>
             </ContentDividerV1>
 
             <section>

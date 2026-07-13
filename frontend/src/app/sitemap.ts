@@ -21,17 +21,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.5
         },
         {
-            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry`,
-            lastModified: '2026-07-09T00:00:00.000Z',
-            changeFrequency: 'weekly',
-            priority: 0.5,
-            images: [
-                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/circle_description_1.svg`,
-                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/Triangle_3.svg`,
-                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/polygonal_line.svg`,
-            ],
-        },
-        {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/algebra`,
             lastModified: '2026-07-09T12:00:00.000Z',
             changeFrequency: 'weekly',
@@ -39,6 +28,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             /*images: [
                 
             ],*/
+        },
+        {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry`,
+            lastModified: '2026-07-13T00:00:00.000Z',
+            changeFrequency: 'weekly',
+            priority: 0.5,
+            images: [
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/circle_description_1.svg`,
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/Triangle_3.svg`,
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/polygonal_line.svg`,
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/rectangular_parallelepiped.svg`,
+            ],
+        },
+        {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/3d`,
+            lastModified: '2026-07-13T00:00:00.000Z',
+            changeFrequency: 'weekly',
+            priority: 0.6,
+            images: [
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/rectangular_parallelepiped.svg`,
+            ],
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/polygonal`,
