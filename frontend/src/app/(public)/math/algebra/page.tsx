@@ -44,7 +44,7 @@ const Numbers = () => (
         </ContentDividerV1>
 
         <section>
-            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Дейсвтия над числами</h3>
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Действия над числами</h3>
             <ul>
                 <li>
                     <h4 className="mt-4 mb-2 text-lg">Деление</h4>
@@ -249,7 +249,9 @@ const Drobi = () => {
                     <span className="sr-only">
                         Дробь пять девятых
                     </span>
-                    и
+
+                    <span>и</span> 
+
                     {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
                     <div aria-hidden="true" className="xl:text-xl">
                         <InlineMath math={"\\frac{2}{15}"} />
@@ -332,7 +334,7 @@ const Drobi = () => {
                 <p>При вычитании дробей с одинаковыми знаменателями из числителя уменьшаемого вычитают числитель вычитаемого, знаменатель оставить. Алгоритм такой:</p>
 
                 <ol className="list-decimal list-inside">
-                    <li>Вычесть из числителя уменьшаемого числитель вычитаемого иразность записать в числитель новой дроби.</li>
+                    <li>Вычесть из числителя уменьшаемого числитель вычитаемого и разность записать в числитель новой дроби.</li>
                     <li>В знаменатель новой дроби записать прежний знаменатель.</li>
                     <li>По возможности:
                         <ul className="list-disc list-inside pl-4">
@@ -361,7 +363,7 @@ const Drobi = () => {
 
             <section>
                 <h3 className="mt-4 mb-2 text-xl">Правило сложения | вычитания дробей с разными знаменателями</h3>
-                <p>Чтобы выполнить сложение | вычитание дробей с разными знаменателями, нужно привести их кобщему знаменателю, азатем применить правило сложения | вычитания дробей с одинаковыми знаменателями.</p>
+                <p>Чтобы выполнить сложение | вычитание дробей с разными знаменателями, нужно привести их к общему знаменателю, а затем применить правило сложения | вычитания дробей с одинаковыми знаменателями.</p>
 
                 <p>Пример:</p>
                 {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
@@ -383,10 +385,10 @@ const Drobi = () => {
                 <p>При сложении | вычитании смешанных чисел целые и дробные части складываются | вычитаются отдельно:</p>
                 <div className="w-full overflow-x-auto">
                     <Table className="text-base table-fixed w-full min-w-[600px] xl:max-w-[1000px] mx-auto overflow-x-scroll">
-                        <TableCaption>Примеры сложения | ивычитания смешанных чисел</TableCaption>
+                        <TableCaption>Примеры сложения | и вычитания смешанных чисел</TableCaption>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="font-bold">Сложение | вычитание смешаных чисел</TableHead>
+                                <TableHead className="font-bold">Сложение | вычитание смешанных чисел</TableHead>
                                 <TableHead className="font-bold w-[250px]">Пример</TableHead>
                             </TableRow>
                         </TableHeader>
