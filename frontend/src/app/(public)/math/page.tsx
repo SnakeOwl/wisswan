@@ -62,22 +62,27 @@ export default async function Page() {
 const ShortMultipliesFormulas = () => {
     const formulas = [
         {
-            formula: <span>(a + b)&sup2; = a&sup2; + 2ab + b&sup2;</span>,
+            formula: <span><strong>(a + b)&sup2; = a&sup2; + 2ab + b&sup2;</strong> =<br />
+                (a + b)(a + b) = <br />
+                a&sup2; + ab + ba + b&sup2;
+            </span>,
             description: "Квадрат суммы"
         }, {
-            formula: <span>a&sup2; - b&sup2; = (a - b)(a + b)</span>,
+            formula: <span><strong>a&sup2; - b&sup2; = (a - b)(a + b)</strong> = <br />
+                a&sup2; - ab + ba - b&sup2;
+            </span>,
             description: "Разность квадратов"
         }, {
-            formula: <span>(a + b)&sup3; = a&sup3; + 3a&sup2;b + 3ab&sup2; + b&sup3;</span>,
+            formula: <span><strong>(a + b)&sup3; = a&sup3; + 3a&sup2;b + 3ab&sup2; + b&sup3;</strong></span>,
             description: "Куб суммы"
         }, {
-            formula: <span>(a - b)&sup3; = a&sup3; - 3a&sup2;b + 3ab&sup2; - b&sup3;</span>,
+            formula: <span><strong>(a - b)&sup3; = a&sup3; - 3a&sup2;b + 3ab&sup2; - b&sup3;</strong></span>,
             description: "Куб разности"
         }, {
-            formula: <span>a&sup3; - b&sup3; = (a - b)(a&sup2; + ab + b&sup2;)</span>,
+            formula: <span><strong>a&sup3; - b&sup3; = (a - b)(a&sup2; + ab + b&sup2;)</strong></span>,
             description: "Разложение разности кубов"
         }, {
-            formula: <span>a&sup3; + b&sup3; = (a + b)(a&sup2; - ab + b&sup2;)</span>,
+            formula: <span><strong>a&sup3; + b&sup3; = (a + b)(a&sup2; - ab + b&sup2;)</strong></span>,
             description: "Разложение суммы кубов"
         }
     ];
@@ -85,7 +90,7 @@ const ShortMultipliesFormulas = () => {
     return (
         <section>
             <ContentDividerV1>
-                <h3 className="text-2xl font-bold mb-4 text-nowrap">Формулы сокращённого умножения</h3>
+                <h3 className="text-2xl font-bold text-nowrap">Формулы сокращённого умножения</h3>
             </ContentDividerV1>
 
             <div className="flex">
@@ -100,7 +105,7 @@ const ShortMultipliesFormulas = () => {
                     <TableBody>
                         {formulas.map((el, index) => (
                             <TableRow key={index}>
-                                <TableCell className="font-bold text-xl">{el.formula}</TableCell>
+                                <TableCell className="text-xl">{el.formula}</TableCell>
                                 <TableCell>{el.description}</TableCell>
                             </TableRow>
                         ))}

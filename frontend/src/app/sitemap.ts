@@ -16,13 +16,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math`,
-            lastModified: '2026-07-06T12:00:00.000Z',
+            lastModified: '2026-07-14T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.5
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/algebra`,
-            lastModified: '2026-07-09T12:00:00.000Z',
+            lastModified: '2026-07-14T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.5,
             /*images: [

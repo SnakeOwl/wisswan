@@ -30,12 +30,82 @@ export default async function Page() {
         <main>
             <Numbers />
 
+            <Algoritsm />
+
             <Drobi />
 
             {/* <FractionalNumbers /> */}
         </main>
     )
 }
+
+
+const Algoritsm = () => (
+    <section id="Numbers">
+        <ContentDividerV1>
+            <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Алгоритмы</h2>
+        </ContentDividerV1>
+
+        <section>
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Нахождение наибольшего общего делителя НОД</h3>
+            <section>
+                <h4 className="mt-4 mb-2 text-lg">Школьный метод</h4>
+                <ol className="list-decimal list-inside">
+                    <li>Разложить каждое из чисел на простые множители.</li>
+                    <li>Выписать все общие множители (те, которые входят в каждое из полученных разложений).</li>
+                    <li>Найти произведение этих общих множителей.</li>
+                </ol>
+
+                <p className="font-bold">Пример:</p>
+                <ol className="list-decimal list-inside">Найти НОД(48, 72, 96)
+                    <li>
+                        Разлаживаю числа на простые множители: <br />
+                        48 = <b>2 * 2 * 2</b> * 2 * <b>3</b><br />
+                        72 = <b>2 * 2 * 2</b> * 3 * <b>3</b><br />
+                        96 = <b>2 * 2 * 2</b> * 2 * 2 * <b>3</b>
+                    </li>
+                    <li>
+                        Выписываю общие множители (те, которые входят в каждое из полученных разложений): <br />
+                        <b>2 * 2 * 2 * 3</b>
+                    </li>
+                    <li> Нахожу произведение общих множителей: <b>2 * 2 * 2 * 3</b> = 24</li>
+                </ol>
+            </section>
+        </section>
+
+        <section>
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Нахождение наименьшего общего кратного НОК</h3>
+            <section>
+                <h4>Школьный метод</h4>
+                <ol className="list-decimal list-inside">
+                    <li>Разложить каждое из чисел на простые множители.</li>
+                    <li>Записать разложение одного из чисел и дополнить его теми множителями из остальных разложений, которых нет в записанном произведении.</li>
+                    <li>Вычислить записанное произведение.</li>
+                </ol>
+
+                <p className="font-bold">Пример:</p>
+                <ol className="list-decimal list-inside">Найти НОК(48, 72, 96)
+                    <li>
+                        Разлаживаю числа на простые множители: <br />
+                        48 = 2 * 2 * 2 * 2 * 3<br />
+                        72 = 2 * 2 * 2 * 3 * 3<br />
+                        96 = 2 * 2 * 2 * 2 * 2 * 3
+                    </li>
+                    <li>
+                        Выписываю числа самого большого числа: <br />
+                        <b>2 * 2 * 2 * 2 * 2 * 3</b> <br />
+                        Сравниваю с оставшимися числами и дописываю то, чего не хватает. <br />
+                        в случае с 48 все множители уже есть. <br />
+                        В случае с 72 не хватает тройки. Добавляю тройку в набор? <br />
+                        <b>2 * 2 * 2 * 2 * 2 * 3 * 3</b>
+                    </li>
+                    <li>Нахожу произведение общих множителей: <b>2 * 2 * 2 * 3</b> = 24</li>
+                </ol>
+            </section>
+        </section>
+    </section>
+)
+
 
 const Numbers = () => (
     <section id="Numbers">
@@ -47,14 +117,70 @@ const Numbers = () => (
             <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Действия над числами</h3>
             <ul>
                 <li>
+                    <h4 className="mt-4 mb-2 text-lg">Сложение</h4>
+                    <b>
+                        a + b = c
+                    </b> <br />
+                    <span>Где a — <strong>слагаемое</strong> (число, для сложения)</span> <br />
+                    <span>b — <strong>слагаемое</strong> (число, для сложения)</span> <br />
+                    <span>c — <strong>сумма</strong> (результат сложения)</span> <br />
+                </li>
+                <li>
+                    <h4 className="mt-4 mb-2 text-lg">Вычитание</h4>
+                    <b>
+                        a - b = c
+                    </b> <br />
+                    <span>Где a — <strong>уменьшаемое</strong> (число, которое уменьшают)</span> <br />
+                    <span>b — <strong>вычитаемое</strong> (число, НА которое уменьшают)</span> <br />
+                    <span>c — <strong>разность</strong> (результат сложения)</span> <br />
+                </li>
+                <li>
+                    <h4 className="mt-4 mb-2 text-lg">Умножение</h4>
+                    <b>
+                        a * b = c
+                    </b> <br />
+                    <span>Где a — <strong>множитель</strong> (число, которое умножают)</span> <br />
+                    <span>b — <strong>множитель</strong> (число, которое умножают)</span> <br />
+                    <span>c — <strong>произведение</strong> (результат сложения)</span> <br />
+                </li>
+                <li>
                     <h4 className="mt-4 mb-2 text-lg">Деление</h4>
                     <p>
-                        <span>
+                        <b>
                             a / b = c
-                        </span> <br />
+                        </b> <br />
                         <span>Где a — <strong>делимое</strong> (число, которое делят)</span> <br />
                         <span>b — <strong>делитель</strong> (число, на которое делят)</span> <br />
                         <span>c — <strong>частное</strong> (результат деления)</span> <br />
+                    </p>
+                </li>
+                <li>
+                    <h4 className="mt-4 mb-2 text-lg">Деление с остатком</h4>
+                    <p>
+                        <b>
+                            a / b = c + d
+                        </b> <br />
+                        <span>Где a — <strong>делимое</strong> (число, которое делят)</span> <br />
+                        <span>b — <strong>делитель</strong> (число, на которое делят)</span> <br />
+                        <span>c — <strong>неполное частное</strong> (результат деления, частная часть)</span> <br />
+                        <span>d — <strong>остаток от деления</strong> (результат деления, остаток)</span> <br />
+                    </p>
+                    <p>Делить число a, на число b — значит найти такие числа c и d, что a = b * c + d, причём d &lt; b </p>
+                </li>
+                <li>
+                    <h4 className="mt-4 mb-2 text-lg">Возведение в степень</h4>
+                    <p>Число <b>a</b> называют <strong>основанием степени</strong>, число <b>n</b> - <strong>показателем степени</strong>.</p>
+
+                    <p className="font-bold">
+                        a<sup>n</sup> = a * a * a ... a<sub>n</sub>
+                    </p>
+                    <p className="text-sm">Пример: 5<sup>5</sup> = 5 * 5 * 5 * 5 * 5 = 3125</p>
+                </li>
+
+                <li>
+                    <h4 className="mt-4 mb-2 text-lg">Раскрытие скобок</h4>
+                    <p>Если перед скобками стоит - , то каждый чел в скобках нужно умножить на -1: <br />
+                        <b>a - (b - c) = a - b + c</b>
                     </p>
                 </li>
             </ul>
@@ -64,7 +190,41 @@ const Numbers = () => (
         <section>
             <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Формулы и характеристики</h3>
             <p>
+                <strong>Простым числом</strong> называют число, которое имеет <b>только два различных делителя</b>.
+            </p>
+            <p>
+                <strong>Составным числом</strong> называют число, которое имеет <b>более двух делителей</b>.
+            </p>
+            <p>
+                Два натуральных числа называют <strong>взаимно простыми</strong>, если их наибольший общий делитель равен 1.
+            </p>
+            <p>
                 <strong>Среднее арифметическое</strong> нескольких чисел — это частное, от деления суммы этих чисел на их количество.
+            </p>
+            <p>
+                <strong>Делителем числа</strong> a называется то число, на которое делится данное число a без остатка.
+            </p>
+            <p>
+                <strong>Общим делителем чисел</strong> a и b называется число, на которое делятся два данных числа a и b без остатка.
+            </p>
+            <p>
+                <strong>Наибольшим общим делителем чисел</strong> a и b (<b>НОД(a, b)</b>) называется наибольшее число, на которое делятся два данных числа a и b без остатка.
+            </p>
+            <p>
+                <strong>Кратным числа</strong> a называется число, которое делится на данное число a без остатка.
+            </p>
+            <p>
+                <strong>Общим кратным чисел</strong> a и b называется число, которое делится на числа a и b без остатка.
+            </p>
+            <p>
+                <strong>Наименьшим общим кратным натуральных чисел</strong> a и b <b>(НОК(a, b))</b> называется наименьшее натуральное число, которое делится на два данных числа без остатка.
+            </p>
+            <p>
+                <strong>Числовое выражение</strong> — выражение, которое содержит в себе: <b>числа, знаки действий, скобки</b>. Если в числовых выражениях содержатся ещё <strong>переменные</strong>, то выражения называются <strong>переменными</strong>.
+            </p>
+            <p>
+                <strong>Уравнением</strong> называется равенство, содержащее переменную. <strong>Корнем уравнения</strong> называется значение переменной (число), подстановка которого в уравнение даёт верное числовое равенство. <br />
+                <strong>Решить уравнение</strong> — значит найти все его корни или доказать, что уравнение не имеет корней.
             </p>
         </section>
     </section>
@@ -98,7 +258,7 @@ const Drobi = () => {
 
             <section>
                 <ContentDividerV1>
-                    <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Действия над дробями</h3>
+                    <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Действия над дробями</h3>
                 </ContentDividerV1>
 
                 <ul className="space-y-2">
@@ -250,7 +410,7 @@ const Drobi = () => {
                         Дробь пять девятых
                     </span>
 
-                    <span>и</span> 
+                    <span>и</span>
 
                     {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
                     <div aria-hidden="true" className="xl:text-xl">
@@ -680,12 +840,12 @@ const Drobi = () => {
 const FractionalNumbers = () => (
     <section>
         <ContentDividerV1>
-            <h2 className="w-fit text-wrap xl:text-nowrap mt-4 mb-2 ">Действия над дробными числами</h2>
+            <h2 className="w-fit text-wrap xl:text-nowrap">Действия над дробными числами</h2>
         </ContentDividerV1>
 
         <section>
             <ContentDividerV1>
-                <h3 className="w-fit text-wrap xl:text-nowrap mt-4 mb-2 ">Деление дробных чисел</h3>
+                <h3 className="w-fit text-wrap xl:text-nowrap">Деление дробных чисел</h3>
             </ContentDividerV1>
 
             <section>
