@@ -58,6 +58,14 @@ sudo docker compose -f docker-compose.dev.yml up -d --build
 ```bash
 sudo docker compose up -d --build
 ```
+
+!!! ВАЖНО: в первый старт перегенерируй ключи через php-cli:
+```bash
+php artisan passport:keys --force
+```
+Если вообще без них, то `php artisan` вообще не работает. Ключи используются из файла `.env`.
+
+
 ### Запуск прода на localhost 
 - Нужно в файле `docker-compose.yml` отключить использование 443 порта у nginx. И удалить путь в `volume` для SSL
 - В файле конфига nginx `backend/docker/production/nginx.conf` пошаманить с комментами, чтобы через SSL не пытался работать. Там всё расписано.

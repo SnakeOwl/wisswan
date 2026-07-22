@@ -42,7 +42,7 @@ services:
       - laravel-storage-production:/var/www/storage # Mount the storage volume
     env_file:
       - ./backend/.env
-    networks:
+    networks: 
       - wisswan-production
     healthcheck:
       test: ["CMD-SHELL", "php-fpm-healthcheck || exit 1"]
@@ -72,44 +72,44 @@ services:
     networks:
       - wisswan-production
 
-  laravel-queue:
-    build:
-      context: ./backend
-      dockerfile: ./docker/common/php-fpm/Dockerfile
-      target: production
-    restart: unless-stopped
-    # --tries=2 Если задача упапа, то попробует ещё раз её выполнить
-    # --timeout=20 Если задача выполняется более 20-ти секунд, то ложить её
-    # Переопределяем дефолтную команду php-fpm на запуск воркера Laravel
-    command: php artisan queue:work --verbose --tries=2 --timeout=20
-    env_file:
-      - ./backend/.env
-    volumes:
-      - laravel-storage-production:/var/www/storage
-    networks:
-      - wisswan-production
-    depends_on:
-      db:
-        condition: service_healthy
+  # laravel-queue:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: ./docker/common/php-fpm/Dockerfile
+  #     target: production
+  #   restart: unless-stopped
+  #   # --tries=2 Если задача упапа, то попробует ещё раз её выполнить
+  #   # --timeout=20 Если задача выполняется более 20-ти секунд, то ложить её
+  #   # Переопределяем дефолтную команду php-fpm на запуск воркера Laravel
+  #   command: php artisan queue:work --verbose --tries=2 --timeout=20
+  #   env_file:
+  #     - ./backend/.env
+  #   volumes:
+  #     - laravel-storage-production:/var/www/storage
+  #   networks:
+  #     - wisswan-production
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
 
-  laravel-schedule:
-    build:
-      context: ./backend
-      dockerfile: ./docker/common/php-fpm/Dockerfile
-      target: production
-    tty: true
-    restart: always
-    # Переопределяем дефолтную команду php-fpm на запуск воркера Laravel
-    command: php artisan schedule:work
-    env_file:
-      - ./backend/.env
-    volumes:
-      - laravel-storage-production:/var/www/storage
-    networks:
-      - wisswan-production
-    depends_on:
-      db:
-        condition: service_healthy
+  # laravel-schedule:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: ./docker/common/php-fpm/Dockerfile
+  #     target: production
+  #   tty: true
+  #   restart: always
+  #   # Переопределяем дефолтную команду php-fpm на запуск воркера Laravel
+  #   command: php artisan schedule:work
+  #   env_file:
+  #     - ./backend/.env
+  #   volumes:
+  #     - laravel-storage-production:/var/www/storage
+  #   networks:
+  #     - wisswan-production
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
 
   db:
     image: mysql:8.0

@@ -25,6 +25,13 @@ php artisan migrate --force
 # -----------------------------------------------------------
 # Improves performance by caching config and routes.
 # -----------------------------------------------------------
+
+# чистка того что плохо чистится
+rm -f bootstrap/cache/packages.php
+rm -f bootstrap/cache/services.php
+rm -f bootstrap/cache/config.php
+
+
 php artisan config:cache
 php artisan route:cache
 
