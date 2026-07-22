@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::middleware(['user_access:admin', 'auth:sanctum'])
+Route::middleware(['user_access:admin', 'auth:api'])
     ->prefix('admin')
     ->group(function () {
         Route::apiResource('users', UsersController::class)

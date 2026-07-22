@@ -28,13 +28,17 @@ class UserLoginCode extends Model
         $code = Str::upper(Str::random(5));
 
         $code = UserLoginCode::create([
-            'expires_at' => now()->addMinutes(15),
+            'expires_at' => now()->utc()->addMinutes(15),
             'code' => $code,
             'user_id' => $user_id,
         ]);
 
         return $code;
     }
+
+    protected $casts = [
+        'expires_at' => 'datetime'
+    ];
 
 
     // ==== RELATIONS ====

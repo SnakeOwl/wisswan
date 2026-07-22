@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/test', function (Request $request) {
+    info("API is working");
     return 'API is working';
 });
 
@@ -21,4 +22,5 @@ require __DIR__ . "/user.php";
 require __DIR__ . "/admin.php";
 
 require __DIR__ . "/webhooks.php";
+require __DIR__ . "/passport.php";
 

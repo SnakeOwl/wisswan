@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Feedback\SupportFormRequestController;
 use App\Http\Controllers\User\Login\LoginController;
+use App\Http\Controllers\User\Login\LogoutController;
 use App\Http\Controllers\User\SiteCrawlersController;
 use App\Http\Controllers\User\TelegramChats\TelegramChatController;
 use App\Http\Controllers\User\User\UpdateUserController;
@@ -10,16 +11,16 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/login-email', [LoginController::class, 'login']);
-Route::post('/login-code', [LoginController::class, 'check_code']);
 
 
-Route::middleware('auth:sanctum')
+Route::middleware('auth:api')
     ->prefix('user')
     ->group(function () {
         Route::get('/', function (Request $request) {
             return $request->user();
         });
 
+        Route::post('logout', LogoutController::class);
 
         Route::post('/update/{user}', UpdateUserController::class);
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\User\Login;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\Login\LoginCodeRequest;
 use App\Http\Requests\User\Login\LoginRequest;
 use App\Models\User;
 use App\Models\UserLoginCode;
@@ -11,9 +10,7 @@ use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
-    /**
-     * First request to login.
-     */
+    // запрос на код
     public function login(LoginRequest $request)
     {
         $params = $request->validated();
@@ -47,39 +44,5 @@ class LoginController extends Controller
 
 
         return response(json_encode(["success" => "Код отправлен на почту"]), 200);
-    }
-
-
-    /**
-     * Checking code and autheintification.
-     */
-    public function check_code(LoginCodeRequest $request)
-    {
-        $params = $request->validated();
-
-        $user = User::where('email', $params['email'])->first();
-
-        if ($user === null)
-            return ['errors' => ['email' => 'Пользователя с таким email не найдено']];
-
-
-        $code = $user->auth_code()->where('code', $params['code'])
-            // ->where('expires_at', '<', now()->addMinutes(15))
-            ->first();
-
-
-        if ($code === null)
-            return ['errors' => ['code' => 'Неверный код']];
-
-
-        if ($user->email_verified_at === null) {
-            $user->update(["email_verified_at" => now()]); // email verification
-        }
-
-
-        $token = $user->createToken("main")->plainTextToken;
-
-
-        return response(['user' => $user, 'token' => $token]);
     }
 }
