@@ -33,7 +33,7 @@ const LayoutAsyncProcessor = async function ({
 
     // ==== Redirecting users without token
 
-    if (!cookiesStorage.has("auth_token"))
+    if (!cookiesStorage.has("access_token"))
         redirect('/login');
 
     // ---- Redirecting users without token

@@ -22,6 +22,22 @@ npx eslint .
 npm run test
 ```
 
+# Важные команды
+## Laravel passport
+### Генерация ключей (JWT tokens), для шифрования
+```bash
+php artisan passport:keys --force
+```
+Они лежат в `storage/`. *(путь может быть изменён)*
+
+### Создание клиента
+Нужно создать одного клиента для фронтенда и записать во `frontend/.env` файл доступы от созданного клиента (client_id, client_secret).
+```bash
+php artisan passport:client --password
+```
+
+Нужены гранды на email_code и refresh_token.
+
 # Установка
 
 Если есть готовый дамп базы, кидать его в папку `init-db`

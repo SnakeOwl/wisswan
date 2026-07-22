@@ -7,7 +7,7 @@ import getCookie from "@/utils/getCookie";
 // создаёт | обновляет хак с валидацией. Функция для useFormState.
 export default async function sendHelpFormRequest(formDataValidated: any) {
     try {
-        const hasUserToken = (await getCookie('auth_token')) != null;
+        const hasUserToken = (await getCookie('access_token')) != null;
 
         const urlToSave = hasUserToken
             ? `user/feedbacks/support-form-requests`

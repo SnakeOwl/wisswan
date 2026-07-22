@@ -5,7 +5,7 @@ import { UserDispatchAction } from './ReduceUser';
 
 export type UserContextType = {
     user: User | null
-    authentication_status: "unknown" | "authorized" | "unauthorized" // 'unknown' on start, theother after check.
+    authentication_status: "unknown" | "authorized" | "unauthorized" | "can_authorize" // 'unknown' on start, theother after check.
 };
 
 export const stateUserInitial: UserContextType = {

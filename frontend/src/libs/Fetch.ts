@@ -42,6 +42,7 @@ export async function Fetch(
         
         
         if (response.status == 200
+            || response.status == 400 
             || response.status == 422 // laravel validation
         ){
             const result = await response.json();
@@ -79,7 +80,7 @@ export async function Get(
 
         try {
             const cookieStore = await cookies();
-            const token = cookieStore.get("auth_token");
+            const token = cookieStore.get("access_token");
             if (token != undefined) {
                 tokenHeader = ({ "Authorization": `Bearer ${token.value}` });
             }
@@ -102,6 +103,7 @@ export async function Get(
 
 
         if (response.status == 200
+            || response.status == 400
             || response.status == 422 // laravel validation
         )
             return await response.json();
@@ -137,7 +139,7 @@ export async function Post(
 ): Promise<false | number | any> {
     try {
         const cookieStore = await cookies();
-        const token = cookieStore.get("auth_token");
+        const token = cookieStore.get("access_token");
 
         const headers = {
             // 'Content-Type': 'multipart/form-data', // TODO: check with files
@@ -169,6 +171,7 @@ export async function Post(
 
         if (response.status == 200
             || response.status == 201 // laravel send 201 after creating by default
+            || response.status == 400 // laravel validation
             || response.status == 422 // laravel validation
         )
             return (await response.json());
@@ -197,7 +200,7 @@ export async function Delete(
 ): Promise<false | number | any> {
     try {
         const cookieStore = await cookies();
-        const token = cookieStore.get("auth_token");
+        const token = cookieStore.get("access_token");
 
         const headers = {
             "accept": "application/json", // without this laravel returns 302
@@ -216,6 +219,7 @@ export async function Delete(
 
         if (response.status == 200
             || response.status == 201
+            || response.status == 400 // laravel validation
             || response.status == 422 // laravel validation
         )
             return (await response.json());

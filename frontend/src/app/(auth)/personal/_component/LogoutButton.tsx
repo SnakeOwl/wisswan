@@ -2,6 +2,7 @@
 
 import Button from "@/app/_components/buttons/Button";
 import ContextUser from "@/context/ContextUser"
+import { Post } from "@/libs";
 import { deleteCookie } from "@/utils/deleteCookie";
 import { redirect } from "next/navigation";
 import { useContext } from "react"
@@ -13,16 +14,22 @@ export default function LogoutButton() {
         if (!confirm("Выйти из аккаунта?"))
             return null;
 
+        const response = await Post("user/logout");
 
-        await deleteCookie('auth_token');
+        if (response != undefined) {
+            await deleteCookie('access_token');
+            await deleteCookie('refresh_token');
+            await deleteCookie('access_token_expires_in');
 
-        dispatchUser({
-            type: "SET",
-            authentication_status: "unauthorized",
-            user: null
-        });
+            dispatchUser({
+                type: "SET",
+                authentication_status: "unauthorized",
+                user: null
+            });
 
-        redirect('/');
+            redirect('/');
+        }
+
     }
 
     return (

@@ -21,8 +21,23 @@ export default async function loginCodeRequest(prevState: any, formData: FormDat
     try {
         zodSchema.parse(rawData); // will be a throw on validation error
 
+        const data = {
+            grant_type: "email_code",
+            client_id: process.env.BACKEND_AUTH_CLIENT_ID,
+            client_secret: process.env.BACKEND_AUTH_CLIENT_SECRET,
+            email: rawData.email,
+            scope: '*',
+            code: rawData.code
+        }
+
         // request to backend
-        const codeResponse = await Post('login-code', rawData);
+        const codeResponse = await Post('oauth/token', data);
+
+
+        // laravel passport validation
+        if (codeResponse.error && codeResponse.hint)
+            return { errors: { code: codeResponse.hint } }
+
 
         return codeResponse;
     } catch (error: unknown) {
@@ -37,6 +52,7 @@ export default async function loginCodeRequest(prevState: any, formData: FormDat
 
             return { errors: errorBuffer };
         }
+
 
         await log(JSON.stringify(error)); // undefined error
 

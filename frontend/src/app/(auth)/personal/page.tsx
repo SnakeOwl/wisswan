@@ -13,8 +13,8 @@ export default async function Page() {
     const user = await getUser();
 
     if (user == null) {
-        log("Не смог получить пользователя, token:" + await getCookie('auth_token'));
-        throw new Error("Не смог получить пользователя, token:");
+        log("Не смог получить пользователя, token:" + await getCookie('access_token'));
+        throw new Error("Не смог получить пользователя");
     }
 
 

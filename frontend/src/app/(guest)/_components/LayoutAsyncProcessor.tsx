@@ -10,7 +10,7 @@ export default async function LayoutAsyncProcessor({
 
     // ==== Redirecting users without token
     
-    if (cookiesStorage.has("auth_token"))
+    if (cookiesStorage.has("access_token"))
         redirect('/dashboard');
 
     // ---- Redirecting users without token

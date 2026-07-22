@@ -10,6 +10,15 @@ import ContextUser from "@/context/ContextUser"
 import setCookie from "@/utils/setCookie"
 import { useRouter } from "next/navigation"
 
+
+export type SuccessLoginAnswer = {
+    token_type: string // "Bearer" в основном
+    expires_in: number
+    access_token: string
+    refresh_token: string
+}
+
+
 export default function LoginFormCode({
     email,
     changeForm,
@@ -157,23 +166,29 @@ export default function LoginFormCode({
 
 
     useEffect(() => {
-        if (!!formState?.user && !!formState?.token) {
-            // SUCCESS: has token and User
-            setCookie('auth_token', formState.token);
+        // при успешном запросе вернёт объект с access_token и refresh_token и expires_in
+        if (!!formState?.access_token && !!formState?.refresh_token) {
+            const successResponse = formState as SuccessLoginAnswer;
 
-            dispatchUser({
-                type: "SET",
-                user: formState.user,
-                authentication_status: "authorized"
-            });
+            (async () => {
+                await setCookie('access_token', successResponse.access_token);
+                await setCookie('refresh_token', formState.refresh_token);
+                await setCookie('access_token_expires_in', String(Date.now() + formState.expires_in * 1000));
+
+                dispatchUser({
+                    type: "SET",
+                    user: null,
+                    authentication_status: "can_authorize"
+                });
 
 
-            if (redirectAfterSuccess) {
-                router.push('/dashboard'); // 
-                router.refresh(); // without refresh() URL is not changing
-            } else {
-                router.back();
-            }
+                if (redirectAfterSuccess) {
+                    router.push('/dashboard');
+                    router.refresh(); // without refresh() URL is not changing
+                } else {
+                    router.back();
+                }
+            })();
         }
     }, [formState, dispatchUser, redirectAfterSuccess, router]);
 
@@ -188,7 +203,7 @@ export default function LoginFormCode({
                 <div className={clsx(`rounded-sm border border-neutral-800 hover:border-b-neutral-100  duration-300 focus:outline-hidden focus:bg-black 
                     flex  justify-center gap-2 mx-auto 
                     cursor-pointer p-2 text-xl`, {
-                    'border-red-500': !!formState?.errors?.code
+                    // 'border-red-500': !!formState?.errors?.code
                 })}
                     onClick={codeFieldClick}
                 >
@@ -252,7 +267,7 @@ export default function LoginFormCode({
                 </div>
 
                 {!!formState?.errors?.code &&
-                    <p className="text-red-500">
+                    <p className="text-red-500 text-center">
                         {formState.errors.code}
                     </p>
                 }
@@ -270,14 +285,14 @@ export default function LoginFormCode({
 
             <p>Код действителен в течении 15-ти минут.</p>
 
-            {!!formState?.codeWasSent &&
+            {formState?.codeWasSent &&
                 <Button type="button" className="py-1 rounded-sm">Отправить код снова</Button>
             }
 
             <Button onClick={changeForm} type="button" className="py-1 rounded-sm">Изменить почту</Button>
 
             {!!formState?.errors?.general &&
-                <p className="text-red-500">
+                <p className="text-red-500 text-center">
                     {formState.errors.general}
                 </p>
             }
