@@ -167,6 +167,7 @@ export default function LoginFormCode({
 
     useEffect(() => {
         // при успешном запросе вернёт объект с access_token и refresh_token и expires_in
+        console.log(formState);
         if (!!formState?.access_token && !!formState?.refresh_token) {
             const successResponse = formState as SuccessLoginAnswer;
 

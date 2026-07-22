@@ -172,6 +172,7 @@ export async function Post(
         if (response.status == 200
             || response.status == 201 // laravel send 201 after creating by default
             || response.status == 400 // laravel validation
+            || response.status == 401 // laravel validation
             || response.status == 422 // laravel validation
         )
             return (await response.json());

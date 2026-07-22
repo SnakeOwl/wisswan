@@ -36,7 +36,7 @@ php artisan passport:keys --force
 php artisan passport:client --password
 ```
 
-Нужены гранды на email_code и refresh_token.
+Нужены гранды на email_code и refresh_token. (Пиши через sql запрос на апдейт: `grant_types="[\"password\",\"refresh_token\",\"email_code\"]"`)
 
 # Установка
 

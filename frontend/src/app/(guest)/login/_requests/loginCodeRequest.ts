@@ -32,7 +32,7 @@ export default async function loginCodeRequest(prevState: any, formData: FormDat
 
         // request to backend
         const codeResponse = await Post('oauth/token', data);
-
+console.log(codeResponse)
 
         // laravel passport validation
         if (codeResponse.error && codeResponse.hint)
