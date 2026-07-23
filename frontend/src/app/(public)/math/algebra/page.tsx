@@ -34,15 +34,99 @@ export default async function Page() {
 
             <Drobi />
 
+            <Percent />
+
             {/* <FractionalNumbers /> */}
         </main>
     )
 }
 
+const Percent = () => (
+    <section id="Percent">
+        <ContentDividerV1 className='my-4'>
+            <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Проценты</h2>
+        </ContentDividerV1>
+
+        <section>
+            <ContentDividerV1 className='my-4'>
+                <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Формулы</h3>
+            </ContentDividerV1>
+
+
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Нахождение процента (<span className="text-green-700">b</span>) от числа (<span className="text-blue-700">a</span>)</h3>
+            <div className="flex flex-row flex-wrap xl:flex-nowrap items-center gap-2">
+                <div>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl">
+                        <InlineMath math={"b = \\frac{a}{100} \\cdot p\\%"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        b = a / 100 * p%
+                    </span>
+                </div>
+
+                <Image
+                    src={"/images/storage/algebra/percent_no_b.svg"}
+                    unoptimized
+                    width={120} height={120}
+                    alt="2 круга: первый большой круг с пометками: a и p%, второй круг вписан в первый, занимает примерно 25% от первого и помечен знаком вопроса"
+                />
+            </div>
+
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Нахождение числа (<span className="text-blue-700">a</span>) по его проценту (<span className="text-blue-700">p%</span>)</h3>
+            <div className="flex flex-row flex-wrap xl:flex-nowrap items-center gap-2">
+                <div>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl">
+                        <InlineMath math={"a = \\frac{b}{p\\%} \\cdot 100\\%"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        a = b / p% * 100%
+                    </span>
+                </div>
+
+                <Image
+                    src={"/images/storage/algebra/percent_no_a.svg"}
+                    unoptimized
+                    width={120} height={120}
+                    alt="2 круга: первый большой круг с пометками: знак вопроса и p%, второй круг вписан в первый, занимает примерно 25% от первого и помечен как b"
+                />
+            </div>
+
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Нахождение процентного соотношения чисел</h3>
+            <p>Какой процент одно число (<span className="text-green-700">b</span>) составляет от другого (<span className="text-blue-700">a</span>):</p>
+            <div className="flex flex-row flex-wrap xl:flex-nowrap items-center gap-2">
+                <div>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl">
+                        <InlineMath math={"p\\% = \\frac{b}{a} \\cdot 100\\%"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        p% = b / a * 100%
+                    </span>
+                </div>
+
+                <Image
+                    src={"/images/storage/algebra/percent_has_a_b.svg"}
+                    unoptimized
+                    width={120} height={120}
+                    alt="2 круга: первый большой круг с пометками: a и p%, второй круг вписан в первый, занимает примерно 25% от первого и помечен как b. На первом круге есть знак вопроса правее от второго круга."
+                />
+            </div>
+        </section>
+    </section>
+)
+
 
 const Algoritsm = () => (
     <section id="Numbers">
-        <ContentDividerV1>
+        <ContentDividerV1 className='my-4'>
             <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Алгоритмы</h2>
         </ContentDividerV1>
 
@@ -109,12 +193,14 @@ const Algoritsm = () => (
 
 const Numbers = () => (
     <section id="Numbers">
-        <ContentDividerV1>
+        <ContentDividerV1 className='my-4'>
             <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Числа</h2>
         </ContentDividerV1>
 
         <section>
-            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Действия над числами</h3>
+            <ContentDividerV1 className='my-4'>
+                <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Действия над числами</h3>
+            </ContentDividerV1>
             <ul>
                 <li>
                     <h4 className="mt-4 mb-2 text-lg">Сложение</h4>
@@ -184,11 +270,12 @@ const Numbers = () => (
                     </p>
                 </li>
             </ul>
-
         </section>
 
         <section>
-            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Формулы и характеристики</h3>
+            <ContentDividerV1 className='my-4'>
+                <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Формулы и характеристики</h3>
+            </ContentDividerV1>
             <p>
                 <strong>Простым числом</strong> называют число, которое имеет <b>только два различных делителя</b>.
             </p>
@@ -227,13 +314,26 @@ const Numbers = () => (
                 <strong>Решить уравнение</strong> — значит найти все его корни или доказать, что уравнение не имеет корней.
             </p>
         </section>
+
+        <section>
+            <ContentDividerV1 className='my-4'>
+                <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Числовые множества</h3>
+            </ContentDividerV1>
+
+            <p>&#8484; <strong>Целые числа</strong> — числа без дробной части, положительные и отрицательные. Обозначаются буквой &#8484; (от немецкого Zahlen)</p>
+            <p>&#8469; <strong>Натуральные числа</strong> — это целые числа без отрицательных элементов. Обычно начинаются от 1, но если пишут &#8469;<sub>0</sub>, то начинают с 0. Обозначаются буквой &#8469;</p>
+            <p>&#8474; <strong>Рациональные числа</strong> — числа с дробной частью. Числа вида p/q, где p и q &isin; &#8469; и q не равен нулю.</p>
+            <p>&#120128; <strong>Иррациональные числа</strong> — числа которые нельзя выразить дробью. Для примера это числа: &pi;, e, &radic;2. Не имеют единого стандарта для обозначения, могут обозначаться как &#120128;</p>
+            <p>&#8477; <strong>Вещественные числа</strong> — объединяют рациональные (&#8474;) и иррациональные числа (&#120128;). Это все числа, которые можно записать на числовой оси.</p>
+            <p>&#8450; <strong>Комплексные числа</strong> — числа вида a + bi, где i — мнимая единица (i<sup>2</sup> = -1)</p>
+        </section>
     </section>
 )
 
 const Drobi = () => {
     return (
         <section id="Drobi">
-            <ContentDividerV1>
+            <ContentDividerV1 className='my-4'>
                 <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Дроби</h2>
             </ContentDividerV1>
 
@@ -257,7 +357,7 @@ const Drobi = () => {
             </section>
 
             <section>
-                <ContentDividerV1>
+                <ContentDividerV1 className='my-4'>
                     <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Действия над дробями</h3>
                 </ContentDividerV1>
 
@@ -839,12 +939,12 @@ const Drobi = () => {
 
 const FractionalNumbers = () => (
     <section>
-        <ContentDividerV1>
+        <ContentDividerV1 className='my-4'>
             <h2 className="w-fit text-wrap xl:text-nowrap">Действия над дробными числами</h2>
         </ContentDividerV1>
 
         <section>
-            <ContentDividerV1>
+            <ContentDividerV1 className='my-4'>
                 <h3 className="w-fit text-wrap xl:text-nowrap">Деление дробных чисел</h3>
             </ContentDividerV1>
 
@@ -951,7 +1051,7 @@ const FractionalNumbers = () => (
 
 
         <section>
-            <ContentDividerV1>
+            <ContentDividerV1 className='my-4'>
                 <h3 className="w-fit text-wrap xl:text-nowrap mt-4 mb-2 ">Умножение дробных чисел</h3>
             </ContentDividerV1>
             <section>

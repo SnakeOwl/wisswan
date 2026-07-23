@@ -21,7 +21,11 @@ export default async function Page() {
         sublinks: [{
             href: "/math/geometry/circle#CircleDescription",
             label: "Общие сведения"
-        }]
+        }, {
+            href: "/math/geometry/circle#Formulas",
+            label: "Формулы"
+        }
+    ]
     }, {
         imageSrc: "/images/storage/Triangle_3.svg",
         imageAlt: "Прямоугольный треугольник с указанием сторон и углов",
