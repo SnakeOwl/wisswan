@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import CookiesAgreement from "./_components/CookiesAgreement";
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import YandexMetrica from "./_components/YandexMetrica";
 
 // дефолтные шрифты
 const pt_sans = PT_Sans({
@@ -54,6 +55,13 @@ export default async function RootLayout({
                         <CookiesAgreement />
                     </Suspense>
 
+                    {process.env.APP_DEBUG == "false" &&
+                        <>
+                            <YandexMetrica />
+
+                            <noscript><div><img src="https://mc.yandex.ru/watch/111044895" style={{position: "absolute", left: "-9999px"}} alt="" /></div></noscript>
+                        </>
+                    }
                 </body>
             </UserProvider>
         </html>
