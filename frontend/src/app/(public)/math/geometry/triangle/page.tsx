@@ -82,8 +82,6 @@ const TriangleFullDescription = () => (
             <div className="flex flex-col">
                 <p><b>Треугольником</b> называется трёхзвенная замкнутая ломаная вместе с&nbsp;частью плоскости, которую она ограничивает.</p>
                 <p><b>Равными</b> треугольниками называются треугольники, которые можно совместить наложением.</p>
-                <p><b>Равнобедренным</b> треугольником называется треугольник, у&nbsp;которого 2&nbsp;стороны равны.</p>
-                <p><b>Равносторонним</b> треугольником называется треугольник, у&nbsp;которого все стороны равны.</p>
                 <p><b>Периметром</b> треугольника (многоугольника) называется сумма длин его сторон.</p>
 
                 <p><b>Высотой</b> треугольника называется перпендикуляр, опущенный из&nbsp;вершины треугольника на&nbsp;противоположную сторону или на&nbsp;её&nbsp;продолжение.</p>
@@ -95,89 +93,88 @@ const TriangleFullDescription = () => (
         <section>
             <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от числа равных сторон</h3>
 
-            <div role="grid"
-                className="grid xl:grid-cols-3 gap-4"
-            >
-                <div role="gridcell"
-                    className="flex flex-col items-center justify-between"
-                >
+            <dl className="grid xl:grid-cols-3 gap-4">
+                <div className="flex flex-col items-center justify-between">
                     <Image
                         src="/images/storage/geometry/scalene_triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Разносторонний треугольник"
                     />
-                    <p role="deﬁnition"><strong>Разносторонний треугольник</strong> — все стороны разной длины.</p>
+                    <div>
+                        <dt className="inline font-bold">Разносторонний треугольник</dt> — <dd className="inline">все стороны разной длины.</dd>
+                    </div>
                 </div>
 
-                <div role="gridcell"
-                    className="flex flex-col items-center justify-between"
-                >
+                <div className="flex flex-col items-center justify-between">
                     <Image
                         src="/images/storage/geometry/isosceles_triangle.svg"
                         width={200} height={200}
                         unoptimized
-                        alt="Разносторонний треугольник"
+                        alt="Равнобедренный треугольник"
                     />
-                    <p role="deﬁnition"><strong>Равнобедренный треугольник</strong> — 2 стороны одинаковой длины.</p>
+                    <div>
+                        <dt className="inline font-bold">Равнобедренный треугольник</dt> — <dd className="inline">2 стороны одинаковой длины.</dd>
+                    </div>
                 </div>
 
-                <div role="gridcell"
-                    className="flex flex-col items-center justify-between"
-                >
+                <div className="flex flex-col items-center justify-between">
                     <Image
                         src="/images/storage/geometry/equilateral_triangle.svg"
                         width={200} height={200}
                         unoptimized
-                        alt="Разносторонний треугольник"
+                        alt="Равносторонний треугольник"
                     />
-                    <p role="deﬁnition"><strong>Равносторонний треугольник</strong> — все стороны одинаковой длины.</p>
+                    <div>
+                        <dt className="inline font-bold">Равносторонний треугольник</dt> — <dd className="inline">все стороны одинаковой длины.</dd>
+                    </div>
                 </div>
-            </div>
+            </dl>
         </section>
 
         <section>
             <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от величины наибольшего угла</h3>
 
-            <div role="grid"
-                className="grid xl:grid-cols-3 gap-4"
-            >
-                <div role="gridcell"
-                    className="flex flex-col items-center justify-between"
-                >
+            <dl className="grid xl:grid-cols-3 gap-4">
+                <div className="flex flex-col items-center justify-between">
                     <Image
                         src="/images/storage/geometry/acute_triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Остроугольный треугольник"
                     />
-                    <p role="deﬁnition"><strong>Остроугольный треугольник</strong> — наибольший угол менее 90&deg;.</p>
+
+                    <div>
+                        <dt className="inline font-bold">Остроугольный треугольник</dt> — <dd className="inline">наибольший угол менее 90&deg;.</dd>
+                    </div>
                 </div>
 
-                <div role="gridcell"
-                    className="flex flex-col items-center justify-between"
-                >
+                <div className="flex flex-col items-center justify-between">
                     <Image
                         src="/images/storage/geometry/right_triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Прямоугольный треугольник"
                     />
-                    <p role="deﬁnition"><strong>Прямоугольный треугольник</strong> — наибольший угол равен 90&deg;.</p>
+
+                    <div>
+                        <dt className="inline font-bold">Прямоугольный треугольник</dt> — <dd className="inline">наибольший угол равен 90&deg;.</dd>
+                    </div>
                 </div>
 
-                <div role="gridcell"
-                    className="flex flex-col items-center justify-between"
-                >
+                <div className="flex flex-col items-center justify-between">
                     <Image
                         src="/images/storage/geometry/obtuse_triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Тупоугольный треугольник"
                     />
-                    <p role="deﬁnition"><strong>Тупоугольный треугольник</strong> — наибольший угол более 90&deg;.</p>
+
+                    <div>
+                        <dt className="inline font-bold">Тупоугольный треугольник</dt> — <dd className="inline">наибольший угол более 90&deg;.</dd>
+                    </div>
                 </div>
-            </div>
+            </dl>
         </section>
     </section>
 )
