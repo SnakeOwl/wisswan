@@ -35,8 +35,6 @@ export default async function Page() {
             <Drobi />
 
             <Percent />
-
-            {/* <FractionalNumbers /> */}
         </main>
     )
 }
@@ -47,23 +45,78 @@ const Percent = () => (
             <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Проценты</h2>
         </ContentDividerV1>
 
-        <section>
+
+        <section id="Percent_general">
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Общие сведения</h3>
+
+            <div>
+                <p>Число процентов можно записать в виде дроби:</p>
+                <div className="flex flex-col gap-2">
+                    <div>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={"4\\% = \\frac{4}{100} = 0.04"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            4% = 4/100 = 0.04
+                        </span>
+                    </div>
+
+                    <div>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={"25\\% = \\frac{25}{100} = 0.25"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            25% = 25/100 = 0.25
+                        </span>
+                    </div>
+
+                    <div>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={"75\\% = \\frac{75}{100} = 0.75"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            75% = 75/100 = 0.75
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p>Дробное число можно записать в виде числа процентов, для этого нужно дробь умножить на 100: <br />
+                    0.04 * 100% = 4% <br />
+                    0.25 * 100% = 25% <br />
+                    1.25 * 100% = 125% 
+                </p>
+            </div>
+        </section>
+
+        <section id="Percent_formulas">
             <ContentDividerV1 className='my-4'>
                 <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Формулы</h3>
             </ContentDividerV1>
 
 
             <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Нахождение процента (<span className="text-green-700">b</span>) от числа (<span className="text-blue-700">a</span>)</h3>
+            <p>Чтобы найти процент от числа, нужно число разделить на 100 и умножить на число процентов:</p>
             <div className="flex flex-row flex-wrap xl:flex-nowrap items-center gap-2">
                 <div>
                     {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
                     <div aria-hidden="true" className="xl:text-xl">
-                        <InlineMath math={"b = \\frac{a}{100} \\cdot p\\%"} />
+                        <InlineMath math={"b = \\frac{a}{100} \\cdot ?\\%"} />
                     </div>
 
                     {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
                     <span className="sr-only">
-                        b = a / 100 * p%
+                        b = a / 100 * ?%
                     </span>
                 </div>
 
@@ -929,6 +982,23 @@ const Drobi = () => {
                     </span>
                 </div>
             </section>
+
+            <section>
+                <h3 className="mt-4 mb-2 text-xl">Правило сравнения десятичных дробей</h3>
+                <ol className="list-decimal list-inside">
+                    <li>Из двух дробей с разными целыми частями больше та, у которой целая часть больше.</li>
+                    <li>Если целые части равны, то больше будет то число, у которого дробная часть больше.</li>
+                </ol>
+
+                <p>
+                    К примеру: <br />
+                    2.31 &gt; 1.31 <br />
+                    2.31 &lt; 2.312 <br />
+                    2.31 = 2.31 <br />
+                </p>
+            </section>
+
+            <FractionalNumbers />
         </section>
     )
 }
@@ -940,13 +1010,12 @@ const Drobi = () => {
 const FractionalNumbers = () => (
     <section>
         <ContentDividerV1 className='my-4'>
-            <h2 className="w-fit text-wrap xl:text-nowrap">Действия над дробными числами</h2>
+            <h3 className="w-fit text-wrap xl:text-nowrap text-xl">Действия над дробными числами</h3>
         </ContentDividerV1>
 
         <section>
-            <ContentDividerV1 className='my-4'>
-                <h3 className="w-fit text-wrap xl:text-nowrap">Деление дробных чисел</h3>
-            </ContentDividerV1>
+            <h4 className="w-fit text-wrap xl:text-nowrap text-lg">Деление дробных чисел</h4>
+            <p>Нужно использовать упрощение, где это возможно. <strong>Упрощение: умножаем оба числа на 10, пока одно из них не станет целым</strong>.</p>
 
             <section>
                 <h4 className="mt-4 mb-2 text-lg">Деление дробного на целое</h4>
@@ -977,7 +1046,6 @@ const FractionalNumbers = () => (
 
             <section>
                 <h4 className="mt-4 mb-2 text-lg">Деление дробного на дробное</h4>
-                <p>Нужно использовать упрощение, где это возможно. <strong>Упрощение: умножаем оба числа на 10, пока одно из них не станет целым</strong>.</p>
 
                 <p>Примеры:</p>
                 <ul className="list-decimal list-inside">
@@ -1051,9 +1119,8 @@ const FractionalNumbers = () => (
 
 
         <section>
-            <ContentDividerV1 className='my-4'>
-                <h3 className="w-fit text-wrap xl:text-nowrap mt-4 mb-2 ">Умножение дробных чисел</h3>
-            </ContentDividerV1>
+            <h4 className="w-fit text-wrap xl:text-nowrap text-lg mt-4 mb-2 ">Умножение дробных чисел</h4>
+
             <section>
 
                 <p>Примеры:</p>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     keywords: ['реугольник', "описание треугольников"],
     openGraph: getDefaultOpenGraph({
         description: "Треугольники",
-        images: [(process.env.NEXT_PUBLIC_SITE_URL +  'images/storage/Triangle_3.svg')]
+        images: [(process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/Triangle_3.svg')]
     }),
 }
 
@@ -91,6 +91,94 @@ const TriangleFullDescription = () => (
                 <p><b>Биссектрисой</b> треугольника называется отрезок биссектрисы угла треугольника, соединяющий вершину треугольника с&nbsp;точкой пересечения биссектрисы с&nbsp;противоположной стороны</p>
             </div>
         </div>
+
+        <section>
+            <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от числа равных сторон</h3>
+
+            <div role="grid"
+                className="grid xl:grid-cols-3 gap-4"
+            >
+                <div role="gridcell"
+                    className="flex flex-col items-center justify-between"
+                >
+                    <Image
+                        src="/images/storage/geometry/scalene_triangle.svg"
+                        width={200} height={200}
+                        unoptimized
+                        alt="Разносторонний треугольник"
+                    />
+                    <p role="deﬁnition"><strong>Разносторонний треугольник</strong> — все стороны разной длины.</p>
+                </div>
+
+                <div role="gridcell"
+                    className="flex flex-col items-center justify-between"
+                >
+                    <Image
+                        src="/images/storage/geometry/isosceles_triangle.svg"
+                        width={200} height={200}
+                        unoptimized
+                        alt="Разносторонний треугольник"
+                    />
+                    <p role="deﬁnition"><strong>Равнобедренный треугольник</strong> — 2 стороны одинаковой длины.</p>
+                </div>
+
+                <div role="gridcell"
+                    className="flex flex-col items-center justify-between"
+                >
+                    <Image
+                        src="/images/storage/geometry/equilateral_triangle.svg"
+                        width={200} height={200}
+                        unoptimized
+                        alt="Разносторонний треугольник"
+                    />
+                    <p role="deﬁnition"><strong>Равносторонний треугольник</strong> — все стороны одинаковой длины.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от величины наибольшего угла</h3>
+
+            <div role="grid"
+                className="grid xl:grid-cols-3 gap-4"
+            >
+                <div role="gridcell"
+                    className="flex flex-col items-center justify-between"
+                >
+                    <Image
+                        src="/images/storage/geometry/acute_triangle.svg"
+                        width={200} height={200}
+                        unoptimized
+                        alt="Остроугольный треугольник"
+                    />
+                    <p role="deﬁnition"><strong>Остроугольный треугольник</strong> — наибольший угол менее 90&deg;.</p>
+                </div>
+
+                <div role="gridcell"
+                    className="flex flex-col items-center justify-between"
+                >
+                    <Image
+                        src="/images/storage/geometry/right_triangle.svg"
+                        width={200} height={200}
+                        unoptimized
+                        alt="Прямоугольный треугольник"
+                    />
+                    <p role="deﬁnition"><strong>Прямоугольный треугольник</strong> — наибольший угол равен 90&deg;.</p>
+                </div>
+
+                <div role="gridcell"
+                    className="flex flex-col items-center justify-between"
+                >
+                    <Image
+                        src="/images/storage/geometry/obtuse_triangle.svg"
+                        width={200} height={200}
+                        unoptimized
+                        alt="Тупоугольный треугольник"
+                    />
+                    <p role="deﬁnition"><strong>Тупоугольный треугольник</strong> — наибольший угол более 90&deg;.</p>
+                </div>
+            </div>
+        </section>
     </section>
 )
 
