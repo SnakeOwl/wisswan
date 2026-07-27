@@ -35,6 +35,8 @@ export default async function Page() {
             <Drobi />
 
             <Percent />
+
+            <Proportions />
         </main>
     )
 }
@@ -1016,7 +1018,7 @@ const FractionalNumbers = () => (
         </ContentDividerV1>
 
         <section>
-            <h4 className="w-fit text-wrap xl:text-nowrap text-lg">Деление дробных чисел</h4>
+            <h4 className="w-fit text-lg">Деление дробных чисел</h4>
             <p>Нужно использовать упрощение, где это возможно. <strong>Упрощение: умножаем оба числа на 10, пока одно из них не станет целым</strong>.</p>
 
             <section>
@@ -1098,7 +1100,6 @@ const FractionalNumbers = () => (
                                 height={50}
                                 alt="Деление в столбик 578.4 на 48"
                                 aria-describedby="divide-578_4-on-48-description"
-
                             />
 
                             {/* 2. Подробное пошаговое описание только для читалок */}
@@ -1121,15 +1122,128 @@ const FractionalNumbers = () => (
 
 
         <section>
-            <h4 className="w-fit text-wrap xl:text-nowrap text-lg mt-4 mb-2 ">Умножение дробных чисел</h4>
+            <h4 className="text-lg mt-4 mb-2 ">Умножение дробных чисел</h4>
 
             <section>
                 <p>Примеры:</p>
                 <p>
                     1.03 * 28.4 = (1.03 * <span className="text-red-700">100</span>) * (28.4 * <span className="text-blue-700">10</span>) / <span className="text-purple-700">1000</span> = 103 * 284 / <span className="text-purple-700">1000</span> = 29.252
                 </p>
-                <div>Тут <span className="text-purple-700">1000</span> - это <span className="text-red-700">100</span> * <span className="text-blue-700">10</span>, которые нужны чтобы сделать из дробных чисел целые.</div>
+                <div>Тут <span className="text-purple-700">1000</span> — это <span className="text-red-700">100</span> * <span className="text-blue-700">10</span>, которые нужны чтобы сделать из дробных чисел целые.</div>
             </section>
         </section>
     </section>
 )
+
+
+const Proportions = () => {
+    return (
+        <section id="Proportions">
+            <ContentDividerV1 className='my-4'>
+                <h2 className="w-fit text-wrap xl:text-nowrap text-2xl">Пропорции</h2>
+            </ContentDividerV1>
+
+            <section>
+                <h3 className="text-xl mt-4 mb-2">Общие сведения</h3>
+
+                <dl>
+                    <div><dt className="inline font-bold">Пропорция</dt> — <dd className="inline">это равенство двух отношений.</dd> По факту, это утверждение о том, что 2 дроби или 2 отношения равны между собой.</div>
+                </dl>
+
+                <div className="flex flex-wrap itemx-center">
+                    Условно
+                    <div className="mx-1">
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={"\\frac{a}{b} = \\frac{c}{d}"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            a/b = c/d
+                        </span>
+                    </div>
+                    <span>— это пропорция. Её можно читать так: отношение <b>a</b> к <b>b</b> равно отношению <b>c</b> к <b>d</b> или: <b>a</b> относится к <b>b</b></span>
+                </div>
+            </section>
+
+            <section>
+                <h3 className="text-xl mt-4 mb-2">Общие сведения</h3>
+
+                <div className="flex flex-wrap itemx-center">
+                    В отношении:
+                    <div className="mx-1">
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={"\\frac{a}{b} = \\frac{c}{d}"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            a/b = c/d
+                        </span>
+                    </div>
+                </div>
+                <p><b>a</b> и <b>d</b> — это крайние члены.</p>
+                <p><b>b</b> и <b>c</b> — это средние члены.</p>
+            </section>
+
+            <section>
+                <ContentDividerV1 className='my-4'>
+                    <h3 className="w-fit text-wrap xl:text-nowrap text-xl mt-4 mb-2">Свойства</h3>
+                </ContentDividerV1>
+
+                <section>
+                    <h4 className="text-lg mt-4 mb-2">Основное свойство пропорции.</h4>
+                    <p>Произведение крайних членов пропорции равно произведению средних членов той же пропорции.</p>
+                    <div>Запись такая: <br />
+                        <div>
+                            {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                            <div aria-hidden="true" className="xl:text-xl">
+                                <InlineMath math={"\\frac{a}{b} = \\frac{c}{d} \\Rightarrow a \\cdot d = b \\cdot c"} />
+                            </div>
+
+                            {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                            <span className="sr-only">
+                                a/b = c/d значит a*d = b*c
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 className="text-lg mt-4 mb-2">Из равенства двух произведений можно составить пропорцию.</h4>
+
+                    <div>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={"4 \\cdot 5 = 3 \\cdot 7 \\Rightarrow \\frac{4}{3} = \\frac{7}{5}"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            Допустим: 4*5 = 3*7 тоже самое что: 4/3 = 7/5
+                        </span>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 className="text-lg mt-4 mb-2">Крайние и средние члены пропорции можно поменять местами.</h4>
+
+                    <div>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-xl">
+                            <InlineMath math={"\\frac{a}{b} = \\frac{c}{d} \\Rightarrow \\frac{d}{b} = \\frac{c}{a} \\Rightarrow \\frac{d}{c} = \\frac{b}{a}"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            Допустим есть пропорция: a/b = c/d тоже самое что: d/b = c/a или: d/c = b/a
+                        </span>
+                    </div>
+                </section>
+
+            </section>
+        </section>
+    )
+}
