@@ -8,7 +8,7 @@ export default async function Layout(props: LayoutProps<"/">) {
                 <LayoutBreadcrumbs />
             </Suspense>
             
-            <div className="pb-4 flex-1 flex">
+            <div className="pb-4 flex-1 flex flex-col">
                 {props.children}
             </div>
         </>

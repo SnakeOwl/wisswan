@@ -35,9 +35,9 @@ export default async function Page() {
 
 
 const TriangleDescription = () => (
-    <section id="CircleDescription">
+    <section>
         <ContentDividerV1 className='my-4'>
-            <h2 className="text-2xl xl:text-nowrap mx-auto">Общие сведения</h2>
+            <h2 id="TriangleDescription" className="text-2xl xl:text-nowrap mx-auto">Общие сведения</h2>
         </ContentDividerV1>
 
         <div className="flex flex-col xl:flex-row ">
@@ -67,7 +67,7 @@ const TriangleDescription = () => (
 const TriangleFullDescription = () => (
     <section id="CircleFullDescription">
         <ContentDividerV1 className='my-4'>
-            <h2 className="text-2xl text-nowrap">Подробные сведения</h2>
+            <h2 id="TriangleFullDescription" className="text-2xl text-nowrap">Подробные сведения</h2>
         </ContentDividerV1>
 
         <div className="flex flex-col xl:flex-row">
@@ -91,7 +91,7 @@ const TriangleFullDescription = () => (
         </div>
 
         <section>
-            <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от числа равных сторон</h3>
+            <h3 id="TriangleFullDescription-triangle_types-form" className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от числа равных сторон</h3>
 
             <dl className="grid xl:grid-cols-3 gap-4">
                 <div className="flex flex-col items-center justify-between">
@@ -133,7 +133,7 @@ const TriangleFullDescription = () => (
         </section>
 
         <section>
-            <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от величины наибольшего угла</h3>
+            <h3 id="TriangleFullDescription-triangle_types-eagle" className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от величины наибольшего угла</h3>
 
             <dl className="grid xl:grid-cols-3 gap-4">
                 <div className="flex flex-col items-center justify-between">
@@ -183,7 +183,7 @@ const TriangleFullDescription = () => (
 const Theorems = () => (
     <section id="Theorems">
         <ContentDividerV1 className='my-2'>
-            <h3 className="text-xl text-nowrap">Теоремы</h3>
+            <h3 id="Triangle-teorems" className="text-xl text-nowrap">Теоремы</h3>
         </ContentDividerV1>
 
         <ul className="space-y-2">
@@ -234,7 +234,7 @@ const Theorems = () => (
 const EqualitySigns = () => (
     <section id="EqualitySigns">
         <ContentDividerV1 className='my-2'>
-            <h4 className="text-lg text-wrap xl:text-nowrap">Тризнаки равенства треугольников</h4>
+            <h4 id="Triangle-EqualitySigns" className="text-lg text-wrap xl:text-nowrap">Тризнаки равенства треугольников</h4>
         </ContentDividerV1>
 
         <ul className="space-y-2">
@@ -244,7 +244,7 @@ const EqualitySigns = () => (
         </ul>
 
         <ContentDividerV1 className='mt-4 mb-2'>
-            <h5 className="text-md text-wrap xl:text-nowrap">Признаки равенства прямоугольных трегольников</h5>
+            <h5 id="Triangle-EqualitySigns-right_triangle" className="text-md text-wrap xl:text-nowrap">Признаки равенства прямоугольных трегольников</h5>
         </ContentDividerV1>
 
         <ol className="list-decimal list-inside">
@@ -277,7 +277,7 @@ const RightTriangleFormulas = () => {
     return (
         <section id="RightTriangleFormulas">
             <ContentDividerV1 className='my-2'>
-                <h2 className="text-lg text-wrap xl:text-nowrap">Формулы прямоугольного треугольника</h2>
+                <h2 id="Triangle-RightTriangleFormulas" className="text-lg text-wrap xl:text-nowrap">Формулы прямоугольного треугольника</h2>
             </ContentDividerV1>
 
             <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">

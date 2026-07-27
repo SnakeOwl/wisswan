@@ -83,17 +83,41 @@
 /* утилиты для переиспользования */
 @layer utils {
   .container-v1 {
-    @apply xl:max-w-7xl w-full mx-auto px-2;
+    @apply w-full mx-auto px-2;
   }
 
 
   /* hover на ссылках */
   .link-hover, .hover-link {
-    @apply hover:text-sky-600;
+    @apply hover:text-sky-600 duration-200;
   }
   
   .link {
     @apply text-sky-600 hover:text-sky-800
+  }
+
+  /* Скрывает скроллбар по умолчанию для всех браузеров */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Показывает тонкий скроллбар при наведении */
+  .hover\:scrollbar-thin:hover::-webkit-scrollbar {
+    display: block;
+    width: 6px; /* Ширина полосы */
+  }
+  .hover\:scrollbar-thin:hover::-webkit-scrollbar-thumb {
+    @apply bg-amber-700;
+    
+    border-radius: 3px;
+  }
+  .hover\:scrollbar-thin:hover {
+    scrollbar-width: thin; /* Для Firefox */
+    scrollbar-color: #cbd5e1 transparent;
   }
 }
 

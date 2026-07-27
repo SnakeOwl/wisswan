@@ -88,9 +88,9 @@ const ShortMultipliesFormulas = () => {
     ];
 
     return (
-        <section>
+        <main>
             <ContentDividerV1>
-                <h3 className="text-2xl font-bold text-nowrap">Формулы сокращённого умножения</h3>
+                <h3 className="text-2xl font-bold text-wrap xl:text-nowrap">Формулы сокращённого умножения</h3>
             </ContentDividerV1>
 
             <div className="flex">
@@ -112,6 +112,6 @@ const ShortMultipliesFormulas = () => {
                     </TableBody>
                 </Table>
             </div>
-        </section>
+        </main>
     )
 }

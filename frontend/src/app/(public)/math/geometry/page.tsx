@@ -32,10 +32,10 @@ export default async function Page() {
         label: "Треугольник",
         link: `/math/geometry/triangle`,
         sublinks: [{
-            href: "/math/geometry/triangle#CircleDescription",
+            href: "/math/geometry/triangle#TriangleDescription",
             label: "Общие сведения"
         }, {
-            href: "/math/geometry/triangle#CircleFullDescription",
+            href: "/math/geometry/triangle#TriangleFullDescription",
             label: "Подробные сведения"
         }, {
             href: "/math/geometry/triangle#Theorems",

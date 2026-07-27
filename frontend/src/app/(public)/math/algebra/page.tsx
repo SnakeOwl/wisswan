@@ -188,7 +188,7 @@ const Algoritsm = () => (
         <section>
             <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Нахождение наибольшего общего делителя НОД</h3>
             <section>
-                <h4 className="mt-4 mb-2 text-lg">Школьный метод</h4>
+                <h4 className="mt-4 mb-2 text-lg text-wrap">Школьный метод</h4>
                 <ol className="list-decimal list-inside">
                     <li>Разложить каждое из чисел на простые множители.</li>
                     <li>Выписать все общие множители (те, которые входят в каждое из полученных разложений).</li>
@@ -247,18 +247,18 @@ const Algoritsm = () => (
 
 
 const Numbers = () => (
-    <section id="Numbers">
+    <section>
         <ContentDividerV1 className='my-4'>
-            <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Числа</h2>
+            <h2 id="Numbers" className="w-fit text-2xl text-wrap xl:text-nowrap">Числа</h2>
         </ContentDividerV1>
 
         <section>
             <ContentDividerV1 className='my-4'>
-                <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Действия над числами</h3>
+                <h3 id="Numbers-actions" className="w-fit text-xl text-wrap xl:text-nowrap">Действия над числами</h3>
             </ContentDividerV1>
             <ul>
                 <li>
-                    <h4 className="mt-4 mb-2 text-lg">Сложение</h4>
+                    <h4 id="Numbers-actions-addition" className="mt-4 mb-2 text-lg">Сложение</h4>
                     <b>
                         a + b = c
                     </b> <br />
@@ -267,7 +267,7 @@ const Numbers = () => (
                     <span>c — <strong>сумма</strong> (результат сложения)</span> <br />
                 </li>
                 <li>
-                    <h4 className="mt-4 mb-2 text-lg">Вычитание</h4>
+                    <h4 id="Numbers-actions-subtraction" className="mt-4 mb-2 text-lg">Вычитание</h4>
                     <b>
                         a - b = c
                     </b> <br />
@@ -276,7 +276,7 @@ const Numbers = () => (
                     <span>c — <strong>разность</strong> (результат сложения)</span> <br />
                 </li>
                 <li>
-                    <h4 className="mt-4 mb-2 text-lg">Умножение</h4>
+                    <h4 id="Numbers-actions-multiplication" className="mt-4 mb-2 text-lg">Умножение</h4>
                     <b>
                         a * b = c
                     </b> <br />
@@ -285,7 +285,7 @@ const Numbers = () => (
                     <span>c — <strong>произведение</strong> (результат сложения)</span> <br />
                 </li>
                 <li>
-                    <h4 className="mt-4 mb-2 text-lg">Деление</h4>
+                    <h4 id="Numbers-actions-division" className="mt-4 mb-2 text-lg">Деление</h4>
                     <p>
                         <b>
                             a / b = c
@@ -296,7 +296,7 @@ const Numbers = () => (
                     </p>
                 </li>
                 <li>
-                    <h4 className="mt-4 mb-2 text-lg">Деление с остатком</h4>
+                    <h4 id="Numbers-actions-division_with_remainder" className="mt-4 mb-2 text-lg text-wrap">Деление с остатком</h4>
                     <p>
                         <b>
                             a / b = c + d
@@ -309,7 +309,7 @@ const Numbers = () => (
                     <p>Делить число a, на число b — значит найти такие числа c и d, что a = b * c + d, причём d &lt; b </p>
                 </li>
                 <li>
-                    <h4 className="mt-4 mb-2 text-lg">Возведение в степень</h4>
+                    <h4 id="Numbers-actions-exponentiation" className="mt-4 mb-2 text-lg text-wrap">Возведение в степень</h4>
                     <p>Число <b>a</b> называют <strong>основанием степени</strong>, число <b>n</b> - <strong>показателем степени</strong>.</p>
 
                     <p className="font-bold">
@@ -319,7 +319,7 @@ const Numbers = () => (
                 </li>
 
                 <li>
-                    <h4 className="mt-4 mb-2 text-lg">Раскрытие скобок</h4>
+                    <h4 id="Numbers-actions-expanding_parentheses" className="mt-4 mb-2 text-lg text-wrap">Раскрытие скобок</h4>
                     <p>Если перед скобками стоит - , то каждый чел в скобках нужно умножить на -1: <br />
                         <b>a - (b - c) = a - b + c</b>
                     </p>
@@ -329,7 +329,7 @@ const Numbers = () => (
 
         <section>
             <ContentDividerV1 className='my-4'>
-                <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Формулы и характеристики</h3>
+                <h3 id="Numbers-formulas" className="w-fit text-xl text-wrap xl:text-nowrap">Формулы и характеристики</h3>
             </ContentDividerV1>
             <p>
                 <strong>Простым числом</strong> называют число, которое имеет <b>только два различных делителя</b>.
@@ -372,7 +372,7 @@ const Numbers = () => (
 
         <section>
             <ContentDividerV1 className='my-4'>
-                <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Числовые множества</h3>
+                <h3 id="Numbers-numerical_sets" className="w-fit text-xl text-wrap xl:text-nowrap">Числовые множества</h3>
             </ContentDividerV1>
 
             <dl>
@@ -391,11 +391,11 @@ const Drobi = () => {
     return (
         <section id="Drobi">
             <ContentDividerV1 className='my-4'>
-                <h2 className="w-fit text-2xl text-wrap xl:text-nowrap">Дроби</h2>
+                <h2 id="Fractions" className="w-fit text-2xl text-wrap xl:text-nowrap">Дроби</h2>
             </ContentDividerV1>
 
             <section>
-                <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Общие сведения</h3>
+                <h3 id="Fractions-general" className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Общие сведения</h3>
 
                 <p>
                     Дроби могут быть <b>правильными</b> и <b>неправильными</b>. <br />
@@ -415,7 +415,7 @@ const Drobi = () => {
 
             <section>
                 <ContentDividerV1 className='my-4'>
-                    <h3 className="w-fit text-xl text-wrap xl:text-nowrap">Действия над дробями</h3>
+                    <h3 id="Fractions-actions" className="w-fit text-xl text-wrap xl:text-nowrap">Действия над дробями</h3>
                 </ContentDividerV1>
 
                 <ul className="space-y-2">
@@ -546,7 +546,7 @@ const Drobi = () => {
             </section>
 
             <section>
-                <h3 className="mt-4 mb-2 text-xl">Общее правило приведения дробей к общему знаменателю</h3>
+                <h3 id="Fractions-actions-fractions_to_common_denominator" className="mt-4 mb-2 text-xl text-wrap">Общее правило приведения дробей к общему знаменателю</h3>
 
                 <p>Чтобы привести две дроби к общему знаменателю, нужно:</p>
                 <ul className="list-decimal list-inside">
@@ -615,7 +615,7 @@ const Drobi = () => {
             </section>
 
             <section>
-                <h3 className="mt-4 mb-2 text-xl mt-4 mb-2 ">Правило сложения дробей с одинаковыми знаменателями</h3>
+                <h3 id="Fractions-actions-addition_fractions_with_common_denominator" className="text-xl mt-4 mb-2 text-wrap">Правило сложения дробей с одинаковыми знаменателями</h3>
                 <p>При сложении дробей с одинаковыми знаменателями числители складывают, знаменатель оставить. Алгоритм такой:</p>
 
                 <ol className="list-decimal list-inside">
@@ -647,7 +647,7 @@ const Drobi = () => {
             </section>
 
             <section>
-                <h3 className="mt-4 mb-2 text-xl">Правило вычитания дробей с одинаковыми знаменателями</h3>
+                <h3 id="Fractions-actions-subtraction_fractions_with_common_denominator" className="mt-4 mb-2 text-xl text-wrap">Правило вычитания дробей с одинаковыми знаменателями</h3>
                 <p>При вычитании дробей с одинаковыми знаменателями из числителя уменьшаемого вычитают числитель вычитаемого, знаменатель оставить. Алгоритм такой:</p>
 
                 <ol className="list-decimal list-inside">
@@ -679,8 +679,8 @@ const Drobi = () => {
             </section>
 
             <section>
-                <h3 className="mt-4 mb-2 text-xl">Правило сложения | вычитания дробей с разными знаменателями</h3>
-                <p>Чтобы выполнить сложение | вычитание дробей с разными знаменателями, нужно привести их к общему знаменателю, а затем применить правило сложения | вычитания дробей с одинаковыми знаменателями.</p>
+                <h3 id="Fractions-actions-subtraction_addiction_different_denominators" className="mt-4 mb-2 text-xl text-wrap">Правило сложения ИЛИ вычитания дробей с разными знаменателями</h3>
+                <p>Чтобы выполнить сложение ИЛИ вычитание дробей с разными знаменателями, нужно привести их к общему знаменателю, а затем применить правило сложения ИЛИ вычитания дробей с одинаковыми знаменателями.</p>
 
                 <p>Пример:</p>
                 {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
@@ -698,14 +698,14 @@ const Drobi = () => {
             </section>
 
             <section>
-                <h3 className="mt-4 mb-2 text-xl">Сложение | вычитание смешанных чисел</h3>
-                <p>При сложении | вычитании смешанных чисел целые и дробные части складываются | вычитаются отдельно:</p>
+                <h3 id="Fractions-actions-subtraction_addiction_mixed_numbers" className="mt-4 mb-2 text-xl text-wrap">Сложение ИЛИ вычитание смешанных чисел</h3>
+                <p>При сложении ИЛИ вычитании смешанных чисел целые и дробные части складываются ИЛИ вычитаются отдельно:</p>
                 <div className="w-full overflow-x-auto">
-                    <Table className="text-base table-fixed w-full min-w-[600px] xl:max-w-[1000px] mx-auto overflow-x-scroll">
-                        <TableCaption>Примеры сложения | и вычитания смешанных чисел</TableCaption>
+                    <Table className="text-base table-fixed w-full min-w-[600px]  xl:max-w-[1000px] mx-auto overflow-x-scroll">
+                        <TableCaption>Примеры сложения ИЛИ и вычитания смешанных чисел</TableCaption>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="font-bold">Сложение | вычитание смешанных чисел</TableHead>
+                                <TableHead className="font-bold">Сложение ИЛИ вычитание смешанных чисел</TableHead>
                                 <TableHead className="font-bold w-[250px]">Пример</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -728,7 +728,7 @@ const Drobi = () => {
                             </TableRow>
                             <TableRow>
                                 <TableCell className="whitespace-normal break-words">
-                                    При сложении | вычитании <b>смешанных чисел</b> целые и дробные части вычисляются отдельно
+                                    При сложении ИЛИ вычитании <b>смешанных чисел</b> целые и дробные части вычисляются отдельно
                                 </TableCell>
                                 <TableCell>
                                     {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
@@ -897,8 +897,8 @@ const Drobi = () => {
 
 
 
-            <section id="rule_for_multiplying_common_fractions">
-                <h3 className="mt-4 mb-2 text-xl">Правило умножения обыкновенных дробей</h3>
+            <section>
+                <h3 id="Fractions-actions-rule_for_multiplying_common_fractions" className="mt-4 mb-2 text-xl text-wrap">Правило умножения обыкновенных дробей</h3>
                 Алгоритм такой:
                 <ol className="list-decimal list-inside">
                     <li>В <b>числитель</b> новой дроби писать произведение <b>числителей</b> умножаемых дробей.</li>
@@ -929,7 +929,7 @@ const Drobi = () => {
             </section>
 
             <section>
-                <h3 className="mt-4 mb-2 text-xl">Правило умножения смешанных чисел</h3>
+                <h3 id="Fractions-actions-rule_for_multiplying_mixed_numbers" className="mt-4 mb-2 text-xl text-wrap">Правило умножения смешанных чисел</h3>
                 <p>Алгоритм такой:</p>
                 <ol className="list-decimal list-inside">
                     <li>Записать каждый множитель в виде <strong>неправильной дроби</strong>.</li>
@@ -958,7 +958,7 @@ const Drobi = () => {
             </section>
 
             <section>
-                <h3 className="mt-4 mb-2 text-xl">Правило деления обыкновенных дробей</h3>
+                <h3 id="Fractions-actions-rule_for_division_fractions" className="mt-4 mb-2 text-xl text-wrap">Правило деления обыкновенных дробей</h3>
                 <p>Чтобы разделить одну дробь на другую, нужно делимое умножить на число, обратное делителю. <i>(Если делим на дробь, то дробь перевернуть. Если делим на число, то преобразовать его в дробь, где в числитель идёт 1, а в знаменатель само число)</i>.</p>
                 <p>Пример:</p>
 
@@ -988,7 +988,7 @@ const Drobi = () => {
             </section>
 
             <section>
-                <h3 className="mt-4 mb-2 text-xl">Правило сравнения десятичных дробей</h3>
+                <h3 id="Fractions-actions-rule_for_equals_fractions" className="mt-4 mb-2 text-xl text-wrap">Правило сравнения десятичных дробей</h3>
                 <ol className="list-decimal list-inside">
                     <li>Из двух дробей с разными целыми частями больше та, у которой целая часть больше.</li>
                     <li>Если целые части равны, то больше будет то число, у которого дробная часть больше.</li>
@@ -1014,15 +1014,15 @@ const Drobi = () => {
 const FractionalNumbers = () => (
     <section>
         <ContentDividerV1 className='my-4'>
-            <h3 className="w-fit text-wrap xl:text-nowrap text-xl">Действия над дробными числами</h3>
+            <h3 id="Fractions-real_numbers_actions" className="w-fit text-wrap xl:text-nowrap text-xl">Действия над дробными числами</h3>
         </ContentDividerV1>
 
         <section>
-            <h4 className="w-fit text-lg">Деление дробных чисел</h4>
+            <h4 id="Fractions-real_numbers_actions-division" className="w-fit text-lg text-wrap">Деление дробных чисел</h4>
             <p>Нужно использовать упрощение, где это возможно. <strong>Упрощение: умножаем оба числа на 10, пока одно из них не станет целым</strong>.</p>
 
             <section>
-                <h4 className="mt-4 mb-2 text-lg">Деление дробного на целое</h4>
+                <h4 className="mt-4 mb-2 text-lg text-wrap">Деление дробного на целое</h4>
 
                 <figure>
                     {/* 1. Картинка с ALT для SEO */}
@@ -1049,7 +1049,7 @@ const FractionalNumbers = () => (
             </section>
 
             <section>
-                <h4 className="mt-4 mb-2 text-lg">Деление дробного на дробное</h4>
+                <h4 id="Fractions-real_numbers_actions-division_real_to_real" className="mt-4 mb-2 text-lg text-wrap">Деление дробного на дробное</h4>
 
                 <p>Примеры:</p>
                 <ul className="list-decimal list-inside">
@@ -1122,7 +1122,7 @@ const FractionalNumbers = () => (
 
 
         <section>
-            <h4 className="text-lg mt-4 mb-2 ">Умножение дробных чисел</h4>
+            <h4 id="Fractions-real_numbers_actions-multiplication" className="text-lg mt-4 mb-2 text-wrap">Умножение дробных чисел</h4>
 
             <section>
                 <p>Примеры:</p>
@@ -1138,13 +1138,13 @@ const FractionalNumbers = () => (
 
 const Proportions = () => {
     return (
-        <section id="Proportions">
+        <section>
             <ContentDividerV1 className='my-4'>
-                <h2 className="w-fit text-wrap xl:text-nowrap text-2xl">Пропорции</h2>
+                <h2 id="Proportions" className="w-fit text-wrap xl:text-nowrap text-2xl">Пропорции</h2>
             </ContentDividerV1>
 
             <section>
-                <h3 className="text-xl mt-4 mb-2">Общие сведения</h3>
+                <h3 id="Proportions-general" className="text-xl mt-4 mb-2 text-wrap">Общие сведения</h3>
 
                 <dl>
                     <div><dt className="inline font-bold">Пропорция</dt> — <dd className="inline">это равенство двух отношений.</dd> По факту, это утверждение о том, что 2 дроби или 2 отношения равны между собой.</div>
@@ -1165,36 +1165,17 @@ const Proportions = () => {
                     </div>
                     <span>— это пропорция. Её можно читать так: отношение <b>a</b> к <b>b</b> равно отношению <b>c</b> к <b>d</b> или: <b>a</b> относится к <b>b</b></span>
                 </div>
-            </section>
-
-            <section>
-                <h3 className="text-xl mt-4 mb-2">Общие сведения</h3>
-
-                <div className="flex flex-wrap itemx-center">
-                    В отношении:
-                    <div className="mx-1">
-                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                        <div aria-hidden="true" className="xl:text-lg">
-                            <InlineMath math={"\\frac{a}{b} = \\frac{c}{d}"} />
-                        </div>
-
-                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                        <span className="sr-only">
-                            a/b = c/d
-                        </span>
-                    </div>
-                </div>
                 <p><b>a</b> и <b>d</b> — это крайние члены.</p>
                 <p><b>b</b> и <b>c</b> — это средние члены.</p>
             </section>
 
             <section>
                 <ContentDividerV1 className='my-4'>
-                    <h3 className="w-fit text-wrap xl:text-nowrap text-xl mt-4 mb-2">Свойства</h3>
+                    <h3 id="Proportions-properties" className="w-fit text-wrap xl:text-nowrap text-xl mt-4 mb-2">Свойства</h3>
                 </ContentDividerV1>
 
                 <section>
-                    <h4 className="text-lg mt-4 mb-2">Основное свойство пропорции.</h4>
+                    <h4 id="Proportions-properties-main_property" className="text-lg mt-4 mb-2 text-wrap">Основное свойство пропорции.</h4>
                     <p>Произведение крайних членов пропорции равно произведению средних членов той же пропорции.</p>
                     <div>Запись такая: <br />
                         <div>
@@ -1212,7 +1193,7 @@ const Proportions = () => {
                 </section>
 
                 <section>
-                    <h4 className="text-lg mt-4 mb-2">Из равенства двух произведений можно составить пропорцию.</h4>
+                    <h4 id="Proportions-properties-equals_multiplications" className="text-lg mt-4 mb-2 text-wrap">Из равенства двух произведений можно составить пропорцию.</h4>
 
                     <div>
                         {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
@@ -1228,7 +1209,7 @@ const Proportions = () => {
                 </section>
 
                 <section>
-                    <h4 className="text-lg mt-4 mb-2">Крайние и средние члены пропорции можно поменять местами.</h4>
+                    <h4 id="Proportions-properties-edge_middle_proportions" className="text-lg mt-4 mb-2 text-wrap">Крайние и средние члены пропорции можно поменять местами.</h4>
 
                     <div>
                         {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
