@@ -22,6 +22,7 @@ const translatedSegments: Record<string, string> = {
     algebra: "Алгебра",
     polygonal: "Многоугольник",
     "3d": "3D",
+    rectangles: "Прямоугольники"
 }
 
 

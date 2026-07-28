@@ -25,7 +25,7 @@ export default async function Page() {
             href: "/math/geometry/circle#Formulas",
             label: "Формулы"
         }
-    ]
+        ]
     }, {
         imageSrc: "/images/storage/Triangle_3.svg",
         imageAlt: "Прямоугольный треугольник с указанием сторон и углов",
@@ -48,6 +48,16 @@ export default async function Page() {
             label: "Формулы прямоугольного треугольника"
         }]
     }, {
+        imageSrc: "/images/storage/geometry/square.svg",
+        imageAlt: "Квадрат где углы помечены как: A, B, C, Z, стороны помечены как: отрезки AB и CZ как h, а BC и AZ как w. По центру проведена диагональ, помеченная как D.",
+        label: "Прямоугольники",
+        link: `/math/geometry/rectangles`,
+        sublinks: [{
+            href: "/math/geometry/rectangles#Calculator",
+            label: "Калькулятор"
+        }
+        ]
+    }, {
         imageSrc: "/images/storage/geometry/polygon.svg",
         imageAlt: "Ломаная из четырёх отрезков",
         label: "Многоугольники",
@@ -63,7 +73,7 @@ export default async function Page() {
             label: "Формулы многоугольников"
         },
         ]
-    },{
+    }, {
         imageSrc: "/images/storage/geometry/rectangular_parallelepiped.svg",
         imageAlt: "Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c.",
         label: "Трёхмерные фигуры",
@@ -74,6 +84,8 @@ export default async function Page() {
         }
         ]
     },
+
+
     ]
 
     return (
