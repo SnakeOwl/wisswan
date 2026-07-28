@@ -58,7 +58,8 @@ export default async function RootLayout({
                     {process.env.APP_DEBUG == "false" &&
                         <>
                             <YandexMetrica />
-
+                            
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <noscript><div><img src="https://mc.yandex.ru/watch/111044895" style={{position: "absolute", left: "-9999px"}} alt="" /></div></noscript>
                         </>
                     }

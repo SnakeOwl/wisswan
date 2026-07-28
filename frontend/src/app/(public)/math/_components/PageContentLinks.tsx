@@ -63,6 +63,8 @@ export default function PageContentLinks() {
             }
         })
 
+        // Иначе гидрация ругается
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setLinks(parsedLinks)
     }, [pathname]);
 
