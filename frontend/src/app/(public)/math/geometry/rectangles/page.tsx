@@ -10,7 +10,10 @@ export const metadata: Metadata = {
     keywords: ['Прямоугольники'],
     openGraph: getDefaultOpenGraph({
         description: "Прямоугольники",
-        images: [(process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/square.svg")]
+        images: [
+            (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/square.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/rectangle.svg")
+        ]
     }),
 }
 
@@ -18,9 +21,9 @@ export const metadata: Metadata = {
 export default async function Page() {
     return (
         <main>
-            <Formulas />
-
             <Calculator />
+            
+            <Formulas />
         </main>
     )
 }

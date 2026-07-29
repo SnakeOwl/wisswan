@@ -42,6 +42,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             ],
         },
         {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/rectangles`,
+            lastModified: '2026-07-29T00:00:00.000Z',
+            changeFrequency: 'weekly',
+            priority: 0.6,
+            images: [
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/square.svg`,
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/rectangle.svg`,
+            ],
+        },
+        {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/3d`,
             lastModified: '2026-07-13T00:00:00.000Z',
             changeFrequency: 'weekly',
