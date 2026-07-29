@@ -55,6 +55,9 @@ export default async function Page() {
         sublinks: [{
             href: "/math/geometry/rectangles#Calculator",
             label: "Калькулятор"
+        }, {
+            href: "/math/geometry/rectangles#Formulas",
+            label: "Формулы"
         }
         ]
     }, {
@@ -71,6 +74,9 @@ export default async function Page() {
         }, {
             href: "/math/geometry/polygonal#PolygonalFormulas",
             label: "Формулы многоугольников"
+        }, {
+            href: "/math/geometry/polygonal#Trapezoid",
+            label: "Трапеция"
         },
         ]
     }, {

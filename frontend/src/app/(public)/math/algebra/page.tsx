@@ -15,15 +15,32 @@ import Link from "next/link";
 import 'katex/dist/katex.min.css'; // Важно для правильного отображения дробей
 import { InlineMath } from 'react-katex'; // Используем InlineMath, чтобы текст шел в одну строку
 
+
 export const metadata: Metadata = {
     title: "Алгебра",
     description: "Разделы по алгебре",
     keywords: ["математика", "алгебра"],
 
     openGraph: getDefaultOpenGraph({
-        description: "Алгебра"
+        description: "Алгебра",
+        images: [
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/algebra/percent_no_b.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/percent_no_a.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/trapezoid.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/percent_has_a_b.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/22.4_div_14.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/625.05_div_1.5.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/0.5784_div_0.048.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_complements.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_intersection.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_union.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_difference.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_with_dots.svg"),
+        ],
     }),
 }
+
 
 export default async function Page() {
     return (
@@ -39,6 +56,8 @@ export default async function Page() {
             <Proportions />
 
             <Sets />
+
+            <Coordinates />
         </main>
     )
 }
@@ -279,12 +298,16 @@ const Numbers = () => (
                 </li>
                 <li>
                     <h4 id="Numbers-actions-multiplication" className="mt-4 mb-2 text-lg">Умножение</h4>
-                    <b>
-                        a * b = c
-                    </b> <br />
-                    <span>Где a — <strong>множитель</strong> (число, которое умножают)</span> <br />
-                    <span>b — <strong>множитель</strong> (число, которое умножают)</span> <br />
-                    <span>c — <strong>произведение</strong> (результат сложения)</span> <br />
+                    <p>
+                        <b>
+                            a * b = c
+                        </b> <br />
+                        <span>Где a — <strong>множитель</strong> (число, которое умножают)</span> <br />
+                        <span>b — <strong>множитель</strong> (число, которое умножают)</span> <br />
+                        <span>c — <strong>произведение</strong> (результат сложения)</span> <br />
+                    </p>
+
+                    <p>При умножении двух отрицательных чисел, ответ будет положительный. Если хоть одно из чисел отрицательное, то ответ будет отрицательным.</p>
                 </li>
                 <li>
                     <h4 id="Numbers-actions-division" className="mt-4 mb-2 text-lg">Деление</h4>
@@ -296,6 +319,8 @@ const Numbers = () => (
                         <span>b — <strong>делитель</strong> (число, на которое делят)</span> <br />
                         <span>c — <strong>частное</strong> (результат деления)</span> <br />
                     </p>
+
+                    <p>При делении двух отрицательных чисел, ответ будет положительный. Если хоть одно из чисел отрицательное, то ответ будет отрицательным.</p>
                 </li>
                 <li>
                     <h4 id="Numbers-actions-division_with_remainder" className="mt-4 mb-2 text-lg text-wrap">Деление с остатком</h4>
@@ -1305,7 +1330,7 @@ const Sets = () => (
                 </figcaption>
             </figure>
 
-                        <figure className="flex flex-col items-center">
+            <figure className="flex flex-col items-center">
                 <Image
                     src={"/images/storage/algebra/set_difference.svg"}
                     unoptimized
@@ -1319,5 +1344,48 @@ const Sets = () => (
                 </figcaption>
             </figure>
         </div>
+    </section>
+)
+
+
+const Coordinates = () => (
+    <section>
+        <ContentDividerV1 className='my-4'>
+            <h2 id="Coordinates" className="w-fit text-wrap xl:text-nowrap text-2xl">Координаты</h2>
+        </ContentDividerV1>
+
+        <p><strong>Система координат</strong> — это удобный способ определять положение точки и графики на плоскости или в пространстве. В большинстве случаев в математике используется Декартова система координать, но есть и другие.</p>
+
+        <h3 id="Coordinates-ReneDekart" className="text-xl mt-4 mb-2 text-wrap">Декартова система координат</h3>
+        <p>Впервые прямоугольную систему координат ввёл Рене Декарт В своей работе «Геометрия». На ней изображены 2 оси: ось <b>X</b> <i>(ось абсцисс)</i> и ось <b>Y</b> <i>(ось ординат)</i> и через них задаются координаты.</p>
+
+
+        <figure className="flex flex-col items-center my-2">
+            <Image
+                src={"/images/storage/algebra/decart_coordinates.svg"}
+                unoptimized
+                width={500} height={500}
+                alt="Декартова система координат. Две перпендикулярные стрелки с засечками от -9 до 9. Горизонтальная ось X, вертикальная Y."
+            />
+
+            <figcaption className="font-bold text-sm">
+                Декартова система координат
+            </figcaption>
+        </figure>
+
+        <p className="font-heading">Примеры использования системы координат</p>
+        <figure className="flex flex-col items-center my-2">
+            <Image
+                src={"/images/storage/algebra/decart_coordinates_with_dots.svg"}
+                unoptimized
+                width={500} height={500}
+                alt="Декартова система координат с точками на ней"
+            />
+
+            <figcaption>
+                Декартова система координат с точками: <b>A(2,1)</b>, <b>B(5,2)</b>, <b>C(6-6)</b>, <b>D(-3,-3)</b>, <b>E(-5,4)</b>
+            </figcaption>
+
+        </figure>
     </section>
 )

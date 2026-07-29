@@ -12,7 +12,11 @@ export const metadata: Metadata = {
     keywords: ['многоугольники', "описание многоугольников"],
     openGraph: getDefaultOpenGraph({
         description: "Многоугольники",
-        images: [(process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/polygon.svg')]
+        images: [
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/polygon.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/polygonal_line.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/trapezoid.svg"),
+        ],
     }),
 }
 
@@ -23,6 +27,8 @@ export default async function Page() {
             <PolygonalLine />
 
             <Polygonal />
+
+            <Trapezoid />
         </main>
     )
 }
@@ -30,7 +36,7 @@ export default async function Page() {
 
 const PolygonalLine = () => (
     <section id="PolygonalLine">
-        <ContentDividerV1>
+        <ContentDividerV1 className="my-4">
             <h3 className="w-fit text-wrap xl:text-nowrap">Ломаная</h3>
         </ContentDividerV1>
 
@@ -58,10 +64,12 @@ const PolygonalLine = () => (
 )
 
 
+
+
 const Polygonal = () => (
-    <section id="Polygonal">
-        <ContentDividerV1>
-            <h2 className="w-fit text-wrap xl:text-nowrap">Многоугольник</h2>
+    <section>
+        <ContentDividerV1 className="my-4">
+            <h2 id="Polygonal" className="w-fit text-wrap xl:text-nowrap">Многоугольник</h2>
         </ContentDividerV1>
 
         <div className="flex flex-row flex-wrap xl:flex-nowrap gap-3 mt-4 mb-2 ">
@@ -69,7 +77,7 @@ const Polygonal = () => (
                 <p>Часть плоскости, с замкнутой ломаной по периметру называют <strong>многоугольником</strong>.</p>
                 <p><strong>Стороны многоугольника</strong> - это звенья той ломаной, которая его формирует. <i>На рисунке это: a, b, c, d, e.</i></p>
                 <p><strong>Вершины многоугольника</strong> - это вершины той ломаной, которая его формирует. <i>На рисунке это: A, B, C, D, E.</i></p>
-                <p><strong>Периметром многоугольника</strong> называют сумму длин его сторон. В данном многоугольнике это: <strong>P = a + b + c + d + e</strong></p>
+                <p><strong>Периметром многоугольника</strong> называют сумму длин его сторон. В данном многоугольнике это:&nbsp;<b className="text-nowrap">P = a + b + c + d + e</b></p>
             </div>
 
             <figure>
@@ -87,9 +95,9 @@ const Polygonal = () => (
 )
 
 const PolygonalFormulas = () => (
-    <section id="PolygonalFormulas">
-        <ContentDividerV1>
-            <h2 className="w-fit text-wrap xl:text-nowrap">Формулы многоугольников</h2>
+    <section>
+        <ContentDividerV1 className="my-4">
+            <h3 id="PolygonalFormulas" className="w-fit text-wrap xl:text-nowrap">Формулы многоугольников</h3>
         </ContentDividerV1>
 
         <ul>
@@ -107,5 +115,30 @@ const PolygonalFormulas = () => (
                 — <strong>Периметр</strong>. Где <b>a</b> - это сторона, <b>n</b> - количество сторон в многоугольнике.
             </li>
         </ul>
+    </section>
+)
+
+
+const Trapezoid = () => (
+    <section>
+        <ContentDividerV1 className="my-4">
+            <h2 id="Trapezoid" className="w-fit text-wrap xl:text-nowrap">Трапеция</h2>
+        </ContentDividerV1>
+
+        <div className="flex flex-col xl:flex-row gap-4">
+            <Image
+                src={"/images/storage/geometry/trapezoid.svg"}
+                width={400} height={400}
+                alt="Трапеция с обозначениями: углы обозначены как A, B, C, Z, диагональ AZ обозначена как D, точка пересечения диагоналей обозначена как O"
+                unoptimized
+            />
+
+            <div>
+                <dl>
+                    <dt className="inline font-bold">Трапеция </dt> —
+                    <dd className="inline">это четырёхугольник 2 стороны которого параллельны друг другу.</dd> Эти стороны являются основаниями.
+                </dl>
+            </div>
+        </div>
     </section>
 )

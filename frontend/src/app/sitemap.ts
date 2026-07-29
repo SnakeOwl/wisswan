@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry`,
-            lastModified: '2026-07-23T00:00:00.000Z',
+            lastModified: '2026-07-29T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.5,
             images: [
@@ -62,12 +62,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/polygonal`,
-            lastModified: '2026-07-09T00:00:00.000Z',
+            lastModified: '2026-07-29T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.6,
             images: [
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/polygonal_line.svg`,
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/polygon.svg`,
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/trapezoid.svg`,
             ],
         },
         {

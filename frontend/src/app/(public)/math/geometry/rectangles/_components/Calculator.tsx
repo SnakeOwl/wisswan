@@ -105,10 +105,10 @@ export default function Calculator() {
             </ContentDividerV1>
 
             <div>
-                <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2">Выберите тип фигуры</h3>
+                <p className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 font-heading">Выберите тип фигуры</p>
 
                 <div className="flex flex-col xl:flex-row gap-3">
-                    <figure className={clsx("flex flex-col justify-between border rounded p-2 cursor-pointer hover:border-sky-500 duration-300", {
+                    <figure className={clsx("flex flex-col justify-between items-center border rounded p-2 cursor-pointer hover:border-sky-500 duration-300", {
                         "border-blue-500 ring ring-blue-200": figure == "square"
                     })}
                         onClick={() => changeFigure("square")}
@@ -125,7 +125,7 @@ export default function Calculator() {
                         </figcaption>
                     </figure>
 
-                    <figure className={clsx("flex flex-col justify-between border rounded p-2 cursor-pointer hover:border-sky-500 duration-300", {
+                    <figure className={clsx("flex flex-col justify-between items-center border rounded p-2 cursor-pointer hover:border-sky-500 duration-300", {
                         "border-blue-500 ring ring-blue-200": figure == "rectangle"
                     })}
                         onClick={() => changeFigure("rectangle")}
@@ -146,7 +146,7 @@ export default function Calculator() {
 
 
             <div>
-                <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Значения (заполнять тут)</h3>
+                <p className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 font-heading">Возможные значения</p>
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-3">
                     <div className="flex flex-col gap-3">
                         <Field>
