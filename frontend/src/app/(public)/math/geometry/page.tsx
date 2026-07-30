@@ -72,12 +72,12 @@ export default async function Page() {
             href: "/math/geometry/polygonal#Polygonal",
             label: "Многоугольники"
         }, {
-            href: "/math/geometry/polygonal#PolygonalFormulas",
-            label: "Формулы многоугольников"
-        }, {
             href: "/math/geometry/polygonal#Trapezoid",
             label: "Трапеция"
-        },
+        },{
+            href: "/math/geometry/polygonal#Rhombus",
+            label: "Ромб"
+        }
         ]
     }, {
         imageSrc: "/images/storage/geometry/rectangular_parallelepiped.svg",

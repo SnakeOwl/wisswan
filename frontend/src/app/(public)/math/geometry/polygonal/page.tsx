@@ -16,6 +16,7 @@ export const metadata: Metadata = {
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/polygon.svg'),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/polygonal_line.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/trapezoid.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/rhombus.svg"),
         ],
     }),
 }
@@ -29,6 +30,8 @@ export default async function Page() {
             <Polygonal />
 
             <Trapezoid />
+
+            <Rhombus />
         </main>
     )
 }
@@ -142,3 +145,74 @@ const Trapezoid = () => (
         </div>
     </section>
 )
+
+
+const Rhombus = () => (
+    <section>
+        <ContentDividerV1 className="my-4">
+            <h2 id="Rhombus" className="w-fit text-wrap xl:text-nowrap">Ромб</h2>
+        </ContentDividerV1>
+
+        <p>У ромба все стороны равны.</p>
+
+        <section>
+            <h3 id="Rhombus-formulas" className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Формулы</h3>
+
+            <figure className="w-full xl:w-fit flex flex-col items-center float-left xl:mr-4">
+                <Image
+                    src={"/images/storage/geometry/rhombus.svg"}
+                    width={380} height={180}
+                    alt="Ромб с обозначениями: точки на углах обозначены как: A, B, C, D. Высота обозначена как h. Диагональ AC обозначена как d1, диагональ BD обозначена как d2."
+                    unoptimized
+                />
+
+                <figcaption className="text-sm text-center font-bold">
+                    Ромб
+                </figcaption>
+            </figure>
+
+            <p className="text-lg">P = 4 * сторону</p>
+
+            <div>
+                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                <div aria-hidden="true" className="xl:text-xl inline">
+                    <InlineMath math={"S = \\frac{d1 \\cdot d2}{2}"} />
+                </div>
+
+                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                <span className="sr-only">
+                    Площадь равна произведению диагоналей делённому на 2.
+                </span>
+
+                <i className="text-sm"> Диагонали пересекаются под прямым углом.</i>
+            </div>
+
+            <div>
+                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                <div aria-hidden="true" className="xl:text-xl inline">
+                    <InlineMath math={"S = \\text{сторона} \\cdot h"} />
+                </div>
+
+                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                <span className="sr-only">
+                    Площадь равна произведению стороны на высоту.
+                </span>
+
+                <i className="text-sm"> Классическая формула как у параллелограмма.</i>
+            </div>
+
+            <div>
+                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                <div aria-hidden="true" className="xl:text-xl inline">
+                    <InlineMath math={"S = \\text{сторона}^2 \\cdot \\sin{α}"} />
+                </div>
+
+                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                <span className="sr-only">
+                    Площадь равна произведению стороны в квадрате на синус угла Альфы (это угол BAD).
+                </span>
+            </div>
+        </section>
+    </section>
+)
+
