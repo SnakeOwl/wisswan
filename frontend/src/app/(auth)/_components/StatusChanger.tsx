@@ -1,9 +1,8 @@
 "use client"
 
 import Select from "@/app/_components/inputs/Select";
-import ContextToast from "@/context/messages/Toaster/ContextToast";
 import { statuses } from "@/types/Status";
-import { useContext } from "react";
+import { toast } from "@/components/ui/toast"
 
 
 export default function StatusChanger({
@@ -15,8 +14,6 @@ export default function StatusChanger({
     status: number,
     onChanged: (newStatus: number) => void
 }) {
-    const { dispatchToast } = useContext(ContextToast);
-    
     const onChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newStatus = Number(e.target.value);
         const response = await changeRequest(newStatus);
@@ -26,10 +23,10 @@ export default function StatusChanger({
 
 
         onChanged(newStatus);
-        dispatchToast({
-            type: "SET",
-            title: "Сохранено",
-            style: "green",
+
+        toast.add({
+            title: "Статус изменён",
+            type: "succes"
         });
     }
 

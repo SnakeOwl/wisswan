@@ -3,10 +3,10 @@
 import ButtonStyled from "@/app/_components/buttons/ButtonStyled";
 import Hr from "@/app/_components/Hr";
 import InputV2Styled from "@/app/_components/inputs/InputV2Styled";
-import ContextToast from "@/context/messages/Toaster/ContextToast";
+import { toast } from "@/components/ui/toast";
 import { Delete, Post } from "@/libs/Fetch";
 import { Domain } from "@/types/Domain"
-import { useContext, useId, useState } from "react"
+import { useId, useState } from "react"
 
 export default function DomainForm({
     initialDomain,
@@ -19,7 +19,6 @@ export default function DomainForm({
 }) {
     const [data, setData] = useState<Domain>(initialDomain);
     const domainFormId = useId();
-    const { dispatchToast } = useContext(ContextToast);
 
 
     const upload = async (updata = data) => {
@@ -28,10 +27,9 @@ export default function DomainForm({
         if (response != undefined) {
             onChanged(response);
 
-            dispatchToast({
-                type: "SET",
+            toast.add({
                 title: "Сохранено",
-                style: "green",
+                type: "succes"
             });
         }
     }

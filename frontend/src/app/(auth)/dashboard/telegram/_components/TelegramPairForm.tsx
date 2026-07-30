@@ -5,13 +5,12 @@ import InputV2Styled from "@/app/_components/inputs/InputV2Styled"
 import { useContext, useState } from "react"
 import ContextTelegramChat from "../_context/ContextTelegramChat"
 import { Delete, log, Post } from "@/libs"
-import ContextToast from "@/context/messages/Toaster/ContextToast"
 import Link from "next/link"
+import { toast } from "@/components/ui/toast"
 
 
 export default function TelegramPairForm() {
     const { stateTelegramChat, dispatchTelegramChat } = useContext(ContextTelegramChat);
-    const { dispatchToast } = useContext(ContextToast);
     const [showSaveButton, setShowSaveButton] = useState<boolean>(false);
     const [telegramName, setTelegramName] = useState<string | null>(stateTelegramChat.telegramChat ? stateTelegramChat.telegramChat.user_name : null)
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -41,11 +40,10 @@ export default function TelegramPairForm() {
                     } else {
                         log(`Произошла ошибка при отправке телеграм имени. response: ${JSON.stringify(response)}, requestUrl: ${requestUrl}, user_name: ${telegramName}`);
 
-                        dispatchToast({
-                            type: "SET",
-                            message: "Данные не сохранены",
+                        toast.add({
                             title: "Ошибка",
-                            style: "red",
+                            description: "Данные не сохранены",
+                            type: "error"
                         });
                     }
                 })
@@ -64,11 +62,10 @@ export default function TelegramPairForm() {
                     } else {
                         log(`Произошла ошибка при попытке удаления телеграм имени. response: ${JSON.stringify(response)}, user_name: ${telegramName}`);
 
-                        dispatchToast({
-                            type: "SET",
-                            message: "Данные не сохранены",
+                                                toast.add({
                             title: "Ошибка",
-                            style: "red",
+                            description: "Данные не сохранены",
+                            type: "error"
                         });
                     }
                 })

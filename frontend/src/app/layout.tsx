@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "./_components/Header/Header";
 import { PT_Sans, Unbounded } from "next/font/google";
 import UserProvider from "../context/UserProvider";
-import ToastProvider from "./_components/contexts/ToastProvider";
 import { Suspense } from "react";
 import { SkeletonTable } from "./_components/Skeletons/SkeletonTable";
 import { cn } from "@/lib/utils";
@@ -11,6 +10,7 @@ import CookiesAgreement from "./_components/CookiesAgreement";
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import YandexMetrica from "./_components/YandexMetrica";
+import { Toaster } from "@/components/ui/toast"
 
 // дефолтные шрифты
 const pt_sans = PT_Sans({
@@ -37,30 +37,31 @@ export default async function RootLayout({
         <html lang="ru" className={cn("bg-white text-black", "font-sans", unbounded.variable)}>
             <UserProvider>
                 <body className={`${pt_sans.className}  antialiased`}>
-                    <ToastProvider>
-                        <TooltipProvider>
-                            <div className="relative w-full min-h-screen flex flex-col">
-                                <Suspense fallback={<SkeletonTable cols={3} rows={1} />}>
-                                    <Header />
-                                </Suspense>
+                    <TooltipProvider>
+                        <div className="relative w-full min-h-screen flex flex-col">
+                            <Suspense fallback={<SkeletonTable cols={3} rows={1} />}>
+                                <Header />
+                            </Suspense>
 
-                                {children}
-                            </div>
+                            {children}
+                        </div>
 
-                            {modal}
-                        </TooltipProvider>
-                    </ToastProvider>
+                        {modal}
+                    </TooltipProvider>
+
 
                     <Suspense>
                         <CookiesAgreement />
                     </Suspense>
 
+                    <Toaster />
+
                     {process.env.APP_DEBUG == "false" &&
                         <>
                             <YandexMetrica />
-                            
+
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <noscript><div><img src="https://mc.yandex.ru/watch/111044895" style={{position: "absolute", left: "-9999px"}} alt="" /></div></noscript>
+                            <noscript><div><img src="https://mc.yandex.ru/watch/111044895" style={{ position: "absolute", left: "-9999px" }} alt="" /></div></noscript>
                         </>
                     }
                 </body>

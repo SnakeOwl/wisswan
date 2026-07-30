@@ -5,7 +5,7 @@ import ContextUser from "@/context/ContextUser";
 import { Post } from "@/libs";
 import { useCallback, useContext } from "react"
 import ContextTelegramChat from "../_context/ContextTelegramChat";
-import ContextToast from "@/context/messages/Toaster/ContextToast";
+import { toast } from "@/components/ui/toast";
 
 export default function TelegramNotificationsForm({
     className
@@ -14,7 +14,6 @@ export default function TelegramNotificationsForm({
 }) {
     const { stateUser, dispatchUser } = useContext(ContextUser);
     const { stateTelegramChat } = useContext(ContextTelegramChat);
-    const { dispatchToast } = useContext(ContextToast);
 
 
     const updateUser = useCallback(async (data: any) => {
@@ -24,18 +23,18 @@ export default function TelegramNotificationsForm({
 
         Post(`user/update/${stateUser.user.id}`, data).then(response => {
             if (!response.id) {
-                dispatchToast({
-                    type: "SET",
+                toast.add({
                     title: "Ошибка",
-                    message: "Данные не сохранены",
-                    style: "red",
+                    description: "Данные не сохранены",
+                    type: "error"
+
                 });
 
                 console.error(response);
             }
         });
-    }, [stateUser.authentication_status, stateUser.user, dispatchToast]);
-    
+    }, [stateUser.authentication_status, stateUser.user]);
+
 
     if (stateUser.authentication_status != "authorized")
         return null;

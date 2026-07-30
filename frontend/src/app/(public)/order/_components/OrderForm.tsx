@@ -13,6 +13,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { toast } from "@/components/ui/toast";
 
 
 const SupportFormRequestSchema = z.object({
@@ -67,7 +68,13 @@ export default function OrderForm() {
             setBackendErrors(response.errros);
         } else {
             setBackendErrors({});
-            // TODO: добавить сюда отклик об отправке формы
+            
+            toast.add({
+                title: "Заказ отправлен",
+                description: "Я разберу ваши требования и свяжусь с вами по предоставленным данным.",
+                type: "success"
+            });
+
             setWasSent(true);
         }
 
@@ -139,7 +146,7 @@ export default function OrderForm() {
                 {wasSent ? "Отправлено!" : "Отправить"}
             </ButtonStyled>
 
-            {!isPending &&
+            {isPending &&
                 <div className="fixed right-4 bottom-4 animate-pulse">
                     <Save className="stroke-neutral-300" />
                 </div>

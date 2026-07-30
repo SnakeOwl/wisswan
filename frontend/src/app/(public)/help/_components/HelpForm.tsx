@@ -12,6 +12,7 @@ import { Save } from "lucide-react";
 import ButtonStyled from "@/app/_components/buttons/ButtonStyled";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "@/components/ui/toast";
 
 const subjectSelectOptions = [
     { value: "Вопросы по платформе", title: "Вопросы по платформе" },
@@ -70,8 +71,14 @@ export default function HelpForm() {
             setBackendErrors(response.errros);
         } else {
             setBackendErrors({});
-            // TODO: добавить сюда отклик об отправке формы
+            
             setWasSent(true);
+
+            toast.add({
+                title: "Сообщение отправлено",
+                description: "Наша команда разберёт ваше обращение и при не обходимости ответит на предоставленные данные.",
+                type: "success"
+            });
         }
 
         setIsPending(false);
@@ -159,7 +166,7 @@ export default function HelpForm() {
                 {wasSent ? "Отправлено!" : "Отправить"}
             </ButtonStyled>
 
-            {!isPending &&
+            {isPending &&
                 <div className="fixed right-4 bottom-4 animate-pulse">
                     <Save className="stroke-neutral-300" />
                 </div>
