@@ -22,16 +22,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/algebra`,
-            lastModified: '2026-07-28T00:00:00.000Z',
+            lastModified: '2026-07-30T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.6,
-            /*images: [
-                
-            ],*/
+            images: [
+                (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/algebra/percent_no_b.svg'),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/percent_no_a.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/trapezoid.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/percent_has_a_b.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/22.4_div_14.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/625.05_div_1.5.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/0.5784_div_0.048.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_complements.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_intersection.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_union.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_difference.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_with_dots.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_y_2_x.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_y_8_div_x.svg"),
+            ],
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry`,
-            lastModified: '2026-07-29T00:00:00.000Z',
+            lastModified: '2026-07-30T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.5,
             images: [
@@ -53,11 +67,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/3d`,
-            lastModified: '2026-07-13T00:00:00.000Z',
+            lastModified: '2026-07-30T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.6,
             images: [
-                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/rectangular_parallelepiped.svg`,
+                (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/rectangular_parallelepiped.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/right_prizm.svg")
             ],
         },
         {

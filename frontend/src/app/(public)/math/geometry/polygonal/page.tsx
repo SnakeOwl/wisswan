@@ -128,7 +128,7 @@ const Trapezoid = () => (
         <div className="flex flex-col xl:flex-row gap-4">
             <Image
                 src={"/images/storage/geometry/trapezoid.svg"}
-                width={400} height={400}
+                width={350} height={220}
                 alt="Трапеция с обозначениями: углы обозначены как A, B, C, Z, диагональ AZ обозначена как D, точка пересечения диагоналей обозначена как O"
                 unoptimized
             />

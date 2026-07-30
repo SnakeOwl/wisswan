@@ -87,7 +87,10 @@ export default async function Page() {
         sublinks: [{
             href: "/math/geometry/3d#RectangularParallelepiped",
             label: "Прямоугольный параллелепипед"
-        }
+        },{
+            href: "/math/geometry/3d#Prizm",
+            label: "Призма"
+        }        
         ]
     },
 

@@ -47,7 +47,7 @@ export default function GeometryNavCard({
                     unoptimized
                 />
                 <div>
-                    <div className="group-hover:text-sky-500 font-bold text-xl mb-2">
+                    <div className="group-hover:text-sky-500 font-bold mb-2 font-heading">
                         {card.label}
                     </div>
 

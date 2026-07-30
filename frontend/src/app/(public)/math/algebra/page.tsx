@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     keywords: ["математика", "алгебра"],
 
     openGraph: getDefaultOpenGraph({
-        description: "Алгебра",
+        description: "Алгебра, пояснения по алгебре",
         images: [
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/algebra/percent_no_b.svg'),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/percent_no_a.svg"),
@@ -37,6 +37,8 @@ export const metadata: Metadata = {
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/set_difference.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_with_dots.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_y_2_x.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_y_8_div_x.svg"),
         ],
     }),
 }
@@ -1359,6 +1361,7 @@ const Coordinates = () => (
         <h3 id="Coordinates-ReneDekart" className="text-xl mt-4 mb-2 text-wrap">Декартова система координат</h3>
         <p>Впервые прямоугольную систему координат ввёл Рене Декарт В своей работе «Геометрия». На ней изображены 2 оси: ось <b>X</b> <i>(ось абсцисс)</i> и ось <b>Y</b> <i>(ось ординат)</i> и через них задаются координаты.</p>
 
+        <p>Графиком обратной пропорциональной зависимости является <b>гипербола</b>.</p>
 
         <figure className="flex flex-col items-center my-2">
             <Image
@@ -1374,18 +1377,46 @@ const Coordinates = () => (
         </figure>
 
         <p className="font-heading">Примеры использования системы координат</p>
-        <figure className="flex flex-col items-center my-2">
-            <Image
-                src={"/images/storage/algebra/decart_coordinates_with_dots.svg"}
-                unoptimized
-                width={500} height={500}
-                alt="Декартова система координат с точками на ней"
-            />
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 ">
+            <figure className="flex flex-col items-center my-2 w-fit">
+                <Image
+                    src={"/images/storage/algebra/decart_coordinates_with_dots.svg"}
+                    unoptimized
+                    width={500} height={500}
+                    alt="Декартова система координат с точками на ней"
+                />
 
-            <figcaption>
-                Декартова система координат с точками: <b>A(2,1)</b>, <b>B(5,2)</b>, <b>C(6-6)</b>, <b>D(-3,-3)</b>, <b>E(-5,4)</b>
-            </figcaption>
+                <figcaption>
+                    Декартова система координат с точками: <b>A(2,1)</b>, <b>B(5,2)</b>, <b>C(6-6)</b>, <b>D(-3,-3)</b>, <b>E(-5,4)</b>
+                </figcaption>
+            </figure>
 
-        </figure>
+            <figure className="flex flex-col items-center my-2 w-fit">
+                <Image
+                    src={"/images/storage/algebra/decart_coordinates_y_2_x.svg"}
+                    unoptimized
+                    width={500} height={500}
+                    alt="Декартова система координат с точками на ней. Точки: (1,2), (2,4), (3,6), (4,8). Через все точки проходит прямая."
+                />
+
+                <figcaption>
+                    Декартова система координат с формулой <b className="text-nowrap">Y = 2X</b>
+                </figcaption>
+            </figure>
+
+            <figure className="flex flex-col items-center my-2 w-fit">
+                <Image
+                    src={"/images/storage/algebra/decart_coordinates_y_8_div_x.svg"}
+                    unoptimized
+                    width={500} height={500}
+                    alt="Декартова система координат с точками на ней. Точки: (1,8), (2,4), (3,2.6), (4,2), (5,1.6), (6,1.3), (7,1.14), (8,1), (9,0.88). Все точки соеденены линией."
+                />
+
+                <figcaption className="w-full">
+                    Декартова система координат с формулой <b className="text-nowrap">Y = 8/X</b>. Кривая, которая соединяет все точки называют <b>Гиперболой</b>.
+                </figcaption>
+            </figure>
+        </div>
+
     </section>
 )

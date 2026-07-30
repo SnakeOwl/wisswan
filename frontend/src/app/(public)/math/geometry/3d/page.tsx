@@ -2,6 +2,13 @@ import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1"
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph"
 import { Metadata } from "next"
 import Image from "next/image"
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import { Button } from "@/components/ui/button"
+
 
 export const metadata: Metadata = {
     title: "Трёхмерные фигуры",
@@ -9,14 +16,21 @@ export const metadata: Metadata = {
     keywords: ['Трёхмерные фигуры', "Прямоугольный параллелепипед"],
     openGraph: getDefaultOpenGraph({
         description: "Трёхмерные фигуры",
-        images: [(process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/rectangular_parallelepiped.svg")]
+        images: [
+            (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/rectangular_parallelepiped.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/right_prizm.svg"),
+        ]
     }),
+
+    
 }
 
 export default async function Page() {
     return (
         <main>
             <RectangularParallelepiped />
+
+            <Prizm />
         </main>
     )
 }
@@ -24,7 +38,7 @@ export default async function Page() {
 
 const RectangularParallelepiped = () => (
     <section>
-        <ContentDividerV1>
+        <ContentDividerV1 className="my-4">
             <h2 id="RectangularParallelepiped" className="w-fit text-2xl text-wrap xl:text-nowrap">Прямоугольный параллелепипед</h2>
         </ContentDividerV1>
 
@@ -60,6 +74,69 @@ const RectangularParallelepiped = () => (
                 <strong><i>V</i> = <span className="text-red-700">a</span>&sup3;</strong>
             </p>
 
+        </section>
+    </section>
+)
+
+
+const Prizm = () => (
+    <section>
+        <ContentDividerV1 className="my-4">
+            <h2 id="Prizm" className="w-fit text-2xl text-wrap xl:text-nowrap">Призма</h2>
+        </ContentDividerV1>
+
+        <dl>
+            <div>
+                <dt className="inline font-bold">Основания призмы</dt> — <dd className="inline">это две равные грани в виде многоугольников, которые лежат парралельно друг другу. По факту верхняя и нижняя фигуры.</dd>
+            </div>
+        </dl>
+
+        <section>
+            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2">Прямая призма</h3>
+
+            <p>У <strong>прямой призмы</strong> боковые рёбра стоят под углом в 90&deg;.</p>
+            <dl>
+                <div>
+                    <dt className="inline font-bold">Правильная призма</dt> — <dd className="inline">это призма, у которой основания — это
+                        правильные многоугольники
+                        <HoverCard>
+                            <HoverCardTrigger delay={10} closeDelay={100} render={<Button variant="secondary" aria-hidden>?</Button>} />
+                            <HoverCardContent className="flex w-64 flex-col gap-0.5">
+                                <div>У правильных многоугольников <b>все стороны равны</b></div>
+                            </HoverCardContent>
+                        </HoverCard>
+                        , а боковые грани — равные прямоугольники
+                        <HoverCard>
+                            <HoverCardTrigger delay={10} closeDelay={100} render={<Button variant="secondary" aria-hidden>?</Button>} />
+                            <HoverCardContent className="flex w-64 flex-col gap-0.5">
+                                <div>У равных прямоугольников <b>одинаковая высота и ширина</b></div>
+                            </HoverCardContent>
+                        </HoverCard>
+                        .</dd>
+                </div>
+            </dl>
+
+            <p className="sr-only">У правильных многоугольников все стороны равны</p>
+            <p className="sr-only">У равных прямоугольников одинаковая высота и ширина</p>
+
+
+            <div>
+                <figure className="xl:float-left flex flex-col items-center">
+                    <Image
+                        src={"/images/storage/geometry/right_prizm.svg"}
+                        width={320} height={400}
+                        alt="Правильная шестиугольная призма"
+                        unoptimized
+                    />
+
+                    <figcaption className="text-sm font-bold">
+                        Правильная шестиугольная призма
+                    </figcaption>
+                </figure>
+
+                <p>S <sub>боковой поверхности</sub> — это общая площадь всех боковых граней призмы без учёта оснований.</p>
+                <p className="text-lg font-bold">S <sub>боковой поверхности</sub> — P <sub>основания</sub> * <span className="text-sky-700">h</span></p>
+            </div>
         </section>
     </section>
 )
