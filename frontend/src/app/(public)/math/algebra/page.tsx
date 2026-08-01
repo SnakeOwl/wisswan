@@ -60,6 +60,8 @@ export default async function Page() {
             <Sets />
 
             <Coordinates />
+
+            <Power />
         </main>
     )
 }
@@ -491,6 +493,20 @@ const Drobi = () => {
                                 Дробь, a деленное на b, умножить на дробь, c деленное на d, равно дроби, в числителе a умножить на c, в знаменателе b умножить на d.
                             </span>
                             <strong> — умножение дробей</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="flex items-center">
+                            {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                            <div aria-hidden="true" className="xl:text-xl">
+                                <InlineMath math={"\\frac{\\cancel{a}}{b} \\cdot \\frac{c}{\\cancel{a}} = \\frac{c}{b}"} />
+                            </div>
+
+                            {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                            <span className="sr-only">
+                                умножение двух дробей: первая дробь: в числителе зачёрскнутая a, в знаменателе b, вторая дробь: в числителе c, в знаменателе зачёркнутая a, равно: дробь: в числителе a, в знаменателе b
+                            </span>
+                            <strong> — сокращение чисел при умножении</strong>
                         </div>
                     </li>
                     <li>
@@ -1418,5 +1434,216 @@ const Coordinates = () => (
             </figure>
         </div>
 
+    </section>
+)
+
+
+const Power = () => (
+    <section>
+        <ContentDividerV1 className='my-4'>
+            <h2 id="Power" className="w-fit text-wrap xl:text-nowrap text-2xl">Степень числа</h2>
+        </ContentDividerV1>
+
+        <p><strong>Степень числа</strong> — это когда число нужно умножить на само себя указанное количество раз (в простом смысле). Но иногда это может приводить даже к дробям (формулы ниже).</p>
+
+        <div>
+            Обозначения операции: <br />
+
+            <div>
+                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                <div aria-hidden="true" className="xl:text-lg">
+                    <InlineMath math={"a^n = \\prod_{i=1}^{n} a"} />
+                </div>
+
+                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                <span className="sr-only">
+                    a в степени n равно a*a ... энное количество раз
+                </span>
+            </div>
+
+            <div>
+                Тут: <br />
+
+                <div className="flex flex-row">
+                    <div>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true">
+                            <InlineMath math={"a^n"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            a в степени n
+                        </span>
+                    </div>
+                    <span> — степень</span>
+                </div>
+
+                <span><b>a</b> — основание степени</span> <br />
+                <span><b>n</b> — показатель степени</span>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={"\\prod_{i=1}^{n} a"} />
+                    </div>
+                    <span> — умножать нужное количество раз на <b>a</b> с накоплением.</span>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3 id="Power-Formulas" className="text-xl mt-4 mb-2 text-wrap">Формулы</h3>
+
+            <div className="flex flex-col gap-2">
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={"a^{-n} = \\frac{1}{a^n}, a \\neq 0"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        a в степени минус n равен дроби: один делённое на a в степени n. Но только если a не равно 0.
+                    </span>
+                </div>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={"a^0 = 1, a \\neq 0"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        a в степени 0 равен одному. Но только если a не равно 0.
+                    </span>
+                </div>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={"(\\frac{a}{b})^{-n} = \\frac{a^n}{b^n}"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        В скобках дробь: a делённое на b, за скобками степень -n. это равно дроби: b в степени n, делённое на a в степени n
+                    </span>
+                </div>
+
+
+                <div className="flex flex-row">
+                    <div>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={"a^m \\cdot a^n = a^{m+n}"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            a в стемени m умножить на a в степени n равно a в степени m+n
+                        </span>
+                    </div>
+                    <span className="text-base"> — Произведение степеней с одинаковым основанием</span>
+                </div>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={"\\frac{a^m}{a^n} = a^m / a^n = a^{m - n}"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        a в степени m делить на a в степени n. Это равно a в степени m-n.
+                    </span>
+                    <span className="text-base"> — Деление степеней с одинаковыми основаниями</span>
+                </div>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={"(a \\cdot b \\cdot c)^n = a^n \\cdot b^n \\cdot c^n"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        В скобках: a*b*c, за скобками степень n. Равно a в степени n, умноженное на b в степени n, уможенное на c в степени n
+                    </span>
+                    <span className="text-base"> — Раскрытие скобок</span>
+                </div>
+
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={"(\\frac{a}{b})^n = (a / b)^n = \\frac{a^n}{b^n}"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        В a/b, за скобками степень n, это равно дроби: a в степени n делённое на b в степени n
+                    </span>
+                    <span className="text-base"> — Раскрытие скобок</span>
+                </div>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={"(a^m)^n = a^{m \\cdot n}"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        В скобках: дробь: a делённое на b, за скобками степень n, это равно дроби: a в степени n делённое на b в степени n
+                    </span>
+                    <span className="text-base"> — Раскрытие скобок</span>
+                </div>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl">
+                        <InlineMath math={"((\\frac{a}{b})^{\\cancel{c}})^{\\frac{d}{\\cancel{c}}} = (\\frac{a}{b})^d"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        Двойная скобка, в скобке дробь a/b, за скобкой в степени перечёркнутое c, за второй скобкой в степени дробь: d делённое на зачёркнутую c, это всё равно, в скобках: a/b за скобками степень d
+                    </span>
+
+                    <span className="text-base"> — Сокращение дробей при переумножении степеней</span>
+                </div>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl">
+                        <InlineMath math={"a^{\\frac{m}{n}} = \\sqrt[n]{a^m} , (a^{\\frac{1}{2}} = \\sqrt{a})"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        a со степенью (m/n) равен: корню: накорневое число равно n, подкорневое число равно a в степени m. Пример: (a со степерью (1/2) равна: под корнем: a)
+                    </span>
+
+                    <span className="text-base"> — Связь степеней с корнями</span>
+                </div>
+
+                <div className="flex flex-row">
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl">
+                        <InlineMath math={"25^9 = 5^{18}"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        25 со степенью 9 равен: 5 со степенью 18
+                    </span>
+
+                    <span className="text-base"> — возведение в степень числа со степенью</span>
+                </div>
+            </div>
+
+        </section>
     </section>
 )
