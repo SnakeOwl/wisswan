@@ -32,8 +32,8 @@ export default async function Page() {
         label: "Треугольник",
         link: `/math/geometry/triangle`,
         sublinks: [{
-            href: "/math/geometry/triangle#TriangleDescription",
-            label: "Общие сведения"
+            href: "/math/geometry/triangle#TriangleCalculator",
+            label: "Калькулятор"
         }, {
             href: "/math/geometry/triangle#TriangleFullDescription",
             label: "Подробные сведения"

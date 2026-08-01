@@ -2,7 +2,7 @@ import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1"
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph"
 import { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
+import TriangleCalculator from "./_components/Calculator"
 
 export const metadata: Metadata = {
     title: "Треугольники",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default async function Page() {
     return (
         <main className="grid gap-4">
-            <TriangleDescription />
+            <TriangleCalculator />
 
             <RightTriangleFormulas />
 
@@ -31,37 +31,6 @@ export default async function Page() {
     )
 }
 
-
-
-
-const TriangleDescription = () => (
-    <section>
-        <ContentDividerV1 className='my-4'>
-            <h2 id="TriangleDescription" className="text-2xl xl:text-nowrap mx-auto">Общие сведения</h2>
-        </ContentDividerV1>
-
-        <div className="flex flex-col xl:flex-row ">
-            <Image
-                className="float-left lg:mr-4"
-                src="/images/storage/triangle_description_1.svg"
-                width={300} height={300}
-                alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
-                unoptimized
-            />
-
-            <div className="flex flex-col gap-2">
-                <p><b>Высотой</b> треугольника называется перпендикуляр, опущенный из&nbsp;вершины треугольника на&nbsp;противоположную сторону или на&nbsp;её&nbsp;продолжение.</p>
-                <p><b>Медианой</b> треугольника называется отрезок, который соединяет вершину треугольника с&nbsp;серединой противоположной стороны</p>
-                <p><b>Биссектриса</b> идёт из угла треугольника и делит этот угол пополам</p>
-                <Link href={'#CircleFullDescription'}
-                    className="link-hover text-sky-800"
-                >
-                    Более подробное описание
-                </Link>
-            </div>
-        </div>
-    </section>
-)
 
 
 const TriangleFullDescription = () => (
@@ -193,8 +162,8 @@ const Theorems = () => (
             <li>В&nbsp;треугольнике против большей стороны лежит больший угол, а&nbsp;против большего угла лежит большая сторона</li>
             <li>Любая сторона треугольника меньше суммы двух других его сторон</li>
             <li><i>О&nbsp;свойстве точек биссектрисы угла</i>. Любая точка биссектрисы угла равноудалена от&nbsp;сторон угла. Если точка внутри угла равноудалена от&nbsp;сторон угла, то&nbsp;она лежит на&nbsp;биссектрисе этого угла.</li>
-            <li><i>Свойство катета прямоугольного треугольника, лежащего против угла в&nbsp;30&deg;</i>. Катет прямоугольного треугольника, лежащий против угла в&nbsp;30&deg;, равен половине гипотенузы.</li>
-            <li>Если в&nbsp;прямоугольном треугольнике катет равен половине гипотенузы, то&nbsp;этот катет лежит против угла в&nbsp;30&deg;.</li>
+            <li><b>Свойство прямоугольного треугольника</b>: Катет прямоугольного треугольника, лежащий против угла в&nbsp;30&deg;, равен половине гипотенузы.</li>
+
 
             <li className="list-none">
                 <div className="flex flex-col xl:flex-row border rounded-md p-2">
