@@ -62,6 +62,8 @@ export default async function Page() {
             <Coordinates />
 
             <Power />
+
+            <Polynomias />
         </main>
     )
 }
@@ -393,11 +395,18 @@ const Numbers = () => (
                 <strong>Наименьшим общим кратным натуральных чисел</strong> a и b <b>(НОК(a, b))</b> называется наименьшее натуральное число, которое делится на два данных числа без остатка.
             </p>
             <p>
-                <strong>Числовое выражение</strong> — выражение, которое содержит в себе: <b>числа, знаки действий, скобки</b>. Если в числовых выражениях содержатся ещё <strong>переменные</strong>, то выражения называются <strong>переменными</strong>.
+                <strong>Числовое выражение</strong> — выражение, которое содержит в себе: <b>числа, знаки действий, скобки</b>.
+                <strong> Значение числового выражения</strong> — число, полученное в результате выполнения указанных в выражении действий.
+                Если в числовых выражениях содержатся ещё <strong>переменные</strong>, то выражения называются <strong>переменными</strong>.
+                <strong> Областью определения выражения с переменными</strong> называют все те значения переменных, при которых выражение имеет смысл.
+
             </p>
             <p>
                 <strong>Уравнением</strong> называется равенство, содержащее переменную. <strong>Корнем уравнения</strong> называется значение переменной (число), подстановка которого в уравнение даёт верное числовое равенство. <br />
                 <strong>Решить уравнение</strong> — значит найти все его корни или доказать, что уравнение не имеет корней.
+            </p>
+            <p>
+                <strong>Тождественно равными выражениями</strong> называют выражения, которые равны между собой: <i className="text-nowrap">11 + a = a + 11</i>, <i className="text-nowrap">5 * a = a * 5</i>, <i className="text-nowrap">a * a * a = a&sup3;</i>. Само <b>равенство</b> этих двух выражений называют <strong>тождеством</strong>.
             </p>
         </section>
 
@@ -1644,6 +1653,139 @@ const Power = () => (
                 </div>
             </div>
 
+        </section>
+    </section>
+)
+
+const Polynomias = () => (
+    <section>
+        <ContentDividerV1 className='my-4'>
+            <h2 id="Polynomias" className="w-fit text-wrap xl:text-nowrap text-2xl">Многочлены</h2>
+        </ContentDividerV1>
+
+        <section>
+            <h3 id="Polynomias-mononomias" className="text-xl mt-4 mb-2 text-wrap">Одночлен</h3>
+
+            <p><strong>Одночленом</strong> называют произведение чисел, переменных и их натуральных степеней.</p>
+            <p>Примеры одночленов:</p>
+            <ul className="list-disc list-inside">
+                <li>-4x <i>(Тут используется одночлен с коэффициентом -1    )</i></li>
+                <li>4x</li>
+                <li>7a&sup2;b&sup3;</li>
+            </ul>
+
+            <p><strong>Степенью одночлена с коэффициентом, отличным от нуля</strong>, называют сумму показателей степеней входящих в него переменных:</p>
+            <ul className="list-disc list-inside">
+                <li>2a&sup2;b&sup3; — одночлен пятой степени</li>
+                <li>2a&sup2; — одночлен второй степени</li>
+                <li>2a&sup2;b — одночлен третьей степени</li>
+                <li>2 — одночлен нулевой степени</li>
+            </ul>
+
+            <p><strong>Подобными</strong> называют одночлены, у которых одинаковая часть, содержащая степени и переменные:</p>
+            <ul className="list-disc list-inside">
+                <li>2a&sup2;b&sup3; и 4a&sup2;b&sup3;</li>
+                <li>a&sup2;b&sup3; и -a&sup2;b&sup3;</li>
+            </ul>
+
+
+            <section>
+                <h4 className="text-lg mt-4 mb-2 text-wrap">Операции над одночленами</h4>
+
+                <section>
+                    <h5 className="text-base mt-4 mb-2 text-wrap">Умножение</h5>
+                    <ul className="space-y-2">
+                        <li>
+                            <div className="flex flex-row">
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={"4a^3b^2 \\cdot -4a^4b^3 = -16a^7b^5"} />
+                                </div>
+
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                    4 * a в степени 3 * b в степени 2 * на -4 * a степени 4 * b в степени 3 равно -16 * a в степени 7 * b в степени 5
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h5 className="text-base mt-4 mb-2 text-wrap">Деление</h5>
+
+                    <ul className="space-y-2">
+                        <li>
+                            <div className="flex flex-row">
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={"8a^3b^2 / -4a^2b = -2ab"} />
+                                </div>
+
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                    4 * a в степени 3 * b в степени 2 делить на -4 * a в степени 2 * b = -2 * a * b
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h5 className="text-base mt-4 mb-2 text-wrap">Возведение в степень</h5>
+
+                    <ul className="space-y-2">
+                        <li>
+                            <div className="flex flex-row">
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={"(4a^4b^3)^3 = 64a^{12}b^9"} />
+                                </div>
+
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                    (4 * a в степени 4 * b в степени 3) в степени 3 = 64 * a в степени 12 * b в степени 9
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h5 className="text-base mt-4 mb-2 text-wrap">Сложение и вычитание</h5>
+                    <p>Складывать и вычитать можно только <b>подобные</b> одночлены</p>
+
+                    <ul className="space-y-2">
+                        <li>
+                            <div className="flex flex-row">
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={"4a^2 + 2a^2 = 6a^2"} />
+                                </div>
+
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                    4 * a в степени 2 + 2 * a в степени 2 = 6 * a в степени 2
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="flex flex-row">
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={"4a^2 - 2a^2 = 2a^2"} />
+                                </div>
+
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                    4 * a в степени 2 - 2 * a в степени 2 = 2 * a в степени 2
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+            </section>
         </section>
     </section>
 )

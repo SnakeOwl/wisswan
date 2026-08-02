@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/algebra`,
-            lastModified: '2026-08-01T00:00:00.000Z',
+            lastModified: '2026-08-02T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.6,
             images: [
@@ -98,7 +98,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/triangle`,
-            lastModified: '2026-07-26T00:00:00.000Z',
+            lastModified: '2026-08-01T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.6,
             images: [

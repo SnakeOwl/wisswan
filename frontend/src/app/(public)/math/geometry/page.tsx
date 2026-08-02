@@ -34,19 +34,13 @@ export default async function Page() {
         sublinks: [{
             href: "/math/geometry/triangle#TriangleCalculator",
             label: "Калькулятор"
-        }, {
-            href: "/math/geometry/triangle#TriangleFullDescription",
-            label: "Подробные сведения"
+        },{
+            href: "/math/geometry/triangle#RightTriangleFormulas",
+            label: "Формулы прямоугольного треугольника"
         }, {
             href: "/math/geometry/triangle#Theorems",
             label: "Теоремы"
-        }, {
-            href: "/math/geometry/triangle#EqualitySigns",
-            label: "Тризнаки равенства треугольников"
-        }, {
-            href: "/math/geometry/triangle#RightTriangleFormulas",
-            label: "Формулы прямоугольного треугольника"
-        }]
+        }, ]
     }, {
         imageSrc: "/images/storage/geometry/square.svg",
         imageAlt: "Квадрат где углы помечены как: A, B, C, Z, стороны помечены как: отрезки AB и CZ как h, а BC и AZ как w. По центру проведена диагональ, помеченная как D.",
