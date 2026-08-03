@@ -22,8 +22,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/algebra`,
-            lastModified: '2026-08-02T00:00:00.000Z',
-            changeFrequency: 'weekly',
+            lastModified: '2026-08-03T00:00:00.000Z',
+            changeFrequency: 'daily',
             priority: 0.6,
             images: [
                 (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/algebra/percent_no_b.svg'),
