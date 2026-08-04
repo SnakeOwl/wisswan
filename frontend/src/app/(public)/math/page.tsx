@@ -67,6 +67,9 @@ const ShortMultipliesFormulas = () => {
                 a&sup2; + ab + ba + b&sup2;
             </span>,
             description: "Квадрат суммы"
+        },{
+            formula: <span><strong>(a - b)&sup2; = a&sup2; - 2ab + b&sup2;</strong></span>,
+            description: "Квадрат разности"
         }, {
             formula: <span><strong>a&sup2; - b&sup2; = (a - b)(a + b)</strong> = <br />
                 a&sup2; - ab + ba - b&sup2;

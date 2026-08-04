@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/algebra`,
-            lastModified: '2026-08-03T00:00:00.000Z',
+            lastModified: '2026-08-04T00:00:00.000Z',
             changeFrequency: 'daily',
             priority: 0.6,
             images: [
