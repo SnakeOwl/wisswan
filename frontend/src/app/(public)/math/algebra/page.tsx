@@ -66,6 +66,8 @@ export default async function Page() {
             <Polynomias />
 
             <LinearEquations />
+
+            <Functions />
         </main>
     )
 }
@@ -1386,66 +1388,67 @@ const Coordinates = () => (
 
         <p><strong>Система координат</strong> — это удобный способ определять положение точки и графики на плоскости или в пространстве. В большинстве случаев в математике используется Декартова система координать, но есть и другие.</p>
 
-        <h3 id="Coordinates-ReneDekart" className="text-xl mt-4 mb-2 text-wrap">Декартова система координат</h3>
-        <p>Впервые прямоугольную систему координат ввёл Рене Декарт В своей работе «Геометрия». На ней изображены 2 оси: ось <b>X</b> <i>(ось абсцисс)</i> и ось <b>Y</b> <i>(ось ординат)</i> и через них задаются координаты.</p>
+        <section>
+            <h3 id="Coordinates-ReneDekart" className="text-xl mt-4 mb-2 text-wrap">Декартова система координат</h3>
+            <p>Впервые прямоугольную систему координат ввёл Рене Декарт В своей работе «Геометрия». На ней изображены 2 оси: ось <b>X</b> <i>(ось абсцисс)</i> и ось <b>Y</b> <i>(ось ординат)</i> и через них задаются координаты.</p>
 
-        <p>Графиком обратной пропорциональной зависимости является <b>гипербола</b>.</p>
+            <p>Графиком обратной пропорциональной зависимости является <b>гипербола</b>.</p>
 
-        <figure className="flex flex-col items-center my-2">
-            <Image
-                src={"/images/storage/algebra/decart_coordinates.svg"}
-                unoptimized
-                width={500} height={500}
-                alt="Декартова система координат. Две перпендикулярные стрелки с засечками от -9 до 9. Горизонтальная ось X, вертикальная Y."
-            />
-
-            <figcaption className="font-bold text-sm">
-                Декартова система координат
-            </figcaption>
-        </figure>
-
-        <p className="font-heading">Примеры использования системы координат</p>
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 ">
-            <figure className="flex flex-col items-center my-2 w-fit">
+            <figure className="flex flex-col items-center my-2">
                 <Image
-                    src={"/images/storage/algebra/decart_coordinates_with_dots.svg"}
+                    src={"/images/storage/algebra/decart_coordinates.svg"}
                     unoptimized
                     width={500} height={500}
-                    alt="Декартова система координат с точками на ней"
+                    alt="Декартова система координат. Две перпендикулярные стрелки с засечками от -9 до 9. Горизонтальная ось X, вертикальная Y."
                 />
 
-                <figcaption>
-                    Декартова система координат с точками: <b>A(2,1)</b>, <b>B(5,2)</b>, <b>C(6-6)</b>, <b>D(-3,-3)</b>, <b>E(-5,4)</b>
+                <figcaption className="font-bold text-sm">
+                    Декартова система координат
                 </figcaption>
             </figure>
 
-            <figure className="flex flex-col items-center my-2 w-fit">
-                <Image
-                    src={"/images/storage/algebra/decart_coordinates_y_2_x.svg"}
-                    unoptimized
-                    width={500} height={500}
-                    alt="Декартова система координат с точками на ней. Точки: (1,2), (2,4), (3,6), (4,8). Через все точки проходит прямая."
-                />
+            <h4 id="Coordinates-examples" className="font-heading">Примеры использования системы координат</h4>
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 ">
+                <figure className="flex flex-col items-center my-2 w-fit">
+                    <Image
+                        src={"/images/storage/algebra/decart_coordinates_with_dots.svg"}
+                        unoptimized
+                        width={500} height={500}
+                        alt="Декартова система координат с точками на ней"
+                    />
 
-                <figcaption>
-                    Декартова система координат с формулой <b className="text-nowrap">Y = 2X</b>
-                </figcaption>
-            </figure>
+                    <figcaption>
+                        Декартова система координат с точками: <b>A(2,1)</b>, <b>B(5,2)</b>, <b>C(6-6)</b>, <b>D(-3,-3)</b>, <b>E(-5,4)</b>
+                    </figcaption>
+                </figure>
 
-            <figure className="flex flex-col items-center my-2 w-fit">
-                <Image
-                    src={"/images/storage/algebra/decart_coordinates_y_8_div_x.svg"}
-                    unoptimized
-                    width={500} height={500}
-                    alt="Декартова система координат с точками на ней. Точки: (1,8), (2,4), (3,2.6), (4,2), (5,1.6), (6,1.3), (7,1.14), (8,1), (9,0.88). Все точки соеденены линией."
-                />
+                <figure className="flex flex-col items-center my-2 w-fit">
+                    <Image
+                        src={"/images/storage/algebra/decart_coordinates_y_2_x.svg"}
+                        unoptimized
+                        width={500} height={500}
+                        alt="Декартова система координат с точками на ней. Точки: (1,2), (2,4), (3,6), (4,8). Через все точки проходит прямая."
+                    />
 
-                <figcaption className="w-full">
-                    Декартова система координат с формулой <b className="text-nowrap">Y = 8/X</b>. Кривая, которая соединяет все точки называют <b>Гиперболой</b>.
-                </figcaption>
-            </figure>
-        </div>
+                    <figcaption>
+                        Декартова система координат с формулой <b className="text-nowrap">Y = 2X</b>
+                    </figcaption>
+                </figure>
 
+                <figure className="flex flex-col items-center my-2 w-fit">
+                    <Image
+                        src={"/images/storage/algebra/decart_coordinates_y_8_div_x.svg"}
+                        unoptimized
+                        width={500} height={500}
+                        alt="Декартова система координат с точками на ней. Точки: (1,8), (2,4), (3,2.6), (4,2), (5,1.6), (6,1.3), (7,1.14), (8,1), (9,0.88). Все точки соеденены линией."
+                    />
+
+                    <figcaption className="w-full">
+                        Декартова система координат с формулой <b className="text-nowrap">Y = 8/X</b>. Кривая, которая соединяет все точки называют <b>Гиперболой</b>.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
     </section>
 )
 
@@ -1979,12 +1982,141 @@ const LinearEquations = () => (
             </li>
         </ul>
 
-        
+
         <h3 id="LinearEquations-not_equals_one_var" className="text-xl mt-4 mb-2 text-wrap">Линейные неравенства с одной переменной</h3>
         <p><b>Линейные неравенства с одной переменной</b>: <i>a*x&gt;b</i> , <i>a*x&lt;b</i> , <i>a*x&ge;b</i> , <i>a*x&le;b</i> , где a,b — числа, а x — переменная. </p>
 
         <p><strong>Решением неравенства с одной переменной</strong> называют число, подстановка которого приводит неравенство к верному числовому равенству.</p>
         <p><strong>Решить неравенство</strong> — значит найти его решения или доказать что их нет.</p>
         <p><strong>Равносильные неравенства</strong> — неравенства, имеющие одно и тоже множество решений. (Аналогично равносильным уравнением)</p>
+
+
+        {/* TODO: адаптировать под незрячих */}
+        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+        <section aria-hidden="true">
+            <h4 id="LinearEquations-examples" className="text-xl mt-4 mb-2 text-wrap">Примеры решений неравенств</h4>
+
+            <ul className="list-disc pl-4 space-y-3">
+                <li>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+
+                        <InlineMath math={`
+                            \\begin{aligned}
+                                6x^2 - 3x(2x + 4) &\\ge 18 \\\\
+                                6x^2 - 6x^2 + 12x &\\ge 18 \\\\
+                                -12x &\\ge 18 \\\\
+                                -2x &\\ge 3 \\\\
+                                -x &\\ge 1.5 \\\\ 
+                                x &\\le -1.5 
+                            \\end{aligned}
+                            `} />
+                    </div>
+                </li>
+                <li>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={`
+                            \\begin{aligned}
+                                (x + 7)(x - 3) &\\ge x^2 \\\\
+                                x^2 - 3x + 7x - 21 &\\ge x^2 \\\\
+                                4x - 21 &\\ge 0 \\\\
+                                x &\\ge 5.25 
+                            \\end{aligned}`} />
+                    </div>
+                </li>
+                <li>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={`
+                            \\begin{aligned}
+                                x(x + 2) &\\lt (x + 3)(x - 1) \\\\
+                                x^2 + 2x &\\lt x^2 - x + 3x - 3 \\\\
+                                x^2 + 2x &\\lt x^2 + 2x - 3 \\\\
+                                0 &\\lt - 3
+                            \\end{aligned}`} />
+
+                        <span> — нет решений, или у неравенства нет корней.</span>
+                    </div>
+                </li>
+                <li>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={`
+                            \\begin{aligned}
+                                (x + 6) (3x - 8) -3(x^2 - 1) &\\gt 20 \\\\
+                                3x^2 - 8x + 18x - 48 - 3x^2 + 3 &\\gt 20 \\\\
+                                10x - 45 &\\gt 20 \\\\
+                                10x - 65 &\\gt 0 \\\\
+                                x &\\gt 6.5
+                            \\end{aligned}`} />
+                    </div>
+                </li>
+                <li>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={`
+                            \\begin{aligned}
+                                (x - 3) (2x - 1) &\\le (2x + 1) (x + 2) \\\\
+                                2x^2 - x - 6x + 3 &\\le 2x^2 + 4x + x + 2 \\\\
+                                2x^2 - 7x + 3 &\\le 2x^2 + 5x + 2 \\\\
+                                -7x + 3 &\\le 5x + 2 \\\\
+                                -12x + 1 &\\le 0 \\\\
+                                -12x &\\le -1 \\\\
+                                -x &\\le - \\frac{1}{12} \\\\\
+                                x &\\ge \\frac{1}{12}
+                            \\end{aligned}`} />
+                    </div>
+                </li>
+                <li>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-lg">
+                        <InlineMath math={`
+                            \\begin{aligned}
+                                (3x + 3)(x + 2) - (3x - 4)(x + 2) &\\gt 35 \\\\
+                                3x^2 + 6x + 3x + 6 + (-3x + 4)(x + 2) &\\gt 35 \\\\
+                                3x^2 + 6x + 3x + 6 -3x^2 - 6x + 4x + 8 &\\gt 35 \\\\
+                                3x + 6 + 4x + 8 &\\gt 35 \\\\
+                                7x + 14 &\\gt 35 \\\\
+                                7x &\\gt 21 \\\\
+                                x &\\gt 3
+                            \\end{aligned}`} />
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+)
+
+
+const Functions = () => (
+    <section>
+        <ContentDividerV1 className='my-4'>
+            <h2 id="Functions" className="w-fit text-wrap xl:text-nowrap text-2xl">Функция</h2>
+        </ContentDividerV1>
+
+        <p><strong>Функцией</strong> называют зависимость двух переменных друг от друга, при которой любому значению одной переменной (аргументу), соответствует одно значение другой переменной (функции). Эту зависимость ещё называют <strong>Функциональной зависимостью</strong>. По факту: в функции y = 2*x, при смене x, y будет меняться тоже. Пример такой функции представлен ниже.</p>
+        <p><strong>Областью определения функции</strong> называют множество значений, которые принимают аргумент функции. В функции Y = 2*X областью о</p>
+        <p><strong>Множеством значений функции</strong> называют множество значений, которые принимает (по факту выдаёт) функция.</p>
+
+        <p>На системе координат ниже представлена функция <b>Y = 2*X</b>. В ней <b>областью определения функции</b> являются числа: <b>&#123;1, 2, 3, 4&#125;</b>. <b>Множеством значений функции</b> являются числа: <b>&#123;2, 4, 6, 8&#125;</b></p>
+
+        <figure className="flex flex-col items-center my-2 w-fit mx-auto">
+            <Image
+                src={"/images/storage/algebra/function_y_2_x.svg"}
+                unoptimized
+                width={500} height={500}
+                alt="Декартова система координат с точками на ней. Точки: (1,2), (2,4), (3,6), (4,8). Через все точки проходит прямая."
+            />
+
+            <figcaption>
+                График функции <b className="text-nowrap">Y = 2*X</b>
+            </figcaption>
+        </figure>
+
+        <p>Аргументы, при которых значения функции равны 0, называют нулями функции.</p>
+
+        <p><strong>График функции</strong> — это когда представляют функцию на системе координат и там: точки на оси абсцисс равны значениям аргумента, значения на оси координат равны значениям функции.</p>
+
     </section>
 )
