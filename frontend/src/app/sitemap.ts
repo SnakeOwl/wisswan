@@ -108,7 +108,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/circle_triangle_1.svg`,
             ],
         },
-
+        {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/calculators`,
+            lastModified: '2026-08-07T00:00:00.000Z',
+            changeFrequency: 'weekly',
+            priority: 0.9,
+            images: [
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/square.svg`,
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/Triangle_3.svg`,
+            ], 
+        },
+        {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/calculators/rectangles`,
+            lastModified: '2026-08-07T00:00:00.000Z',
+            changeFrequency: 'weekly',
+            priority: 1,
+            images: [
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/rectangle.svg`,
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/square.svg`,
+            ],
+        },
+        {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/calculators/triangle`,
+            lastModified: '2026-08-07T00:00:00.000Z',
+            changeFrequency: 'weekly',
+            priority: 1,
+            images: [
+                `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/Triangle_3.svg`,
+            ],
+        },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}privacy`,
             lastModified: '2026-07-01T08:53:55.061Z',

@@ -28,6 +28,7 @@ export default function GeometryNavCard({
         <div
             className="group cursor-pointer relative border rounded-md"
             onClick={() => router.push(card.link)}
+            onAuxClick={() => window.open(card.link, '_blank')}
         >
             <GlowingEffect
                 spread={40}
@@ -39,7 +40,7 @@ export default function GeometryNavCard({
 
             <div className="group p-4 flex flex-col xl:flex-row gap-4">
                 <Image
-                className="mx-auto xl:mx-0"
+                    className="mx-auto xl:mx-0"
                     src={card.imageSrc}
                     alt={card.imageAlt}
                     width={200}
@@ -51,13 +52,14 @@ export default function GeometryNavCard({
                         {card.label}
                     </div>
 
-                    <ul className="flex flex-wrap gap-2"
-                        onClick={e => e.stopPropagation()}
-                    >
+                    <ul className="flex flex-wrap gap-2">
                         {card.sublinks.map((link, index) => (
                             <li key={index}
                             >
-                                <HastagLink href={link.href}>
+                                <HastagLink href={link.href} 
+                                    onAuxClick={e => e.stopPropagation()}
+                                    onClick={e => e.stopPropagation()}
+                                >
                                     <span className="font-bold text-sky-500">#</span>&nbsp;{link.label}
                                 </HastagLink>
                             </li>

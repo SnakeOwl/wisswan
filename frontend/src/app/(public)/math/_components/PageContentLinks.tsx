@@ -16,6 +16,10 @@ export default function PageContentLinks() {
     const [links, setLinks] = useState<HeaderLink[]>([])
     const pathname = usePathname();
 
+    if (pathname.includes("calculators"))
+        return null;
+    
+
     useEffect(() => {
         const mainElement = document.querySelector("main")
         if (!mainElement)

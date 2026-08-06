@@ -14,7 +14,7 @@ import clsx from "clsx";
 type Figure = "rectangle" | "square";
 
 
-export default function Calculator() {
+export default function RectangleCalculator() {
     const [data, setData] = useState<Record<string, string | number>>({});
     const [figure, setFigure] = useState<Figure>("square");
 
@@ -101,7 +101,7 @@ export default function Calculator() {
     return (
         <section>
             <ContentDividerV1>
-                <h2 id="Calculator" className="w-fit text-2xl text-wrap xl:text-nowrap">Калькулятор</h2>
+                <h2 id="Calculator" className="w-fit text-2xl text-wrap xl:text-nowrap">Калькулятор прямоугольников</h2>
             </ContentDividerV1>
 
             <div>

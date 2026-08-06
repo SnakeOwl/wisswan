@@ -2,7 +2,7 @@ import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1"
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph"
 import { Metadata } from "next"
 import Image from "next/image"
-import TriangleCalculator from "./_components/Calculator"
+import TriangleCalculator from "../../_components/TriangleCalculator"
 
 export const metadata: Metadata = {
     title: "Треугольники",
@@ -226,7 +226,8 @@ const EqualitySigns = () => (
     </section>
 )
 
-const RightTriangleFormulas = () => {
+
+function RightTriangleFormulas() {
     /**
      * используемые цвета на картинке
      * e - text-amber-700   <span className="text-amber-600">e</span>

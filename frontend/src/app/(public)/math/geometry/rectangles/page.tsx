@@ -2,7 +2,7 @@ import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1"
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph"
 import { Metadata } from "next"
 import Image from "next/image"
-import Calculator from "./_components/Calculator"
+import RectangleCalculator from "../../_components/RectangleCalculator"
 
 export const metadata: Metadata = {
     title: "Прямоугольники",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default async function Page() {
     return (
         <main>
-            <Calculator />
+            <RectangleCalculator />
             
             <Formulas />
         </main>
