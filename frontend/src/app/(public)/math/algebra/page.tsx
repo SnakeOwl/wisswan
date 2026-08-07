@@ -1983,25 +1983,26 @@ const LinearEquations = () => (
         </ul>
 
 
-        <h3 id="LinearEquations-not_equals_one_var" className="text-xl mt-4 mb-2 text-wrap">Линейные неравенства с одной переменной</h3>
-        <p><b>Линейные неравенства с одной переменной</b>: <i>a*x&gt;b</i> , <i>a*x&lt;b</i> , <i>a*x&ge;b</i> , <i>a*x&le;b</i> , где a,b — числа, а x — переменная. </p>
+        <section>
+            <h3 id="LinearEquations-not_equals_one_var" className="text-xl mt-4 mb-2 text-wrap">Линейные неравенства с одной переменной</h3>
+            <p><b>Линейные неравенства с одной переменной</b>: <i>a*x&gt;b</i> , <i>a*x&lt;b</i> , <i>a*x&ge;b</i> , <i>a*x&le;b</i> , где a,b — числа, а x — переменная. </p>
 
-        <p><strong>Решением неравенства с одной переменной</strong> называют число, подстановка которого приводит неравенство к верному числовому равенству.</p>
-        <p><strong>Решить неравенство</strong> — значит найти его решения или доказать что их нет.</p>
-        <p><strong>Равносильные неравенства</strong> — неравенства, имеющие одно и тоже множество решений. (Аналогично равносильным уравнением)</p>
+            <p><strong>Решением неравенства с одной переменной</strong> называют число, подстановка которого приводит неравенство к верному числовому равенству.</p>
+            <p><strong>Решить неравенство</strong> — значит найти его решения или доказать что их нет.</p>
+            <p><strong>Равносильные неравенства</strong> — неравенства, имеющие одно и тоже множество решений. (Аналогично равносильным уравнением)</p>
 
 
-        {/* TODO: адаптировать под незрячих */}
-        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-        <section aria-hidden="true">
-            <h4 id="LinearEquations-examples" className="text-xl mt-4 mb-2 text-wrap">Примеры решений неравенств</h4>
+            {/* TODO: адаптировать под незрячих */}
+            {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+            <section aria-hidden="true">
+                <h4 id="LinearEquations-examples" className="text-lg mt-4 mb-2 text-wrap">Примеры решений неравенств с одной переменной</h4>
 
-            <ul className="list-disc pl-4 space-y-3">
-                <li>
-                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                    <div aria-hidden="true" className="xl:text-lg">
+                <ul className="list-disc pl-4 space-y-3">
+                    <li>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
 
-                        <InlineMath math={`
+                            <InlineMath math={`
                             \\begin{aligned}
                                 6x^2 - 3x(2x + 4) &\\ge 18 \\\\
                                 6x^2 - 6x^2 + 12x &\\ge 18 \\\\
@@ -2011,24 +2012,24 @@ const LinearEquations = () => (
                                 x &\\le -1.5 
                             \\end{aligned}
                             `} />
-                    </div>
-                </li>
-                <li>
-                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                    <div aria-hidden="true" className="xl:text-lg">
-                        <InlineMath math={`
+                        </div>
+                    </li>
+                    <li>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={`
                             \\begin{aligned}
                                 (x + 7)(x - 3) &\\ge x^2 \\\\
                                 x^2 - 3x + 7x - 21 &\\ge x^2 \\\\
                                 4x - 21 &\\ge 0 \\\\
                                 x &\\ge 5.25 
                             \\end{aligned}`} />
-                    </div>
-                </li>
-                <li>
-                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                    <div aria-hidden="true" className="xl:text-lg">
-                        <InlineMath math={`
+                        </div>
+                    </li>
+                    <li>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={`
                             \\begin{aligned}
                                 x(x + 2) &\\lt (x + 3)(x - 1) \\\\
                                 x^2 + 2x &\\lt x^2 - x + 3x - 3 \\\\
@@ -2036,13 +2037,13 @@ const LinearEquations = () => (
                                 0 &\\lt - 3
                             \\end{aligned}`} />
 
-                        <span> — нет решений, или у неравенства нет корней.</span>
-                    </div>
-                </li>
-                <li>
-                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                    <div aria-hidden="true" className="xl:text-lg">
-                        <InlineMath math={`
+                            <span> — нет решений, или у неравенства нет корней.</span>
+                        </div>
+                    </li>
+                    <li>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={`
                             \\begin{aligned}
                                 (x + 6) (3x - 8) -3(x^2 - 1) &\\gt 20 \\\\
                                 3x^2 - 8x + 18x - 48 - 3x^2 + 3 &\\gt 20 \\\\
@@ -2050,12 +2051,12 @@ const LinearEquations = () => (
                                 10x - 65 &\\gt 0 \\\\
                                 x &\\gt 6.5
                             \\end{aligned}`} />
-                    </div>
-                </li>
-                <li>
-                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                    <div aria-hidden="true" className="xl:text-lg">
-                        <InlineMath math={`
+                        </div>
+                    </li>
+                    <li>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={`
                             \\begin{aligned}
                                 (x - 3) (2x - 1) &\\le (2x + 1) (x + 2) \\\\
                                 2x^2 - x - 6x + 3 &\\le 2x^2 + 4x + x + 2 \\\\
@@ -2066,12 +2067,12 @@ const LinearEquations = () => (
                                 -x &\\le - \\frac{1}{12} \\\\\
                                 x &\\ge \\frac{1}{12}
                             \\end{aligned}`} />
-                    </div>
-                </li>
-                <li>
-                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                    <div aria-hidden="true" className="xl:text-lg">
-                        <InlineMath math={`
+                        </div>
+                    </li>
+                    <li>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={`
                             \\begin{aligned}
                                 (3x + 3)(x + 2) - (3x - 4)(x + 2) &\\gt 35 \\\\
                                 3x^2 + 6x + 3x + 6 + (-3x + 4)(x + 2) &\\gt 35 \\\\
@@ -2081,9 +2082,56 @@ const LinearEquations = () => (
                                 7x &\\gt 21 \\\\
                                 x &\\gt 3
                             \\end{aligned}`} />
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 id="LinearEquations-linear_with_two_variables" className="text-xl mt-4 mb-2 text-wrap">Линейные неравенства с двумя переменными</h3>
+
+                <div><strong>Линейным уравнением с двумя переменными</strong>&nbsp;выглядит так:&nbsp;
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="inline xl:text-lg">
+                        <InlineMath math={"ax + by = c"} />
                     </div>
-                </li>
-            </ul>
+                    <div className="sr-only inline">
+                        a*x+b*y=c
+                    </div>
+                    <span>, в нём <b>a</b>, <b>b</b>, <b>c</b> — числа, <b>x</b> и <b>y</b> — переменные.</span>
+                </div>
+
+                <div>
+                    <b>Решением уравнения</b> {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="inline xl:text-lg">
+                        <InlineMath math={"ax + by = c"} />
+                    </div>
+                    <div className="sr-only inline">
+                        a*x+b*y=c
+                    </div>
+                    <span> является упорядоченная пара чисел (x, y), при подстановке которых в уравнение, получается верное числовое равенство.</span>
+                    <span><strong>Графиком</strong> такого уравнения является прямая</span>
+                </div>
+                <p>Стоит отметить, что количество решений может быть более одного (это от нулей в уравнении зависит, чем их больше, тем меньше решений).</p>
+            </section>
+
+            {/** TODO: адаптировать для незрячих */}
+            <section aria-hidden="true">
+                <h3 id="LinearEquations-system_with_2_linear_with_two_variables" className="text-xl mt-4 mb-2 text-wrap">Система из двух линейных уравнений с двумя переменными</h3>
+
+                <p>Система из двух линейных уравнений с двумя переменными имеет вид:</p>
+                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                <div aria-hidden="true" className="xl:text-lg">
+                    <InlineMath math={`
+                            \\begin{cases}
+                            a_1x + b_1y &= c_1 \\\\
+                            a_2x + b_2y &= c_2 
+                            \\end{cases}`} />
+                    <span>где a<sub>1,2</sub>, b<sub>1,2</sub>, c<sub>1,2</sub> — числа, а x,y — переменные</span>
+                </div>
+                <p><strong>Решением системы уравнений</strong> будет пара чисел (x,y), которые будут одновременно решать все уравнения в системе.</p>
+                <p><strong>Решить систему</strong> — значит найти все её решения или доказать, что их нет.</p>
+            </section>
         </section>
     </section>
 )
@@ -2118,5 +2166,13 @@ const Functions = () => (
 
         <p><strong>График функции</strong> — это когда представляют функцию на системе координат и там: точки на оси абсцисс равны значениям аргумента, значения на оси координат равны значениям функции.</p>
 
+        <section>
+            <h3 id="Functions-linear_functions" className="text-xl mt-4 mb-2 text-wrap">Линейная функция</h3>
+
+            <p><strong>Линейной функцией</strong> называют функцию вида: <b>y = a * x + b</b>, где <b>a</b> и <b>b</b> — числа, а <b>x</b> и <b>y</b> — переменные.</p>
+            <p><strong>Областью определения линейной функции</strong> <b>y = a * x + b</b> является множество всех чисел.</p>
+            <p><strong>Множеством значений линейной функции</strong> <b>y = a * x + b</b> является множество всех чисел, при <b>a &ne; 0</b>. Если <b>a = 0</b>, то множество значений состоит из <b>b</b>.</p>
+            <p>На координатной плоскости линейная функция выглядит как прямая. Число <b>a</b> называют угловым коэффициентом прямой (для функции <b>y = a * x + b</b>).</p>
+        </section>
     </section>
 )

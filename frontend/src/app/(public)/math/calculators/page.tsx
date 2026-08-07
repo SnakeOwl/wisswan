@@ -38,12 +38,8 @@ export default async function Page() {
                 {links.map((el, index) => (
                     <NavCard key={el.href}
                         {...el}
-
-                    >
-
-                    </NavCard>
+                    />
                 ))}
-
             </nav>
         </main>
     )
