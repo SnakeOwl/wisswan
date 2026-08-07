@@ -1538,12 +1538,12 @@ const Power = () => (
                 <div className="flex flex-row">
                     {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
                     <div aria-hidden="true" className="xl:text-lg">
-                        <InlineMath math={"(\\frac{a}{b})^{-n} = \\frac{a^n}{b^n}"} />
+                        <InlineMath math={"(\\frac{a}{b})^{-n} = \\frac{b^n}{a^n}"} />
                     </div>
 
                     {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
                     <span className="sr-only">
-                        (a/b)^(-n) = (a^n)/(b^n)
+                        (a/b)^(-n) = (b^n)/(a^n)
                     </span>
                 </div>
 
