@@ -31,8 +31,8 @@ const Header = React.memo(() => {
             link: "/order",
         },
         {
-            name: "Геометрия",
-            link: "/math/geometry",
+            name: "Математика",
+            link: "/math",
         },
         {
             name: "О проекте",

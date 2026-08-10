@@ -16,8 +16,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math`,
-            lastModified: '2026-07-14T00:00:00.000Z',
-            changeFrequency: 'weekly',
+            lastModified: '2026-08-10T00:00:00.000Z',
+            changeFrequency: 'monthly',
             priority: 0.5
         },
         {

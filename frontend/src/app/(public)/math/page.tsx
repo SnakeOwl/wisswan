@@ -1,25 +1,16 @@
-import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table"
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
-
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Математика",
     description: "Раздел с ссылками на другие разделы математики",
-    keywords: ["математика", "геометрия"],
+    keywords: ["математика", "геометрия", "калькулятор"],
 
     openGraph: getDefaultOpenGraph({
-        description: "Раздел математики"
+        description: "Раздел с ссылками на другие разделы математики"
     }),
 }
 
@@ -28,93 +19,140 @@ export default async function Page() {
     return (
         <main>
             <section>
-                <ContentDividerV1 className="mb-4">
-                    <h2 className="text-2xl text-nowrap">Разделы математики</h2>
-                </ContentDividerV1>
+                <nav>
+                    <ul className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+                        <li>
+                            <Link href={'/math/algebra'}
+                                className="link-hover">
+                                <div className="group cursor-pointer relative border rounded-md p-4">
+                                    <GlowingEffect
+                                        spread={40}
+                                        glow={true}
+                                        disabled={false}
+                                        proximity={64}
+                                        inactiveZone={0.01}
+                                    />
+                                    <span className="font-heading text-2xl">Алгебра</span>
 
-                <ContentDividerV1 className="mb-4">
-                    <h3 className="text-xl font-bold text-nowrap">
-                        <Link href={'/math/geometry'}
-                            className="link-hover underline"
-                        >
-                            Геометрия
-                        </Link>
-                    </h3>
-                </ContentDividerV1>
+                                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-2" aria-hidden={true}>
+                                        <figure className="flex flex-col items-center">
+                                            <Image
+                                                src={"/images/storage/algebra/decart_coordinates_with_dots.svg"}
+                                                unoptimized
+                                                width={150} height={150}
+                                                alt="Декартова система координат с точками на ней"
+                                            />
 
-                <ContentDividerV1 className="mb-4">
-                    <h3 className="text-xl font-bold text-nowrap">
-                        <Link href={'/math/algebra'}
-                            className="link-hover underline"
-                        >
-                            Алгебра
-                        </Link>
-                    </h3>
-                </ContentDividerV1>
+                                            <figcaption className="text-xs text-center">
+                                                Декартова система координат
+                                            </figcaption>
+                                        </figure>
+
+                                        <figure className="flex flex-col items-center">
+                                            <Image
+                                                src={"/images/storage/algebra/set_union.svg"}
+                                                unoptimized
+                                                width={150} height={150}
+                                                alt="2 круга: первый круг как бы представляет собой множество A, второй круг и представляет собой подмножество B. Они пересекаются в центре и какбы объеденены."
+                                            />
+
+                                            <figcaption className="text-xs text-center">
+                                                Объединение множеств <br />
+                                                <span className="text-nowrap"><b className="text-orange-500">C</b> = <b className="text-green-700">A</b> &cup; <b className="text-blue-700">B</b></span>
+                                            </figcaption>
+                                        </figure>
+
+                                        <figure className="flex flex-col items-center my-2 w-fit mx-auto">
+                                            <Image
+                                                src={"/images/storage/algebra/two_linear_formulas_crossed.svg"}
+                                                unoptimized
+                                                width={150} height={150}
+                                                alt="Декартова система координат с двумя прямыми, которые пересекаются в одной точке"
+                                            />
+                                        </figure>
+                                    </div>
+
+                                </div>
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link href={'/math/geometry'}
+                                className="link-hover">
+                                <div className="group cursor-pointer relative border rounded-md p-4">
+                                    <GlowingEffect
+                                        spread={40}
+                                        glow={true}
+                                        disabled={false}
+                                        proximity={64}
+                                        inactiveZone={0.01}
+                                    />
+                                    <span className="font-heading text-2xl">Геометрия</span>
+
+                                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-2" aria-hidden={true}>
+                                        <figure className="flex flex-col items-center">
+                                            <Image
+                                                src="/images/storage/circle_description_1.svg"
+                                                width={150} height={150}
+                                                alt="Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор"
+                                                unoptimized
+                                            />
+
+                                            <figcaption className="text-xs text-center">
+                                                Круг
+                                            </figcaption>
+                                        </figure>
+
+                                        <figure className="flex flex-col items-center">
+                                            <Image
+                                                src={"/images/storage/geometry/rectangular_parallelepiped.svg"}
+                                                width={150} height={150}
+                                                alt="Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c."
+                                                unoptimized
+                                            />
+                                            
+                                            <figcaption className="text-xs text-center">
+                                                Куб
+                                            </figcaption>
+                                        </figure>
+
+                                        <figure className="flex flex-col items-center">
+                                            <Image
+                                                src={"/images/storage/geometry/polygon.svg"}
+                                                width={150} height={150}
+                                                alt="Многоугольник, где обозначены вершины: A, B, C, D, E и стороны: a, b, c, d ,e"
+                                                unoptimized
+                                            />
+
+                                            <figcaption className="text-xs text-center">
+                                                Многоугольник
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link href={'/math/calculators'}
+                                className="link-hover">
+                                <div className="group cursor-pointer relative border rounded-md p-4">
+                                    <GlowingEffect
+                                        spread={40}
+                                        glow={true}
+                                        disabled={false}
+                                        proximity={64}
+                                        inactiveZone={0.01}
+                                    />
+                                    <span className="font-heading text-2xl">Калькуляторы</span>
+                                </div>
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
             </section>
-
-            <ShortMultipliesFormulas />
-        </main>
-    )
-}
-
-
-const ShortMultipliesFormulas = () => {
-    const formulas = [
-        {
-            formula: <span><strong>(a + b)&sup2; = a&sup2; + 2ab + b&sup2;</strong> =<br />
-                (a + b)(a + b) = <br />
-                a&sup2; + ab + ba + b&sup2;
-            </span>,
-            description: "Квадрат суммы"
-        },{
-            formula: <span><strong>(a - b)&sup2; = a&sup2; - 2ab + b&sup2;</strong></span>,
-            description: "Квадрат разности"
-        }, {
-            formula: <span><strong>a&sup2; - b&sup2; = (a - b)(a + b)</strong> = <br />
-                a&sup2; - ab + ba - b&sup2;
-            </span>,
-            description: "Разность квадратов"
-        }, {
-            formula: <span><strong>(a + b)&sup3; = a&sup3; + 3a&sup2;b + 3ab&sup2; + b&sup3;</strong></span>,
-            description: "Куб суммы"
-        }, {
-            formula: <span><strong>(a - b)&sup3; = a&sup3; - 3a&sup2;b + 3ab&sup2; - b&sup3;</strong></span>,
-            description: "Куб разности"
-        }, {
-            formula: <span><strong>a&sup3; - b&sup3; = (a - b)(a&sup2; + ab + b&sup2;)</strong></span>,
-            description: "Разложение разности кубов"
-        }, {
-            formula: <span><strong>a&sup3; + b&sup3; = (a + b)(a&sup2; - ab + b&sup2;)</strong></span>,
-            description: "Разложение суммы кубов"
-        }
-    ];
-
-    return (
-        <main>
-            <ContentDividerV1>
-                <h3 className="text-2xl font-bold text-wrap xl:text-nowrap">Формулы сокращённого умножения</h3>
-            </ContentDividerV1>
-
-            <div className="flex">
-                <Table className="max-w-lg mx-auto">
-                    <TableCaption>Формулы сокращённого умножения</TableCaption>
-                    <TableHeader>
-                        <TableRow >
-                            <TableHead className="font-bold">Формула</TableHead>
-                            <TableHead className="font-bold">Название</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {formulas.map((el, index) => (
-                            <TableRow key={index}>
-                                <TableCell className="text-xl">{el.formula}</TableCell>
-                                <TableCell>{el.description}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </div>
         </main>
     )
 }
