@@ -51,14 +51,14 @@ export default function PageContentLinks() {
 
 
 
-    // Отслеживаем прокрутку – определяем заголовок ближе всего к центру
+    // Отслеживаем прокрутку – определяем заголовок ближе всего к вверху
     useEffect(() => {
         if (links.length === 0) return
 
         let ticking = false
 
         const updateActive = () => {
-            const viewportCenter = window.innerHeight >> 1
+            const viewportCenter = window.innerHeight >> 3
             let closestId: string | null = null
             let closestDist = Infinity
 

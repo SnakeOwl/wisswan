@@ -25,6 +25,17 @@ const translatedSegments: Record<string, string> = {
     rectangles: "Прямоугольники",
     calculators: "Калькуляторы",
 
+    numbers: "Числа",
+    algoritms: "Алгоритмы",
+    fractions: "Дроби",
+    percents: "Проценты",
+    proportions: "Пропорции",
+    sets: "Множества",
+    coordinates: "Координаты",
+    power: "Степень числа",
+    polynomias: "Многочлены",
+    linear_equations: "Линейные уравнения",
+    functions: "Функции",
 }
 
 

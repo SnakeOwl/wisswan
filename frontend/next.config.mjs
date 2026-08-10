@@ -38,7 +38,8 @@ const nextConfig = {
 
     experimental: {
         /** Turbopack now supports filesystem caching in development, storing compiler artifacts on disk between runs for significantly faster compile times across restarts, especially in large projects. */
-        turbopackFileSystemCacheForDev: true,
+        turbopackFileSystemCacheForDev: process.env.NODE_ENV === 'production',
+        turbopackServerFastRefresh: false,
 
         serverActions: {
             allowedOrigins: ['wisswan.tech', 'localhost', '127.0.0.1'],

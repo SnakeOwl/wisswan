@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     title: "Калькулятор прямоугольников",
     description: "Калькулятор прямоугольников",
     keywords: ['Калькулятор прямоугольников'],
+    alternates: {
+        canonical: "/math/geometry/rectangles"
+    },
     openGraph: getDefaultOpenGraph({
         description: "Калькулятор прямоугольников",
         images: [
