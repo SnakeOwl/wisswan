@@ -90,25 +90,26 @@ services:
       db:
         condition: service_started
 
-  laravel-schedule:
-    build:
-      context: ./backend
-      dockerfile: ./docker/common/php-fpm/Dockerfile
-      target: development
-    tty: true
-    restart: always
-    # Переопределяем дефолтную команду php-fpm на запуск воркера Laravel
-    command: php artisan schedule:work
-    env_file:
-      - ./backend/.env
-    volumes:
-      # Mount the application code for live updates
-      - ./backend:/var/www
-    networks:
-      - wisswan-development
-    depends_on:
-      db:
-        condition: service_started
+  # раскоментить при необходимости
+  # laravel-schedule:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: ./docker/common/php-fpm/Dockerfile
+  #     target: development
+  #   tty: true
+  #   restart: always
+  #   # Переопределяем дефолтную команду php-fpm на запуск воркера Laravel
+  #   command: php artisan schedule:work
+  #   env_file:
+  #     - ./backend/.env
+  #   volumes:
+  #     # Mount the application code for live updates
+  #     - ./backend:/var/www
+  #   networks:
+  #     - wisswan-development
+  #   depends_on:
+  #     db:
+  #       condition: service_started
 
   db:
     image: mysql:8.0

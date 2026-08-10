@@ -41,6 +41,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_with_dots.svg"),
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_y_2_x.svg"),
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/decart_coordinates_y_8_div_x.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/two_linear_formulas_same.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/two_linear_formulas_parralel.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/two_linear_formulas_crossed.svg"),
             ],
         },
         {

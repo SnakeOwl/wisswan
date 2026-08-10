@@ -62,16 +62,19 @@ const UserInitiator = React.memo(() => {
             const interval = setInterval(async ()=>{
                 const access_token_expires_in = Number(await getCookie("access_token_expires_in"));
 
-                // за 10 минут до просрочки меняем коды
-                const window = 600000;
-                if (Date.now() + window > access_token_expires_in){
-                    const responseTokens = await refreshUserToken();
-
-                    setCookie('access_token', responseTokens.access_token);
-                    setCookie('refresh_token', responseTokens.refresh_token);
-                    setCookie('access_token_expires_in', String(Date.now() + responseTokens.expires_in * 1000));
+                if (access_token_expires_in) {
+                    const window = 600000;
+                    
+                    // за 10 минут до просрочки меняем коды
+                    if (Date.now() + window > access_token_expires_in){
+                        const responseTokens = await refreshUserToken();
+                        
+                        setCookie('access_token', responseTokens.access_token);
+                        setCookie('refresh_token', responseTokens.refresh_token);
+                        setCookie('access_token_expires_in', String(Date.now() + responseTokens.expires_in * 1000));
+                    }
                 }
-            }, 5000);
+            }, 1500000);
 
             return () => clearInterval(interval);
         }
