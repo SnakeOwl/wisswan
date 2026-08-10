@@ -416,6 +416,40 @@ const Numbers = () => (
             <p>
                 <strong>Тождественно равными выражениями</strong> называют выражения, которые равны между собой: <i className="text-nowrap">11 + a = a + 11</i>, <i className="text-nowrap">5 * a = a * 5</i>, <i className="text-nowrap">a * a * a = a&sup3;</i>. Само <b>равенство</b> этих двух выражений называют <strong>тождеством</strong>.
             </p>
+
+            <section>
+                <h4 id="Fractions-general" className="w-fit text-lg text-wrap xl:text-nowrap mt-4 mb-2 ">Мнимая единица &#8520;</h4>
+                <p>&#8520; <strong>Мнимая единица</strong> — число, для которого &#8520;&sup2;=-1. Формально обозначают её как &#8520;, но почти всегда пишут как обычную i.</p>
+
+                <div>
+                    <p>Цикл степеней у неё такой:</p>
+                    <div className="flex flex-wrap items-center">
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-xl">
+                            <InlineMath math={`
+                            \\begin{aligned}
+                                ⅈ^1&=ⅈ \\\\
+                                ⅈ^2&=-1 \\\\
+                                ⅈ^3&=-ⅈ \\\\
+                                ⅈ^4&=1 
+                            \\end{aligned}
+                        `} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            ⅈ^1=ⅈ br
+                            ⅈ^2=-1 
+                            ⅈ^3=-ⅈ 
+                            ⅈ^4=1 
+                        </span>
+                    </div>
+                    <p>а далее цикл повторяется.</p>
+                </div>
+
+
+            </section>
+
         </section>
 
         <section>
