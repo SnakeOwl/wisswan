@@ -1,5 +1,32 @@
 // структурированные данные под сущности. JSON-LD
 export default async function SchemaOrg() {
+    const priceCurrency = "BYN";
+
+    const offers = [
+        {
+            name: "Создание и поддержка сайтов на WordPress",
+            description: "Быстрый запуск, удобная админ-панель. Идеально для блогов, визиток, SPA и небольших каталогов",
+            priceCurrency: priceCurrency,
+            price: 219
+        }, {
+            name: "Создание и поддержка сайтов на 1С-Битрикс",
+            description: "Надежное решение для интернет-магазинов и корпоративных порталов",
+            priceCurrency: priceCurrency,
+            price: 449
+        }, {
+            name: "Разработка и поддержка веб-приложений на Laravel",
+            description: "Кастомная разработка сервисов, CRM-систем и высоконагруженных проектов",
+            priceCurrency: priceCurrency,
+            price: 1533
+        }, {
+            name: "Разработка и поддержка сайтов на Next.js (React)",
+            description: "Современные, сверхбыстрые SPA и SSR приложения с отличным SEO-потенциалом и уверенным кешированием",
+            priceCurrency: priceCurrency,
+            price: 1533
+        }
+    ];
+
+
     const JSONSchema = {
         "@context": "https://schema.org",
         "@graph": [
@@ -25,58 +52,20 @@ export default async function SchemaOrg() {
                 },
                 "offers": {
                     "@type": "AggregateOffer",
-                    /*
-                    "priceCurrency": "RUB",
-                    "lowPrice": "15000",
-                    "highPrice": "150000",
-                    */
+                    "priceCurrency": priceCurrency,
+                    "lowPrice": offers.reduce((acum, el) => el.price < acum.price ? el : acum, offers[0]).price,
+                    "highPrice": offers.reduce((acum, el) => el.price > acum.price ? el : acum, offers[0]).price,
+
                     "offerCount": "4",
-                    "offers": [
-                        {
-                            "@type": "Offer",
-                            "name": "Создание сайта на WordPress",
-                            "description": "Быстрый запуск, удобная админ-панель. Идеально для блогов, визиток и небольших каталогов.",
-                            /*
-                            "price": "15000",
-                            "priceCurrency": "RUB",
-                            */
-                            "availability": "https://schema.org",
-                            "url": process.env.NEXT_PUBLIC_SITE_URL
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Создание сайта на 1С-Битрикс",
-                            "description": "Надежное решение для крупных интернет-магазинов и корпоративных порталов.",
-                            /*
-                            "price": "45000",
-                            "priceCurrency": "RUB",
-                            */
-                            "availability": "https://schema.org",
-                            "url": process.env.NEXT_PUBLIC_SITE_URL
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Разработка веб-приложений на Laravel",
-                            "description": "Кастомная разработка сервисов, CRM-систем и высоконагруженных проектов.",
-                            /*
-                            "price": "80000",
-                            "priceCurrency": "RUB",
-                            */
-                            "availability": "https://schema.org",
-                            "url": process.env.NEXT_PUBLIC_SITE_URL
-                        },
-                        {
-                            "@type": "Offer",
-                            "name": "Разработка на Next.js (React)",
-                            "description": "Современные, сверхбыстрые SPA и SSR приложения с отличным SEO-потенциалом.",
-                            /*
-                            "price": "120000",
-                            "priceCurrency": "RUB",
-                            */
-                            "availability": "https://schema.org",
-                            "url": process.env.NEXT_PUBLIC_SITE_URL
-                        }
-                    ]
+                    "offers": offers.map(el => ({
+                        "@type": "Offer",
+                        name: el.name,
+                        description: el.description,
+                        priceCurrency: el.priceCurrency,
+                        price: el.price,
+                        availability: "https://schema.org",
+                        url: process.env.NEXT_PUBLIC_SITE_URL
+                    }))
                 }
             },
             {

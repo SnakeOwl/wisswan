@@ -4,7 +4,6 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 import Image from "next/image";
-import Link from "next/link";
 import ButtonStyled from "@/app/_components/buttons/ButtonStyled";
 import { useRouter } from "next/navigation";
 
@@ -15,6 +14,7 @@ export function CardsWithGlowingEffectBox() {
             imageSrc: '/images/storage/dashicons-wordpress-alt.svg',
             imageAlt: 'Логотип WordPress',
             title: 'Wordpress',
+            priceFrom: 219,
             pluses: [
                 "Решение проверенное временем",
                 "Возможность глубокой модерации с помощью панели управления",
@@ -43,6 +43,7 @@ export function CardsWithGlowingEffectBox() {
             imageSrc: '/images/storage/1c_bitrix_logo.svg',
             imageAlt: 'Логотип 1С-Битрикс',
             title: '1С-Битрикс',
+            priceFrom: 449,
             pluses: [
                 "Решение проверенное временем",
                 "Возможность глубокой модерации с помощью панели управления",
@@ -71,6 +72,7 @@ export function CardsWithGlowingEffectBox() {
             imageSrc: '/images/storage/Laravel.svg',
             imageAlt: 'Логотип Laravel',
             title: 'Laravel',
+            priceFrom: 1533,
             pluses: [
                 "Решение проверенное временем",
                 "Панель управления выбирается индивидуально",
@@ -124,11 +126,12 @@ export function CardsWithGlowingEffectBox() {
                         sites={el.sites}
                         plusesListIcon={el.plusesListIcon}
                         detailsHref={el.detailsHref}
+                        price={el.priceFrom}
                     />
                 ))
                 }
                 <div className="px-1">
-                    <NextjsEvervaultCard />
+                    <NextjsEvervaultCard price={1533} />
                 </div>
             </ul>
         </section>
@@ -137,7 +140,11 @@ export function CardsWithGlowingEffectBox() {
 }
 
 
-const NextjsEvervaultCard = () => {
+const NextjsEvervaultCard = ({
+    price
+}: {
+    price: number
+}) => {
     const router = useRouter();
 
     return (
@@ -154,8 +161,6 @@ const NextjsEvervaultCard = () => {
             </h3>
 
 
-
-
             <ul className="space-y-1">
                 <li className="flex flex-row gap-2 items-center">
                     <Star className="text-yellow-400 min-h-6 h-6 min-w-6 w-6" />
@@ -170,11 +175,16 @@ const NextjsEvervaultCard = () => {
 
 
             <div className="w-full flex flex-row justify-between items-center mt-4">
-                <Link href={"/#WorkSteps"}
-                    className="link-hover text-sky-600"
-                >
-                    Подробнее
-                </Link>
+                <div className="flex flex-row items-center gap-1">
+                    <span className="text-lg font-heading">{price}</span>
+
+                    <Image
+                        src={"/images/byn_symbol.svg"}
+                        alt="Графический знак белорусского рубля"
+                        width={14} height={14}
+                        unoptimized
+                    />
+                </div>
 
                 <ButtonStyled
                     className="px-2 py-1 rounded"
@@ -200,9 +210,10 @@ interface GridItemProps {
     }[]
     plusesListIcon: React.ReactNode
     detailsHref: string
+    price: number
 }
 
-const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref }: GridItemProps) => {
+const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref, price }: GridItemProps) => {
     const router = useRouter();
 
     return (
@@ -256,11 +267,16 @@ const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref }: G
                         </section>
 
                         <div className="flex flex-row justify-between items-center mt-4">
-                            <Link href={detailsHref}
-                                className="link-hover text-sky-600"
-                            >
-                                Подробнее
-                            </Link>
+                            <div className="flex flex-row items-center gap-1">
+                                <span className="text-lg font-heading">{price}</span>
+
+                                <Image
+                                    src={"/images/byn_symbol.svg"}
+                                    alt="Графический знак белорусского рубля"
+                                    width={14} height={14}
+                                    unoptimized
+                                />
+                            </div>
 
                             <ButtonStyled
                                 className="px-2 py-1 rounded"
