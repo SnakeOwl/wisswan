@@ -34,13 +34,13 @@ export default async function Page() {
         sublinks: [{
             href: "/math/geometry/triangle#TriangleCalculator",
             label: "Калькулятор"
-        },{
+        }, {
             href: "/math/geometry/triangle#RightTriangleFormulas",
             label: "Формулы прямоугольного треугольника"
         }, {
             href: "/math/geometry/triangle#Theorems",
             label: "Теоремы"
-        }, ]
+        },]
     }, {
         imageSrc: "/images/storage/geometry/square.svg",
         imageAlt: "Квадрат где углы помечены как: A, B, C, Z, стороны помечены как: отрезки AB и CZ как h, а BC и AZ как w. По центру проведена диагональ, помеченная как D.",
@@ -68,7 +68,7 @@ export default async function Page() {
         }, {
             href: "/math/geometry/polygonal#Trapezoid",
             label: "Трапеция"
-        },{
+        }, {
             href: "/math/geometry/polygonal#Rhombus",
             label: "Ромб"
         }
@@ -81,10 +81,17 @@ export default async function Page() {
         sublinks: [{
             href: "/math/geometry/3d#RectangularParallelepiped",
             label: "Прямоугольный параллелепипед"
-        },{
+        }, {
             href: "/math/geometry/3d#Prizm",
             label: "Призма"
-        }        
+        }
+        ]
+    }, {
+        imageSrc: "/images/storage/geometry/rectangular_parallelepiped.svg",
+        imageAlt: "Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c.",
+        label: "Трёхмерные фигуры",
+        link: `/math/geometry/3d`,
+        sublinks: [
         ]
     },
     ]

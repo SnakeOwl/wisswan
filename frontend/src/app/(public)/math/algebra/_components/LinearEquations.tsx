@@ -444,92 +444,202 @@ const LinearEquations = () => (
                 <section aria-hidden={true}>
                     <h4 id="LinearEquations-system_with_2_linear_with_two_variables-examples" className="text-lg mt-4 mb-2 text-wrap">Примеры решения систем</h4>
 
+                    <div className="flex flex-col gap-6">
 
-                    <div>
-                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                        <div aria-hidden="true" className="xl:text-lg">
-                            <InlineMath math={`
+
+                        <div className="flex flex-col gap-3">
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
                                 \\begin{cases}
                                 0.1x + 0.2y &= 0.3 \\\\
                                 0.4x + 0.5y &= 0.9
                                 \\end{cases}
                                 `} />
-                        </div>
-                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                        <span className="sr-only">
-                        </span>
-                    </div>
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
+                            </div>
 
-                    <p>Умножаем первое уравнение на -4 и суммируем со вторым:</p>
-                    <div className="flex flex-col gap-3">
-                        <div>
-                            {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                            <div aria-hidden="true" className="xl:text-lg">
-                                <InlineMath math={`
+                            <p>Умножаем первое уравнение на -4 и суммируем со вторым:</p>
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
                                 \\begin{cases}
                                     0.1x + 0.2y &= 0.3 \\\\
                                     0 + -0.3y &= -0.3
                                 \\end{cases}
                                 `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
                             </div>
-                            {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                            <span className="sr-only">
-                            </span>
-                        </div>
 
-                        <div>
-                            {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                            <div aria-hidden="true" className="xl:text-lg">
-                                <InlineMath math={`
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
                                 \\begin{cases}
                                     0.1x + 0.2y &= 0.3 \\\\
                                     y &= -0.3 / -0.3 = 1
                                 \\end{cases}
                                 `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
                             </div>
-                            {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                            <span className="sr-only">
-                            </span>
-                        </div>
 
-                        <div>
-                            {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                            <div aria-hidden="true" className="xl:text-lg">
-                                <InlineMath math={`
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
                                 \\begin{cases}
                                     0.1x + 0.2(1) &= 0.3 \\\\
                                     y &= 1
                                 \\end{cases}
                                 `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
                             </div>
-                            {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                            <span className="sr-only">
-                            </span>
-                        </div>
 
-                        <div>
-                            {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                            <div aria-hidden="true" className="xl:text-lg">
-                                <InlineMath math={`
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
                                 \\begin{cases}
                                     x &= (0.3 - 0.2) / 0.1 = 1 \\\\
                                     y &= 1
                                 \\end{cases}
                                 `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
                             </div>
-                            {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                            <span className="sr-only">
-                            </span>
+                        </div>
+
+                        <hr />
+                        <div className="flex flex-col gap-3">
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
+                                    \\begin{cases}
+                                        0.6x - 0.2 = 19 - 3y \\\\
+                                        0.5y - \\frac{5}{6} = 15 \\frac{2}{3} - 2x
+                                    \\end{cases}
+                                `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
+                            </div>
+
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
+                                    \\begin{cases}
+                                        0.6x + 3y = 19 + \\frac{1}{5} = \\frac{96}{5} = \\frac{192}{10}  \\\\
+                                        2x + 0.5y  = 15\\frac{2}{3} + \\frac{5}{6} = \\frac{99}{6} = \\frac{33}{2} = \\frac{165}{10}
+                                    \\end{cases}
+                                `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
+                            </div>
+
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
+                                    \\begin{cases}
+                                        y = (\\frac{192}{10} - 0.6x) / 3 =\\frac{64}{10} - 0.2x \\\\
+                                        2x + 0.5(\\frac{64}{10} - 0.2x) = \\frac{165}{10}
+                                    \\end{cases}
+                                `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
+                            </div>
+
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
+                                    \\begin{cases}
+                                        y = 6.4 - 0.2x \\\\
+                                        2x + \\frac{32}{10} - 0.1x = \\frac{165}{10}
+                                    \\end{cases}
+                                `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
+                            </div>
+
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
+                                    \\begin{cases}
+                                        y = 6.4 - 0.2x \\\\
+                                        1.9x = 16.5 - 3.2 = 13.3
+                                    \\end{cases}
+                                `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
+                            </div>
+
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
+                                    \\begin{cases}
+                                        y = 6.4 - 0.2x \\\\
+                                        1.9x = 13.3 / 1.9 = 7
+                                    \\end{cases}
+                                `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
+                            </div>
+
+                            <div>
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-lg">
+                                    <InlineMath math={`
+                                    \\begin{cases}
+                                        y = 6.4 - 0.2 \\cdot 7 = 5\\\\
+                                        1.9x  = 7
+                                    \\end{cases}
+                                `} />
+                                </div>
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                </span>
+                            </div>
                         </div>
                     </div>
-
                 </section>
             </section>
 
 
 
         </section>
-    </div>
+    </div >
 )
 
 

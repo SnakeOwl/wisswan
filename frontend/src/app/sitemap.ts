@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/algebra`,
-            lastModified: '2026-08-10T00:00:00.000Z',
+            lastModified: '2026-08-13T00:00:00.000Z',
             changeFrequency: 'daily',
             priority: 0.8,
             images: [
@@ -136,12 +136,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/3d`,
-            lastModified: '2026-07-30T00:00:00.000Z',
+            lastModified: '2026-08-13T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.6,
             images: [
                 (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/rectangular_parallelepiped.svg"),
-                (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/right_prizm.svg")
+                (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/right_prizm.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/cylinder.svg")
             ],
         },
         {
