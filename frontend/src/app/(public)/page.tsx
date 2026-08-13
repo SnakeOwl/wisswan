@@ -9,12 +9,12 @@ import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import SchemaOrg from "./_components/SchemaOrg";
 
 export const metadata: Metadata = {
-    title: "Создание сайтов",
-    description: `${process.env.NEXT_PUBLIC_APP_NAME} — Создание сайтов на Wordpress, Laravel, React, Nextjs, 1С-Битрикс. Купить сайт под ключ.`,
+    title: "Создание сайтов РБ",
+    description: `${process.env.NEXT_PUBLIC_APP_NAME} — Создание сайтов на Wordpress, Laravel, React, Nextjs, 1С-Битрикс. Купить сайт под ключ в РБ.`,
     keywords: [process.env.NEXT_PUBLIC_APP_NAME!, "виссван", "создание сайтов", "разработка сайтов", "wordpress", "1с-битрикс", "laravel", "react", "nextjs"],
 
     openGraph: getDefaultOpenGraph({
-        description: "Создание сайтов на Wordpress, Laravel, React, Nextjs, 1С-Битрикс"
+        description: "Создание сайтов на Wordpress, Laravel, React, Nextjs, 1С-Битрикс в РБ"
     }),
 }
 
