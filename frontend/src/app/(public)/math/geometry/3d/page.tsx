@@ -22,8 +22,6 @@ export const metadata: Metadata = {
             (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/cylinder.svg"),
         ]
     }),
-
-    
 }
 
 export default async function Page() {

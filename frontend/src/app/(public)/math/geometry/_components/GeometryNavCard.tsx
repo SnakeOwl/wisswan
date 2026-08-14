@@ -38,15 +38,17 @@ export default function GeometryNavCard({
                 inactiveZone={0.01}
             />
 
-            <div className="group p-4 flex flex-col xl:flex-row gap-4">
-                <Image
-                    className="mx-auto xl:mx-0"
-                    src={card.imageSrc}
-                    alt={card.imageAlt}
-                    width={200}
-                    height={200}
-                    unoptimized
-                />
+            <div className="group p-4 flex flex-col xl:flex-row gap-4 h-full">
+                <div className="h-full flex items-center">
+                    <Image
+                        className="mx-auto xl:mx-0"
+                        src={card.imageSrc}
+                        alt={card.imageAlt}
+                        width={200}
+                        height={200}
+                        unoptimized
+                    />
+                </div>
                 <div>
                     <div className="group-hover:text-sky-500 font-bold mb-2 font-heading">
                         {card.label}
@@ -56,7 +58,7 @@ export default function GeometryNavCard({
                         {card.sublinks.map((link, index) => (
                             <li key={index}
                             >
-                                <HastagLink href={link.href} 
+                                <HastagLink href={link.href}
                                     onAuxClick={e => e.stopPropagation()}
                                     onClick={e => e.stopPropagation()}
                                 >

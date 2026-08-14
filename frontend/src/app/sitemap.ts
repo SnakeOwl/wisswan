@@ -125,6 +125,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             ],
         },
         {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/base`,
+            lastModified: '2026-07-30T00:00:00.000Z',
+            changeFrequency: 'weekly',
+            priority: 0.5,
+            images: [
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/acute_angle.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/obtuse_angle.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right_angle.svg"),
+            ],
+
+        },
+        {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/rectangles`,
             lastModified: '2026-07-29T00:00:00.000Z',
             changeFrequency: 'weekly',
@@ -140,9 +152,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'weekly',
             priority: 0.6,
             images: [
-                (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/rectangular_parallelepiped.svg"),
-                (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/right_prizm.svg"),
-                (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/cylinder.svg")
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/rectangular_parallelepiped.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right_prizm.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/cylinder.svg")
             ],
         },
         {
@@ -186,7 +198,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             images: [
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/square.svg`,
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/Triangle_3.svg`,
-            ], 
+            ],
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/calculators/rectangles`,

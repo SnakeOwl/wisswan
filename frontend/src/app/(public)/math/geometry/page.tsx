@@ -14,6 +14,15 @@ export const metadata: Metadata = {
 export default async function Page() {
 
     const sections = [{
+        imageSrc: "/images/storage/geometry/acute_angle.svg",
+        imageAlt: "Острый угол",
+        label: "База",
+        link: `/math/geometry/base`,
+        sublinks: [{
+            href: "/math/geometry/base#Definitions",
+            label: "Определения"
+        }]
+    }, {
         imageSrc: "/images/storage/circle_description_1.svg",
         imageAlt: "Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор",
         label: "Круг и окружность",
