@@ -32,9 +32,48 @@ export default async function Page() {
             <Prizm />
 
             <Cylinder />
+
+            <Sphere />
         </main>
     )
 }
+
+
+const Sphere = () => (
+    <section>
+        <ContentDividerV1 className="my-4">
+            <h2 id="Sphere" className="w-fit text-2xl text-wrap xl:text-nowrap">Сфера</h2>
+        </ContentDividerV1>
+
+        <div >
+            <figure className="flex flex-col items-center xl:float-left">
+                <Image
+                    className=" mx-4"
+                    src={"/images/storage/geometry/sphere.svg"}
+                    alt={"Цилиндр, с пометками: r — радиус, EF — осевое сечение, h — высота, ABCD — осевое сечение L0 — длина окружности."}
+                    width={300} height={400}
+                    unoptimized
+                />
+            </figure>
+
+            <div>
+                {/* <section>
+                    <h3 id="Formulas" className="w-fit text-2xl text-wrap xl:text-nowrap mt-4 mb-2">Формулы</h3>
+                    <p>S боковой поверхности цилиндра = <span className="text-green-700">L0</span> * <span className="text-blue-700">h</span></p>
+                </section> */}
+
+                <section>
+                    <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2">Обозначения</h3>
+                    <dl>
+                        <dt className="inline font-bold">Шар</dt> — <dd className="inline">это геометрическое тело, которое состоит из всех точек пространства, которые находятся на расстоянии от центра, до заданного радиуса.</dd> <br />
+                        <dt className="inline font-bold">Сфера</dt> — <dd className="inline">это поверхность шара, она же <b>оболочка</b>.</dd> <br />
+                    </dl>
+
+                </section>
+            </div>
+        </div>
+    </section>
+)
 
 
 const RectangularParallelepiped = () => (
@@ -149,13 +188,16 @@ const Cylinder = () => (
             <h2 id="Cylinder" className="w-fit text-2xl text-wrap xl:text-nowrap">Цилиндр</h2>
         </ContentDividerV1>
 
-        <div className="flex flex-col xl:flex-row flex-wrap gap-4 mt-4">
-            <Image
-                src={"/images/storage/geometry/cylinder.svg"}
-                alt={"Цилиндр, с пометками: r — радиус, EF — осевое сечение, h — высота, ABCD — осевое сечение L0 — длина окружности."}
-                width={300} height={400}
-                unoptimized
-            />
+        <div>
+            <figure className="flex flex-col items-center xl:float-left">
+                <Image
+                    src={"/images/storage/geometry/cylinder.svg"}
+                    alt={"Цилиндр, с пометками: r — радиус, EF — осевое сечение, h — высота, ABCD — осевое сечение L0 — длина окружности."}
+                    width={300} height={400}
+                    unoptimized
+                />
+            </figure>
+
             <div>
                 <section>
                     <h3 id="Formulas" className="w-fit text-2xl text-wrap xl:text-nowrap mt-4 mb-2">Формулы</h3>

@@ -176,7 +176,7 @@ const NextjsEvervaultCard = ({
 
             <div className="w-full flex flex-row justify-between items-center mt-4">
                 <div className="flex flex-row items-center gap-1">
-                    <span className="text-lg font-heading">{price}</span>
+                    <span className="text-lg font-heading">от {price}</span>
 
                     <Image
                         src={"/images/byn_symbol.svg"}
@@ -268,7 +268,7 @@ const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref, pri
 
                         <div className="flex flex-row justify-between items-center mt-4">
                             <div className="flex flex-row items-center gap-1">
-                                <span className="text-lg font-heading">{price}</span>
+                                <span className="text-lg font-heading">от {price}</span>
 
                                 <Image
                                     src={"/images/byn_symbol.svg"}

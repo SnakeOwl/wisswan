@@ -38,13 +38,19 @@ const Definitions = () => (
         <dl>
             <dt className="inline font-bold">Прямая</dt> — <dd className="inline">это прямая линия, бесконечная в обе стороны.</dd> <br />
             <dt className="inline font-bold">Луч</dt> — <dd className="inline">это часть прямой, но имеет начало и не имеет конца (бесконечен в одну сторону).</dd> <br />
-            <dt className="inline font-bold">Отрезок</dt> — <dd className="inline">это часть прямой, но имеет концы на обеих сторонах.</dd> <br />
+            <dt className="inline font-bold">Отрезок</dt> — <dd className="inline">это часть прямой, но имеет концы на обеих сторонах (длина ограничена двумя точками).</dd> <br />
             <dt className="inline font-bold">Параллельные прямые</dt> — <dd className="inline">это прямые, которые не пересекаются.</dd> Обозначаются так: &#8741; , НЕ параллельные обозначаются так: &#x2226; <br />
             <dt className="inline font-bold">Перпендикулярные прямые</dt> — <dd className="inline">это прямые, которые при пересечении образуют между собой прямой угол.</dd> Обозначаются так: &#8869; <br />
             <dt className="inline font-bold">Аксиома</dt> — <dd className="inline">это утверждения о свойствах фигур, которые принимаются без доказательств.</dd> <br />
-            <dt className="inline font-bold">Теорема</dt> — <dd className="inline">это утверждение, верность которой проверяется путём логических рассуждений, которые называют <b>доказательством</b></dd>
-
+            <dt className="inline font-bold">Теорема</dt> — <dd className="inline">это утверждение, верность которой проверяется путём логических рассуждений, которые называют <b>доказательством</b></dd> <br />
+            <dt className="inline font-bold">Пересекающиеся прямые</dt> — <dd className="inline">это те, которые имеют общую точку пересечения.</dd> <br />
+            <dt className="inline font-bold">Параллельные прямые</dt> — <dd className="inline">это те, которые имеют лежат в одной плоскости и не пересекаются.</dd> <br />
+            <dt className="inline font-bold">Противоположные лучи</dt> <dd className="inline">имеют общее начало и лежат на одной прямой. Их ещё называют <b>дополнительными</b>.</dd> <br />
+            <dt className="inline font-bold">Равные отрезки</dt> <dd className="inline">Имеют одинаковую длину и их можно совместить наложением.</dd> <br />
+            <dt className="inline font-bold">Длина отрезка</dt> — <dd className="inline">Это расстояние между двумя его концами (точками).</dd> 
         </dl>
+
+
 
         <section>
             <h3 className="mt-4 mb-2 text-lg text-wrap">Виды углов</h3>

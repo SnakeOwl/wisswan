@@ -108,6 +108,21 @@ const Power = () => (
                 </div>
 
                 <div className="flex flex-row">
+                    <div>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-lg">
+                            <InlineMath math={"a^c \\cdot b^c = d^c"} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+                            a^c * b^c = d^c
+                        </span>
+                    </div>
+                    <span className="text-base"> — Произведение оснований с одинаковыми степенями</span>
+                </div>
+
+                <div className="flex flex-row">
                     {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
                     <div aria-hidden="true" className="xl:text-lg">
                         <InlineMath math={"\\frac{a^m}{a^n} = a^m / a^n = a^{m - n}"} />
@@ -209,7 +224,7 @@ const Power = () => (
         <section aria-hidden={true}>
             <h3 id="Power-examples" className="mt-4 mb-2 text-xl text-wrap">Примеры вычислений со стеменями</h3>
 
-            <ul className="list-disc pl-4">
+            <ul className="list-disc pl-4 space-y-3">
                 <li>
                     <div className="flex flex-wrap items-center font-bold">
                         <span>Вычислить:</span>
@@ -270,6 +285,75 @@ const Power = () => (
                                     &\\frac{1}{25} - 4 + \\frac{1}{7} - 3 = \\\\
                                     &\\frac{7}{175} + \\frac{25}{175} - 7 = \\\\
                                     &\\frac{32}{175} - 7 \\Rightarrow - \\frac{1193}{175} \\Rightarrow -6\\frac{143}{175}
+                                \\end{aligned}
+                                `} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+
+                        </span>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="flex flex-wrap items-center font-bold">
+                        <span>Найти значение выражения:</span>
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-xl ml-2">
+                            <InlineMath math={`(2-15^{\\frac{1}{4}})(2+15^{\\frac{1}{4}}) / (3^\\frac{1}{2} - 5^{\\frac{1}{2}})^2`} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+
+                        </span>
+                    </div>
+
+                    <div className="flex flex-wrap items-center">
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-xl">
+                            <InlineMath math={`
+                                \\begin{aligned}
+                                    (2-15^{\\frac{1}{4}})(2+15^{\\frac{1}{4}}) / (3^\\frac{1}{2} - 5^{\\frac{1}{2}})^2 =
+                                \\end{aligned}
+                                `} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+
+                        </span>
+                    </div>
+
+                    <p>Использую формулу сокращённого умножения Разность квадратов:</p>
+
+                    <div className="flex flex-wrap items-center">
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-xl">
+                            <InlineMath math={`
+                                \\begin{aligned}
+                                    2^2 - (15^{\\frac{1}{4}})^2 / (3^\\frac{1}{2} - 5^{\\frac{1}{2}})^2 =
+                                \\end{aligned}
+                                `} />
+                        </div>
+
+                        {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                        <span className="sr-only">
+
+                        </span>
+                    </div>
+
+                    <p>Использую формулу сокращённого умножения Квадрат разности:</p>
+
+                    <div className="flex flex-wrap items-center">
+                        {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                        <div aria-hidden="true" className="xl:text-xl">
+                            <InlineMath math={`
+                                \\begin{aligned}
+                                    &\\frac{2^2 - 15^{\\frac{1}{2}}}{3 - 2 \\cdot 15^{\\frac{1}{2}} + 5} = \\\\
+                                    &\\frac{4 - 15^{\\frac{1}{2}}}{8 - 2 \\cdot 15^{\\frac{1}{2}}} = \\\\
+                                    &\\frac{4 - 15^{\\frac{1}{2}}}{2 (4 - 15^{\\frac{1}{2}})} = \\frac{1}{2}
                                 \\end{aligned}
                                 `} />
                         </div>
