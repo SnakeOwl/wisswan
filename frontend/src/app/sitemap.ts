@@ -5,13 +5,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return [
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
-            lastModified: '2026-07-01T08:53:55.061Z',
-            changeFrequency: 'weekly',
+            lastModified: '2026-08-18T00:00:00.000Z',
+            changeFrequency: 'monthly',
             priority: 1,
             images: [
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/example_seo_core_1.png`,
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/tehzadanie.png`,
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/figma.png`,
+            ],
+        },
+        {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}cases`,
+            lastModified: '2026-08-18T00:00:00.000Z',
+            changeFrequency: 'monthly',
+            priority: 1,
+            images: [
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/cases/burger_cucumber_preview.jpg"),
             ],
         },
         {
