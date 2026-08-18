@@ -7,6 +7,8 @@ import DoomBlock from './_components/DoomBlock/DoomBlock';
 import TimelineWorkSteps from "./_components/TimelineWorkSteps";
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import SchemaOrg from "./_components/SchemaOrg";
+import ContentDividerV1 from "../_components/dividers/ContentDividerV1";
+import { Cases } from "../cases/page";
 
 export const metadata: Metadata = {
     title: "Создание сайтов РБ",
@@ -28,13 +30,23 @@ export default async function Page() {
 
             <CardsWithGlowingEffectBox />
 
+            <section>
+                <ContentDividerV1 className="mb-4">
+                    <h3 className="text-lg px-2 xl:px-0 xl:text-lg xl:text-nowrap font-bold mx-auto w-fit">Проекты</h3>
+                </ContentDividerV1>
+
+                <Cases />
+            </section>
+
+
             <WorkSteps />
 
-            <section data-nosnippet className='container-v1'>
+            {/** TODO: Нужны нормальные живые отзывы */}
+            {/* <section data-nosnippet className='container-v1'>
                 <Suspense>
                     <ReviewsBlock />
                 </Suspense>
-            </section>
+            </section> */}
 
             <section data-nosnippet aria-hidden="true" className='container-v1 hidden lg:block'>
                 <DoomBlock />
@@ -44,6 +56,7 @@ export default async function Page() {
         </main>
     );
 }
+
 
 
 const RainWithTextBlock = () => (

@@ -36,7 +36,11 @@ const translatedSegments: Record<string, string> = {
     polynomias: "Многочлены",
     linear_equations: "Линейные уравнения",
     functions: "Функции",
-    base: "База"
+    base: "База",
+    cases: "Проекты",
+
+    /** Названия проектов */
+    "burger-cucumber": "BURGER CUCUMBER"
 }
 
 

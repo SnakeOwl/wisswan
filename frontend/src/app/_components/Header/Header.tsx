@@ -45,7 +45,11 @@ const Header = React.memo(() => {
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+console.log(pathname)
+if (pathname.startsWith("/cases/")){
+    // внутри примеров скрыть
+    return null;
+}
 
     return (
         <Navbar>

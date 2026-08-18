@@ -95,13 +95,6 @@ export default async function Page() {
             label: "Призма"
         }
         ]
-    }, {
-        imageSrc: "/images/storage/geometry/rectangular_parallelepiped.svg",
-        imageAlt: "Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c.",
-        label: "Трёхмерные фигуры",
-        link: `/math/geometry/3d`,
-        sublinks: [
-        ]
     },
     ]
 
