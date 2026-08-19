@@ -1,9 +1,9 @@
 User-agent: *
 Allow: /
 
-Disallow /dashboard
-Disallow /admin
-Disallow /personal
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /personal
 
 
 

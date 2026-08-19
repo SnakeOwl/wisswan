@@ -126,7 +126,7 @@ const Definitions = () => (
                         src={"/images/storage/geometry/obtuse_angle.svg"}
                         unoptimized
                         width={150} height={150}
-                        alt=""
+                        alt="Тупой угол"
                     />
 
                     <figcaption className="text-base text-center font-heading">
