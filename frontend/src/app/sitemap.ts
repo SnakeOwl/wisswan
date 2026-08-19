@@ -18,7 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}cases`,
             lastModified: '2026-08-18T00:00:00.000Z',
             changeFrequency: 'monthly',
-            priority: 1,
+            priority: 0.8,
             images: [
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/cases/burger_cucumber_preview.jpg"),
             ],
@@ -142,6 +142,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/acute_angle.svg"),
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/obtuse_angle.svg"),
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right_angle.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/adjacent-angles.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/vertical-angles.svg"),
             ],
 
         },
