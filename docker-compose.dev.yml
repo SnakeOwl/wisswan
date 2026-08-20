@@ -1,11 +1,26 @@
 services:
+  postgres:
+    image: postgres:18
+    restart: unless-stopped
+    user: postgres
+    ports:
+      - "5433:5432" # [порт на компе]:[порт в контейнере]
+    environment:
+      - POSTGRES_DB=wisswan
+      - POSTGRES_USER=wisswan
+      - POSTGRES_PASSWORD=rQVz2rMRPNVU
+    volumes:
+      - postgres-data-production:/var/lib/postgresql
+    networks:
+      - wisswan-development
+
   nginx:
     image: nginx:latest
     restart: unless-stopped # Automatically restart unless the service is explicitly stopped
     networks:
       - wisswan-development
     ports:
-      - "80:80"
+      - "80:80" # [порт на компе]:[порт в контейнере]
     volumes:
       # Mount the application code for live updates
       - ./backend:/var/www
@@ -42,7 +57,7 @@ services:
     networks:
       - wisswan-development
     depends_on:
-      db:
+      postgres:
         condition: service_started
 
   workspace:
@@ -87,7 +102,7 @@ services:
     networks:
       - wisswan-development
     depends_on:
-      db:
+      postgres:
         condition: service_started
 
   # раскоментить при необходимости
@@ -108,23 +123,9 @@ services:
   #   networks:
   #     - wisswan-development
   #   depends_on:
-  #     db:
+  #     postgres:
   #       condition: service_started
 
-  db:
-    image: mysql:8.0
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: wisswan           # Имя базы
-      MYSQL_ROOT_PASSWORD: root         # Пароль рута
-      MYSQL_USER: admin                 # Твой пользователь
-      MYSQL_PASSWORD: admin             # Пароль пользователя
-    volumes:
-      - db_data:/var/lib/mysql         # ДАННЫЕ НЕ ПРОПАДУТ МЕЖДУ БИЛДАМИ
-      # МАГИЯ ДЛЯ ДАМПА:
-      - ./init-db:/docker-entrypoint-initdb.d # Сюда положи свой дамп
-    networks:
-      - wisswan-development
 
   frontend:
     build:
@@ -137,36 +138,21 @@ services:
       - ./frontend:/app   # Весь ваш локальный код прокидывается внутрь контейнера в реальном времени
       # - /app/node_modules # защищает node_modules в контейнере
     ports:
-      - "3000:3000" # Пробрасываем порт: [порт на компе]:[порт в контейнере]
+      - "3000:3000"           # [порт на компе]:[порт в контейнере]
     depends_on:
       - php-fpm               # Фронт не запустится, пока не поднимется бэкенд
     networks:
       - wisswan-development
-    
-  # postgres:
-  #   image: postgres:18
-  #   restart: unless-stopped
-  #   user: postgres
-  #   ports:
-  #     - "${POSTGRES_PORT}:5432"
-  #   environment:
-  #     - POSTGRES_DB=${POSTGRES_DATABASE}
-  #     - POSTGRES_USER=${POSTGRES_USERNAME}
-  #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-  #   volumes:
-  #     - postgres-data-production:/var/lib/postgresql
-  #   networks:
-  #     - wisswan-development
-
+  
 
   # redis:
   # image: redis:alpine
   # networks:
-  #   - laravel-development
+  #   - wisswan-development
 
 networks:
   wisswan-development:
 
 volumes:
-  db_data:
+  postgres-data-production:
 

@@ -25,6 +25,8 @@ npm run test
 # Важные команды
 ## Laravel passport
 ### Генерация ключей (JWT tokens), для шифрования
+!!! ПРОВЕРЬ В `.env` ФАЙЛЕ, ТОКЕНЫ НА ПРОДЕ УЖЕ ИМЕЮТСЯ.
+Но если нет, то после создания в `.env` файл их запиши:
 ```bash
 php artisan passport:keys --force
 ```
@@ -36,7 +38,11 @@ php artisan passport:keys --force
 php artisan passport:client --password
 ```
 
-Нужены гранды на email_code и refresh_token. (Пиши через sql запрос на апдейт: `grant_types="[\"password\",\"refresh_token\",\"email_code\"]"`)
+Нужены гранды на email_code и refresh_token. (Пиши через sql запрос на апдейт: 
+```sql
+update oauth_clients set grant_types = '["password","refresh_token","email_code"]' where id = 'сида_айди';
+```
+)
 
 # Установка
 
