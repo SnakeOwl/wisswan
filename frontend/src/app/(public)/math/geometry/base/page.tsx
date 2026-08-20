@@ -15,6 +15,8 @@ export const metadata: Metadata = {
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right_angle.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/adjacent-angles.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/vertical-angles.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-two-perpendicular.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-perpendicular.svg"),
         ]
     }),
 }
@@ -25,7 +27,6 @@ export default async function Page() {
     return (
         <main>
             <Definitions />
-            <Theorems />
         </main>
     )
 }
@@ -56,8 +57,10 @@ const Definitions = () => (
             <dt className="inline font-bold">Смежными углами</dt> <dd className="inline">называют углы, у которых одна сторона общая, а остальные являются дополнительными лучами:</dd>
         </dl>
 
+        <p className="first-letter:font-bold">Теорема (свойтво смежных углов): Сумма смежных углов равна 180&deg;.</p>
+
         <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
-            <figure className=" flex flex-col items-center gap-2 border rounded-md p-4">
+            <figure className="flex flex-col items-center gap-2 border rounded-md p-4">
                 <Image
                     src={"/images/storage/geometry/adjacent-angles.svg"}
                     unoptimized
@@ -74,6 +77,7 @@ const Definitions = () => (
         <dl>
             <dt className="inline font-bold">Вертикальные углами</dt> <dd className="inline">называют те углы, у которых образующие лучи являются дополнительными другого угла:</dd> <br />
         </dl>
+        <p className="first-letter:font-bold">Теорема (свойтво вертикальных углов): Вертикальные углы равны.</p>
 
         <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
             <figure className=" flex flex-col items-center gap-2 border rounded-md p-4">
@@ -88,6 +92,45 @@ const Definitions = () => (
                     Вертикальные углы
                 </figcaption>
             </figure>
+        </div>
+
+        <dl>
+            <dt className="inline font-bold">Перпендикулярные прямые</dt> <dd className="inline">пересекаются под прямым углом.</dd> <br />
+            <dt className="inline font-bold">Перпендикуляром</dt> <dd className="inline">к прямой называют отрезок, который лежит на другой прямой, которая пересекает первую и перпендикулярна ей. Их точку пересечения называют <strong>основанием</strong></dd>
+        </dl>
+
+        <p className="first-letter:font-bold">Теорема: Через точку, лежащую на прямой, можно провести прямую, перпендикулярную этой прямой и только одну.</p>
+        <p className="first-letter:font-bold">Теорема: Через точку, не лежащую на прямой, можно провести прямую, перпендикулярную этой прямой и только одну.</p>
+        <p className="first-letter:font-bold">Теорема (о двух прямых, перпендикулярных третьей): На плоскости две прямые, перпендикулярные третьей параллельны между собой.</p>
+
+        <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
+            <figure className=" flex flex-col items-center gap-2 border rounded-md p-4">
+                <Image
+                    src={"/images/storage/geometry/right-angle-with-perpendicular.svg"}
+                    unoptimized
+                    width={200} height={200}
+                    alt="Перпендикулярные прямые"
+                />
+
+                <figcaption className="text-base text-center font-heading max-w-[300px]">
+                    Перпендикулярные прямые
+                </figcaption>
+            </figure>
+
+            <figure className=" flex flex-col items-center gap-2 border rounded-md p-4">
+                <Image
+                    src={"/images/storage/geometry/right-angle-with-two-perpendicular.svg"}
+                    unoptimized
+                    width={200} height={200}
+                    alt="Две прямые, перпендикулярные третьей"
+                />
+
+                <figcaption className="text-base text-center font-heading max-w-[300px]">
+                    Две прямые, перпендикулярные третьей
+                </figcaption>
+            </figure>
+
+
         </div>
 
 
@@ -136,17 +179,5 @@ const Definitions = () => (
 
             </div>
         </section>
-    </section>
-)
-
-
-const Theorems = () => (
-    <section>
-        <ContentDividerV1 className="mb-4">
-            <h2 id="Theorems" className="w-fit text-2xl text-wrap xl:text-nowrap">Теоремы</h2>
-        </ContentDividerV1>
-
-        <p>Теорема (свойтво смежных углов): Сумма смежных углов равна 180&deg;.</p>
-        <p>Теорема (свойтво вертикальных углов): Вертикальные углы равны.</p>
     </section>
 )

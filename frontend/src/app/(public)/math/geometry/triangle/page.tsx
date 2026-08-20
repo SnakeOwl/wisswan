@@ -3,6 +3,11 @@ import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph"
 import { Metadata } from "next"
 import Image from "next/image"
 import TriangleCalculator from "../../_components/TriangleCalculator"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
+import 'katex/dist/katex.min.css'; // Важно для правильного отображения дробей
+import { InlineMath } from "react-katex"
+
+
 
 export const metadata: Metadata = {
     title: "Треугольники",
@@ -240,57 +245,110 @@ function RightTriangleFormulas() {
      * γ - text-pink-700    <span className="text-pink-600">γ</span>
      * ω - text-purple-700  <span className="text-purple-600">ω</span>
      */
-    const formulas: React.ReactNode[] = [
-
-    ];
-
     return (
-        <section id="RightTriangleFormulas">
+        <section>
             <ContentDividerV1 className='my-2'>
-                <h2 id="Triangle-RightTriangleFormulas" className="text-lg text-wrap xl:text-nowrap">Формулы прямоугольного треугольника</h2>
+                <h2 id="Triangle-Formulas" className="text-2xl text-wrap xl:text-nowrap">Формулы</h2>
             </ContentDividerV1>
 
-            <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">
-                <ul className="tex-md xl:text-xl flex-1 font-bold space-y-2">
-                    <li>
-                        <span className="text-emerald-600">f</span> = <span>&radic;<span className="overline decoration-solid"><span className="text-amber-700">e</span>&sup2; + <span className="text-cyan-700">g</span>&sup2;</span></span>  <span className="font-normal text-base">(Теорема Пифагора)</span>
-                    </li>
-                    <li>
-                        <span className="text-lime-600">f</span> = <span className="text-amber-600">e</span> / cos(<span className="text-amber-600">α</span>) == <span className="text-cyan-600">g</span> / cos(<span className="text-purple-600">ω</span>) == <span className="text-amber-600">e</span> / sin(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> / sin(<span className="text-amber-600">α</span>)
-                    </li>
-                    <li>
-                        <span className="text-amber-600">e</span> = <span className="text-lime-600">f</span> * cos(<span className="text-amber-600">α</span>) == <span className="text-lime-600">f</span> * sin(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> * tg(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> / tg(<span className="text-amber-600">α</span>)
-                    </li>
-                    <li>
-                        <span className="text-cyan-600">g</span> = <span className="text-lime-600">f</span> * cos(<span className="text-purple-600">ω</span>) == <span className="text-lime-600">f</span> * sin(<span className="text-amber-600">α</span>) == <span className="text-amber-600">e</span> * tg(<span className="text-amber-600">α</span>) == <span className="text-amber-600">e</span> / tg(<span className="text-purple-600">ω</span>)
-                    </li>
-                    <li>
-                        S = (<span className="text-amber-600">e</span> * <span className="text-cyan-600">g</span>) / 2 <span className="text-base font-normal">(Площадь)</span>
-                    </li>
-                    <li>
-                        <span className="text-amber-600">e</span>&sup2; = <span className="text-cyan-600">g</span>&sup2; + <span className="text-lime-600">f</span>&sup2; - 2<span className="text-cyan-600">g</span><span className="text-lime-600">f</span> * cos(<span className="text-purple-600">ω</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
-                    </li>
-                    <li>
-                        <span className="text-cyan-600">g</span>&sup2; = <span className="text-amber-600">e</span>&sup2; + <span className="text-lime-600">f</span>&sup2; - 2<span className="text-amber-600">e</span><span className="text-lime-600">f</span> * cos(<span className="text-amber-600">α</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
-                    </li>
-                    <li>
-                        <span className="text-emerald-600">f</span>&sup2; = <span className="text-amber-600">e</span>&sup2; + <span className="text-cyan-600">g</span>&sup2; - 2<span className="text-amber-600">e</span><span className="text-cyan-600">g</span> * cos(<span className="text-pink-600">γ</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
-                    </li>
-                    <li>
-                        <span className="text-base font-normal">Формула Герона:</span> S = &radic;<span className="overline decoration-solid">П (П - <span className="text-amber-600">e</span>) (П - <span className="text-cyan-600">g</span>) (П - <span className="text-lime-600">f</span>)</span><span className="text-base font-normal">, где</span> П = (<span className="text-amber-600">e</span> + <span className="text-lime-600">f</span> + <span className="text-cyan-600">g</span>) / 2 <span className="text-base font-normal">(полупериметр)</span>
-                    </li>
-                    <li>
-                        S = (<span className="text-amber-600">e</span>&sup2; * &radic;3) / 4 <span className="text-base font-normal">НО: только если треугольник равносторонний</span>
-                    </li>
-                </ul>
+            <section>
+                <h3 id="Triangle-formulas-general" className="text-xl text-wrap xl:text-nowrap mt-4 mb-2">Общие формулы</h3>
 
-                <Image
-                    src="/images/storage/Triangle_3.svg"
-                    width={300} height={300}
-                    alt="Прямоугольный треугольник с указанием сторон и углов"
-                    unoptimized
-                />
-            </div>
+
+                <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">
+
+                    <figure className="flex flex-col items-center gap-2 border rounded-md p-4 relative">
+                        <GlowingEffect
+                            spread={40}
+                            glow={true}
+                            disabled={false}
+                            proximity={64}
+                            inactiveZone={0.01}
+                        />
+
+                        <Image
+                            src="/images/storage/geometry/triangle-random.svg"
+                            width={300} height={300}
+                            alt="Непримечательный треугольник с указанием сторон и углов. Стороны: a, b, c. Углы: α, β, γ"
+                            unoptimized
+                        />
+
+                        <figcaption className="text-base text-center font-heading">
+                            Треугольник без особенностей
+                        </figcaption>
+                    </figure>
+
+                    <ul>
+                        <li>
+                            <div className="flex flex-wrap items-center">
+                                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                <div aria-hidden="true" className="xl:text-xl">
+                                    <InlineMath math={`
+                                    \\begin{aligned}
+                                        P = \\blue{a} + \\blue{b} + \\blue{c}
+                                    \\end{aligned}
+                                `} />
+                                </div>
+
+                                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                <span className="sr-only">
+                                    P = a + b + c
+                                </span>
+
+                                <span className="ml-2"> — Периметр</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3 id="Triangle-RightTriangleFormulas" className="text-xl text-wrap xl:text-nowrap mt-4 mb-2">Формулы прямоугольного треугольника</h3>
+
+                <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">
+                    <Image
+                        src="/images/storage/Triangle_3.svg"
+                        width={300} height={300}
+                        alt="Прямоугольный треугольник с указанием сторон и углов"
+                        unoptimized
+                    />
+
+                    <ul className="tex-md xl:text-xl flex-1 font-bold space-y-2">
+                        <li>
+                            <span className="text-emerald-600">f</span> = <span>&radic;<span className="overline decoration-solid"><span className="text-amber-700">e</span>&sup2; + <span className="text-cyan-700">g</span>&sup2;</span></span>  <span className="font-normal text-base">(Теорема Пифагора)</span>
+                        </li>
+                        <li>
+                            <span className="text-lime-600">f</span> = <span className="text-amber-600">e</span> / cos(<span className="text-amber-600">α</span>) == <span className="text-cyan-600">g</span> / cos(<span className="text-purple-600">ω</span>) == <span className="text-amber-600">e</span> / sin(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> / sin(<span className="text-amber-600">α</span>)
+                        </li>
+                        <li>
+                            <span className="text-amber-600">e</span> = <span className="text-lime-600">f</span> * cos(<span className="text-amber-600">α</span>) == <span className="text-lime-600">f</span> * sin(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> * tg(<span className="text-purple-600">ω</span>) == <span className="text-cyan-600">g</span> / tg(<span className="text-amber-600">α</span>)
+                        </li>
+                        <li>
+                            <span className="text-cyan-600">g</span> = <span className="text-lime-600">f</span> * cos(<span className="text-purple-600">ω</span>) == <span className="text-lime-600">f</span> * sin(<span className="text-amber-600">α</span>) == <span className="text-amber-600">e</span> * tg(<span className="text-amber-600">α</span>) == <span className="text-amber-600">e</span> / tg(<span className="text-purple-600">ω</span>)
+                        </li>
+                        <li>
+                            S = (<span className="text-amber-600">e</span> * <span className="text-cyan-600">g</span>) / 2 <span className="text-base font-normal">(Площадь)</span>
+                        </li>
+                        <li>
+                            <span className="text-amber-600">e</span>&sup2; = <span className="text-cyan-600">g</span>&sup2; + <span className="text-lime-600">f</span>&sup2; - 2<span className="text-cyan-600">g</span><span className="text-lime-600">f</span> * cos(<span className="text-purple-600">ω</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
+                        </li>
+                        <li>
+                            <span className="text-cyan-600">g</span>&sup2; = <span className="text-amber-600">e</span>&sup2; + <span className="text-lime-600">f</span>&sup2; - 2<span className="text-amber-600">e</span><span className="text-lime-600">f</span> * cos(<span className="text-amber-600">α</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
+                        </li>
+                        <li>
+                            <span className="text-emerald-600">f</span>&sup2; = <span className="text-amber-600">e</span>&sup2; + <span className="text-cyan-600">g</span>&sup2; - 2<span className="text-amber-600">e</span><span className="text-cyan-600">g</span> * cos(<span className="text-pink-600">γ</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
+                        </li>
+                        <li>
+                            <span className="text-base font-normal">Формула Герона:</span> S = &radic;<span className="overline decoration-solid">П (П - <span className="text-amber-600">e</span>) (П - <span className="text-cyan-600">g</span>) (П - <span className="text-lime-600">f</span>)</span><span className="text-base font-normal">, где</span> П = (<span className="text-amber-600">e</span> + <span className="text-lime-600">f</span> + <span className="text-cyan-600">g</span>) / 2 <span className="text-base font-normal">(полупериметр)</span>
+                        </li>
+                        <li>
+                            S = (<span className="text-amber-600">e</span>&sup2; * &radic;3) / 4 <span className="text-base font-normal">НО: только если треугольник равносторонний</span>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </section>
         </section>
     )
 }

@@ -135,7 +135,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/base`,
-            lastModified: '2026-07-30T00:00:00.000Z',
+            lastModified: '2026-08-20T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.5,
             images: [
@@ -144,6 +144,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right_angle.svg"),
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/adjacent-angles.svg"),
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/vertical-angles.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-two-perpendicular.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-perpendicular.svg"),
             ],
 
         },

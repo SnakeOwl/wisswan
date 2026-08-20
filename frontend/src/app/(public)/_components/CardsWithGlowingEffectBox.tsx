@@ -7,8 +7,8 @@ import Image from "next/image";
 import ButtonStyled from "@/app/_components/buttons/ButtonStyled";
 import { useRouter } from "next/navigation";
 
-export function CardsWithGlowingEffectBox() {
 
+export function CardsWithGlowingEffectBox() {
     const cards = [
         {
             imageSrc: '/images/storage/dashicons-wordpress-alt.svg',

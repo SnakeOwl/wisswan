@@ -28,7 +28,7 @@ const Algoritsm = () => (
         </section>
 
         <section>
-            <h3 id="Algoritsm-NOK" className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Нахождение наименьшего общего кратного НОК</h3>
+            <h3 id="Algoritsm-NOK" className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2">Нахождение наименьшего общего кратного НОК</h3>
             <section>
                 <h4 id="Algoritsm-NOK-school"  className="mt-4 mb-2 text-lg text-wrap">Школьный метод</h4>
                 <ol className="list-decimal list-inside">
