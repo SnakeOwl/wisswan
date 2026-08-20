@@ -10,7 +10,7 @@ services:
       - POSTGRES_USER=wisswan
       - POSTGRES_PASSWORD=rQVz2rMRPNVU
     volumes:
-      - postgres-data-production:/var/lib/postgresql
+      - postgres-data-development:/var/lib/postgresql
     networks:
       - wisswan-development
 
@@ -154,5 +154,5 @@ networks:
   wisswan-development:
 
 volumes:
-  postgres-data-production:
+  postgres-data-development:
 

@@ -53,7 +53,7 @@ services:
     # this service will not start until the 'postgres' service passes its health check.
     # This prevents the application from trying to connect to the database before it's ready.
     depends_on:
-      db:
+      postgres:
         condition: service_healthy
 
   # The Laravel 'php-cli' service provides a command-line interface for running Artisan commands and other CLI tasks.
@@ -89,7 +89,7 @@ services:
     networks:
       - wisswan-production
     depends_on:
-      db:
+      postgres:
         condition: service_healthy
 
   laravel-schedule:
@@ -108,29 +108,8 @@ services:
     networks:
       - wisswan-production
     depends_on:
-      db:
+      postgres:
         condition: service_healthy
-
-  db:
-    image: mysql:8.0
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: wisswan           # Имя базы
-      MYSQL_ROOT_PASSWORD: root         # Пароль рута
-      MYSQL_USER: admin                 # Твой пользователь
-      MYSQL_PASSWORD: admin             # Пароль пользователя
-    volumes:
-      - db_data:/var/lib/mysql         # ДАННЫЕ НЕ ПРОПАДУТ МЕЖДУ БИЛДАМИ
-      # МАГИЯ ДЛЯ ДАМПА:
-      - ./init-db:/docker-entrypoint-initdb.d # Сюда положи свой дамп
-    networks:
-      - wisswan-production
-    # This prevents dependent services from starting before the database is ready.
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "admin", "-padmin"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
   frontend:
     build:
@@ -150,31 +129,25 @@ services:
     networks:
       - wisswan-production
     
-  # postgres:
-  #   image: postgres:18
-  #   restart: unless-stopped
-  #   user: postgres
-  #   ports:
-  #     - "${POSTGRES_PORT}:5432"
-  #   environment:
-  #     - POSTGRES_DB=${POSTGRES_DATABASE}
-  #     - POSTGRES_USER=${POSTGRES_USERNAME}
-  #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-  #   volumes:
-  #     - postgres-data-production:/var/lib/postgresql
-  #   networks:
-  #     - laravel-production
-  #   # Health check for PostgreSQL
-  #   # -----------------------------------------------------------
-  #   # Health checks allow Docker to determine if a service is operational.
-  #   # The 'pg_isready' command checks if PostgreSQL is ready to accept connections.
-  #   # This prevents dependent services from starting before the database is ready.
-  #   # -----------------------------------------------------------
-  #   healthcheck:
-  #     test: ["CMD", "pg_isready"]
-  #     interval: 10s
-  #     timeout: 5s
-  #     retries: 5
+  postgres:
+    image: postgres:18
+    restart: unless-stopped
+    user: postgres
+    ports:
+      - "5433:5432" # [порт на компе]:[порт в контейнере]
+    environment:
+      - POSTGRES_DB=wisswan
+      - POSTGRES_USER=wisswan
+      - POSTGRES_PASSWORD=rQVz2rMRPNVU
+    volumes:
+      - postgres-data-production:/var/lib/postgresql
+    networks:
+      - wisswan-production
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   # redis:
   #   image: redis:alpine
@@ -197,5 +170,4 @@ networks:
 
 volumes:
   laravel-storage-production:
-  db_data:
 
