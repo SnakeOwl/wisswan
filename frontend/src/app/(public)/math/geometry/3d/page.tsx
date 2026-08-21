@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     openGraph: getDefaultOpenGraph({
         description: "Трёхмерные фигуры",
         images: [
-            (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/rectangular_parallelepiped.svg"),
-            (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/right_prizm.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/rectangular-parallelepiped.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/right-prizm.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "/images/storage/geometry/cylinder.svg"),
         ]
     }),
@@ -85,7 +85,7 @@ const RectangularParallelepiped = () => (
         <div className="flex flex-row flex-wrap xl:flex-nowrap">
             <figure>
                 <Image
-                    src={"/images/storage/geometry/rectangular_parallelepiped.svg"}
+                    src={"/images/storage/geometry/rectangular-parallelepiped.svg"}
                     width={400} height={400}
                     alt="Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c."
                     unoptimized
@@ -163,7 +163,7 @@ const Prizm = () => (
             <div>
                 <figure className="xl:float-left flex flex-col items-center">
                     <Image
-                        src={"/images/storage/geometry/right_prizm.svg"}
+                        src={"/images/storage/geometry/right-prizm.svg"}
                         width={320} height={400}
                         alt="Правильная шестиугольная призма"
                         unoptimized

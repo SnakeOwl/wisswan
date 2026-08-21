@@ -189,7 +189,7 @@ export default function TriangleCalculator() {
                         "border-blue-500 ring ring-blue-200": triangleType == "right"
                     })}>
                         <Image
-                            src="/images/storage/Triangle_3.svg"
+                            src="/images/storage/geometry/Triangle-3.svg"
                             width={250} height={250}
                             alt="Прямоугольный треугольник с указанием сторон и углов"
                             unoptimized

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default async function Page() {
     const links: INavCard[] = [
         {
-            imageSrc: "/images/storage/Triangle_3.svg",
+            imageSrc: "/images/storage/geometry/Triangle-3.svg",
             imageAlt: "Прямоугольный треугольник с указанием сторон и углов",
             label: "Калькулятор треугольников",
             href: `/math/calculators/triangle`,

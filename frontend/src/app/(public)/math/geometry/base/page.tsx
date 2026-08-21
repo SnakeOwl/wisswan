@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     openGraph: getDefaultOpenGraph({
         description: "База по геометрии",
         images: [
-            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/acute_angle.svg"),
-            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/obtuse_angle.svg"),
-            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right_angle.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/acute-angle.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/obtuse-angle.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/adjacent-angles.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/vertical-angles.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-two-perpendicular.svg"),
@@ -140,7 +140,7 @@ const Definitions = () => (
             <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
                 <figure className="flex flex-col items-center gap-2 border rounded-md p-4">
                     <Image
-                        src={"/images/storage/geometry/acute_angle.svg"}
+                        src={"/images/storage/geometry/acute-angle.svg"}
                         unoptimized
                         width={150} height={150}
                         alt="Острый угол"
@@ -153,7 +153,7 @@ const Definitions = () => (
 
                 <figure className="flex flex-col items-center gap-2 border rounded-md p-4">
                     <Image
-                        src={"/images/storage/geometry/right_angle.svg"}
+                        src={"/images/storage/geometry/right-angle.svg"}
                         unoptimized
                         width={150} height={150}
                         alt="Прямой угол"
@@ -166,7 +166,7 @@ const Definitions = () => (
 
                 <figure className="flex flex-col items-center gap-2 border rounded-md p-4">
                     <Image
-                        src={"/images/storage/geometry/obtuse_angle.svg"}
+                        src={"/images/storage/geometry/obtuse-angle.svg"}
                         unoptimized
                         width={150} height={150}
                         alt="Тупой угол"

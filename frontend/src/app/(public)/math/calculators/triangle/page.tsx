@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     },
     openGraph: getDefaultOpenGraph({
         description: "Калькулятор треугольников",
-        images: [(process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/Triangle_3.svg')]
+        images: [(process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/Triangle-3.svg')]
     }),
 }
 

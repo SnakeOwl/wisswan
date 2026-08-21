@@ -80,7 +80,7 @@ const Percent = () => (
                 </div>
 
                 <Image
-                    src={"/images/storage/algebra/percent_no_b.svg"}
+                    src={"/images/storage/algebra/percent-no-b.svg"}
                     unoptimized
                     width={120} height={120}
                     alt="2 круга: первый большой круг с пометками: a и p%, второй круг вписан в первый, занимает примерно 25% от первого и помечен знаком вопроса"
@@ -102,7 +102,7 @@ const Percent = () => (
                 </div>
 
                 <Image
-                    src={"/images/storage/algebra/percent_no_a.svg"}
+                    src={"/images/storage/algebra/percent-no-a.svg"}
                     unoptimized
                     width={120} height={120}
                     alt="2 круга: первый большой круг с пометками: знак вопроса и p%, второй круг вписан в первый, занимает примерно 25% от первого и помечен как b"
@@ -125,7 +125,7 @@ const Percent = () => (
                 </div>
 
                 <Image
-                    src={"/images/storage/algebra/percent_has_a_b.svg"}
+                    src={"/images/storage/algebra/percent-has-a-b.svg"}
                     unoptimized
                     width={120} height={120}
                     alt="2 круга: первый большой круг с пометками: a и p%, второй круг вписан в первый, занимает примерно 25% от первого и помечен как b. На первом круге есть знак вопроса правее от второго круга."

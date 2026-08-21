@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         description: "Многоугольники",
         images: [
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/polygon.svg'),
-            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/polygonal_line.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/polygonal-line.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/trapezoid.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/rhombus.svg"),
         ],
@@ -46,7 +46,7 @@ const PolygonalLine = () => (
         <div className="flex flex-row flex-wrap xl:flex-nowrap gap-3">
             <figure>
                 <Image
-                    src={"/images/storage/geometry/polygonal_line.svg"}
+                    src={"/images/storage/geometry/polygonal-line.svg"}
                     width={320} height={280}
                     alt="Ломаная A,B,C,D,E"
                     unoptimized

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default async function Page() {
 
     const sections = [{
-        imageSrc: "/images/storage/geometry/acute_angle.svg",
+        imageSrc: "/images/storage/geometry/acute-angle.svg",
         imageAlt: "Острый угол",
         label: "База",
         link: `/math/geometry/base`,
@@ -36,7 +36,7 @@ export default async function Page() {
         }
         ]
     }, {
-        imageSrc: "/images/storage/Triangle_3.svg",
+        imageSrc: "/images/storage/geometry/Triangle-3.svg",
         imageAlt: "Прямоугольный треугольник с указанием сторон и углов",
         label: "Треугольник",
         link: `/math/geometry/triangle`,
@@ -83,7 +83,7 @@ export default async function Page() {
         }
         ]
     }, {
-        imageSrc: "/images/storage/geometry/rectangular_parallelepiped.svg",
+        imageSrc: "/images/storage/geometry/rectangular-parallelepiped.svg",
         imageAlt: "Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c.",
         label: "Трёхмерные фигуры",
         link: `/math/geometry/3d`,

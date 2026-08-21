@@ -182,7 +182,7 @@ const LinearEquations = () => (
                     <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
                         <figure className="flex flex-col items-center my-2 w-fit mx-auto">
                             <Image
-                                src={"/images/storage/algebra/two_linear_formulas_same.svg"}
+                                src={"/images/storage/algebra/two-linear-formulas-same.svg"}
                                 unoptimized
                                 width={500} height={500}
                                 alt="Декартова система координат с двумя прямыми, которые лежат друг на друге"
@@ -195,7 +195,7 @@ const LinearEquations = () => (
 
                         <figure className="flex flex-col items-center my-2 w-fit mx-auto">
                             <Image
-                                src={"/images/storage/algebra/two_linear_formulas_parralel.svg"}
+                                src={"/images/storage/algebra/two-linear-formulas-parralel.svg"}
                                 unoptimized
                                 width={500} height={500}
                                 alt="Декартова система координат с двумя прямыми, которые парралельны друг другу"
@@ -208,7 +208,7 @@ const LinearEquations = () => (
 
                         <figure className="flex flex-col items-center my-2 w-fit mx-auto">
                             <Image
-                                src={"/images/storage/algebra/two_linear_formulas_crossed.svg"}
+                                src={"/images/storage/algebra/two-linear-formulas-crossed.svg"}
                                 unoptimized
                                 width={500} height={500}
                                 alt="Декартова система координат с двумя прямыми, которые пересекаются в одной точке"

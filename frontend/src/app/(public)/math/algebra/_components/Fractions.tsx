@@ -808,7 +808,7 @@ const FractionalNumbers = () => (
                 <figure>
                     {/* 1. Картинка с ALT для SEO */}
                     <Image
-                        src={"/images/storage/algebra/22.4_div_14.svg"}
+                        src={"/images/storage/algebra/22.4-div-14.svg"}
                         unoptimized
                         width={80} height={50}
                         alt="Деление в столбик 22.4 на 14"
@@ -841,7 +841,7 @@ const FractionalNumbers = () => (
                         <figure>
                             {/* 1. Картинка с коротким, емким ALT для SEO и Яндекс/Google Картинок */}
                             <Image
-                                src={"/images/storage/algebra/625.05_div_1.5.svg"}
+                                src={"/images/storage/algebra/625.05-div-1.5.svg"}
                                 unoptimized
                                 width={120}
                                 height={50}
@@ -875,7 +875,7 @@ const FractionalNumbers = () => (
                         <figure>
                             {/* 1. Картинка с коротким, емким ALT для SEO и Яндекс/Google Картинок */}
                             <Image
-                                src={"/images/storage/algebra/0.5784_div_0.048.svg"}
+                                src={"/images/storage/algebra/0.5784-div-0.048.svg"}
                                 unoptimized
                                 width={120}
                                 height={50}

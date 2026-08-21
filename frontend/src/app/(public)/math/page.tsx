@@ -38,7 +38,7 @@ export default async function Page() {
                                     <div className="grid grid-cols-1 xl:grid-cols-3 gap-2" aria-hidden={true}>
                                         <figure className="flex flex-col items-center">
                                             <Image
-                                                src={"/images/storage/algebra/decart_coordinates_with_dots.svg"}
+                                                src={"/images/storage/algebra/decart-coordinates-with-dots.svg"}
                                                 unoptimized
                                                 width={150} height={150}
                                                 alt="Декартова система координат с точками на ней"
@@ -51,7 +51,7 @@ export default async function Page() {
 
                                         <figure className="flex flex-col items-center">
                                             <Image
-                                                src={"/images/storage/algebra/set_union.svg"}
+                                                src={"/images/storage/algebra/set-union.svg"}
                                                 unoptimized
                                                 width={150} height={150}
                                                 alt="2 круга: первый круг как бы представляет собой множество A, второй круг и представляет собой подмножество B. Они пересекаются в центре и какбы объеденены."
@@ -65,7 +65,7 @@ export default async function Page() {
 
                                         <figure className="flex flex-col items-center my-2 w-fit mx-auto">
                                             <Image
-                                                src={"/images/storage/algebra/two_linear_formulas_crossed.svg"}
+                                                src={"/images/storage/algebra/two-linear-formulas-crossed.svg"}
                                                 unoptimized
                                                 width={150} height={150}
                                                 alt="Декартова система координат с двумя прямыми, которые пересекаются в одной точке"
@@ -107,7 +107,7 @@ export default async function Page() {
 
                                         <figure className="flex flex-col items-center">
                                             <Image
-                                                src={"/images/storage/geometry/rectangular_parallelepiped.svg"}
+                                                src={"/images/storage/geometry/rectangular-parallelepiped.svg"}
                                                 width={150} height={150}
                                                 alt="Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c."
                                                 unoptimized

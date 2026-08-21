@@ -12,7 +12,7 @@ const Coordinates = () => (
 
             <figure className="flex flex-col items-center my-2">
                 <Image
-                    src={"/images/storage/algebra/decart_coordinates.svg"}
+                    src={"/images/storage/algebra/decart-coordinates.svg"}
                     unoptimized
                     width={500} height={500}
                     alt="Декартова система координат. Две перпендикулярные стрелки с засечками от -9 до 9. Горизонтальная ось X, вертикальная Y."
@@ -27,7 +27,7 @@ const Coordinates = () => (
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 ">
                 <figure className="flex flex-col items-center my-2 w-fit">
                     <Image
-                        src={"/images/storage/algebra/decart_coordinates_with_dots.svg"}
+                        src={"/images/storage/algebra/decart-coordinates-with-dots.svg"}
                         unoptimized
                         width={500} height={500}
                         alt="Декартова система координат с точками на ней"
@@ -40,7 +40,7 @@ const Coordinates = () => (
 
                 <figure className="flex flex-col items-center my-2 w-fit">
                     <Image
-                        src={"/images/storage/algebra/decart_coordinates_y_2_x.svg"}
+                        src={"/images/storage/algebra/decart-coordinates-y-2-x.svg"}
                         unoptimized
                         width={500} height={500}
                         alt="Декартова система координат с точками на ней. Точки: (1,2), (2,4), (3,6), (4,8). Через все точки проходит прямая."
@@ -53,7 +53,7 @@ const Coordinates = () => (
 
                 <figure className="flex flex-col items-center my-2 w-fit">
                     <Image
-                        src={"/images/storage/algebra/decart_coordinates_y_8_div_x.svg"}
+                        src={"/images/storage/algebra/decart-coordinates-y-8-div-x.svg"}
                         unoptimized
                         width={500} height={500}
                         alt="Декартова система координат с точками на ней. Точки: (1,8), (2,4), (3,2.6), (4,2), (5,1.6), (6,1.3), (7,1.14), (8,1), (9,0.88). Все точки соеденены линией."

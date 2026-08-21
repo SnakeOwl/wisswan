@@ -23,7 +23,7 @@ const Sets = () => (
 
         <figure className="flex flex-col items-center">
             <Image
-                src={"/images/storage/algebra/set_complements.svg"}
+                src={"/images/storage/algebra/set-complements.svg"}
                 unoptimized
                 width={200} height={200}
                 alt="2 круга: первый круг как бы представляет собой множество A, второй круг вписан в первый и представляет собой подмножество B. На круге A надпись о том, что это дополнение."
@@ -46,7 +46,7 @@ const Sets = () => (
         <div className="flex flex-col xl:flex-row items-center justify-center gap-4">
             <figure className="flex flex-col items-center">
                 <Image
-                    src={"/images/storage/algebra/set_intersection.svg"}
+                    src={"/images/storage/algebra/set-intersection.svg"}
                     unoptimized
                     width={200} height={200}
                     alt="2 круга: первый круг как бы представляет собой множество A, второй круг и представляет собой подмножество B. Они пересекаются в центре и это пересечение выделено красным и какбы это и есть область C."
@@ -60,7 +60,7 @@ const Sets = () => (
 
             <figure className="flex flex-col items-center">
                 <Image
-                    src={"/images/storage/algebra/set_union.svg"}
+                    src={"/images/storage/algebra/set-union.svg"}
                     unoptimized
                     width={200} height={200}
                     alt="2 круга: первый круг как бы представляет собой множество A, второй круг и представляет собой подмножество B. Они пересекаются в центре и какбы объеденены."
@@ -74,7 +74,7 @@ const Sets = () => (
 
             <figure className="flex flex-col items-center">
                 <Image
-                    src={"/images/storage/algebra/set_difference.svg"}
+                    src={"/images/storage/algebra/set-difference.svg"}
                     unoptimized
                     width={200} height={200}
                     alt="2 круга: первый круг как бы представляет собой множество A, второй круг и представляет собой подмножество B. Они пересекаются в центре и какбы объеденены."

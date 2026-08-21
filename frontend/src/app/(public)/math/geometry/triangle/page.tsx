@@ -15,7 +15,16 @@ export const metadata: Metadata = {
     keywords: ['реугольник', "описание треугольников"],
     openGraph: getDefaultOpenGraph({
         description: "Треугольники",
-        images: [(process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/Triangle_3.svg')]
+        images: [
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/Triangle-2.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/Triangle-3.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/equilateral-triangle.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/isosceles-triangle.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/scalene-triangle.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/acute-triangle.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/obtuse-triangle.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/right-triangle.svg'),
+        ]
     }),
 }
 
@@ -70,7 +79,7 @@ const TriangleFullDescription = () => (
             <dl className="grid xl:grid-cols-3 gap-4">
                 <div className="flex flex-col items-center justify-between">
                     <Image
-                        src="/images/storage/geometry/scalene_triangle.svg"
+                        src="/images/storage/geometry/scalene-triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Разносторонний треугольник"
@@ -82,7 +91,7 @@ const TriangleFullDescription = () => (
 
                 <div className="flex flex-col items-center justify-between">
                     <Image
-                        src="/images/storage/geometry/isosceles_triangle.svg"
+                        src="/images/storage/geometry/isosceles-triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Равнобедренный треугольник"
@@ -94,7 +103,7 @@ const TriangleFullDescription = () => (
 
                 <div className="flex flex-col items-center justify-between">
                     <Image
-                        src="/images/storage/geometry/equilateral_triangle.svg"
+                        src="/images/storage/geometry/equilateral-triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Равносторонний треугольник"
@@ -112,7 +121,7 @@ const TriangleFullDescription = () => (
             <dl className="grid xl:grid-cols-3 gap-4">
                 <div className="flex flex-col items-center justify-between">
                     <Image
-                        src="/images/storage/geometry/acute_triangle.svg"
+                        src="/images/storage/geometry/acute-triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Остроугольный треугольник"
@@ -125,7 +134,7 @@ const TriangleFullDescription = () => (
 
                 <div className="flex flex-col items-center justify-between">
                     <Image
-                        src="/images/storage/geometry/right_triangle.svg"
+                        src="/images/storage/geometry/right-triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Прямоугольный треугольник"
@@ -138,7 +147,7 @@ const TriangleFullDescription = () => (
 
                 <div className="flex flex-col items-center justify-between">
                     <Image
-                        src="/images/storage/geometry/obtuse_triangle.svg"
+                        src="/images/storage/geometry/obtuse-triangle.svg"
                         width={200} height={200}
                         unoptimized
                         alt="Тупоугольный треугольник"
@@ -173,7 +182,7 @@ const Theorems = () => (
             <li className="list-none">
                 <div className="flex flex-col xl:flex-row border rounded-md p-2">
                     <Image
-                        src="/images/storage/Triangle_2.svg"
+                        src="/images/storage/geometry/Triangle-2.svg"
                         width={200} height={200}
                         alt="Треугольник, на котором показано как 3 биссектрисы пересекаются в центре вписанного круга"
                         unoptimized
@@ -189,7 +198,7 @@ const Theorems = () => (
             <li>
                 <div className="flex flex-col xl:flex-row xl:flex-nowrap gap-4 border rounded-md p-2">
                     <Image
-                        src="/images/storage/circle_triangle_1.svg"
+                        src="/images/storage/geometry/circle-triangle-1.svg"
                         width={300} height={300}
                         alt="Прямоугольный треугольник с указанием сторон и углов"
                         unoptimized
@@ -307,7 +316,7 @@ function RightTriangleFormulas() {
 
                 <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">
                     <Image
-                        src="/images/storage/Triangle_3.svg"
+                        src="/images/storage/geometry/Triangle-3.svg"
                         width={300} height={300}
                         alt="Прямоугольный треугольник с указанием сторон и углов"
                         unoptimized

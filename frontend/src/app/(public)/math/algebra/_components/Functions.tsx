@@ -10,7 +10,7 @@ const Functions = () => (
 
         <figure className="flex flex-col items-center my-2 w-fit mx-auto">
             <Image
-                src={"/images/storage/algebra/function_y_2_x.svg"}
+                src={"/images/storage/algebra/function-y-2-x.svg"}
                 unoptimized
                 width={500} height={500}
                 alt="Декартова система координат с точками на ней. Точки: (1,2), (2,4), (3,6), (4,8). Через все точки проходит прямая."

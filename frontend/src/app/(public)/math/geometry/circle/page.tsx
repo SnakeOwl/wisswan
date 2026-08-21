@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 
     openGraph: getDefaultOpenGraph({
         description: "круг и окружности",
-        images: [(process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/circle_description_1.svg')]
+        images: [
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/circle_description_1.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/circle-inner-corner.svg'),
+        ] 
     }),
 }
 
@@ -75,7 +78,7 @@ const Theorems = () => (
             </div>
 
             <Image
-                src="/images/storage/geometry/circle_inner_corner.svg"
+                src="/images/storage/geometry/circle-inner-corner.svg"
                 width={300} height={300}
                 alt="Рисунок круга на котором зелёными линиями подписан вписанный угол, а синими линиями центральный угол. Центральный угол идёт из центра, вписанный идёт из края круга."
                 unoptimized
