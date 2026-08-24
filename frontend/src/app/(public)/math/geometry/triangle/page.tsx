@@ -53,27 +53,39 @@ const TriangleFullDescription = () => (
             <h2 id="TriangleFullDescription" className="text-2xl text-nowrap">Подробные сведения</h2>
         </ContentDividerV1>
 
-        <div className="flex flex-col xl:flex-row">
-            <Image
-                className="float-left lg:mr-4"
-                src="/images/storage/triangle_description_1.svg"
-                width={300} height={300}
-                alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
-                unoptimized
-            />
+        <div className="flow-root">
+            <figure className="w-full xl:mx-2 xl:w-fit xl:float-start border rounded-md p-2 relative">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                />
 
-            <div className="flex flex-col">
-                <p><b>Треугольником</b> называется трёхзвенная замкнутая ломаная вместе с&nbsp;частью плоскости, которую она ограничивает.</p>
-                <p><b>Равными</b> треугольниками называются треугольники, которые можно совместить наложением.</p>
-                <p><b>Периметром</b> треугольника (многоугольника) называется сумма длин его сторон.</p>
 
-                <p><b>Высотой</b> треугольника называется перпендикуляр, опущенный из&nbsp;вершины треугольника на&nbsp;противоположную сторону или на&nbsp;её&nbsp;продолжение.</p>
-                <p><b>Медианой</b> треугольника называется отрезок, который соединяет вершину треугольника с&nbsp;серединой противоположной стороны</p>
-                <p><b>Биссектрисой</b> треугольника называется отрезок биссектрисы угла треугольника, соединяющий вершину треугольника с&nbsp;точкой пересечения биссектрисы с&nbsp;противоположной стороны</p>
+                <Image
+                    className="xl:mr-4"
+                    src="/images/storage/triangle_description_1.svg"
+                    width={300} height={300}
+                    alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
+                    unoptimized
+                />
+            </figure>
+
+            <div>
+                <p><b>Треугольником</b> называют трёхзвенную замкнутую ломаную вместе с&nbsp;частью плоскости, которую она ограничивает.</p>
+                <p><b>Равными</b> треугольниками называют треугольники, которые можно совместить наложением.</p>
+                <p><b>Периметром</b> треугольника (многоугольника) называют сумму длин его сторон.</p>
+
+                <p><b>Высотой</b> треугольника называют перпендикуляр, опущенный из&nbsp;вершины треугольника на&nbsp;противоположную сторону или на&nbsp;её&nbsp;продолжение.</p>
+                <p><b>Медианой</b> треугольника называют отрезок, который соединяет вершину треугольника с&nbsp;серединой противоположной стороны</p>
+                <p><b>Биссектрисой</b> треугольника называют отрезок биссектрисы угла треугольника, соединяющий вершину треугольника с&nbsp;точкой пересечения биссектрисы с&nbsp;противоположной стороны</p>
             </div>
         </div>
 
-        <section>
+
+        <section className="float-none">
             <h3 id="TriangleFullDescription-triangle_types-form" className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от числа равных сторон</h3>
 
             <dl className="grid xl:grid-cols-3 gap-4">
@@ -113,6 +125,24 @@ const TriangleFullDescription = () => (
                     </div>
                 </div>
             </dl>
+
+            <div className="mt-2">
+                <p className="first-letter:font-bold">Теорема (о свойстве углов при основании): В <b>равнобедренном</b> треугольнике углы при основании равны.</p>
+                <p className="first-letter:font-bold">Теорема (о свойстве биссектрисы <b>равнобедренного</b> треугольника): В <b>равнобедренном</b> треугольнике биссектриса, проведённая к основанию, является его медианой и высотой.</p>
+                <p className="first-letter:font-bold">Теорема (признак равнобедренного треугольника). Если в треугольнике два угла равны, то он равнобедренный.</p>
+            </div>
+
+            <section>
+                <h4 id="TriangleFullDescription-triangle_types-Characteristics-isosceles-triangle" className="text-sm text-wrap xl:text-nowrap mt-4 mb-2">Признаки равнобедренного треугольника</h4>
+
+                <div>
+                    <p className="first-letter:font-bold">Теорема: Если в треугольнике высота является медианой, то треугольник равнобедренный.</p>
+                    <p className="first-letter:font-bold">Теорема: Если в треугольнике высота является биссектрисой, то треугольник равнобедренный.</p>
+                    <p className="first-letter:font-bold">Теорема: Если в треугольнике медиана является биссектрисой, то треугольник равнобедренный.</p>
+
+                </div>
+            </section>
+
         </section>
 
         <section>
@@ -217,13 +247,13 @@ const Theorems = () => (
 const EqualitySigns = () => (
     <section id="EqualitySigns">
         <ContentDividerV1 className='my-2'>
-            <h4 id="Triangle-EqualitySigns" className="text-lg text-wrap xl:text-nowrap">Тризнаки равенства треугольников</h4>
+            <h4 id="Triangle-EqualitySigns" className="text-lg text-wrap xl:text-nowrap">Признаки равенства треугольников</h4>
         </ContentDividerV1>
 
         <ul className="space-y-2">
-            <li><b>Первый признак (по&nbsp;двум сторонам и&nbsp;углу между ними)</b>: если две стороны и&nbsp;угол между ними одного треугольника соответственно равны двум сторонам и&nbsp;углу между ними&nbsp;другого треугольника, то&nbsp;такие треугольники равны.</li>
-            <li><b>Второй признак (по&nbsp;стороне и&nbsp;двум прилежащим к&nbsp;ней углам)</b>: если сторона и&nbsp;два прилежащих к&nbsp;ней угла одного треугольника соответственно равны стороне и&nbsp;двум прилежащим к&nbsp;ней углам другого треугольника, то&nbsp;такие треугольники равны.</li>
-            <li><b>Третий признак (по&nbsp;трем сторонам)</b>: Если три стороны одного треугольника соответственно равны трем сторонам другого треугольника, то&nbsp;такие треугольники равны.</li>
+            <li><b>Первый признак (по&nbsp;двум сторонам и&nbsp;углу между ними)</b>: если две стороны и&nbsp;угол между ними одного треугольника равны двум сторонам и&nbsp;углу между ними&nbsp;другого треугольника, то&nbsp;такие треугольники равны.</li>
+            <li><b>Второй признак (по&nbsp;стороне и&nbsp;двум прилежащим к&nbsp;ней углам)</b>: если сторона и&nbsp;два прилежащих к&nbsp;ней угла одного треугольника равны стороне и&nbsp;двум прилежащим к&nbsp;ней углам другого треугольника, то&nbsp;такие треугольники равны.</li>
+            <li><b>Третий признак (по&nbsp;трем сторонам)</b>: Если три стороны одного треугольника равны трем сторонам другого треугольника, то&nbsp;такие треугольники равны.</li>
         </ul>
 
         <ContentDividerV1 className='mt-4 mb-2'>
@@ -265,7 +295,6 @@ function RightTriangleFormulas() {
 
 
                 <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">
-
                     <figure className="flex flex-col items-center gap-2 border rounded-md p-4 relative">
                         <GlowingEffect
                             spread={40}
