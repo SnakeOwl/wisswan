@@ -14,6 +14,7 @@ const translatedSegments: Record<string, string> = {
     "math": "Математика",
     "geometry": "Геометрия",
     circle: "Круг и окружность",
+    "circumference-calculator": "Калькулятор окружности",
     about: "О проекте",
     triangle: "Треугольник",
     login: "Вход",
@@ -84,7 +85,7 @@ export default function LayoutBreadcrumbs() {
                             <div>/</div>
                         }
 
-                        {index == breadcrumbs.length-1 ? (
+                        {index == breadcrumbs.length - 1 ? (
                             <h1 className="font-bold text-nowrap">
                                 {el.label}
                             </h1>

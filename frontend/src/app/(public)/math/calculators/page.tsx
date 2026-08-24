@@ -28,6 +28,11 @@ export default async function Page() {
             imageAlt: "Квадрат где углы помечены как: A, B, C, Z, стороны помечены как: отрезки AB и CZ как h, а BC и AZ как w. По центру проведена диагональ, помеченная как D.",
             label: "Калькулятор прямоугольников",
             href: `/math/calculators/rectangles`,
+        }, {
+            imageSrc: "/images/storage/geometry/calculator-circle.svg",
+            imageAlt: "Круг",
+            label: "Калькулятор окружности",
+            href: `/math/calculators/circumference-calculator`,
         }
     ]
 

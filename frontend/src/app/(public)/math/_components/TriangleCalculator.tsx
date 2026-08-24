@@ -195,7 +195,7 @@ export default function TriangleCalculator() {
                             unoptimized
                         />
 
-                        <figcaption className="text-sm font-bold">
+                        <figcaption className="text-sm font-heading">
                             Прямоугольный треугольник
                         </figcaption>
                     </figure>

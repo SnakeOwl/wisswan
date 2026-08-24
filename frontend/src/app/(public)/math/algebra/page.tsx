@@ -4,7 +4,7 @@ import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import Numbers from "./_components/Numbers";
 import Algoritsm from "./_components/Algoritms";
 import Fractions from "./_components/Fractions";
-import { Percent } from "lucide-react";
+
 import Proportions from "./_components/Proportions";
 import Sets from "../_components/Sets";
 import Coordinates from "./_components/Coordinates";
@@ -12,6 +12,7 @@ import Power from "./_components/Power";
 import Polynomias from "./_components/Polynomias";
 import LinearEquations from "./_components/LinearEquations";
 import Functions from "./_components/Functions";
+import Percent from "./_components/Percent";
 
 
 export const metadata: Metadata = {

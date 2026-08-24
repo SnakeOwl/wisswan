@@ -186,8 +186,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/circle`,
-            lastModified: '2026-07-27T00:00:00.000Z',
-            changeFrequency: 'weekly',
+            lastModified: '2026-08-24T00:00:00.000Z',
+            changeFrequency: 'monthly',
             priority: 0.6,
             images: [
                 (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/circle_description_1.svg'),
@@ -219,6 +219,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             images: [
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/square.svg`,
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/Triangle-3.svg`,
+            ],
+        },
+        {
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}math/calculators/circumference-calculator`,
+            lastModified: '2026-08-07T00:00:00.000Z',
+            changeFrequency: 'monthly',
+            priority: 1,
+            images: [
+                (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/calculator-circle.svg'),
             ],
         },
         {

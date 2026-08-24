@@ -120,7 +120,7 @@ export default function RectangleCalculator() {
                             unoptimized
                         />
 
-                        <figcaption className="text-sm text-center font-bold">
+                        <figcaption className="text-sm text-center font-heading">
                             Квадрат
                         </figcaption>
                     </figure>
@@ -137,7 +137,7 @@ export default function RectangleCalculator() {
                             unoptimized
                         />
 
-                        <figcaption className="text-sm text-center font-bold">
+                        <figcaption className="text-sm text-center font-heading">
                             Прямоугольник
                         </figcaption>
                     </figure>

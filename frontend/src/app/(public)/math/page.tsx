@@ -49,7 +49,7 @@ export default async function Page() {
                                             </figcaption>
                                         </figure>
 
-                                        <figure className="flex flex-col items-center">
+                                        <figure className="flex flex-col items-center justify-end">
                                             <Image
                                                 src={"/images/storage/algebra/set-union.svg"}
                                                 unoptimized

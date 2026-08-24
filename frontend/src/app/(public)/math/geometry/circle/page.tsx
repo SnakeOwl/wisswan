@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import Image from "next/image";
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
+import CircleCalculator from "../../_components/CircleCalculator";
 
 export const metadata: Metadata = {
     title: "Круг и окружности",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
         images: [
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/circle_description_1.svg'),
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/circle-inner-corner.svg'),
-        ] 
+        ]
     }),
 }
 
@@ -22,14 +23,19 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <main>
-            <CircleDescription />
+            <section>
+                <ContentDividerV1 className='my-4'>
+                    <h2 id="TriangleCalculator" className="w-fit text-2xl text-wrap xl:text-nowrap">Калькулятор окружности</h2>
+                </ContentDividerV1>
+
+                <CircleCalculator />
+            </section>
 
             <Formulas />
 
             <Theorems />
 
-            {/* <CircleCalculator /> */}
-
+            <CircleDescription />
         </main>
     )
 }
