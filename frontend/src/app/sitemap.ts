@@ -5,7 +5,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return [
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
-            lastModified: '2026-08-18T00:00:00.000Z',
+            lastModified: '2026-08-24T00:00:00.000Z',
             changeFrequency: 'monthly',
             priority: 1,
             images: [
@@ -213,12 +213,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/calculators`,
-            lastModified: '2026-08-07T00:00:00.000Z',
+            lastModified: '2026-08-24T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.9,
             images: [
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/square.svg`,
                 `${process.env.NEXT_PUBLIC_SITE_URL}images/storage/geometry/Triangle-3.svg`,
+                (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/calculator-circle.svg'),
             ],
         },
         {

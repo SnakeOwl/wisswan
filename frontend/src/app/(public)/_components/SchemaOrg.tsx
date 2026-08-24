@@ -7,22 +7,22 @@ export default async function SchemaOrg() {
             name: "Создание и поддержка сайтов на WordPress",
             description: "Быстрый запуск, удобная админ-панель. Идеально для блогов, визиток, SPA и небольших каталогов",
             priceCurrency: priceCurrency,
-            price: 219
+            price: 492
         }, {
             name: "Создание и поддержка сайтов на 1С-Битрикс",
             description: "Надежное решение для интернет-магазинов и корпоративных порталов",
             priceCurrency: priceCurrency,
-            price: 449
+            price: 972
         }, {
             name: "Разработка и поддержка веб-приложений на Laravel",
             description: "Кастомная разработка сервисов, CRM-систем и высоконагруженных проектов",
             priceCurrency: priceCurrency,
-            price: 1533
+            price: 1865
         }, {
             name: "Разработка и поддержка сайтов на Next.js (React)",
             description: "Современные, сверхбыстрые SPA и SSR приложения с отличным SEO-потенциалом и уверенным кешированием",
             priceCurrency: priceCurrency,
-            price: 1533
+            price: 3990
         }
     ];
 

@@ -138,6 +138,7 @@ export const Cases = () => {
                                     alt={el.imgAlt}
                                     src={el.imgSrc}
                                     width={200} height={400}
+                                    overrideSrc={el.imgSrc}
                                 />
                             </figure>
                         </div>

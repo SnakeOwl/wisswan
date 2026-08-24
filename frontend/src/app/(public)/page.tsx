@@ -32,7 +32,7 @@ export default async function Page() {
 
             <section>
                 <ContentDividerV1 className="mb-4">
-                    <h3 className="text-lg px-2 xl:px-0 xl:text-lg xl:text-nowrap font-bold mx-auto w-fit">Проекты</h3>
+                    <h3 className="text-lg px-2 xl:px-0 xl:text-2xl xl:text-nowrap font-bold mx-auto w-fit">Проекты</h3>
                 </ContentDividerV1>
 
                 <Cases />

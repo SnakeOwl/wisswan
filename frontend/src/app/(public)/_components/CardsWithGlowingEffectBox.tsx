@@ -1,11 +1,13 @@
 "use client";
-import { BriefcaseBusiness, CirclePlus, Contact, Handshake, Plus, Presentation, ReplaceAll, ShoppingCart, SquarePlus, Star, Workflow } from "lucide-react";
+import { BadgeQuestionMark, BriefcaseBusiness, CirclePlus, Contact, Handshake, Plus, Presentation, ReplaceAll, ShoppingCart, SquarePlus, Star, Workflow } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 import Image from "next/image";
 import ButtonStyled from "@/app/_components/buttons/ButtonStyled";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 
 export function CardsWithGlowingEffectBox() {
@@ -14,7 +16,30 @@ export function CardsWithGlowingEffectBox() {
             imageSrc: '/images/storage/dashicons-wordpress-alt.svg',
             imageAlt: 'Логотип WordPress',
             title: 'Wordpress',
-            priceFrom: 219,
+            priceFrom: 492,
+            priceDescription: (
+                <div>
+                    <p className="font-heading">Подробнее по затратам:</p>
+                    <table className="my-3">
+                        <tbody>
+                            <tr>
+                                <td className="text-nowrap align-top">от 255.60</td>
+                                <td>&nbsp;— плата провайдеру за <Link className="link-hover text-sky-500" href="https://hoster.by/service/hosting/unix/" rel="noindex noreferrer" target="_blank">размещение</Link> на год</td>
+                            </tr>
+                            <tr>
+                                <td className="text-nowrap align-top">от 18</td>
+                                <td>&nbsp;— плата за <Link className="link-hover text-sky-500" href="https://hoster.by/service/domains/" rel="noindex noreferrer" target="_blank">домен</Link> на год</td>
+                            </tr>
+                            <tr>
+                                <td className="text-nowrap align-top">от 219</td>
+                                <td>&nbsp;— зарплата пролетарию за время (16 ч.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p className="text-xs">Цены приведены без учёта скидок.</p>
+                </div>
+            ),
             pluses: [
                 "Решение проверенное временем",
                 "Возможность глубокой модерации с помощью панели управления",
@@ -43,7 +68,35 @@ export function CardsWithGlowingEffectBox() {
             imageSrc: '/images/storage/1c_bitrix_logo.svg',
             imageAlt: 'Логотип 1С-Битрикс',
             title: '1С-Битрикс',
-            priceFrom: 449,
+            priceFrom: 972,
+            priceDescription: (
+                <div>
+                    <p className="font-heading">Подробнее по затратам:</p>
+                    <table className="my-3">
+                        <tbody>
+                            <tr>
+                                <td className="text-nowrap align-top">от 255.60</td>
+                                <td>&nbsp;— плата провайдеру за <Link className="link-hover text-sky-500" href="https://hoster.by/service/hosting/unix/" rel="noindex noreferrer" target="_blank">размещение</Link> на год</td>
+                            </tr>
+                            <tr>
+                                <td className="text-nowrap align-top">от 18</td>
+                                <td>&nbsp;— плата за <Link className="link-hover text-sky-500" href="https://hoster.by/service/domains/" rel="noindex noreferrer" target="_blank">домен</Link> на год</td>
+                            </tr>
+                            <tr>
+                                <td className="text-nowrap align-top">от 250</td>
+                                <td>&nbsp;— плата за <Link className="link-hover text-sky-500" href="https://www.1c-bitrix.by/products/cms/license.php" rel="noindex noreferrer" target="_blank">лицензию 1С-Битрикс</Link> с поддержкой на год</td>
+                            </tr>
+                            
+                            <tr>
+                                <td className="text-nowrap align-top">от 449</td>
+                                <td>&nbsp;— зарплата пролетарию за время (32 ч.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p className="text-xs">Цены приведены без учёта скидок.</p>
+                </div>
+            ),
             pluses: [
                 "Решение проверенное временем",
                 "Возможность глубокой модерации с помощью панели управления",
@@ -72,7 +125,30 @@ export function CardsWithGlowingEffectBox() {
             imageSrc: '/images/storage/Laravel.svg',
             imageAlt: 'Логотип Laravel',
             title: 'Laravel',
-            priceFrom: 1533,
+            priceFrom: 1865,
+            priceDescription: (
+                <div>
+                    <p className="font-heading">Подробнее по затратам:</p>
+                    <table className="my-3">
+                        <tbody>
+                            <tr>
+                                <td className="text-nowrap align-top">от 314.40</td>
+                                <td>&nbsp;— плата провайдеру за <Link className="link-hover text-sky-500" href="https://hoster.by/service/hosting/unix/" rel="noindex noreferrer" target="_blank">размещение</Link> на год</td>
+                            </tr>
+                            <tr>
+                                <td className="text-nowrap align-top">от 18</td>
+                                <td>&nbsp;— плата за <Link className="link-hover text-sky-500" href="https://hoster.by/service/domains/" rel="noindex noreferrer" target="_blank">домен</Link> на год</td>
+                            </tr>
+                            <tr>
+                                <td className="text-nowrap align-top">от 1533</td>
+                                <td>&nbsp;— зарплата пролетарию за время (120 ч.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p className="text-xs">Цены приведены без учёта скидок.</p>
+                </div>
+            ),
             pluses: [
                 "Решение проверенное временем",
                 "Панель управления выбирается индивидуально",
@@ -127,11 +203,12 @@ export function CardsWithGlowingEffectBox() {
                         plusesListIcon={el.plusesListIcon}
                         detailsHref={el.detailsHref}
                         price={el.priceFrom}
+                        priceDescription={el.priceDescription}
                     />
                 ))
                 }
                 <div className="px-1">
-                    <NextjsEvervaultCard price={1533} />
+                    <NextjsEvervaultCard price={3990} />
                 </div>
             </ul>
         </section>
@@ -184,6 +261,33 @@ const NextjsEvervaultCard = ({
                         width={14} height={14}
                         unoptimized
                     />
+
+                    <HoverCard>
+                        <HoverCardTrigger delay={10} closeDelay={100} render={<BadgeQuestionMark aria-hidden />} />
+                        <HoverCardContent className="flex w-[350px] flex-col gap-0.5">
+                            <div>
+                                <p className="font-heading">Подробнее по затратам:</p>
+                                <table className="my-3">
+                                    <tbody>
+                                        <tr>
+                                            <td className="text-nowrap align-top">от 2439.37</td>
+                                            <td>&nbsp;— плата провайдеру за <Link className="link-hover text-sky-500" href="https://hoster.by/service/cloud/hosting/" rel="noindex noreferrer" target="_blank">размещение</Link> на год</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="text-nowrap align-top">от 18</td>
+                                            <td>&nbsp;— плата за <Link className="link-hover text-sky-500" href="https://hoster.by/service/domains/" rel="noindex noreferrer" target="_blank">домен</Link> на год</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="text-nowrap align-top">от 1533</td>
+                                            <td>&nbsp;— зарплата пролетарию за время (120 ч.)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p className="text-xs">Цены приведены без учёта скидок.</p>
+                            </div>
+                        </HoverCardContent>
+                    </HoverCard>
                 </div>
 
                 <ButtonStyled
@@ -211,9 +315,10 @@ interface GridItemProps {
     plusesListIcon: React.ReactNode
     detailsHref: string
     price: number
+    priceDescription: React.ReactNode
 }
 
-const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref, price }: GridItemProps) => {
+const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref, price, priceDescription }: GridItemProps) => {
     const router = useRouter();
 
     return (
@@ -276,6 +381,13 @@ const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref, pri
                                     width={14} height={14}
                                     unoptimized
                                 />
+
+                                <HoverCard>
+                                    <HoverCardTrigger delay={10} closeDelay={100} render={<BadgeQuestionMark aria-hidden />} />
+                                    <HoverCardContent className="flex w-[350px] flex-col gap-0.5">
+                                        {priceDescription}
+                                    </HoverCardContent>
+                                </HoverCard>
                             </div>
 
                             <ButtonStyled
@@ -283,7 +395,6 @@ const GridItem = ({ icon, title, pluses, sites, plusesListIcon, detailsHref, pri
                                 theme="red-reversed"
                                 onClick={() => router.push('/order')}
                             >
-
                                 Заказать
                             </ButtonStyled>
                         </div>
