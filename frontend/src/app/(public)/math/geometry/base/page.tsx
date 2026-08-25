@@ -56,8 +56,46 @@ const Definitions = () => (
         </dl>
 
         <section>
-            <h3 id="Definitions-eagles" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Углы</h3>
+            <h3 id="Definitions-signs-parallelism-lines" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Свойства параллельных прямых</h3>
 
+            <div className="flow-root">
+                <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2">
+                    <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
+                    />
+
+                    <Image
+                        src={"/images/storage/geometry/signs-parallelism-lines.svg"}
+                        unoptimized
+                        width={200} height={200}
+                        alt="Две парралельные прямые с сечением. Углы α и β накрест лежащие, углы α и γ соответственные, углы α и ω смежные."
+                    />
+
+                    <figcaption className="text-base text-center font-heading max-w-[300px]">
+                        <span className="text-blue-700">Две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>
+                    </figcaption>
+                </figure>
+
+
+                <h4 id="Definitions-signs-parallelism-lines" className="text-md text-wrap xl:text-nowrap mb-1">Признаки параллельности прямых</h4>
+                <p className="first-letter:font-bold">Теорема (первый признак параллельности прямых): Если при пересечении <span className="text-blue-700">двух прямых</span> <span className="text-red-700">секущей</span> <span className="text-green-700">внутренние накрест лежащие углы</span> равны, то прямые параллельны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">β</span> равны, они накрест лежащие.</i></p>
+                <p className="first-letter:font-bold">Теорема (второй признак параллельности прямых): Если при пересечении <span className="text-blue-700">двух прямых</span> <span className="text-red-700">секущей</span> <span className="text-green-700">соответственные углы</span> равны, то прямые параллельны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">γ</span> равны, они соответственные.</i></p>
+                <p className="first-letter:font-bold">Теорема (третий признак параллельности прямых): Если при пересечении <span className="text-blue-700">двух прямых</span> <span className="text-red-700">секущей</span> сумма внутренних односторонних углов равна 180&deg;, то прямые параллельны. <i>На рисунке сумма углов <span className="text-red-700">ω</span> и <span className="text-green-700">β</span> равна 180&deg;.</i></p>
+                <h4 id="Definitions-signs-parallelism-lines" className="text-md text-wrap xl:text-nowrap mt-2 mb-1">Другие свойства</h4>
+                <p className="first-letter:font-bold">Теорема (о свойстве накрест лежащих углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то <span className="text-green-700">внутренние накрест лежащие углы</span> равны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">β</span> равны, они накрест лежащие.</i></p>
+                <p className="first-letter:font-bold">Теорема (о свойстве соответственных углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то <span className="text-green-700">соответственные углы</span> равны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">γ</span> равны, они соответственные.</i></p>
+                <p className="first-letter:font-bold">Теорема (о свойстве односторонних углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то сумма <span className="text-green-700">внутренних односторонних углов</span> равна 180&deg;. <i>На рисунке сумма углов <span className="text-red-700">ω</span> и <span className="text-green-700">β</span> равна 180&deg;.</i></p>
+
+
+            </div>
+        </section>
+
+        <section>
+            <h3 id="Definitions-eagles" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Углы</h3>
 
             <dl>
                 <dt className="inline font-bold">Угол</dt> — <dd className="inline">это геометрическая фигура, которую образуют 2 луча, выходящие из одной точки и часть плоскости между ними.</dd> <br />
@@ -112,6 +150,7 @@ const Definitions = () => (
             <p className="first-letter:font-bold">Теорема: Через точку, лежащую на прямой, можно провести прямую, перпендикулярную этой прямой и только одну.</p>
             <p className="first-letter:font-bold">Теорема: Через точку, не лежащую на прямой, можно провести прямую, перпендикулярную этой прямой и только одну.</p>
             <p className="first-letter:font-bold">Теорема (о двух прямых, перпендикулярных третьей): На плоскости две прямые, перпендикулярные третьей параллельны между собой.</p>
+            <p className="first-letter:font-bold">Теорема: Если на плоскости прямая пересекает одну из двух параллельных прямых, то она пересекает и другую прямую.</p>
 
             <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
                 <figure className=" flex flex-col items-center gap-2 border rounded-md p-4">
@@ -139,10 +178,7 @@ const Definitions = () => (
                         Две прямые, перпендикулярные третьей
                     </figcaption>
                 </figure>
-
-
             </div>
-
 
 
             <section>
@@ -221,9 +257,7 @@ const Definitions = () => (
                 </dl>
 
                 <p className="first-letter:font-bold">Теорема (о серединном перпендикуляре к отрезку): Любая точка серединного перпендикуляра к отрезку равноудалена от концов этого отрезка. Если точка равноудалена от концов отрезка, то она лежит на серединном перпендикуляре к этому отрезку.</p>
-
             </div>
-
         </section>
     </section>
 )
