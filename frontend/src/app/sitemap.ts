@@ -136,7 +136,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/base`,
-            lastModified: '2026-08-24T00:00:00.000Z',
+            lastModified: '2026-08-27T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.5,
             images: [
@@ -148,6 +148,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-two-perpendicular.svg"),
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-perpendicular.svg"),
                 (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/perpendicular-bisector-of-a-segment.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/parallelism-lines-with-edges-1.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/perpendicular-lines-with-edges-2.svg"),
+                (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/perpendicular-lines-with-edges-1.svg"),
             ],
 
         },

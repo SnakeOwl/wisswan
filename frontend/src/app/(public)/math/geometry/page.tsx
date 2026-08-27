@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 export default async function Page() {
 
     const sections = [{
-        imageSrc: "/images/storage/geometry/acute-angle.svg",
-        imageAlt: "Острый угол",
+        imageSrc: "/images/storage/geometry/parallelism-lines-with-edges-1.svg",
+        imageAlt: "Две параллельные прямые пересечены двумя параллельными секущими. Указаны углы: α, β, γ, δ, ω.",
         label: "База",
         link: `/math/geometry/base`,
         sublinks: [{

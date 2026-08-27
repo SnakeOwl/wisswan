@@ -19,6 +19,9 @@ export const metadata: Metadata = {
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-two-perpendicular.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/right-angle-with-perpendicular.svg"),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/perpendicular-bisector-of-a-segment.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/parallelism-lines-with-edges-1.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/perpendicular-lines-with-edges-2.svg"),
+            (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/geometry/perpendicular-lines-with-edges-1.svg"),
         ]
     }),
 }
@@ -56,7 +59,7 @@ const Definitions = () => (
         </dl>
 
         <section>
-            <h3 id="Definitions-signs-parallelism-lines" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Свойства параллельных прямых</h3>
+            <h3 id="Definitions-parallelism-lines" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Свойства параллельных прямых</h3>
 
             <div className="flow-root">
                 <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2">
@@ -72,7 +75,7 @@ const Definitions = () => (
                         src={"/images/storage/geometry/signs-parallelism-lines.svg"}
                         unoptimized
                         width={200} height={200}
-                        alt="Две парралельные прямые с сечением. Углы α и β накрест лежащие, углы α и γ соответственные, углы α и ω смежные."
+                        alt="Две параллельные прямые с сечением. Углы α и β накрест лежащие, углы α и γ соответственные, углы α и ω смежные."
                     />
 
                     <figcaption className="text-base text-center font-heading max-w-[300px]">
@@ -81,16 +84,14 @@ const Definitions = () => (
                 </figure>
 
 
-                <h4 id="Definitions-signs-parallelism-lines" className="text-md text-wrap xl:text-nowrap mb-1">Признаки параллельности прямых</h4>
+                <h4 id="Definitions-parallelism-lines-signs" className="text-md text-wrap xl:text-nowrap mb-1">Признаки параллельности прямых</h4>
                 <p className="first-letter:font-bold">Теорема (первый признак параллельности прямых): Если при пересечении <span className="text-blue-700">двух прямых</span> <span className="text-red-700">секущей</span> <span className="text-green-700">внутренние накрест лежащие углы</span> равны, то прямые параллельны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">β</span> равны, они накрест лежащие.</i></p>
                 <p className="first-letter:font-bold">Теорема (второй признак параллельности прямых): Если при пересечении <span className="text-blue-700">двух прямых</span> <span className="text-red-700">секущей</span> <span className="text-green-700">соответственные углы</span> равны, то прямые параллельны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">γ</span> равны, они соответственные.</i></p>
                 <p className="first-letter:font-bold">Теорема (третий признак параллельности прямых): Если при пересечении <span className="text-blue-700">двух прямых</span> <span className="text-red-700">секущей</span> сумма внутренних односторонних углов равна 180&deg;, то прямые параллельны. <i>На рисунке сумма углов <span className="text-red-700">ω</span> и <span className="text-green-700">β</span> равна 180&deg;.</i></p>
-                <h4 id="Definitions-signs-parallelism-lines" className="text-md text-wrap xl:text-nowrap mt-2 mb-1">Другие свойства</h4>
+                <h4 id="Definitions-parallelism-lines-other-properties" className="text-md text-wrap xl:text-nowrap mt-2 mb-1">Другие свойства</h4>
                 <p className="first-letter:font-bold">Теорема (о свойстве накрест лежащих углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то <span className="text-green-700">внутренние накрест лежащие углы</span> равны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">β</span> равны, они накрест лежащие.</i></p>
                 <p className="first-letter:font-bold">Теорема (о свойстве соответственных углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то <span className="text-green-700">соответственные углы</span> равны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">γ</span> равны, они соответственные.</i></p>
                 <p className="first-letter:font-bold">Теорема (о свойстве односторонних углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то сумма <span className="text-green-700">внутренних односторонних углов</span> равна 180&deg;. <i>На рисунке сумма углов <span className="text-red-700">ω</span> и <span className="text-green-700">β</span> равна 180&deg;.</i></p>
-
-
             </div>
         </section>
 
@@ -222,7 +223,92 @@ const Definitions = () => (
                             Тупой угол
                         </figcaption>
                     </figure>
+                </div>
+            </section>
 
+            <section>
+                <h4 id="Definitions-eagles-difficult-header-1" className="mt-4 mb-2 text-md text-wrap">Углы с соответственно параллельными и соответственно перпендикулярными сторонами</h4>
+                <div className="flow-root">
+                    <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2">
+                        <GlowingEffect
+                            spread={40}
+                            glow={true}
+                            disabled={false}
+                            proximity={64}
+                            inactiveZone={0.01}
+                        />
+
+                        <Image
+                            src={"/images/storage/geometry/parallelism-lines-with-edges-1.svg"}
+                            unoptimized
+                            width={200} height={200}
+                            alt="Две параллельные прямые пересечены двумя параллельными секущими. Указаны углы: α, β, γ, δ, ω."
+                        />
+
+                        <figcaption className="text-base text-center font-heading max-w-[300px]">
+                            <span className="text-blue-700">Две параллельные прямые</span> пересечены <span className="text-red-700">двумя парралельными секущими</span>
+                        </figcaption>
+                    </figure>
+
+                    <p className="first-letter:font-bold">Теорема (об углах с соответственно параллельными сторонами): Углы с соответственно параллельными сторонами или равны (если оба <span className="text-green-700">острые</span> или оба <span className="text-red-700">тупые</span>), или в сумме составляют 180&deg; (если один <span className="text-green-700">острый</span>, а другой <span className="text-red-700">тупой</span>).
+                        <br />
+                        <i>
+                            На рисунке углы <span className="text-green-700">α, β, γ, δ</span> и <span className="text-red-700">ω</span> соответственно параллельны, потому что их образуют параллельные <span className="text-red-700">друг</span> <span className="text-blue-700">другу</span> линии. Следуя теореме: углы <span className="text-green-700">α, β, γ</span> равны, а углы <span className="text-green-700">δ</span> и <span className="text-red-700">ω</span> в сумме образуют угол в 180&deg;. Углы <span className="text-green-700">δ</span> и <span className="text-green-700">γ</span> равны, так как они накрест лежащие.
+                        </i>
+                    </p>
+                </div>
+
+                <div className="flow-root mt-4">
+                    <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2">
+                        <GlowingEffect
+                            spread={40}
+                            glow={true}
+                            disabled={false}
+                            proximity={64}
+                            inactiveZone={0.01}
+                        />
+
+                        <Image
+                            src={"/images/storage/geometry/perpendicular-lines-with-edges-1.svg"}
+                            unoptimized
+                            width={200} height={200}
+                            alt="Два острых угла, лучи основания второго угла перпендикулярны лучам первого угла (в смысле, один луч перпендикулярен одному лучу первого угла, а второй луч перпендикулярен второму). Углы помечены как: α, β"
+                        />
+
+                        <figcaption className="text-base text-center font-heading max-w-[300px]">
+                            Два угла с перпендикулярными основаниями (a)
+                        </figcaption>
+                    </figure>
+
+                    <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2 mt-2 xl:mt-0">
+                        <GlowingEffect
+                            spread={40}
+                            glow={true}
+                            disabled={false}
+                            proximity={64}
+                            inactiveZone={0.01}
+                        />
+
+                        <Image
+                            src={"/images/storage/geometry/perpendicular-lines-with-edges-2.svg"}
+                            unoptimized
+                            width={200} height={200}
+                            alt="Два угла, перый острый и помечен как α, второй тупой и помечен как β. Образующие линии второго угла перпендикулярны образующим линиям первого угла."
+                        />
+
+                        <figcaption className="text-base text-center font-heading max-w-[300px]">
+                            Два угла с перпендикулярными основаниями (b)
+                        </figcaption>
+                    </figure>
+
+                    <p className="first-letter:font-bold">Теорема (об углах с соответственно перпендикулярными сторонами): Углы с соответственно перпендикулярными сторонами или равны (если оба <span className="text-red-700">острые</span> или оба <span className="text-green-700">тупые</span>), или в сумме составляют 180&deg; (если один <span className="text-red-700">острый</span>, а другой <span className="text-green-700">тупой</span>).
+                        <br />
+                        <i>
+                            На рисунке <b>a</b> углы <span className="text-red-700">α</span> и <span className="text-red-700">β</span> соответственно перпендикулярны, потому что их образуют перпендикулярные <span className="text-green-700">друг</span> <span className="text-blue-700">другу</span> линии. Следуя теореме: углы равны. 
+                            <br />
+                            На рисунке <b>b</b> углы <span className="text-red-700">α</span> и <span className="text-green-700">γ</span> соответственно перпендикулярны. Если продолжить одну из образующих линий угла <span className="text-green-700">γ</span>, то окажется что образуется второй угол <span className="text-red-700">β</span>, который смежный с углом <span className="text-green-700">γ</span> и их сумма будет равна 180&deg;. Следуя теореме: сумма углов <span className="text-red-700">α</span> и <span className="text-green-700">γ</span> равна 180&deg;. 
+                        </i>
+                    </p>
                 </div>
             </section>
         </section>
