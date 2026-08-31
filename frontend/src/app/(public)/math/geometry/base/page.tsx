@@ -56,6 +56,11 @@ const Definitions = () => (
             <dt className="inline font-bold">Противоположные лучи</dt> <dd className="inline">имеют общее начало и лежат на одной прямой. Их ещё называют <b>дополнительными</b>.</dd> <br />
             <dt className="inline font-bold">Равные отрезки</dt> <dd className="inline">имеют одинаковую длину и их можно совместить наложением.</dd> <br />
             <dt className="inline font-bold">Длина отрезка</dt> — <dd className="inline">это расстояние между двумя его концами (точками).</dd> <br />
+            <div>
+                <dt className="inline font-bold">Геометрическое место точек</dt> — <dd className="inline">это множество точек, обладающих общим свойством.</dd> 
+                <br />
+                <i>Примером таких мест точек являются: <b>окружность</b>, так как её точки равноудалены от центральной точки, <b>биссектриса</b>, так как её точки равноудалены от образующих угла линий.</i>
+            </div>
         </dl>
 
         <section>
@@ -92,6 +97,7 @@ const Definitions = () => (
                 <p className="first-letter:font-bold">Теорема (о свойстве накрест лежащих углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то <span className="text-green-700">внутренние накрест лежащие углы</span> равны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">β</span> равны, они накрест лежащие.</i></p>
                 <p className="first-letter:font-bold">Теорема (о свойстве соответственных углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то <span className="text-green-700">соответственные углы</span> равны. <i>На рисунке углы <span className="text-green-700">α</span> и <span className="text-green-700">γ</span> равны, они соответственные.</i></p>
                 <p className="first-letter:font-bold">Теорема (о свойстве односторонних углов между секущей и параллельными прямыми): Если <span className="text-blue-700">две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>, то сумма <span className="text-green-700">внутренних односторонних углов</span> равна 180&deg;. <i>На рисунке сумма углов <span className="text-red-700">ω</span> и <span className="text-green-700">β</span> равна 180&deg;.</i></p>
+                <p className="first-letter:font-bold">Теорема (о расстоянии между параллельными прямыми): Все точки одной из двух параллельных прямых равноудалены от другой прямой.</p>
             </div>
         </section>
 
@@ -304,9 +310,9 @@ const Definitions = () => (
                     <p className="first-letter:font-bold">Теорема (об углах с соответственно перпендикулярными сторонами): Углы с соответственно перпендикулярными сторонами или равны (если оба <span className="text-red-700">острые</span> или оба <span className="text-green-700">тупые</span>), или в сумме составляют 180&deg; (если один <span className="text-red-700">острый</span>, а другой <span className="text-green-700">тупой</span>).
                         <br />
                         <i>
-                            На рисунке <b>a</b> углы <span className="text-red-700">α</span> и <span className="text-red-700">β</span> соответственно перпендикулярны, потому что их образуют перпендикулярные <span className="text-green-700">друг</span> <span className="text-blue-700">другу</span> линии. Следуя теореме: углы равны. 
+                            На рисунке <b>a</b> углы <span className="text-red-700">α</span> и <span className="text-red-700">β</span> соответственно перпендикулярны, потому что их образуют перпендикулярные <span className="text-green-700">друг</span> <span className="text-blue-700">другу</span> линии. Следуя теореме: углы равны.
                             <br />
-                            На рисунке <b>b</b> углы <span className="text-red-700">α</span> и <span className="text-green-700">γ</span> соответственно перпендикулярны. Если продолжить одну из образующих линий угла <span className="text-green-700">γ</span>, то окажется что образуется второй угол <span className="text-red-700">β</span>, который смежный с углом <span className="text-green-700">γ</span> и их сумма будет равна 180&deg;. Следуя теореме: сумма углов <span className="text-red-700">α</span> и <span className="text-green-700">γ</span> равна 180&deg;. 
+                            На рисунке <b>b</b> углы <span className="text-red-700">α</span> и <span className="text-green-700">γ</span> соответственно перпендикулярны. Если продолжить одну из образующих линий угла <span className="text-green-700">γ</span>, то окажется что образуется второй угол <span className="text-red-700">β</span>, который смежный с углом <span className="text-green-700">γ</span> и их сумма будет равна 180&deg;. Следуя теореме: сумма углов <span className="text-red-700">α</span> и <span className="text-green-700">γ</span> равна 180&deg;.
                         </i>
                     </p>
                 </div>

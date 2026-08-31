@@ -200,7 +200,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${process.env.NEXT_PUBLIC_SITE_URL}math/geometry/triangle`,
-            lastModified: '2026-08-24T00:00:00.000Z',
+            lastModified: '2026-08-31T00:00:00.000Z',
             changeFrequency: 'weekly',
             priority: 0.6,
             images: [
@@ -212,6 +212,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/acute-triangle.svg'),
                 (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/obtuse-triangle.svg'),
                 (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/right-triangle.svg'),
+                (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/acute-triangles-with-corresponding-angles.svg'),
             ],
         },
         {

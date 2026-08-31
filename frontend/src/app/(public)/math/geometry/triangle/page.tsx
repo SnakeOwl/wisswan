@@ -24,6 +24,8 @@ export const metadata: Metadata = {
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/acute-triangle.svg'),
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/obtuse-triangle.svg'),
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/right-triangle.svg'),
+            (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/geometry/acute-triangles-with-corresponding-angles.svg'),
+
         ]
     }),
 }
@@ -62,7 +64,6 @@ const TriangleFullDescription = () => (
                     proximity={64}
                     inactiveZone={0.01}
                 />
-
 
                 <Image
                     className="xl:mr-4"
@@ -139,7 +140,6 @@ const TriangleFullDescription = () => (
                     <p className="first-letter:font-bold">Теорема: Если в треугольнике высота является медианой, то треугольник равнобедренный.</p>
                     <p className="first-letter:font-bold">Теорема: Если в треугольнике высота является биссектрисой, то треугольник равнобедренный.</p>
                     <p className="first-letter:font-bold">Теорема: Если в треугольнике медиана является биссектрисой, то треугольник равнобедренный.</p>
-
                 </div>
             </section>
 
@@ -200,13 +200,22 @@ const Theorems = () => (
         </ContentDividerV1>
 
         <ul className="space-y-2">
+            <li>
+                <p className="first-letter:font-bold">Теорема: Сумма углов треугольника равна 180&deg;.</p>
+                <p className="first-letter:font-bold">Теорема: В треугольнике напротив большего угла лежит большая сторона, а напротив большей стороны лежит больший угол.</p>
+                <p className="first-letter:font-bold">Теорема (о неравенстве треугольника): Любая сторона треугольника меньше суммы двух других его сторон.</p>
+                <p className="first-letter:font-bold">Теорема (о свойстве точек биссектрисы угла): Любая точка биссектрисы угла равноудалена от сторон угла. Если точка внутри угла равноудалена от сторон угла, то она лежит на биссектрисе этого угла.</p>
+                
+            </li>
             <li>Если в&nbsp;треугольнике <b>высота является медианой</b>, то&nbsp;<b>треугольник равнобедренный</b></li>
             <li>Если в&nbsp;треугольнике <b>высота является биссектрисой</b>, то&nbsp;<b>треугольник равнобедренный</b></li>
             <li>Если в&nbsp;треугольнике <b>медиана является биссектрисой</b>, то&nbsp;<b>треугольник равнобедренный</b></li>
             <li>В&nbsp;треугольнике против большей стороны лежит больший угол, а&nbsp;против большего угла лежит большая сторона</li>
             <li>Любая сторона треугольника меньше суммы двух других его сторон</li>
             <li><i>О&nbsp;свойстве точек биссектрисы угла</i>. Любая точка биссектрисы угла равноудалена от&nbsp;сторон угла. Если точка внутри угла равноудалена от&nbsp;сторон угла, то&nbsp;она лежит на&nbsp;биссектрисе этого угла.</li>
-            <li><b>Свойство прямоугольного треугольника</b>: Катет прямоугольного треугольника, лежащий против угла в&nbsp;30&deg;, равен половине гипотенузы.</li>
+            <li>
+                <p className="first-letter:font-bold">Теорема (о катете, лежащем против угла в 30&deg;): Катет <b>прямоугольного треугольника</b>, лежащий против угла в 30&deg;, равен половине гипотенузы. Следовательно: Если в прямоугольном треугольнике катет равен половине гипотенузы, то он лежит против угла в 30&deg;.</p>
+            </li>
 
 
             <li className="list-none">
@@ -240,6 +249,53 @@ const Theorems = () => (
                 </div>
             </li>
         </ul>
+
+        <section>
+            <h4 id="Triangle-teorems-external-angle-triangle" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Внешний угол треугольника</h4>
+
+            <div className="flow-root">
+                <figure className="w-full xl:mx-2 xl:w-fit xl:float-start border rounded-md p-2 relative">
+                    <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
+                    />
+
+                    <Image
+                        className="xl:mr-4"
+                        src="/images/storage/geometry/acute-triangles-with-corresponding-angles.svg"
+                        width={400} height={400}
+                        alt="Треугольник со смежными внешними углами. Внешние углы: α, β, γ. Внутренние углы: ε, δ, ζ."
+                        unoptimized
+                    />
+
+                    <figcaption className="text-base text-center font-heading">
+                        Треугольник со смежными внешними углами
+                    </figcaption>
+                </figure>
+
+
+                <div>
+                    <dl>
+                        <div><dt className="inline font-bold">Смежный угол треугольника</dt> — <dd className="inline">это угол, смежный его внутреннему углу.</dd> <i>На рисунке углы <span className="text-green-700">α</span>, <span className="text-green-700">β</span>, <span className="text-green-700">γ</span> являются смежными</i></div>
+                    </dl>
+
+                    <p className="first-letter:font-bold">Теорема: <span className="text-green-700">Внешний угол</span> треугольника равен сумме <span className="text-blue-700">двух внутренних углов</span>, не смежных с ним.
+                        <br />
+                        <i>
+                            Следуя теореме можно вычислить:
+                            <span className="text-lg">
+                                {" "}<span className="text-green-700">α</span> = <span className="text-blue-700">δ</span> + <span className="text-blue-700">ζ</span>,
+                                {" "}<span className="text-green-700">β</span> = <span className="text-blue-700">ε</span> + <span className="text-blue-700">ζ</span>,
+                                {" "}<span className="text-green-700">γ</span> = <span className="text-blue-700">ε</span> + <span className="text-blue-700">δ</span>
+                            </span>
+                        </i>
+                    </p>
+                </div>
+            </div>
+        </section>
     </section>
 )
 
@@ -247,7 +303,7 @@ const Theorems = () => (
 const EqualitySigns = () => (
     <section id="EqualitySigns">
         <ContentDividerV1 className='my-2'>
-            <h4 id="Triangle-EqualitySigns" className="text-lg text-wrap xl:text-nowrap">Признаки равенства треугольников</h4>
+            <h3 id="Triangle-EqualitySigns" className="text-xl text-wrap xl:text-nowrap">Признаки равенства треугольников</h3>
         </ContentDividerV1>
 
         <ul className="space-y-2">
@@ -256,17 +312,17 @@ const EqualitySigns = () => (
             <li><b>Третий признак (по&nbsp;трем сторонам)</b>: Если три стороны одного треугольника равны трем сторонам другого треугольника, то&nbsp;такие треугольники равны.</li>
         </ul>
 
-        <ContentDividerV1 className='mt-4 mb-2'>
-            <h5 id="Triangle-EqualitySigns-right_triangle" className="text-md text-wrap xl:text-nowrap">Признаки равенства прямоугольных трегольников</h5>
-        </ContentDividerV1>
+        <section>
+            <h4 id="Triangle-EqualitySigns-right_triangle" className="text-lg text-wrap mt-4 mb-2 xl:text-nowrap">Признаки равенства прямоугольных трегольников</h4>
 
-        <ol className="list-decimal list-inside">
-            <li>По&nbsp;двум катетам. Если катеты одного прямоугольного треугольника соответственно равны двум катетам другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
-            <li>По&nbsp;катету и&nbsp;прилежащему острому углу. Если катет и&nbsp;прилежащий к&nbsp;нему острый угол одного прямоугольного треугольника соответственно равны катету и&nbsp;прилежащему к&nbsp;нему острому углу другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
-            <li>По&nbsp;катету и&nbsp;противолежащему острому углу. Если катет и&nbsp;противолежащий острый угол одного прямоугольного треугольника соответственно равны катету и&nbsp;противолежащему острому углу другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
-            <li>По&nbsp;гипотенузе и&nbsp;острому углу. Если гипотенуза и&nbsp;острый угол одного прямоугольного треугольника соответственно равны гипотенузе и&nbsp;острому углу другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
-            <li>По&nbsp;катету и&nbsp;гипотенузе. Если катет и&nbsp;гипотенуза одного прямоугольного треугольника соответственно равны катету и&nbsp;гипотенузе другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
-        </ol>
+            <ol className="list-decimal list-inside">
+                <li>По&nbsp;двум катетам. Если катеты одного прямоугольного треугольника соответственно равны двум катетам другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
+                <li>По&nbsp;катету и&nbsp;прилежащему острому углу. Если катет и&nbsp;прилежащий к&nbsp;нему острый угол одного прямоугольного треугольника соответственно равны катету и&nbsp;прилежащему к&nbsp;нему острому углу другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
+                <li>По&nbsp;катету и&nbsp;противолежащему острому углу. Если катет и&nbsp;противолежащий острый угол одного прямоугольного треугольника соответственно равны катету и&nbsp;противолежащему острому углу другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
+                <li>По&nbsp;гипотенузе и&nbsp;острому углу. Если гипотенуза и&nbsp;острый угол одного прямоугольного треугольника соответственно равны гипотенузе и&nbsp;острому углу другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
+                <li>По&nbsp;катету и&nbsp;гипотенузе. Если катет и&nbsp;гипотенуза одного прямоугольного треугольника соответственно равны катету и&nbsp;гипотенузе другого прямоугольного треугольника, то&nbsp;такие треугольники равны.</li>
+            </ol>
+        </section>
     </section>
 )
 
