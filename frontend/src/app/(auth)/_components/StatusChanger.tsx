@@ -1,9 +1,12 @@
 "use client"
 
-import Select from "@/app/_components/inputs/Select";
 import { statuses } from "@/types/Status";
 import { toast } from "@/components/ui/toast"
-
+import {
+    NativeSelect,
+    NativeSelectOption,
+} from "@/components/ui/native-select"
+import { Field, FieldLabel } from "@/components/ui/field";
 
 export default function StatusChanger({
     changeRequest, // какая-либо функция для отправки на бек. Главное чтобы response возвращала для отладки
@@ -16,11 +19,7 @@ export default function StatusChanger({
 }) {
     const onChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newStatus = Number(e.target.value);
-        const response = await changeRequest(newStatus);
-
-        if (response == undefined || response.id == undefined)
-            throw new Error('Не смог сохранить статус');
-
+        await changeRequest(newStatus);
 
         onChanged(newStatus);
 
@@ -33,13 +32,19 @@ export default function StatusChanger({
 
 
     return (
-        <div className="w-[250px]">
-            <label htmlFor="status">Статус</label>
-            <Select id="status"
-                options={statuses}
-                value={status}
+        <Field className="w-[250px]">
+            <FieldLabel htmlFor="status">Статус</FieldLabel>
+
+            <NativeSelect
+                id="status"
                 onChange={onChange}
-            />
-        </div>
+                value={status}
+            >
+                {statuses.map((el, index) => (
+                    <NativeSelectOption key={index} value={el.value}>{el.title}</NativeSelectOption>
+                ))
+                }
+            </NativeSelect>
+        </Field>
     )
 }

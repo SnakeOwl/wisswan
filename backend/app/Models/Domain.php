@@ -26,5 +26,10 @@ class Domain extends Model
 
     // ==== RELATIONS ====
 
+    public function posts(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class);
+    }
+    
     // ---- RELATIONS ----
 }

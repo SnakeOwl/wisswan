@@ -1,6 +1,6 @@
 # Описание
 
-Код сайта wisswan.tech. Backend написан на [Laravel](https://laravel.com/). Frontend написан на [Laravel](https://nextjs.org/).
+Код сайта wisswan.tech. Backend написан на [Laravel](https://laravel.com/). Frontend написан на [Next.js](https://nextjs.org/).
 
 # Frontend (Next.js)
 

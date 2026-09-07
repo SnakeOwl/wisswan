@@ -62,6 +62,11 @@ class User extends Authenticatable implements OAuthenticatable
 
     // ==== RELATIONS ====
 
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+
     public function telegram_chats(): HasMany
     {
         return $this->hasMany(TelegramChat::class);

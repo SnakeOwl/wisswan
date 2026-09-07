@@ -25,6 +25,8 @@ const translatedSegments: Record<string, string> = {
     "3d": "3D",
     rectangles: "Прямоугольники",
     calculators: "Калькуляторы",
+    blog: "Блог",
+    add: "Добавление",
 
     numbers: "Числа",
     algoritms: "Алгоритмы",

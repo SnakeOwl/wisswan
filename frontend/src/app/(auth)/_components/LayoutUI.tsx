@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
-import { Bot, House, LandPlot, Mail, Settings, ToolCase, UsersRound } from "lucide-react";
+import { Bot, House, LandPlot, Mail, Newspaper, Settings, ToolCase, UsersRound } from "lucide-react";
 import ContextUser from "@/context/ContextUser";
 import Link from "next/link";
 import { isAdmin } from "@/types/User";
@@ -33,6 +33,11 @@ export function LayoutUI({
             label: "Telegram бот",
             href: "/dashboard/telegram",
             icon: <Bot className="h-5 w-5 shrink-0 text-neutral-700" />
+        },
+        {
+            label: "Блог",
+            href: "/dashboard/blog", 
+            icon: <Newspaper className="h-5 w-5 shrink-0 text-neutral-700" />
         },
         {
             label: "Помощники",

@@ -30,7 +30,7 @@ export default function DomainsSelector({
     const inputRef = useRef<HTMLInputElement>(null);
     const matches = useMemo(() => {
         if (inputText.length > 0) {
-            const matchedDomains = matchesFiltered.filter(domain => domain.name.toLowerCase().includes(inputText));
+            const matchedDomains = matchesFiltered.filter(domain => domain.name.toLowerCase().includes(inputText.toLowerCase()));
             return matchedDomains;
         } else {
             return matchesFiltered;
@@ -59,10 +59,10 @@ export default function DomainsSelector({
 
     return (
         <div>
-            <h3>Область использования</h3>
+            <h3>Область использования (фильтры)</h3>
 
             <div id="DomainSelector_domains_container"
-                className="flex flex-wrap items-center gap-2 border border-neutral-200 cursor-pointer relative px-1"
+                className="flex flex-wrap items-center gap-2 border rounded-lg p-1 border-neutral-200 cursor-pointer relative px-1"
                 onClick={() => inputRef.current?.focus()}
             >
                 {selectedDomains.map((domain: Domain) => (

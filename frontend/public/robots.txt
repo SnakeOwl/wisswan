@@ -5,6 +5,7 @@ Disallow: /dashboard
 Disallow: /admin
 Disallow: /personal
 
-
+Disallow: /tools
+Disallow: /blog
 
 Sitemap: https://wisswan.tech/sitemap.xml

@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import DomainForm from "./DomainForm";
 import { formatDate } from "@/utils/formatDate";
 
+
 export default function DomainsList() {
     const searchParams = useSearchParams();
     const [domains, setDomains] = useState<Domain[]>([]);
@@ -26,8 +27,7 @@ export default function DomainsList() {
 
             setDomains(domainsPaginationResponse.data);
             setTotalPages(domainsPaginationResponse.last_page);
-        })
-
+        });
     }, [searchParams]);
 
 
@@ -56,7 +56,9 @@ export default function DomainsList() {
                         >
                             <DomainForm
                                 initialDomain={domain}
-                                onDeleted={() => router.refresh()}
+                                onDeleted={() => {
+                                    router.refresh()
+                                }}
                                 onChanged={(newDomain) => {
                                     domains[index] = newDomain;
                                     setDomains([...domains]);

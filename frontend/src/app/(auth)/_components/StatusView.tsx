@@ -64,7 +64,7 @@ export default function StatusView({
 
 
     return (
-        <div className={`flex text-sm gap-2 ${baseClasses} ${className}`}>
+        <div className={`flex items-center text-sm gap-2 ${baseClasses} ${className}`}>
             {text} 
 
             {hint && 

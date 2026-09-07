@@ -3,6 +3,7 @@
 use App\Http\Controllers\Feedback\SupportFormRequestController;
 use App\Http\Controllers\User\Login\LoginController;
 use App\Http\Controllers\User\Login\LogoutController;
+use App\Http\Controllers\User\Post\PostController;
 use App\Http\Controllers\User\SiteCrawlersController;
 use App\Http\Controllers\User\TelegramChats\TelegramChatController;
 use App\Http\Controllers\User\User\UpdateUserController;
@@ -34,4 +35,7 @@ Route::middleware('auth:api')
             ->except(['update']);
         Route::post('feedbacks/support-form-requests/{support_form_request}', [SupportFormRequestController::class, 'update']);
 
+
+        Route::apiResource('posts', PostController::class);
+        Route::put('posts/{post}/sync-domains', [PostController::class, "sync_domains"]);
     });

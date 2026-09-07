@@ -1,11 +1,11 @@
 "use client"
 
 import ButtonStyled from "@/app/_components/buttons/ButtonStyled";
-import Hr from "@/app/_components/Hr";
 import InputV2Styled from "@/app/_components/inputs/InputV2Styled";
 import { toast } from "@/components/ui/toast";
 import { Delete, Post } from "@/libs/Fetch";
 import { Domain } from "@/types/Domain"
+import updateTagAction from "@/utils/cache/updateTagAction";
 import { useId, useState } from "react"
 
 export default function DomainForm({
@@ -25,6 +25,7 @@ export default function DomainForm({
         const response = await Post(`admin/domains/${data.id}`, updata)
 
         if (response != undefined) {
+            updateTagAction("domains");
             onChanged(response);
 
             toast.add({
@@ -44,12 +45,13 @@ export default function DomainForm({
 
         if (response) {
             onDeleted();
+            updateTagAction("domains");
         }
     }
 
 
     return (
-        <div className="p-3 flex flex-col gap-2 min-w-[250px]">
+        <div className="p-3 flex flex-col gap-2 min-w-[250px] bg-white">
             <div className="flex flex-col gap-2">
                 <div>
                     <label htmlFor={domainFormId + '-name'}>Название</label>
@@ -76,8 +78,6 @@ export default function DomainForm({
                 </ButtonStyled>
             </div>
 
-            <Hr />
-
             <ButtonStyled
                 className="px-2 py-1 rounded-md"
                 onClick={() => {
@@ -88,8 +88,6 @@ export default function DomainForm({
             >
                 {data.published ? "Скрыть" : "Опубликовать"}
             </ButtonStyled>
-
-            <Hr />
 
 
             <ButtonStyled
