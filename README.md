@@ -50,13 +50,17 @@ update oauth_clients set grant_types = '["password","refresh_token","email_code"
 
 ## Установка / Весь проект / Docker / !!DEV
 
-Запускаем саму сборку по команде:
+Запускаем по команде:
 ```bash
-sudo docker compose -f docker-compose.dev.yml up -d --build
+./dev_up.bash
 ```
 
 Если всё прошло Хорошо, frontend откроется по пути [localhost](http://localhost). Работу бекенда можно глянуть по пути [localhost/api/test](http://localhost/api/test)
 
+Становить можно по команде:
+```bash
+./dev_down.bash
+```
 
 ## Установка / Весь проект / Docker / !!PROD
 
@@ -90,79 +94,6 @@ php artisan passport:keys --force
 https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://wisswan.tech/api/webhooks/telegram-input&secret_token=<SECRET>
 ```
 
-
-## Установка / Backend / Ручная
-Создать базу и пользователя к ней. (на примере используется mysql)
-
-Далее из папки backend:
-- Создаём файл **.env** из файла **.env.example**
-- Для связи с базой нужно в **.env** файле изменить нужные переменные (прописать доступы от своей базы):
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=wisswan
-DB_USERNAME=admin
-DB_PASSWORD=admin
-```
-
-- Установить зависимости:
-```bash
-composer install
-```
-
-- Создать ссылку на storage:
-```bash
-php artisan storage:link
-```
-
-- Запустить миграции базы:
-```bash
-php artisan migrate
-```
-
-Запуск (будет запущен на localhost:8000):
-```bash
-php artisan serve
-```
-
-Если всё сделано верно, по этому адресу: [localhost:8000](http://localhost:8000/api/test), выведется сообщение о том, что API работает.
-
-## Установка / Frontend / Ручная
-
-Из папки frontend:
-- Создаём файл **.env** из файла **.env.example**
-- Устанавливаем зависимости:
-```bash
-- npm install
-```
-
-Запуск: 
-```bash
-npm run dev
-```
-
-Если всё хорошо, по этой ссылке можно увидеть сайт: [localhost:3030](http://localhost:3030/)
-
-
-# Развёртывание / Frontend / Ручная
-
-1. Собираем проект в режиме standalone (с переменными окружения .env.example):
-```bash
-npm run build
-```
-
-2. Копируем public и статические файлы:
-```bash
-cp -r ./public ./.next/static ./.next/standalone/.next
-```
-
-3. Запускаем:
-```bash
-node ./.next/standalone/server.js
-```
-
-4. Проверяем (backend не критичен, просто данных не будет): [localhost:3000](http://localhost:3000/)
 
 
 # Создание админа

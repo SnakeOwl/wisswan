@@ -3,7 +3,7 @@ import { Post } from "@/types/Blog";
 import { formatDate } from "@/utils/formatDate";
 import Link from "next/link";
 
-export default function BlogList({
+export default function PostList({
     posts
 }: {
     posts: Post[]
