@@ -98,7 +98,7 @@ const PostDetailsPopover = ({ post }: { post: Post }) => (
                     <div>{`#: ${post.id}`}</div>
                     <div>{post.published_at ? `Опубликован: ${formatDate(post.published_at)}` : "Не опубликован"}</div>
                     <div>{`Создан: ${formatDate(post.created_at, true)}`}</div>
-                    <div>{`Обновлён: ${formatDate(post.created_at, true)}`}</div>
+                    <div>{`Обновлён: ${formatDate(post.updated_at, true)}`}</div>
                     <div>{`editor_ip: ${post.editor_ip}`}</div>
                     <div>{`device_type: ${post.device_type}`}</div>
                     <div>{`browser_name: ${post.browser_name}`}</div>

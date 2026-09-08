@@ -21,7 +21,8 @@ export const metadata: Metadata = {
     keywords: ["математика", "алгебра"],
 
     openGraph: getDefaultOpenGraph({
-        description: "Алгебра, пояснения по алгебре",
+        title: "Алгебра",
+        description: "Разделы по алгебре",
         images: [
             (process.env.NEXT_PUBLIC_SITE_URL + 'images/storage/algebra/percent-no-b.svg'),
             (process.env.NEXT_PUBLIC_SITE_URL + "images/storage/algebra/percent-no-a.svg"),

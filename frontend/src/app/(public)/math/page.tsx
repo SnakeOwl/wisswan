@@ -10,7 +10,8 @@ export const metadata: Metadata = {
     keywords: ["математика", "геометрия", "калькулятор"],
 
     openGraph: getDefaultOpenGraph({
-        description: "Раздел с ссылками на другие разделы математики"
+        title: "Математика",
+        description: "Раздел с ссылками на другие разделы математики",
     }),
 }
 

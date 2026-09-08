@@ -6,9 +6,10 @@
 @custom-variant dark (&:is(.dark *));
 
 
-@theme{
-  --font-heading: var(--font-unbounded), sans-serif; /* шрифты для заголовков */
-  --dark-mode: class(.dark); 
+@theme {
+  --font-heading: var(--font-unbounded), sans-serif;
+  /* шрифты для заголовков */
+  --dark-mode: class(.dark);
 }
 
 @theme inline {
@@ -59,9 +60,32 @@
 /* красота для базовых вещей */
 @layer base {
 
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
+  }
+  h1 {
+    @apply text-3xl
+  }
+  h2 {
+    @apply text-2xl
+  }
+  h3 {
+    @apply text-xl 
+  }
+  h4 {
+    @apply text-lg  
+  }
+  h5 {
+    @apply text-base
+  }
+  h6 {
+    @apply text-sm
   }
 
   label {
@@ -70,8 +94,6 @@
 
   * {
     @apply border-border outline-ring/50 selection:bg-emerald-200 selection:text-emerald-950;
-
-     
   }
 
   body {
@@ -80,7 +102,8 @@
 
   html {
     @apply font-sans;
-    scroll-behavior: smooth; /* нормальный скролл */
+    scroll-behavior: smooth;
+    /* нормальный скролл */
   }
 
 }
@@ -93,10 +116,11 @@
 
 
   /* hover на ссылках */
-  .link-hover, .hover-link {
+  .link-hover,
+  .hover-link {
     @apply hover:text-sky-600 duration-200;
   }
-  
+
   .link {
     @apply text-sky-600 hover:text-sky-800
   }
@@ -105,23 +129,30 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
   .scrollbar-none {
-    -ms-overflow-style: none;  /* IE и Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE и Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 
   /* Показывает тонкий скроллбар при наведении */
   .hover\:scrollbar-thin:hover::-webkit-scrollbar {
     display: block;
-    width: 6px; /* Ширина полосы */
+    width: 6px;
+    /* Ширина полосы */
   }
+
   .hover\:scrollbar-thin:hover::-webkit-scrollbar-thumb {
     @apply bg-amber-700;
-    
+
     border-radius: 3px;
   }
+
   .hover\:scrollbar-thin:hover {
-    scrollbar-width: thin; /* Для Firefox */
+    scrollbar-width: thin;
+    /* Для Firefox */
     scrollbar-color: #cbd5e1 transparent;
   }
 }
@@ -198,6 +229,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);

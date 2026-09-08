@@ -2,6 +2,7 @@ import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import { Metadata } from "next";
 import Numbers from "../_components/Numbers";
 
+
 export const metadata: Metadata = {
     title: "Числа",
     description: "Алгебра, раздел о числах",
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
         description: "Алгебра, раздел о числах",
     }),
 }
+
 
 export default async function Page(){
     return (

@@ -4,12 +4,14 @@ namespace App\Models;
 
 use App\Models\Scopes\OrderByIdDesc;
 use App\Models\Traits\UsesStatuses;
+use App\Observers\PostObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-#[ScopedBy([OrderByIdDesc::class])]
+#[ScopedBy([OrderByIdDesc::class]), ObservedBy(PostObserver::class)   ]
 class Post extends Model
 {
     use UsesStatuses;

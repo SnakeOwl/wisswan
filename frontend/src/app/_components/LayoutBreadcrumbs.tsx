@@ -88,9 +88,16 @@ export default function LayoutBreadcrumbs() {
                         }
 
                         {index == breadcrumbs.length - 1 ? (
-                            <h1 className="font-bold text-nowrap">
-                                {el.label}
-                            </h1>
+                            (Number.isNaN(Number(el.label)) ? (
+                                <h1 className="font-bold text-nowrap">
+                                    {el.label}
+                                </h1>
+                            ) : (
+                                <div className="font-bold text-nowrap">
+                                    {el.label}
+                                </div>
+                            ))
+
                         ) : (
                             <Link href={el.href}
                                 className="hover:text-sky-500 font-bold text-nowrap"
@@ -104,7 +111,7 @@ export default function LayoutBreadcrumbs() {
                 }
             </div>
             <div className="hidden xl:block border-b border-neutral-500 w-full"></div>
-        </div>
+        </div >
     )
 
 }

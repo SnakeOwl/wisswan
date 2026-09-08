@@ -1,6 +1,7 @@
 import { Domain } from "domain"
 import { User } from "./User"
 
+// некторые элементы могут быть скрыты в публичной части сайта
 export type Post = {
     id: number
     created_at: string | null
