@@ -45,6 +45,7 @@ export function MenuSection() {
               className="group flex flex-col overflow-hidden rounded-2xl bg-card shadow-sm ring-1 ring-border/60 transition-shadow hover:shadow-lg"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={burger.image || "/placeholder.svg"}
                   alt={burger.name}

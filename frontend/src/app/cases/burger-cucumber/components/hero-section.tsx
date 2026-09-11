@@ -49,6 +49,7 @@ export function HeroSection() {
 
         <div className="relative">
           <div className="absolute inset-0 -z-10 rounded-full bg-primary/10 blur-3xl" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/storage/cases/burger_cucumber/hero-burger.png"
             alt="A juicy double cheeseburger with melted cheese and fresh toppings"
