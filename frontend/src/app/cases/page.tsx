@@ -99,7 +99,7 @@ export const Cases = () => {
                         className="group block p-4 xl:p-6 hover:ring-sky-100"
                         href={el.href}
                     >
-                        <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 relative">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 relative">
                             <div className="flex flex-col gap-4 justify-center order-2 xl:order-1">
                                 <p className="font-heading group-hover:text-sky-700">{el.label}</p>
 

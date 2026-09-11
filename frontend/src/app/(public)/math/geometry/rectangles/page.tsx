@@ -3,6 +3,7 @@ import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph"
 import { Metadata } from "next"
 import Image from "next/image"
 import RectangleCalculator from "../../_components/RectangleCalculator"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 export const metadata: Metadata = {
     title: "Прямоугольники",
@@ -22,7 +23,7 @@ export default async function Page() {
     return (
         <main>
             <RectangleCalculator />
-            
+
             <Formulas />
         </main>
     )
@@ -35,7 +36,7 @@ const Formulas = () => (
             <h2 id="Formulas" className="w-fit text-2xl text-wrap xl:text-nowrap">Формулы</h2>
         </ContentDividerV1>
 
-        <h3 id="Fractions-defines" className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Обозначения</h3>
+        <h3 id="Fractions-defines" className="w-fit text-wrap xl:text-nowrap mt-4 mb-2 ">Обозначения</h3>
 
         <dl>
             <div>S <dt className="inline font-bold">Площадь прямоугольника (так же площадь квадрата)</dt> — <dd className="inline">размер внутренней поверхности.</dd> Измеряется обычно в м<sup>2</sup> или см<sup>2</sup>.</div>
@@ -43,19 +44,29 @@ const Formulas = () => (
             <div><span className="text-purple-700">D</span> <dt className="inline font-bold">Диагональ прямоугольника</dt> — <dd className="inline">прямой отрезок, идущий от одного угла к другому через центр.</dd></div>
         </dl>
 
-        <div className="flex flex-col xl:flex-row flex-wrap gap-4 mt-4">
-            <Image
-                src={"/images/storage/geometry/square.svg"}
-                alt={"Квадрат где углы помечены как: A, B, C, Z, стороны помечены как: отрезки AB и CZ как h, а BC и AZ как w. По центру проведена диагональ, помеченная как D."}
-                width={200} height={200}
-                unoptimized
-            />
+        <div className="flow-root mt-2">
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                />
 
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-3 flex-1 text-xl">
-                <div className="text-nowrap">S = <span className="text-green-700">w</span> * <span className="text-blue-700">h</span></div>
-                <div className="text-nowrap">P = 2<span className="text-green-700">w</span> + 2<span className="text-blue-700">h</span></div>
-                <div className="text-nowrap"><span className="text-purple-700">D</span> = &radic;(<span className="text-green-700">w</span><sup>2</sup> + <span className="text-blue-700">h</span><sup>2</sup>)</div>
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src={"/images/storage/geometry/square.svg"}
+                        alt={"Квадрат где углы помечены как: A, B, C, Z, стороны помечены как: отрезки AB и CZ как h, а BC и AZ как w. По центру проведена диагональ, помеченная как D."}
+                        width={200} height={200}
+                        unoptimized
+                    />
+                </figure>
             </div>
+
+            <div className="text-nowrap">S = <span className="text-green-700">w</span> * <span className="text-blue-700">h</span></div>
+            <div className="text-nowrap">P = 2<span className="text-green-700">w</span> + 2<span className="text-blue-700">h</span></div>
+            <div className="text-nowrap"><span className="text-purple-700">D</span> = &radic;(<span className="text-green-700">w</span><sup>2</sup> + <span className="text-blue-700">h</span><sup>2</sup>)</div>
         </div>
     </section>
 )

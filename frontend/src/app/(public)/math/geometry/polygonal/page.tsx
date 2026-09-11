@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { InlineMath } from "react-katex";
 import 'katex/dist/katex.min.css';
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 
 export const metadata: Metadata = {
@@ -43,26 +44,33 @@ const PolygonalLine = () => (
             <h3 className="w-fit text-wrap xl:text-nowrap">Ломаная</h3>
         </ContentDividerV1>
 
-        <div className="flex flex-row flex-wrap xl:flex-nowrap gap-3">
-            <figure>
-                <Image
-                    src={"/images/storage/geometry/polygonal-line.svg"}
-                    width={320} height={280}
-                    alt="Ломаная A,B,C,D,E"
-                    unoptimized
+        <div className="flow-root">
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
                 />
-            </figure>
 
-            <div>
-                <p>Ломаная ABCDE</p>
-                <p>Вершины: A, B, C, D, E.</p>
-                <p>Звенья: AB, BC, CD, DE</p>
-                <p><strong>Длиной</strong> ломаной называется сумма длин её звеньев.</p>
-                <p>Ломаная строится из нескольких точек, из которых три соседние не лежат на одной прямой. Далее из этих точек формируются отрезки. <strong>Точки</strong> называют <strong>вершинами ломаной</strong>, а <strong>отрезками</strong> называют <strong>звенья ломанной</strong></p>
-                <p>Ломаные могут быть <strong>замкнутыми</strong> и <strong>незамкнутыми</strong>. <strong>Незамкнутые ломаные</strong> - это те, у которых конечная вершина последнего звена не является начальной вершиной ломаной (<i>по факту ломанная не зацикливается на начальной вершине</i>). <strong>Замкнутые ломаные</strong> - это те, у которых конечная вершина последнего звена является начальной вершиной ломаной (по факту ломанная зацикливается на начальной вершине).</p>
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src={"/images/storage/geometry/polygonal-line.svg"}
+                        width={320} height={280}
+                        alt="Ломаная A,B,C,D,E"
+                        unoptimized
+                    />
+                </figure>
             </div>
-        </div>
 
+            <p>Ломаная ABCDE</p>
+            <p>Вершины: A, B, C, D, E.</p>
+            <p>Звенья: AB, BC, CD, DE</p>
+            <p><strong>Длиной</strong> ломаной называется сумма длин её звеньев.</p>
+            <p>Ломаная строится из нескольких точек, из которых три соседние не лежат на одной прямой. Далее из этих точек формируются отрезки. <strong>Точки</strong> называют <strong>вершинами ломаной</strong>, а <strong>отрезками</strong> называют <strong>звенья ломанной</strong></p>
+            <p>Ломаные могут быть <strong>замкнутыми</strong> и <strong>незамкнутыми</strong>. <strong>Незамкнутые ломаные</strong> - это те, у которых конечная вершина последнего звена не является начальной вершиной ломаной (<i>по факту ломанная не зацикливается на начальной вершине</i>). <strong>Замкнутые ломаные</strong> - это те, у которых конечная вершина последнего звена является начальной вершиной ломаной (по факту ломанная зацикливается на начальной вершине).</p>
+        </div>
     </section>
 )
 
@@ -75,33 +83,42 @@ const Polygonal = () => (
             <h2 id="Polygonal" className="w-fit text-wrap xl:text-nowrap">Многоугольник</h2>
         </ContentDividerV1>
 
-        <div className="flex flex-row flex-wrap xl:flex-nowrap gap-3 mt-4 mb-2 ">
+
+        <div className="flow-root">
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                />
+
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src={"/images/storage/geometry/polygon.svg"}
+                        width={400} height={400}
+                        alt="Многоугольник, где обозначены вершины: A, B, C, D, E и стороны: a, b, c, d ,e"
+                        unoptimized
+                    />
+                </figure>
+            </div>
+
             <div>
                 <p>Часть плоскости, с замкнутой ломаной по периметру называют <strong>многоугольником</strong>.</p>
                 <p><strong>Стороны многоугольника</strong> - это звенья той ломаной, которая его формирует. <i>На рисунке это: a, b, c, d, e.</i></p>
                 <p><strong>Вершины многоугольника</strong> - это вершины той ломаной, которая его формирует. <i>На рисунке это: A, B, C, D, E.</i></p>
                 <p><strong>Периметром многоугольника</strong> называют сумму длин его сторон. В данном многоугольнике это:&nbsp;<b className="text-nowrap">P = a + b + c + d + e</b></p>
+
+                <PolygonalFormulas />
             </div>
-
-            <figure>
-                <Image
-                    src={"/images/storage/geometry/polygon.svg"}
-                    width={400} height={400}
-                    alt="Многоугольник, где обозначены вершины: A, B, C, D, E и стороны: a, b, c, d ,e"
-                    unoptimized
-                />
-            </figure>
         </div>
-
-        <PolygonalFormulas />
     </section >
 )
 
 const PolygonalFormulas = () => (
     <section>
-        <ContentDividerV1 className="my-4">
-            <h3 id="PolygonalFormulas" className="w-fit text-wrap xl:text-nowrap">Формулы многоугольников</h3>
-        </ContentDividerV1>
+        <h3 id="PolygonalFormulas" className="mt-4 mb-2 w-fit text-wrap xl:text-nowrap">Формулы многоугольников</h3>
 
         <ul>
             <li>
@@ -128,20 +145,30 @@ const Trapezoid = () => (
             <h2 id="Trapezoid" className="w-fit text-wrap xl:text-nowrap">Трапеция</h2>
         </ContentDividerV1>
 
-        <div className="flex flex-col xl:flex-row gap-4">
-            <Image
-                src={"/images/storage/geometry/trapezoid.svg"}
-                width={350} height={220}
-                alt="Трапеция с обозначениями: углы обозначены как A, B, C, Z, диагональ AZ обозначена как D, точка пересечения диагоналей обозначена как O"
-                unoptimized
-            />
+        <div className="flow-root">
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                />
 
-            <div>
-                <dl>
-                    <dt className="inline font-bold">Трапеция </dt> —
-                    <dd className="inline">это четырёхугольник 2 стороны которого параллельны друг другу.</dd> Эти стороны являются основаниями.
-                </dl>
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src={"/images/storage/geometry/trapezoid.svg"}
+                        width={350} height={220}
+                        alt="Трапеция с обозначениями: углы обозначены как A, B, C, Z, диагональ AZ обозначена как D, точка пересечения диагоналей обозначена как O"
+                        unoptimized
+                    />
+                </figure>
             </div>
+
+            <dl>
+                <dt className="inline font-bold">Трапеция </dt> —
+                <dd className="inline">это четырёхугольник 2 стороны которого параллельны друг другу.</dd> Эти стороны являются основаниями.
+            </dl>
         </div>
     </section>
 )
@@ -153,66 +180,76 @@ const Rhombus = () => (
             <h2 id="Rhombus" className="w-fit text-wrap xl:text-nowrap">Ромб</h2>
         </ContentDividerV1>
 
-        <p>У ромба все стороны равны.</p>
-
-        <section>
-            <h3 id="Rhombus-formulas" className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 ">Формулы</h3>
-
-            <figure className="w-full xl:w-fit flex flex-col items-center float-left xl:mr-4">
-                <Image
-                    src={"/images/storage/geometry/rhombus.svg"}
-                    width={380} height={180}
-                    alt="Ромб с обозначениями: точки на углах обозначены как: A, B, C, D. Высота обозначена как h. Диагональ AC обозначена как d1, диагональ BD обозначена как d2."
-                    unoptimized
+        <div className="flow-root">
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
                 />
 
-                <figcaption className="text-sm text-center font-bold">
-                    Ромб
-                </figcaption>
-            </figure>
-
-            <p className="text-lg">P = 4 * сторону</p>
-
-            <div>
-                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                <div aria-hidden="true" className="xl:text-xl inline">
-                    <InlineMath math={"S = \\frac{d1 \\cdot d2}{2}"} />
-                </div>
-
-                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                <span className="sr-only">
-                    Площадь равна произведению диагоналей делённому на 2.
-                </span>
-
-                <i className="text-sm"> Диагонали пересекаются под прямым углом.</i>
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src={"/images/storage/geometry/rhombus.svg"}
+                        width={380} height={180}
+                        alt="Ромб с обозначениями: точки на углах обозначены как: A, B, C, D. Высота обозначена как h. Диагональ AC обозначена как d1, диагональ BD обозначена как d2."
+                        unoptimized
+                    />
+                    <figcaption className="text-sm text-center font-bold">
+                        Ромб
+                    </figcaption>
+                </figure>
             </div>
 
-            <div>
-                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                <div aria-hidden="true" className="xl:text-xl inline">
-                    <InlineMath math={"S = \\text{сторона} \\cdot h"} />
+            <p>У ромба все стороны равны.</p>
+
+            <section>
+                <h3 id="Rhombus-formulas" className="w-fit text-wrap inline xl:text-nowrap mt-4 mb-2 ">Формулы</h3>
+                <p className="text-lg">P = 4 * сторону</p>
+
+                <div>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl inline">
+                        <InlineMath math={"S = \\frac{d1 \\cdot d2}{2}"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        Площадь равна произведению диагоналей делённому на 2.
+                    </span>
+
+                    <i className="text-sm"> Диагонали пересекаются под прямым углом.</i>
                 </div>
 
-                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                <span className="sr-only">
-                    Площадь равна произведению стороны на высоту.
-                </span>
+                <div>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl inline">
+                        <InlineMath math={"S = \\text{сторона} \\cdot h"} />
+                    </div>
 
-                <i className="text-sm"> Классическая формула как у параллелограмма.</i>
-            </div>
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        Площадь равна произведению стороны на высоту.
+                    </span>
 
-            <div>
-                {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                <div aria-hidden="true" className="xl:text-xl inline">
-                    <InlineMath math={"S = \\text{сторона}^2 \\cdot \\sin{α}"} />
+                    <i className="text-sm"> Классическая формула как у параллелограмма.</i>
                 </div>
 
-                {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
-                <span className="sr-only">
-                    Площадь равна произведению стороны в квадрате на синус угла Альфы (это угол BAD).
-                </span>
-            </div>
-        </section>
+                <div>
+                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                    <div aria-hidden="true" className="xl:text-xl inline">
+                        <InlineMath math={"S = \\text{сторона}^2 \\cdot \\sin{α}"} />
+                    </div>
+
+                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                    <span className="sr-only">
+                        Площадь равна произведению стороны в квадрате на синус угла Альфы (это угол BAD).
+                    </span>
+                </div>
+            </section>
+        </div>
     </section>
 )
 

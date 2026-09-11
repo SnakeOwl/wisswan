@@ -100,7 +100,7 @@ export default async function Page() {
 
     return (
         <main>
-            <nav className="grid lg:grid-cols-2 gap-4">
+            <nav className="grid md:grid-cols-2 gap-4">
                 {sections.map((el, index) => (
                     <GeometryNavCard key={index}
                         card={el}

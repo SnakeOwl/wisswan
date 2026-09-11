@@ -18,11 +18,15 @@ export const metadata: Metadata = {
 
 export default async function Page() {
     return (
-        <main className="container-v1">
-            <LogosBlock />
+        <div className="xl:grid xl:grid-cols-5">
+            <div className="hidden xl:block"></div>
+            <main className="container-v1 xl:col-span-3">
+                <LogosBlock />
 
-            <UsedTecnologies />
-        </main>
+                <UsedTecnologies />
+            </main>
+            <div className="hidden xl:block"></div>
+        </div>
     )
 }
 

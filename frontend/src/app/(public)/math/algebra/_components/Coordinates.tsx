@@ -23,47 +23,50 @@ const Coordinates = () => (
                 </figcaption>
             </figure>
 
-            <h4 id="Coordinates-examples" className="text-lg mt-4 mb-2 text-wrap">Примеры использования системы координат</h4>
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 ">
-                <figure className="flex flex-col items-center my-2 w-fit">
-                    <Image
-                        src={"/images/storage/algebra/decart-coordinates-with-dots.svg"}
-                        unoptimized
-                        width={500} height={500}
-                        alt="Декартова система координат с точками на ней"
-                    />
+            <section>
+                <h4 id="Coordinates-examples" className="text-lg mt-4 mb-2 text-wrap">Примеры использования системы координат</h4>
 
-                    <figcaption>
-                        Декартова система координат с точками: <b>A(2,1)</b>, <b>B(5,2)</b>, <b>C(6-6)</b>, <b>D(-3,-3)</b>, <b>E(-5,4)</b>
-                    </figcaption>
-                </figure>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <figure className="flex flex-col items-center my-2">
+                        <Image
+                            src={"/images/storage/algebra/decart-coordinates-with-dots.svg"}
+                            unoptimized
+                            width={500} height={500}
+                            alt="Декартова система координат с точками на ней"
+                        />
 
-                <figure className="flex flex-col items-center my-2 w-fit">
-                    <Image
-                        src={"/images/storage/algebra/decart-coordinates-y-2-x.svg"}
-                        unoptimized
-                        width={500} height={500}
-                        alt="Декартова система координат с точками на ней. Точки: (1,2), (2,4), (3,6), (4,8). Через все точки проходит прямая."
-                    />
+                        <figcaption>
+                            Декартова система координат с точками: <b>A(2,1)</b>, <b>B(5,2)</b>, <b>C(6-6)</b>, <b>D(-3,-3)</b>, <b>E(-5,4)</b>
+                        </figcaption>
+                    </figure>
 
-                    <figcaption>
-                        Декартова система координат с формулой <b className="text-nowrap">Y = 2X</b>
-                    </figcaption>
-                </figure>
+                    <figure className="flex flex-col items-center my-2">
+                        <Image
+                            src={"/images/storage/algebra/decart-coordinates-y-2-x.svg"}
+                            unoptimized
+                            width={500} height={500}
+                            alt="Декартова система координат с точками на ней. Точки: (1,2), (2,4), (3,6), (4,8). Через все точки проходит прямая."
+                        />
 
-                <figure className="flex flex-col items-center my-2 w-fit">
-                    <Image
-                        src={"/images/storage/algebra/decart-coordinates-y-8-div-x.svg"}
-                        unoptimized
-                        width={500} height={500}
-                        alt="Декартова система координат с точками на ней. Точки: (1,8), (2,4), (3,2.6), (4,2), (5,1.6), (6,1.3), (7,1.14), (8,1), (9,0.88). Все точки соеденены линией."
-                    />
+                        <figcaption>
+                            Декартова система координат с формулой <b className="text-nowrap">Y = 2X</b>
+                        </figcaption>
+                    </figure>
 
-                    <figcaption className="w-full">
-                        Декартова система координат с формулой <b className="text-nowrap">Y = 8/X</b>. Кривая, которая соединяет все точки называют <b>Гиперболой</b>.
-                    </figcaption>
-                </figure>
-            </div>
+                    <figure className="flex flex-col items-center my-2">
+                        <Image
+                            src={"/images/storage/algebra/decart-coordinates-y-8-div-x.svg"}
+                            unoptimized
+                            width={500} height={500}
+                            alt="Декартова система координат с точками на ней. Точки: (1,8), (2,4), (3,2.6), (4,2), (5,1.6), (6,1.3), (7,1.14), (8,1), (9,0.88). Все точки соеденены линией."
+                        />
+
+                        <figcaption className="w-full">
+                            Декартова система координат с формулой <b className="text-nowrap">Y = 8/X</b>. Кривая, которая соединяет все точки называют <b>Гиперболой</b>.
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
         </section>
     </div>
 )

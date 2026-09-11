@@ -182,11 +182,11 @@ export default function TriangleCalculator() {
             </ContentDividerV1>
 
             <section>
-                <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Выберите тип треугольника</h3>
+                <p className="font-heading text-wrap mt-4 mb-2">Выберите тип треугольника</p>
 
-                <div className="flex flex-col xl:flex-row gap-3">
-                    <figure className={clsx("flex flex-col justify-between items-center border rounded p-2 cursor-pointer hover:border-sky-500 duration-300", {
-                        "border-blue-500 ring ring-blue-200": triangleType == "right"
+                <div className="flex flex-col md:flex-row gap-3">
+                    <figure className={clsx("flex flex-col justify-between items-center rounded p-2 cursor-pointer hover:ring-2 duration-300", {
+                        "border-sky-500 ring ring-blue-200": triangleType == "right"
                     })}>
                         <Image
                             src="/images/storage/geometry/Triangle-3.svg"
@@ -205,7 +205,7 @@ export default function TriangleCalculator() {
             <section>
                 <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Введите что известно</h3>
 
-                <div className="grid grid-cols-1 xl:grid-cols-5 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-3">
                     <div className="flex flex-col gap-3">
                         <Field>
                             <FieldLabel htmlFor="α" className="text-amber-700 text-lg"><InlineMath math="\angle{α}" /></FieldLabel>

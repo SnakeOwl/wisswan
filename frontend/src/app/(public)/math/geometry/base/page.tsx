@@ -67,7 +67,7 @@ const Definitions = () => (
             <h3 id="Definitions-parallelism-lines" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Свойства параллельных прямых</h3>
 
             <div className="flow-root">
-                <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2">
+                <figure className="float-left flex flex-col w-full md:w-fit items-center gap-2 border rounded-md p-2 relative md:mr-2">
                     <GlowingEffect
                         spread={40}
                         glow={true}
@@ -114,7 +114,7 @@ const Definitions = () => (
 
             <p className="first-letter:font-bold">Теорема (свойтво смежных углов): Сумма смежных углов равна 180&deg;.</p>
 
-            <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
+            <div className="flex flex-col md:flex-row gap-4 items-center md:items-end justify-start">
                 <figure className="flex flex-col items-center gap-2 border rounded-md p-4">
                     <Image
                         src={"/images/storage/geometry/adjacent-angles.svg"}
@@ -134,7 +134,7 @@ const Definitions = () => (
             </dl>
             <p className="first-letter:font-bold">Теорема (свойтво вертикальных углов): Вертикальные углы равны.</p>
 
-            <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
+            <div className="flex flex-col md:flex-row gap-4 items-center md:items-end justify-start">
                 <figure className=" flex flex-col items-center gap-2 border rounded-md p-4">
                     <Image
                         src={"/images/storage/geometry/vertical-angles.svg"}
@@ -159,7 +159,7 @@ const Definitions = () => (
             <p className="first-letter:font-bold">Теорема (о двух прямых, перпендикулярных третьей): На плоскости две прямые, перпендикулярные третьей параллельны между собой.</p>
             <p className="first-letter:font-bold">Теорема: Если на плоскости прямая пересекает одну из двух параллельных прямых, то она пересекает и другую прямую.</p>
 
-            <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
+            <div className="flex flex-col md:flex-row gap-4 items-center md:items-end justify-start">
                 <figure className=" flex flex-col items-center gap-2 border rounded-md p-4">
                     <Image
                         src={"/images/storage/geometry/right-angle-with-perpendicular.svg"}
@@ -190,7 +190,7 @@ const Definitions = () => (
 
             <section>
                 <h4 id="Definitions-eagles-types" className="mt-4 mb-2 text-md text-wrap">Виды углов</h4>
-                <div className="flex flex-col xl:flex-row gap-4 items-center xl:items-end justify-start">
+                <div className="flex flex-col md:flex-row gap-4 items-center md:items-end justify-start">
                     <figure className="flex flex-col items-center gap-2 border rounded-md p-4">
                         <Image
                             src={"/images/storage/geometry/acute-angle.svg"}
@@ -235,7 +235,7 @@ const Definitions = () => (
             <section>
                 <h4 id="Definitions-eagles-difficult-header-1" className="mt-4 mb-2 text-md text-wrap">Углы с соответственно параллельными и соответственно перпендикулярными сторонами</h4>
                 <div className="flow-root">
-                    <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2">
+                    <figure className="float-left flex flex-col w-full md:w-fit items-center gap-2 border rounded-md p-2 relative md:mr-2">
                         <GlowingEffect
                             spread={40}
                             glow={true}
@@ -265,7 +265,7 @@ const Definitions = () => (
                 </div>
 
                 <div className="flow-root mt-4">
-                    <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2">
+                    <figure className="float-left flex flex-col w-full md:w-fit items-center gap-2 border rounded-md p-2 relative md:mr-2">
                         <GlowingEffect
                             spread={40}
                             glow={true}
@@ -286,7 +286,7 @@ const Definitions = () => (
                         </figcaption>
                     </figure>
 
-                    <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2 mt-2 xl:mt-0">
+                    <figure className="float-left flex flex-col w-full md:w-fit items-center gap-2 border rounded-md p-2 relative md:mr-2 mt-2 md:mt-0">
                         <GlowingEffect
                             spread={40}
                             glow={true}
@@ -323,7 +323,7 @@ const Definitions = () => (
             <h3 id="Definitions-Perpendicular-bisector-segment" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Серединный перпендикуляр к отрезку</h3>
 
             <div className="flow-root">
-                <figure className="float-left flex flex-col w-full xl:w-fit items-center gap-2 border rounded-md p-2 relative xl:mr-2">
+                <figure className="float-left flex flex-col w-full md:w-fit items-center gap-2 border rounded-md p-2 relative md:mr-2">
                     <GlowingEffect
                         spread={40}
                         glow={true}

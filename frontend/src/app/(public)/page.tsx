@@ -1,7 +1,6 @@
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { Metadata } from 'next';
-import { Suspense } from 'react';
-import { CardsWithGlowingEffectBox } from './_components/CardsWithGlowingEffectBox';
+
 import { ReviewsBlock } from './_components/ReviewsBlock';
 import DoomBlock from './_components/DoomBlock/DoomBlock';
 import TimelineWorkSteps from "./_components/TimelineWorkSteps";
@@ -9,6 +8,7 @@ import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import SchemaOrg from "./_components/SchemaOrg";
 import ContentDividerV1 from "../_components/dividers/ContentDividerV1";
 import { Cases } from "../cases/page";
+import { Services } from "./_components/Services";
 
 export const metadata: Metadata = {
     title: "Создание сайтов РБ",
@@ -28,7 +28,7 @@ export default async function Page() {
                 <RainWithTextBlock />
             </section>
 
-            <CardsWithGlowingEffectBox />
+            <Services />
 
             <section>
                 <ContentDividerV1 className="mb-4">
@@ -61,7 +61,7 @@ export default async function Page() {
 
 const RainWithTextBlock = () => (
     <BackgroundBeamsWithCollision>
-        <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
+        <h2 className="text-2xl relative z-20 md:text-4xl xl:text-7xl font-bold text-center text-black font-sans tracking-tight">
             Профессиональная сборка{" "}<br className="hidden lg:block" />
             <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
                 <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">

@@ -179,7 +179,7 @@ const LinearEquations = () => (
                 <div>
                     <p>Количество решений у систем может быть несколько или не быть:</p>
 
-                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <figure className="flex flex-col items-center my-2 w-fit mx-auto">
                             <Image
                                 src={"/images/storage/algebra/two-linear-formulas-same.svg"}

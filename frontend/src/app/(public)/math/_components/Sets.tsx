@@ -43,7 +43,7 @@ const Sets = () => (
 
         <p>Визуально, действия выше можно представить так:</p>
 
-        <div className="flex flex-col xl:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <figure className="flex flex-col items-center">
                 <Image
                     src={"/images/storage/algebra/set-intersection.svg"}

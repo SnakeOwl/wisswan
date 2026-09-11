@@ -8,6 +8,7 @@ import {
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Button } from "@/components/ui/button"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 
 export const metadata: Metadata = {
@@ -45,33 +46,44 @@ const Sphere = () => (
             <h2 id="Sphere" className="w-fit text-2xl text-wrap xl:text-nowrap">Сфера</h2>
         </ContentDividerV1>
 
-        <div >
-            <figure className="flex flex-col items-center xl:float-left">
-                <Image
-                    className=" mx-4"
-                    src={"/images/storage/geometry/sphere.svg"}
-                    alt={"Цилиндр, с пометками: r — радиус, EF — осевое сечение, h — высота, ABCD — осевое сечение L0 — длина окружности."}
-                    width={300} height={400}
-                    unoptimized
-                />
-            </figure>
 
-            <div>
-                {/* <section>
+        <div className="root">
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                />
+
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src={"/images/storage/geometry/sphere.svg"}
+                        alt={"Цилиндр, с пометками: r — радиус, EF — осевое сечение, h — высота, ABCD — осевое сечение L0 — длина окружности."}
+                        width={300} height={400}
+                        unoptimized
+                    />
+                    <figcaption className="text-sm text-center font-bold">
+                        Цилиндр
+                    </figcaption>
+                </figure>
+            </div>
+
+            {/* <section>
                     <h3 id="Formulas" className="w-fit text-2xl text-wrap xl:text-nowrap mt-4 mb-2">Формулы</h3>
                     <p>S боковой поверхности цилиндра = <span className="text-green-700">L0</span> * <span className="text-blue-700">h</span></p>
                 </section> */}
 
-                <section>
-                    <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2">Обозначения</h3>
-                    <dl>
-                        <dt className="inline font-bold">Шар</dt> — <dd className="inline">это геометрическое тело, которое состоит из всех точек пространства, которые находятся на расстоянии от центра, до заданного радиуса.</dd> <br />
-                        <dt className="inline font-bold">Сфера</dt> — <dd className="inline">это поверхность шара, она же <b>оболочка</b>.</dd> <br />
-                    </dl>
-
-                </section>
-            </div>
+            <section>
+                <h3 className="w-fit inline text-wrap xl:text-nowrap mt-4 mb-2">Обозначения</h3>
+                <dl>
+                    <dt className="inline font-bold">Шар</dt> — <dd className="inline">это геометрическое тело, которое состоит из всех точек пространства, которые находятся на расстоянии от центра, до заданного радиуса.</dd> <br />
+                    <dt className="inline font-bold">Сфера</dt> — <dd className="inline">это поверхность шара, она же <b>оболочка</b>.</dd> <br />
+                </dl>
+            </section>
         </div>
+
     </section>
 )
 
@@ -79,18 +91,31 @@ const Sphere = () => (
 const RectangularParallelepiped = () => (
     <section>
         <ContentDividerV1 className="my-4">
-            <h2 id="RectangularParallelepiped" className="w-fit text-2xl text-wrap xl:text-nowrap">Прямоугольный параллелепипед</h2>
+            <h2 id="RectangularParallelepiped" className="w-fit text-wrap xl:text-nowrap">Прямоугольный параллелепипед</h2>
         </ContentDividerV1>
 
-        <div className="flex flex-row flex-wrap xl:flex-nowrap">
-            <figure>
-                <Image
-                    src={"/images/storage/geometry/rectangular-parallelepiped.svg"}
-                    width={400} height={400}
-                    alt="Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c."
-                    unoptimized
+        <div className="flow-root">
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
                 />
-            </figure>
+
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src={"/images/storage/geometry/rectangular-parallelepiped.svg"}
+                        width={400} height={400}
+                        alt="Прямоугольный параллелепипед с указанием высоты как a, длины как b, ширины как c."
+                        unoptimized
+                    />
+                    <figcaption className="text-sm text-center font-bold">
+                        Прямоугольный параллелепипед
+                    </figcaption>
+                </figure>
+            </div>
 
             <div>
                 <ul className="list-disc list-inside"> Прямоугольный параллелепипед состоит из:
@@ -101,20 +126,19 @@ const RectangularParallelepiped = () => (
                 <p>В каждой вершине прямоугольного параллелепипеда сходятся 3 ребра. Их длины можно назвать измерениями параллелепипеда: <strong className="text-blue-700">длиной</strong>, <strong className="text-green-700">шириной</strong>, <strong className="text-red-700">высотой</strong></p>
                 <p>На практике часто используется куб. <strong>Куб</strong> — это прямоугольный параллелепипед, у которого все стороны равны. Грани куба — это квадраты</p>
             </div>
+
+            <section>
+                <h3 className="mt-4 mb-2 inline">Формулы</h3>
+                <p>
+                    Объём обозначается прописной латинской буквой <i>V</i>. <br />
+                    Объём прямоугольного параллелепипеда равен произведению его длины, ширины, высоты. <br />
+                    <strong><i>V</i> = <span className="text-red-700">a</span> * <span className="text-blue-700">b</span> * <span className="text-green-700">c</span></strong>
+                </p>
+                <p>Объём куда равен произведению трёх сторон, которые равны между собой: <br />
+                    <strong><i>V</i> = <span className="text-red-700">a</span>&sup3;</strong>
+                </p>
+            </section>
         </div>
-
-        <section>
-            <h4 className="mt-4 mb-2 text-lg">Формулы</h4>
-            <p>
-                Объём обозначается прописной латинской буквой <i>V</i>. <br />
-                Объём прямоугольного параллелепипеда равен произведению его длины, ширины, высоты. <br />
-                <strong><i>V</i> = <span className="text-red-700">a</span> * <span className="text-blue-700">b</span> * <span className="text-green-700">c</span></strong>
-            </p>
-            <p>Объём куда равен произведению трёх сторон, которые равны между собой: <br />
-                <strong><i>V</i> = <span className="text-red-700">a</span>&sup3;</strong>
-            </p>
-
-        </section>
     </section>
 )
 
@@ -131,53 +155,63 @@ const Prizm = () => (
             </div>
         </dl>
 
-        <section>
-            <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2">Прямая призма</h3>
+        <div className="flow-root">
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                />
 
-            <p>У <strong>прямой призмы</strong> боковые рёбра стоят под углом в 90&deg;.</p>
-            <dl>
-                <div>
-                    <dt className="inline font-bold">Правильная призма</dt> — <dd className="inline">это призма, у которой основания — это
-                        правильные многоугольники
-                        <HoverCard>
-                            <HoverCardTrigger delay={10} closeDelay={100} render={<Button variant="secondary" aria-hidden>?</Button>} />
-                            <HoverCardContent className="flex w-64 flex-col gap-0.5">
-                                <div>У правильных многоугольников <b>все стороны равны</b></div>
-                            </HoverCardContent>
-                        </HoverCard>
-                        , а боковые грани — равные прямоугольники
-                        <HoverCard>
-                            <HoverCardTrigger delay={10} closeDelay={100} render={<Button variant="secondary" aria-hidden>?</Button>} />
-                            <HoverCardContent className="flex w-64 flex-col gap-0.5">
-                                <div>У равных прямоугольников <b>одинаковая высота и ширина</b></div>
-                            </HoverCardContent>
-                        </HoverCard>
-                        .</dd>
-                </div>
-            </dl>
-
-            <p className="sr-only">У правильных многоугольников все стороны равны</p>
-            <p className="sr-only">У равных прямоугольников одинаковая высота и ширина</p>
-
-
-            <div>
-                <figure className="xl:float-left flex flex-col items-center">
+                <figure className="flex flex-col items-center gap-2 ">
                     <Image
                         src={"/images/storage/geometry/right-prizm.svg"}
                         width={320} height={400}
                         alt="Правильная шестиугольная призма"
                         unoptimized
                     />
-
-                    <figcaption className="text-sm font-bold">
+                    <figcaption className="text-sm text-center font-bold">
                         Правильная шестиугольная призма
                     </figcaption>
                 </figure>
-
-                <p>S <sub>боковой поверхности</sub> — это общая площадь всех боковых граней призмы без учёта оснований.</p>
-                <p className="text-lg font-bold">S <sub>боковой поверхности</sub> — P <sub>основания</sub> * <span className="text-sky-700">h</span></p>
             </div>
-        </section>
+
+            <section>
+                <h3 className="w-fit inline text-wrap xl:text-nowrap mt-4 mb-2">Прямая призма</h3>
+
+                <p>У <strong>прямой призмы</strong> боковые рёбра стоят под углом в 90&deg;.</p>
+                <dl>
+                    <div>
+                        <dt className="inline font-bold">Правильная призма</dt> — <dd className="inline">это призма, у которой основания — это
+                            правильные многоугольники
+                            <HoverCard>
+                                <HoverCardTrigger delay={10} closeDelay={100} render={<Button variant="secondary" aria-hidden>?</Button>} />
+                                <HoverCardContent className="flex w-64 flex-col gap-0.5">
+                                    <div>У правильных многоугольников <b>все стороны равны</b></div>
+                                </HoverCardContent>
+                            </HoverCard>
+                            , а боковые грани — равные прямоугольники
+                            <HoverCard>
+                                <HoverCardTrigger delay={10} closeDelay={100} render={<Button variant="secondary" aria-hidden>?</Button>} />
+                                <HoverCardContent className="flex w-64 flex-col gap-0.5">
+                                    <div>У равных прямоугольников <b>одинаковая высота и ширина</b></div>
+                                </HoverCardContent>
+                            </HoverCard>
+                            .</dd>
+                    </div>
+                </dl>
+
+                <p className="sr-only">У правильных многоугольников все стороны равны</p>
+                <p className="sr-only">У равных прямоугольников одинаковая высота и ширина</p>
+
+                <div>
+                    <p>S <sub>боковой поверхности</sub> — это общая площадь всех боковых граней призмы без учёта оснований.</p>
+                    <p className="text-lg font-bold">S <sub>боковой поверхности</sub> — P <sub>основания</sub> * <span className="text-sky-700">h</span></p>
+                </div>
+            </section>
+        </div>
     </section>
 )
 
@@ -185,27 +219,41 @@ const Prizm = () => (
 const Cylinder = () => (
     <section>
         <ContentDividerV1 className="my-4">
-            <h2 id="Cylinder" className="w-fit text-2xl text-wrap xl:text-nowrap">Цилиндр</h2>
+            <h2 id="Cylinder" className="w-fit text-wrap xl:text-nowrap">Цилиндр</h2>
         </ContentDividerV1>
 
-        <div>
-            <figure className="flex flex-col items-center xl:float-left">
-                <Image
-                    src={"/images/storage/geometry/cylinder.svg"}
-                    alt={"Цилиндр, с пометками: r — радиус, EF — осевое сечение, h — высота, ABCD — осевое сечение L0 — длина окружности."}
-                    width={300} height={400}
-                    unoptimized
+        <div className="flow-root">
+
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
                 />
-            </figure>
+
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src={"/images/storage/geometry/cylinder.svg"}
+                        alt={"Цилиндр, с пометками: r — радиус, EF — осевое сечение, h — высота, ABCD — осевое сечение L0 — длина окружности."}
+                        width={300} height={400}
+                        unoptimized
+                    />
+                    <figcaption className="text-sm text-center font-bold">
+                        Цилиндр
+                    </figcaption>
+                </figure>
+            </div>
 
             <div>
                 <section>
-                    <h3 id="Formulas" className="w-fit text-2xl text-wrap xl:text-nowrap mt-4 mb-2">Формулы</h3>
+                    <h3 id="Formulas" className="w-fit inline text-wrap xl:text-nowrap mt-4 mb-2">Формулы</h3>
                     <p>S боковой поверхности цилиндра = <span className="text-green-700">L0</span> * <span className="text-blue-700">h</span></p>
                 </section>
 
                 <section>
-                    <h3 className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2">Обозначения</h3>
+                    <h3 className="w-fit inline text-wrap xl:text-nowrap mt-4 mb-2">Обозначения</h3>
 
                     <p><span className="text-blue-700">h</span> — высота</p>
                     <p><span className="text-red-700">r</span> — радиус основания</p>

@@ -105,10 +105,10 @@ export default function RectangleCalculator() {
             </ContentDividerV1>
 
             <div>
-                <p className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 font-heading">Выберите тип фигуры</p>
+                <p className="w-fit text-wrap xl:text-nowrap mt-4 mb-2 font-heading">Выберите тип фигуры</p>
 
-                <div className="flex flex-col xl:flex-row gap-3">
-                    <figure className={clsx("flex flex-col justify-between items-center border rounded p-2 cursor-pointer hover:border-sky-500 duration-300", {
+                <div className="flex flex-col md:flex-row gap-3">
+                    <figure className={clsx("flex flex-col justify-between items-center rounded p-2 cursor-pointer hover:ring-2 duration-300", {
                         "border-blue-500 ring ring-blue-200": figure == "square"
                     })}
                         onClick={() => changeFigure("square")}
@@ -125,7 +125,7 @@ export default function RectangleCalculator() {
                         </figcaption>
                     </figure>
 
-                    <figure className={clsx("flex flex-col justify-between items-center border rounded p-2 cursor-pointer hover:border-sky-500 duration-300", {
+                    <figure className={clsx("flex flex-col justify-between items-center rounded p-2 cursor-pointer hover:ring-2 duration-300", {
                         "border-blue-500 ring ring-blue-200": figure == "rectangle"
                     })}
                         onClick={() => changeFigure("rectangle")}
@@ -147,7 +147,7 @@ export default function RectangleCalculator() {
 
             <div>
                 <p className="w-fit text-xl text-wrap xl:text-nowrap mt-4 mb-2 font-heading">Возможные значения</p>
-                <div className="grid grid-cols-1 xl:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-3">
                     <div className="flex flex-col gap-3">
                         <Field>
                             <FieldLabel htmlFor="w" className="text-green-700 text-lg">Ширина (w)</FieldLabel>

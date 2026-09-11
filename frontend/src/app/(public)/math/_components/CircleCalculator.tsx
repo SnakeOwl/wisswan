@@ -77,8 +77,8 @@ export default function CircleCalculator() {
                 <section>
                     <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Выберите тип фигуры</h3>
 
-                    <div className="flex flex-col xl:flex-row gap-3">
-                        <figure className={clsx("flex flex-col justify-between items-center border rounded p-2 cursor-pointer hover:border-sky-500 duration-300", {
+                    <div className="flex flex-col md:flex-row gap-3">
+                        <figure className={clsx("flex flex-col justify-between items-center rounded p-2 cursor-pointer hover:ring-2 duration-300", {
                             "border-blue-500 ring ring-blue-200": true
                         })}>
                             <Image
@@ -98,7 +98,7 @@ export default function CircleCalculator() {
                 <section>
                     <h3 className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Введите что известно</h3>
 
-                    <div className="grid grid-cols-1 xl:grid-cols-5 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-3">
                         <div className="flex flex-col gap-3">
                             <Field>
                                 <FieldLabel htmlFor="radius" className="text-green-700 text-lg">Радиус</FieldLabel>

@@ -10,7 +10,7 @@ import Link from "next/link";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 
-export function CardsWithGlowingEffectBox() {
+export function Services() {
     const cards = [
         {
             imageSrc: '/images/storage/dashicons-wordpress-alt.svg',
@@ -186,7 +186,7 @@ export function CardsWithGlowingEffectBox() {
                 <h1 className="text-xl px-2 xl:px-0 xl:text-2xl xl:text-nowrap font-bold mx-auto w-fit">Создание&nbsp;и&nbsp;поддержка сайтов</h1>
             </ContentDividerV1>
 
-            <ul className="px-2 xl:px-16 px-2 xl:px-16 grid xl:grid-cols-4 gap-4 lg:gap-4">
+            <ul className="px-2 xl:px-16 px-2 xl:px-16 grid md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-4">
                 {cards.map((el, index) => (
                     <GridItem key={index}
                         icon={

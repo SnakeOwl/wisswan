@@ -3,7 +3,6 @@
 import Modal from "@/app/_components/Modal"
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
-
 export default function ModalWrapper({
     children
 }: {
@@ -12,15 +11,17 @@ export default function ModalWrapper({
     const router = useRouter();
     const hide = () => router.back();
 
+
+
     return (
         <Modal hide={hide}
             wrapperClick={hide}
         >
-                <div className="relative bg-white">
-                    <X className="absolute right-4 top-4 cursor-pointer w-fit h-fit z-50 hover:animate-pulse" />
+            <div className="relative">
+                <X className="absolute right-4 top-4 cursor-pointer w-fit h-fit z-50 hover:animate-pulse" />
 
-                    {children}
-                </div>
+                {children}
+            </div>
         </Modal>
     )
 }

@@ -21,7 +21,7 @@ export default async function Page() {
         <main>
             <section>
                 <nav>
-                    <ul className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <li>
                             <Link href={'/math/algebra'}
                                 className="link-hover">
@@ -36,8 +36,8 @@ export default async function Page() {
                                     <span className="font-heading text-2xl">Алгебра</span>
 
                                     {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-2" aria-hidden={true}>
-                                        <figure className="flex flex-col items-center">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2" aria-hidden={true}>
+                                        <figure className="flex flex-col items-center justify-end ml-auto md:ml-0 mr-12 md:mr-0">
                                             <Image
                                                 src={"/images/storage/algebra/decart-coordinates-with-dots.svg"}
                                                 unoptimized
@@ -50,7 +50,7 @@ export default async function Page() {
                                             </figcaption>
                                         </figure>
 
-                                        <figure className="flex flex-col items-center justify-end">
+                                        <figure className="hidden md:flex flex-col items-center justify-end">
                                             <Image
                                                 src={"/images/storage/algebra/set-union.svg"}
                                                 unoptimized
@@ -64,7 +64,7 @@ export default async function Page() {
                                             </figcaption>
                                         </figure>
 
-                                        <figure className="flex flex-col items-center my-2 w-fit mx-auto">
+                                        <figure className="hidden md:flex flex-col items-center my-2 w-fit mx-auto ">
                                             <Image
                                                 src={"/images/storage/algebra/two-linear-formulas-crossed.svg"}
                                                 unoptimized
@@ -73,7 +73,6 @@ export default async function Page() {
                                             />
                                         </figure>
                                     </div>
-
                                 </div>
                             </Link>
                         </li>
@@ -92,8 +91,8 @@ export default async function Page() {
                                     <span className="font-heading text-2xl">Геометрия</span>
 
                                     {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
-                                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-2" aria-hidden={true}>
-                                        <figure className="flex flex-col items-center">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2" aria-hidden={true}>
+                                        <figure className="flex flex-col items-center ml-auto md:ml-0 mr-12 md:mr-0">
                                             <Image
                                                 src="/images/storage/circle_description_1.svg"
                                                 width={150} height={150}
@@ -106,7 +105,7 @@ export default async function Page() {
                                             </figcaption>
                                         </figure>
 
-                                        <figure className="flex flex-col items-center">
+                                        <figure className="hidden md:flex flex-col items-center">
                                             <Image
                                                 src={"/images/storage/geometry/rectangular-parallelepiped.svg"}
                                                 width={150} height={150}
@@ -119,7 +118,7 @@ export default async function Page() {
                                             </figcaption>
                                         </figure>
 
-                                        <figure className="flex flex-col items-center">
+                                        <figure className="hidden md:flex flex-col items-center">
                                             <Image
                                                 src={"/images/storage/geometry/polygon.svg"}
                                                 width={150} height={150}

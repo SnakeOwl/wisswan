@@ -56,7 +56,8 @@ const TriangleFullDescription = () => (
         </ContentDividerV1>
 
         <div className="flow-root">
-            <figure className="w-full xl:mx-2 xl:w-fit xl:float-start border rounded-md p-2 relative">
+
+            <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
                 <GlowingEffect
                     spread={40}
                     glow={true}
@@ -65,14 +66,16 @@ const TriangleFullDescription = () => (
                     inactiveZone={0.01}
                 />
 
-                <Image
-                    className="xl:mr-4"
-                    src="/images/storage/triangle_description_1.svg"
-                    width={300} height={300}
-                    alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
-                    unoptimized
-                />
-            </figure>
+                <figure className="flex flex-col items-center gap-2 ">
+                    <Image
+                        src="/images/storage/triangle_description_1.svg"
+                        width={300} height={300}
+                        alt="Треугольник, на котором обозначены высота, медиана, биссектриса"
+                        unoptimized
+                    />
+
+                </figure>
+            </div>
 
             <div>
                 <p><b>Треугольником</b> называют трёхзвенную замкнутую ломаную вместе с&nbsp;частью плоскости, которую она ограничивает.</p>
@@ -89,41 +92,71 @@ const TriangleFullDescription = () => (
         <section className="float-none">
             <h3 id="TriangleFullDescription-triangle_types-form" className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от числа равных сторон</h3>
 
-            <dl className="grid xl:grid-cols-3 gap-4">
-                <div className="flex flex-col items-center justify-between">
-                    <Image
-                        src="/images/storage/geometry/scalene-triangle.svg"
-                        width={200} height={200}
-                        unoptimized
-                        alt="Разносторонний треугольник"
+            <dl className="grid md:grid-cols-3 gap-4">
+                <div className="border rounded-md relative p-4 md:mr-2 mb-2">
+                    <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
                     />
-                    <div>
-                        <dt className="inline font-bold">Разносторонний треугольник</dt> — <dd className="inline">все стороны разной длины.</dd>
-                    </div>
+
+                    <figure className="flex flex-col items-center gap-2 h-full justify-between">
+                        <Image
+                            src="/images/storage/geometry/scalene-triangle.svg"
+                            width={200} height={200}
+                            unoptimized
+                            alt="Разносторонний треугольник"
+                        />
+                        <figcaption className="text-base text-center font-heading">
+                            <dt className="inline font-bold">Разносторонний треугольник</dt> — <dd className="inline">все стороны разной длины.</dd>
+                        </figcaption>
+                    </figure>
                 </div>
 
-                <div className="flex flex-col items-center justify-between">
-                    <Image
-                        src="/images/storage/geometry/isosceles-triangle.svg"
-                        width={200} height={200}
-                        unoptimized
-                        alt="Равнобедренный треугольник"
+                <div className="border rounded-md relative p-4 md:mr-2 mb-2">
+                    <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
                     />
-                    <div>
-                        <dt className="inline font-bold">Равнобедренный треугольник</dt> — <dd className="inline">2 стороны одинаковой длины.</dd>
-                    </div>
+
+                    <figure className="flex flex-col items-center gap-2 ">
+                        <Image
+                            src="/images/storage/geometry/isosceles-triangle.svg"
+                            width={200} height={200}
+                            unoptimized
+                            alt="Равнобедренный треугольник"
+                        />
+                        <figcaption className="text-base text-center font-heading">
+                            <dt className="inline font-bold">Равнобедренный треугольник</dt> — <dd className="inline">2 стороны одинаковой длины.</dd>
+                        </figcaption>
+                    </figure>
                 </div>
 
-                <div className="flex flex-col items-center justify-between">
-                    <Image
-                        src="/images/storage/geometry/equilateral-triangle.svg"
-                        width={200} height={200}
-                        unoptimized
-                        alt="Равносторонний треугольник"
+                <div className="border rounded-md relative p-4 md:mr-2 mb-2">
+                    <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
                     />
-                    <div>
-                        <dt className="inline font-bold">Равносторонний треугольник</dt> — <dd className="inline">все стороны одинаковой длины.</dd>
-                    </div>
+
+                    <figure className="flex flex-col items-center h-full justify-between gap-2 ">
+                        <Image
+                            src="/images/storage/geometry/equilateral-triangle.svg"
+                            width={200} height={200}
+                            unoptimized
+                            alt="Равносторонний треугольник"
+                        />
+                        <figcaption className="text-base text-center font-heading">
+                            <dt className="inline font-bold">Равносторонний треугольник</dt> — <dd className="inline">все стороны одинаковой длины.</dd>
+                        </figcaption>
+                    </figure>
                 </div>
             </dl>
 
@@ -148,44 +181,71 @@ const TriangleFullDescription = () => (
         <section>
             <h3 id="TriangleFullDescription-triangle_types-eagle" className="text-md text-wrap xl:text-nowrap mt-4 mb-2">Виды треугольников в зависимости от величины наибольшего угла</h3>
 
-            <dl className="grid xl:grid-cols-3 gap-4">
-                <div className="flex flex-col items-center justify-between">
-                    <Image
-                        src="/images/storage/geometry/acute-triangle.svg"
-                        width={200} height={200}
-                        unoptimized
-                        alt="Остроугольный треугольник"
+            <dl className="grid md:grid-cols-3 gap-4">
+                <div className="border rounded-md relative p-4 md:mr-2 mb-2">
+                    <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
                     />
 
-                    <div>
-                        <dt className="inline font-bold">Остроугольный треугольник</dt> — <dd className="inline">наибольший угол менее 90&deg;.</dd>
-                    </div>
+                    <figure className="flex flex-col items-center h-full justify-between gap-2 ">
+                        <Image
+                            src="/images/storage/geometry/acute-triangle.svg"
+                            width={200} height={200}
+                            unoptimized
+                            alt="Остроугольный треугольник"
+                        />
+                        <figcaption className="text-base text-center font-heading">
+                            <dt className="inline font-bold">Остроугольный треугольник</dt> — <dd className="inline">наибольший угол менее 90&deg;.</dd>
+                        </figcaption>
+                    </figure>
                 </div>
 
-                <div className="flex flex-col items-center justify-between">
-                    <Image
-                        src="/images/storage/geometry/right-triangle.svg"
-                        width={200} height={200}
-                        unoptimized
-                        alt="Прямоугольный треугольник"
+                <div className="border rounded-md relative p-4 md:mr-2 mb-2">
+                    <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
                     />
 
-                    <div>
-                        <dt className="inline font-bold">Прямоугольный треугольник</dt> — <dd className="inline">наибольший угол равен 90&deg;.</dd>
-                    </div>
+                    <figure className="flex flex-col items-center h-full justify-between gap-2 ">
+                        <Image
+                            src="/images/storage/geometry/right-triangle.svg"
+                            width={200} height={200}
+                            unoptimized
+                            alt="Прямоугольный треугольник"
+                        />
+                        <figcaption className="text-base text-center font-heading">
+                            <dt className="inline font-bold">Прямоугольный треугольник</dt> — <dd className="inline">наибольший угол равен 90&deg;.</dd>
+                        </figcaption>
+                    </figure>
                 </div>
 
-                <div className="flex flex-col items-center justify-between">
-                    <Image
-                        src="/images/storage/geometry/obtuse-triangle.svg"
-                        width={200} height={200}
-                        unoptimized
-                        alt="Тупоугольный треугольник"
+                <div className="border rounded-md relative p-4 md:mr-2 mb-2">
+                    <GlowingEffect
+                        spread={40}
+                        glow={true}
+                        disabled={false}
+                        proximity={64}
+                        inactiveZone={0.01}
                     />
 
-                    <div>
-                        <dt className="inline font-bold">Тупоугольный треугольник</dt> — <dd className="inline">наибольший угол более 90&deg;.</dd>
-                    </div>
+                    <figure className="flex flex-col items-center h-full justify-between gap-2 ">
+                        <Image
+                            src="/images/storage/geometry/obtuse-triangle.svg"
+                            width={200} height={200}
+                            unoptimized
+                            alt="Тупоугольный треугольник"
+                        />
+                        <figcaption className="text-base text-center font-heading">
+                            <dt className="inline font-bold">Тупоугольный треугольник</dt> — <dd className="inline">наибольший угол более 90&deg;.</dd>
+                        </figcaption>
+                    </figure>
                 </div>
             </dl>
         </section>
@@ -205,7 +265,6 @@ const Theorems = () => (
                 <p className="first-letter:font-bold">Теорема: В треугольнике напротив большего угла лежит большая сторона, а напротив большей стороны лежит больший угол.</p>
                 <p className="first-letter:font-bold">Теорема (о неравенстве треугольника): Любая сторона треугольника меньше суммы двух других его сторон.</p>
                 <p className="first-letter:font-bold">Теорема (о свойстве точек биссектрисы угла): Любая точка биссектрисы угла равноудалена от сторон угла. Если точка внутри угла равноудалена от сторон угла, то она лежит на биссектрисе этого угла.</p>
-                
             </li>
             <li>Если в&nbsp;треугольнике <b>высота является медианой</b>, то&nbsp;<b>треугольник равнобедренный</b></li>
             <li>Если в&nbsp;треугольнике <b>высота является биссектрисой</b>, то&nbsp;<b>треугольник равнобедренный</b></li>
@@ -219,42 +278,70 @@ const Theorems = () => (
 
 
             <li className="list-none">
-                <div className="flex flex-col xl:flex-row border rounded-md p-2">
-                    <Image
-                        src="/images/storage/geometry/Triangle-2.svg"
-                        width={200} height={200}
-                        alt="Треугольник, на котором показано как 3 биссектрисы пересекаются в центре вписанного круга"
-                        unoptimized
-                    />
+                <div className="flow-root">
+                    <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                        <GlowingEffect
+                            spread={40}
+                            glow={true}
+                            disabled={false}
+                            proximity={64}
+                            inactiveZone={0.01}
+                        />
+
+                        <figure className="flex flex-col items-center gap-2 ">
+                            <Image
+                                src="/images/storage/geometry/Triangle-2.svg"
+                                width={200} height={200}
+                                alt="Треугольник, на котором показано как 3 биссектрисы пересекаются в центре вписанного круга"
+                                unoptimized
+                            />
+                        </figure>
+                    </div>
 
                     <ul className="space-y-2">
                         <li>Каждая биссектриса угла в&nbsp;треугольнике делит его противолежащую сторону на&nbsp;отрезки, пропорциональные к&nbsp;двум другим сторонам треугольника: <span className="font-bold">BN/BA = CN/CA ; NB/NC = AB/AC</span></li>
                         <li>Все биссектрисы треугольника пересекаются в&nbsp;одной точке, которая является центром вписанной окружности.</li>
                     </ul>
                 </div>
+
             </li>
             <li><span className="font-bold">Теорема косинусов:</span> квадрат стороны треугольника равен сумме квадратов двух других сторон минус удвоенное произведение этих сторон на&nbsp;косинус угла между ними.</li>
             <li>
-                <div className="flex flex-col xl:flex-row xl:flex-nowrap gap-4 border rounded-md p-2">
-                    <Image
-                        src="/images/storage/geometry/circle-triangle-1.svg"
-                        width={300} height={300}
-                        alt="Прямоугольный треугольник с указанием сторон и углов"
-                        unoptimized
-                    />
+                <div className="flow-root">
+                    <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                        <GlowingEffect
+                            spread={40}
+                            glow={true}
+                            disabled={false}
+                            proximity={64}
+                            inactiveZone={0.01}
+                        />
+
+                        <figure className="flex flex-col items-center gap-2 ">
+                            <Image
+                                src="/images/storage/geometry/circle-triangle-1.svg"
+                                width={300} height={300}
+                                alt="Прямоугольный треугольник с указанием сторон и углов"
+                                unoptimized
+                            />
+                        </figure>
+                    </div>
+
                     <div>
                         <p><span className="font-bold">Теорема синусов:</span> стороны треугольника пропорциональны синусу противолежащих углов. Кроме того, это отношение равно диаметру окружности, описанной вокруг этого треугольника:</p>
                         <div className="text-md xl:text-2xl"><span className="text-blue-600">a</span> / sin(<span className="text-green-600">α</span>) == <span className="text-blue-600">b</span> / sin(<span className="text-green-600">β</span>) == <span className="text-blue-600">c</span> / sin(<span className="text-green-600">γ</span>) == 2<span className="text-red-600">R</span></div>
                     </div>
                 </div>
+
+
             </li>
         </ul>
 
         <section>
-            <h4 id="Triangle-teorems-external-angle-triangle" className="text-lg text-wrap xl:text-nowrap mt-4 mb-2">Внешний угол треугольника</h4>
+            <h4 id="Triangle-teorems-external-angle-triangle" className="text-wrap xl:text-nowrap mt-4 mb-2">Внешний угол треугольника</h4>
 
             <div className="flow-root">
-                <figure className="w-full xl:mx-2 xl:w-fit xl:float-start border rounded-md p-2 relative">
+                <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
                     <GlowingEffect
                         spread={40}
                         glow={true}
@@ -263,18 +350,19 @@ const Theorems = () => (
                         inactiveZone={0.01}
                     />
 
-                    <Image
-                        className="xl:mr-4"
-                        src="/images/storage/geometry/acute-triangles-with-corresponding-angles.svg"
-                        width={400} height={400}
-                        alt="Треугольник со смежными внешними углами. Внешние углы: α, β, γ. Внутренние углы: ε, δ, ζ."
-                        unoptimized
-                    />
+                    <figure className="flex flex-col items-center gap-2 ">
+                        <Image
+                            src="/images/storage/geometry/acute-triangles-with-corresponding-angles.svg"
+                            width={400} height={400}
+                            alt="Треугольник со смежными внешними углами. Внешние углы: α, β, γ. Внутренние углы: ε, δ, ζ."
+                            unoptimized
+                        />
 
-                    <figcaption className="text-base text-center font-heading">
-                        Треугольник со смежными внешними углами
-                    </figcaption>
-                </figure>
+                        <figcaption className="text-base text-center font-heading">
+                            Треугольник со смежными внешними углами
+                        </figcaption>
+                    </figure>
+                </div>
 
 
                 <div>
@@ -350,8 +438,8 @@ function RightTriangleFormulas() {
                 <h3 id="Triangle-formulas-general" className="text-xl text-wrap xl:text-nowrap mt-4 mb-2">Общие формулы</h3>
 
 
-                <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">
-                    <figure className="flex flex-col items-center gap-2 border rounded-md p-4 relative">
+                <div className="flow-root">
+                    <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
                         <GlowingEffect
                             spread={40}
                             glow={true}
@@ -360,19 +448,21 @@ function RightTriangleFormulas() {
                             inactiveZone={0.01}
                         />
 
-                        <Image
-                            src="/images/storage/geometry/triangle-random.svg"
-                            width={300} height={300}
-                            alt="Непримечательный треугольник с указанием сторон и углов. Стороны: a, b, c. Углы: α, β, γ"
-                            unoptimized
-                        />
+                        <figure className="flex flex-col items-center gap-2 ">
+                            <Image
+                                src="/images/storage/geometry/triangle-random.svg"
+                                width={300} height={300}
+                                alt="Непримечательный треугольник с указанием сторон и углов. Стороны: a, b, c. Углы: α, β, γ"
+                                unoptimized
+                            />
 
-                        <figcaption className="text-base text-center font-heading">
-                            Треугольник без особенностей
-                        </figcaption>
-                    </figure>
+                            <figcaption className="text-base text-center font-heading">
+                                Треугольник без особенностей
+                            </figcaption>
+                        </figure>
+                    </div>
 
-                    <ul>
+                    <ul className="inline-block">
                         <li>
                             <div className="flex flex-wrap items-center">
                                 {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
@@ -391,6 +481,27 @@ function RightTriangleFormulas() {
 
                                 <span className="ml-2"> — Периметр</span>
                             </div>
+
+                            <div className="mt-2">
+                                <p className="text-base font-normal">Площадь (Формула Герона):</p>
+                                <div className="flex flex-wrap items-center">
+
+                                    {/* 1. Этот блок увидят обычные пользователи. Читалка его пропустит */}
+                                    <div aria-hidden="true" className="xl:text-xl">
+                                        <InlineMath math={`
+                                            \\begin{aligned}
+                                                &S = \\sqrt{p} \\cdot (p - \\blue{a}) \\cdot (p - \\blue{b}) \\cdot (p - \\blue{c}), \\\\ 
+                                                &\\text{где } p = \\frac{\\blue{a} + \\blue{b} + \\blue{c}}{2} \\text{полупериметр}
+                                            \\end{aligned}
+                                        `} />
+                                    </div>
+
+                                    {/* 2. Этот блок не виден на экране, но читалка прочтет его идеально понятным языком */}
+                                    <span className="sr-only">
+                                        P = a + b + c
+                                    </span>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -399,13 +510,27 @@ function RightTriangleFormulas() {
             <section>
                 <h3 id="Triangle-RightTriangleFormulas" className="text-xl text-wrap xl:text-nowrap mt-4 mb-2">Формулы прямоугольного треугольника</h3>
 
-                <div className="flex flex-col xl:flex-row gap-4 max-w-4xl mx-auto">
-                    <Image
-                        src="/images/storage/geometry/Triangle-3.svg"
-                        width={300} height={300}
-                        alt="Прямоугольный треугольник с указанием сторон и углов"
-                        unoptimized
-                    />
+                <div className="flow-root">
+
+                    <div className="md:float-left border rounded-md relative p-4 md:mr-2 mb-2">
+                        <GlowingEffect
+                            spread={40}
+                            glow={true}
+                            disabled={false}
+                            proximity={64}
+                            inactiveZone={0.01}
+                        />
+
+                        <figure className="flex flex-col items-center gap-2 ">
+                            <Image
+                                src="/images/storage/geometry/Triangle-3.svg"
+                                width={300} height={300}
+                                alt="Прямоугольный треугольник с указанием сторон и углов"
+                                unoptimized
+                            />
+                        </figure>
+                    </div>
+
 
                     <ul className="tex-md xl:text-xl flex-1 font-bold space-y-2">
                         <li>
@@ -433,14 +558,12 @@ function RightTriangleFormulas() {
                             <span className="text-emerald-600">f</span>&sup2; = <span className="text-amber-600">e</span>&sup2; + <span className="text-cyan-600">g</span>&sup2; - 2<span className="text-amber-600">e</span><span className="text-cyan-600">g</span> * cos(<span className="text-pink-600">γ</span>) <span className="text-base font-normal">(Теорема косинусов)</span>
                         </li>
                         <li>
-                            <span className="text-base font-normal">Формула Герона:</span> S = &radic;<span className="overline decoration-solid">П (П - <span className="text-amber-600">e</span>) (П - <span className="text-cyan-600">g</span>) (П - <span className="text-lime-600">f</span>)</span><span className="text-base font-normal">, где</span> П = (<span className="text-amber-600">e</span> + <span className="text-lime-600">f</span> + <span className="text-cyan-600">g</span>) / 2 <span className="text-base font-normal">(полупериметр)</span>
+
                         </li>
                         <li>
                             S = (<span className="text-amber-600">e</span>&sup2; * &radic;3) / 4 <span className="text-base font-normal">НО: только если треугольник равносторонний</span>
                         </li>
                     </ul>
-
-
                 </div>
             </section>
         </section>

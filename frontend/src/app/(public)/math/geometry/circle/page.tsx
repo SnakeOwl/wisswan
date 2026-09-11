@@ -3,6 +3,7 @@ import ContentDividerV1 from "@/app/_components/dividers/ContentDividerV1";
 import Image from "next/image";
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
 import CircleCalculator from "../../_components/CircleCalculator";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export const metadata: Metadata = {
     title: "Круг и окружности",
@@ -78,17 +79,30 @@ const Theorems = () => (
             <h2 className="text-2xl text-nowrap">Теоремы</h2>
         </ContentDividerV1>
 
-        <div className="flex flex-col xl:flex-row">
-            <div>
-                Вписанный угол равен половине соответствующего ему центрального угла.
-            </div>
 
-            <Image
-                src="/images/storage/geometry/circle-inner-corner.svg"
-                width={300} height={300}
-                alt="Рисунок круга на котором зелёными линиями подписан вписанный угол, а синими линиями центральный угол. Центральный угол идёт из центра, вписанный идёт из края круга."
-                unoptimized
-            />
+        <div className="flow-root">
+            <figure className="float-left flex flex-col w-full md:w-fit items-center gap-2 border rounded-md p-2 relative md:mr-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                />
+
+                <Image
+                    src="/images/storage/geometry/circle-inner-corner.svg"
+                    width={300} height={300}
+                    alt="Рисунок круга на котором зелёными линиями подписан вписанный угол, а синими линиями центральный угол. Центральный угол идёт из центра, вписанный идёт из края круга."
+                    unoptimized
+                />
+
+                <figcaption className="text-base text-center font-heading max-w-[300px]">
+                    <span className="text-blue-700">Две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>
+                </figcaption>
+            </figure>
+
+            <p>Вписанный угол равен половине соответствующего ему центрального угла.</p>
         </div>
     </section>
 )
@@ -100,29 +114,44 @@ const CircleDescription = () => (
             <h2 className="text-2xl text-nowrap">Общие сведения</h2>
         </ContentDividerV1>
 
-        <div className="flex flex-col xl:flex-row">
-            <Image
-                className="float-left lg:mr-4"
-                src="/images/storage/circle_description_1.svg"
-                width={400} height={400}
-                alt="Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор"
-                unoptimized
-            />
+        <div className="flow-root">
+            <figure className="float-left flex flex-col w-full md:w-fit items-center gap-2 border rounded-md p-2 relative md:mr-2">
+                <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                />
 
-            <div className="flex flex-col gap-2">
-                <p><strong className="text-blue-700" >Диаметр</strong> — это отрезок, который соединяет две точки окружности и обязательно проходит через её центр. Иногда обозначается так: &#8960;</p>
-                <p><strong className="text-green-700">Радиус</strong> — это отрезок, соединяющий центр окружности с любой точкой, лежащей на этой окружности.</p>
+                <Image
+                className="block h-auto object-contain"
+                    src="/images/storage/circle_description_1.svg"
+                    width={400} height={400}
+                    alt="Рисунок круга с указанием таких элементов как: диаметр, радиус, дуга, хорда, сегмент, сектор"
+                    unoptimized
+                />
 
-                <p><strong>Окружность</strong>&nbsp;&mdash; это замкнутая линия на&nbsp;плоскости, все точки которой находятся на&nbsp;одинаковом расстоянии от&nbsp;одной точки&nbsp;&mdash; центра окружности.</p>
-                <p><strong>Круг</strong>&nbsp;&mdash; это внутренняя часть плоскости, ограниченная окружностью.</p>
-                <p><strong>Хордой</strong> окружности называется отрезок соединяющий две точки окружности.</p>
-                <p><strong>Дугой</strong> окружности называется часть окружности, ограниченная двумя точками.</p>
-                <p><strong>Сектором</strong> называется часть круга, заключенная между двумя радиусами.</p>
+                <figcaption className="text-base text-center font-heading max-w-[300px]">
+                    <span className="text-blue-700">Две параллельные прямые</span> пересечены <span className="text-red-700">секущей</span>
+                </figcaption>
+            </figure>
 
-                <dl>
-                    <div><dt className="inline font-bold">Вписанный угол</dt> — <dd className="inline">угол, вершина которого лежит на окружности, а стороны пересекают эту окружность. </dd></div>
-                </dl>
-            </div>
+            <p><strong className="text-blue-700" >Диаметр</strong> — это отрезок, который соединяет две точки окружности и обязательно проходит через её центр. Иногда обозначается так: &#8960;</p>
+            <p><strong className="text-green-700">Радиус</strong> — это отрезок, соединяющий центр окружности с любой точкой, лежащей на этой окружности.</p>
+
+            <p><strong>Окружность</strong>&nbsp;&mdash; это замкнутая линия на&nbsp;плоскости, все точки которой находятся на&nbsp;одинаковом расстоянии от&nbsp;одной точки&nbsp;&mdash; центра окружности.</p>
+            <p><strong>Круг</strong>&nbsp;&mdash; это внутренняя часть плоскости, ограниченная окружностью.</p>
+            <p><strong>Хордой</strong> окружности называется отрезок соединяющий две точки окружности.</p>
+            <p><strong>Дугой</strong> окружности называется часть окружности, ограниченная двумя точками.</p>
+            <p><strong>Сектором</strong> называется часть круга, заключенная между двумя радиусами.</p>
+
+            <dl>
+                <div><dt className="inline font-bold">Вписанный угол</dt> — <dd className="inline">угол, вершина которого лежит на окружности, а стороны пересекают эту окружность. </dd></div>
+            </dl>
         </div>
+
+
+
     </section>
 )
