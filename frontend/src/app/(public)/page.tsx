@@ -1,7 +1,5 @@
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { Metadata } from 'next';
-
-import { ReviewsBlock } from './_components/ReviewsBlock';
 import DoomBlock from './_components/DoomBlock/DoomBlock';
 import TimelineWorkSteps from "./_components/TimelineWorkSteps";
 import { getDefaultOpenGraph } from "@/utils/SEO/getDefaultOpenGraph";
